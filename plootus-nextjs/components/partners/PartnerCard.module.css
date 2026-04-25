@@ -1,0 +1,110 @@
+/* Partners Page Styles */
+
+.partners-container {
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding: 0 24px 48px;
+}
+
+.partners-content {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.partners-header {
+  margin-bottom: 0;
+}
+
+.partners-divider {
+  width: 100%;
+  height: 2px;
+  background-color: #14b8a6;
+  border: none;
+  margin: 0;
+}
+
+.partner-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: stretch;
+}
+
+.partner-logo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.partner-logo {
+  max-width: 300px;
+  height: 260px;
+  object-fit: contain;
+}
+
+.partner-logo-link {
+  display: inline-block;
+}
+
+.partner-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 280px;
+}
+
+.partner-description {
+  color: #262626;
+  line-height: 1.4;
+  font-size: 1rem;
+}
+
+.partner-link-text {
+  color: #262626;
+  font-size: 1rem;
+}
+
+.partner-link {
+  color: #14b8a6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.partner-link:hover {
+  color: #0f9488;
+}
+
+.partner-separator {
+  border: none;
+  border-top: 2px solid #14b8a6;
+  margin: 0;
+}
+
+.disclaimer {
+  padding: 12px 0;
+}
+
+.disclaimer-text {
+  color: #262626;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+@media (min-width: 768px) {
+  .partners-container {
+    padding: 64px 48px;
+  }
+
+  .partner-card {
+    grid-template-columns: 340px 1fr;
+    gap: 40px;
+  }
+
+  .partner-logo-container {
+    justify-content: flex-start;
+    align-items: center;
+    height: 250px;
+  }
+
+  .partner-content {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Much Should I Have in My 401(k) by Age? 2026 Benchmarks | Plootus</title>
+<meta name="description" content="See exactly how much you should have saved in your 401(k) at every age in 2026 — with Fidelity benchmarks, actual average balances, and a clear action plan if you're behind.">
+  <!-- Canonical & Robots -->
+  <link rel="canonical" href="https://www.plootus.com/401k-by-age">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="author" content="Plootus Research Team">
+  <meta name="date" content="2026-01-01">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="401(k) Savings Benchmarks by Age 2026 — How Much Should You Have? | Plootus">
+  <meta property="og:description" content="Fidelity salary-multiple benchmarks vs. actual average and median 401(k) balances at every age in 2026. Age 30: 1× salary. Age 40: 3×. Age 50: 6×. Age 67: 10×. Plus 2026 contribution limits and catch-up rules.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.plootus.com/401k-by-age">
+  <meta property="og:site_name" content="Plootus">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:publisher" content="https://www.plootus.com">
+  <meta property="article:published_time" content="2026-01-01T00:00:00+00:00">
+  <meta property="article:modified_time" content="2026-03-01T00:00:00+00:00">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@plootus">
+  <meta name="twitter:title" content="401(k) by Age 2026: Benchmarks vs. Reality">
+  <meta name="twitter:description" content="Fidelity benchmarks: 1× salary at 30, 3× at 40, 6× at 50, 10× at 67. Avg 401k: $148K (Vanguard 2025). Median: $38K. 2026 limits: $24,500 standard; $35,750 ages 60-63 (SECURE 2.0). Plootus 2026.">
+<meta name="keywords" content="401k by age, how much should I have in my 401k, 401k benchmarks 2026, retirement savings by age, 401k savings milestones">
+<meta name="author" content="Plootus Research Team">
+<meta property="og:title" content="How Much Should I Have in My 401(k) by Age? 2026 | Plootus">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<style>
+:root{--blue:#3B5BDB;--blue-dark:#2C47C5;--blue-deeper:#1A2F8F;--blue-light:#EEF2FF;--blue-mid:#E0E7FF;--green:#2CB67D;--green-light:#ECFDF5;--gold:#F59F00;--gold-light:#FFF9DB;--red:#E03131;--red-light:#FFF5F5;--navy:#0D1B3E;--white:#FFFFFF;--off-white:#F7F9FC;--border:#E2E8F4;--text:#0D1B3E;--text-mid:#3A4D6E;--text-light:#6B7FA8;--shadow-sm:0 1px 8px rgba(59,91,219,.07);--shadow:0 4px 24px rgba(59,91,219,.10);--radius:12px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--text);background:var(--off-white);line-height:1.65;font-size:15px}
+.top-bar{background:var(--blue);color:rgba(255,255,255,.9);text-align:center;padding:9px 20px;font-size:13px;font-weight:500}
+.top-bar a{color:#fff;font-weight:700;text-decoration:underline}
+.site-header{background:var(--white);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;height:64px;box-shadow:var(--shadow-sm)}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none}
+.logo-mark{width:32px;height:32px;background:var(--blue);border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-size:16px;font-weight:800}
+.logo-text{font-size:20px;font-weight:800;color:var(--navy)}
+.logo-text span{color:var(--blue)}
+nav{display:flex;gap:28px}
+nav a{font-size:14px;font-weight:500;color:var(--text-mid);text-decoration:none}
+nav a:hover{color:var(--blue)}
+.header-cta{background:var(--blue);color:white;padding:9px 20px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600}
+.breadcrumb{max-width:1100px;margin:0 auto;padding:14px 40px;font-size:13px;color:var(--text-light)}
+.breadcrumb a{color:var(--blue);text-decoration:none}
+.breadcrumb span{margin:0 6px;color:var(--border)}
+
+/* HERO */
+.hero{background:var(--white);border-bottom:1px solid var(--border);padding:48px 40px 36px}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 320px;gap:40px;align-items:center}
+.hero-tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+.hero h1{font-size:clamp(24px,3.5vw,40px);font-weight:800;line-height:1.12;color:var(--navy);margin-bottom:14px;letter-spacing:-.4px}
+.hero-sub{font-size:15px;color:var(--text-mid);margin-bottom:18px;line-height:1.65}
+.hero-meta{display:flex;gap:8px;flex-wrap:wrap}
+.hero-meta span{font-size:12px;font-weight:500;background:var(--off-white);border:1px solid var(--border);color:var(--text-light);padding:4px 10px;border-radius:20px}
+.quick-ref{background:var(--navy);border-radius:var(--radius);padding:22px}
+.qr-title{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:12px}
+.qr-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:13px;color:rgba(255,255,255,.7)}
+.qr-row:last-child{border-bottom:none}
+.qr-val{font-weight:700;color:var(--gold)}
+
+/* LAYOUT */
+.page-body{max-width:1100px;margin:0 auto;padding:40px 40px;display:grid;grid-template-columns:1fr 284px;gap:36px;align-items:start}
+.main-content{min-width:0}
+.sidebar{position:sticky;top:80px;display:flex;flex-direction:column;gap:14px}
+
+/* TYPE */
+.section-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
+h2{font-size:25px;font-weight:800;color:var(--navy);margin-bottom:14px;line-height:1.2;letter-spacing:-.3px;scroll-margin-top:80px}
+h3{font-size:18px;font-weight:700;color:var(--navy);margin:26px 0 10px;letter-spacing:-.2px}
+p{font-size:15px;color:var(--text-mid);margin-bottom:14px;line-height:1.72}
+section{margin-bottom:40px;padding-bottom:40px;border-bottom:1px solid var(--border)}
+section:last-of-type{border-bottom:none}
+
+.callout{border-left:3px solid var(--blue);background:var(--blue-light);padding:14px 18px;border-radius:0 8px 8px 0;margin:20px 0}
+.callout.orange{border-left-color:var(--gold);background:var(--gold-light)}
+.callout.red{border-left-color:var(--red);background:var(--red-light)}
+.callout.green{border-left-color:var(--green);background:var(--green-light)}
+.callout p{margin:0;font-size:14px;color:var(--text-mid);line-height:1.65}
+
+/* TIMELINE */
+.timeline{position:relative;margin:24px 0;display:flex;flex-direction:column;gap:0}
+.timeline::before{content:'';position:absolute;left:36px;top:28px;bottom:28px;width:2px;background:linear-gradient(to bottom,var(--blue),var(--gold));border-radius:1px}
+.tl-item{display:grid;grid-template-columns:72px 1fr;gap:18px;position:relative}
+.tl-bubble-wrap{display:flex;flex-direction:column;align-items:center;padding-top:10px}
+.tl-bubble{width:40px;height:40px;border-radius:50%;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;border:3px solid var(--white);box-shadow:0 0 0 2px var(--navy);z-index:1;flex-shrink:0}
+.tl-item.highlight .tl-bubble{background:var(--blue);box-shadow:0 0 0 3px rgba(59,91,219,.25),0 0 0 5px var(--white)}
+.tl-age-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--text-light);margin-top:5px;text-align:center}
+.tl-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:18px;margin-bottom:16px;box-shadow:var(--shadow-sm);transition:box-shadow .2s}
+.tl-card:hover{box-shadow:var(--shadow)}
+.tl-item.highlight .tl-card{border-color:var(--blue);border-width:2px}
+.tl-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.tm-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text-light);margin-bottom:3px}
+.tm-val{font-size:15px;font-weight:800;color:var(--navy);line-height:1}
+.tm-sub{font-size:11px;color:var(--text-light);margin-top:2px}
+.tl-body{font-size:13px;color:var(--text-mid);line-height:1.6}
+.tl-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.tl-tag{font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;background:var(--blue-light);color:var(--blue)}
+.tl-tag.green{background:var(--green-light);color:var(--green)}
+.tl-tag.gold{background:var(--gold-light);color:#9a6000}
+
+/* BENCHMARK TABLE */
+.tbl-wrap{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--border);margin:18px 0;box-shadow:var(--shadow-sm)}
+.data-table{width:100%;border-collapse:collapse;font-size:13px}
+.data-table thead{background:var(--navy);color:white}
+.data-table thead th{padding:11px 13px;text-align:left;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap}
+.data-table tbody tr{border-bottom:1px solid var(--border);transition:background .12s}
+.data-table tbody tr:hover{background:var(--blue-light)}
+.data-table tbody tr:last-child{border-bottom:none}
+.data-table td{padding:11px 13px;vertical-align:middle}
+.data-table tbody tr:nth-child(even){background:var(--off-white)}
+.on-track{color:var(--green);font-weight:700}
+.behind{color:var(--red);font-weight:700}
+
+/* CONTRIB BOX */
+.contrib-box{background:linear-gradient(135deg,var(--navy),var(--blue-deeper));border-radius:var(--radius);padding:24px;color:white;margin:20px 0}
+.contrib-box h3{color:white;margin:0 0 4px}
+.contrib-box .sub{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:16px}
+.contrib-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.contrib-item{background:rgba(255,255,255,.08);border-radius:8px;padding:14px;text-align:center;border:1px solid rgba(255,255,255,.1)}
+.ci-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.55);margin-bottom:6px}
+.ci-amount{font-size:26px;font-weight:800;color:var(--gold);letter-spacing:-.5px;line-height:1}
+.ci-note{font-size:11px;color:rgba(255,255,255,.55);margin-top:5px;line-height:1.4}
+.contrib-source{font-size:11px;color:rgba(255,255,255,.4);margin-top:14px;margin-bottom:0}
+
+/* ACTION GRID */
+.action-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}
+.action-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow-sm)}
+.action-num{font-size:32px;font-weight:800;color:var(--border);line-height:1;margin-bottom:8px;font-feature-settings:'tnum'}
+.action-card h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:7px}
+.action-card p{font-size:13px;color:var(--text-mid);margin:0;line-height:1.6}
+
+/* CHART */
+.chart-box{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:22px;margin:20px 0;box-shadow:var(--shadow-sm)}
+.chart-box h3{margin-top:0;font-size:16px;margin-bottom:14px}
+.chart-source{font-size:11px;color:var(--text-light);margin-top:10px;margin-bottom:0;font-style:italic}
+
+/* INLINE CTA */
+.inline-cta{background:linear-gradient(135deg,var(--blue),var(--blue-deeper));padding:24px 28px;border-radius:var(--radius);display:flex;align-items:center;justify-content:space-between;gap:20px;margin:28px 0;flex-wrap:wrap}
+.inline-cta-text h3{color:white;margin:0 0 5px;font-size:18px}
+.inline-cta-text p{color:rgba(255,255,255,.75);margin:0;font-size:13px}
+.inline-cta-btn{background:white;color:var(--blue);padding:11px 22px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;white-space:nowrap;flex-shrink:0}
+
+/* FAQ */
+.faq-item{border:1px solid var(--border);border-radius:8px;margin-bottom:8px;overflow:hidden;background:var(--white)}
+.faq-q{padding:14px 18px;font-size:14px;font-weight:600;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;list-style:none}
+.faq-q::-webkit-details-marker{display:none}
+.faq-q::after{content:'+';font-size:18px;color:var(--blue);flex-shrink:0;font-weight:400}
+details[open] .faq-q::after{content:'−'}
+.faq-a{padding:0 18px 14px;font-size:14px;color:var(--text-mid);line-height:1.7}
+
+/* SOURCES */
+.sources-box{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:18px 22px;margin-top:8px}
+.sources-box h3{font-size:15px;margin-bottom:10px}
+.sources-box ol{padding-left:18px;font-size:12px;color:var(--text-light);line-height:1.85}
+.sources-box a{color:var(--blue)}
+
+/* SIDEBAR */
+.toc-box,.sidebar-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow-sm)}
+.toc-box h3{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);margin-bottom:11px}
+.toc-box ol{list-style:none;counter-reset:toc;padding:0;display:flex;flex-direction:column;gap:6px}
+.toc-box li{counter-increment:toc;display:flex;align-items:flex-start;gap:8px;font-size:13px}
+.toc-box li::before{content:counter(toc);background:var(--blue);color:white;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:1px}
+.toc-box a{color:var(--text-mid);text-decoration:none;line-height:1.4}
+.toc-box a:hover{color:var(--blue)}
+.cta-card{background:linear-gradient(145deg,var(--navy),var(--blue-deeper));border-radius:var(--radius);padding:20px 18px;color:white}
+.cta-card h4{font-size:16px;font-weight:700;margin-bottom:8px;line-height:1.3}
+.cta-card p{font-size:13px;color:rgba(255,255,255,.65);margin-bottom:14px;line-height:1.5}
+.cta-btn{display:block;background:var(--blue);color:white;text-align:center;padding:10px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px}
+.related-card h4{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);margin-bottom:11px}
+.related-card a{display:block;font-size:13px;color:var(--blue);text-decoration:none;padding:6px 0;border-bottom:1px solid var(--border)}
+.related-card a:last-child{border-bottom:none}
+
+footer{background:var(--navy);color:rgba(255,255,255,.5);padding:40px 40px 26px;font-size:13px}
+.footer-inner{max-width:1100px;margin:0 auto}
+.footer-logo{display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.footer-logo-mark{width:28px;height:28px;background:var(--blue);border-radius:6px;display:flex;align-items:center;justify-content:center;color:white;font-size:14px;font-weight:800}
+.footer-logo-text{font-size:18px;font-weight:800;color:white}
+footer p{margin-bottom:14px;max-width:600px;line-height:1.7}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.footer-links a{color:rgba(255,255,255,.5);text-decoration:none}
+.footer-links a:hover{color:white}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:16px;font-size:12px}
+
+@media(max-width:900px){
+  .page-body{grid-template-columns:1fr;padding:24px 20px}
+  .sidebar{position:static}
+  .hero-inner{grid-template-columns:1fr}
+  .quick-ref{display:none}
+  .action-grid{grid-template-columns:1fr}
+  .contrib-grid{grid-template-columns:1fr 1fr}
+  .tl-metrics{grid-template-columns:1fr 1fr}
+  .inline-cta{flex-direction:column;text-align:center}
+  .hero{padding:36px 20px}
+  .site-header{padding:0 20px}
+  nav{display:none}
+}
+</style>
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How Much Should You Have in Your 401(k) by Age? 2026 Benchmarks",
+    "description": "Fidelity's salary-multiple retirement savings benchmarks compared to actual average and median 401(k) balances at every age, using Vanguard How America Saves 2025 and Fidelity Q4 2025 data. Includes 2026 IRS contribution limits, SECURE 2.0 super catch-up provisions for ages 60–63, and a 4-step action plan for those behind benchmark.",
+    "datePublished": "2026-01-01",
+    "dateModified": "2026-03-01",
+    "author": {"@type":"Organization","name":"Plootus Research Team","url":"https://www.plootus.com"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "Plootus",
+      "url": "https://www.plootus.com",
+      "logo": {"@type":"ImageObject","url":"https://www.plootus.com/logo.png"}
+    },
+    "mainEntityOfPage": {"@type":"WebPage","@id":"https://www.plootus.com/401k-by-age"},
+    "about": [{"@type":"Thing","name":"401(k) Retirement Savings"},
+      {"@type":"Thing","name":"Retirement Savings Benchmarks"},
+      {"@type":"Thing","name":"IRS Contribution Limits 2026"},
+      {"@type":"Thing","name":"SECURE 2.0 Act"}],
+    "keywords": "401k benchmarks by age, how much to save for retirement, Fidelity salary multiple, 2026 401k limits, catch-up contributions, SECURE 2.0, retirement savings average"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "401(k) Savings Benchmarks and Average Balances by Age 2026",
+    "description": "Fidelity salary-multiple retirement savings benchmarks by age (1× at 30, 3× at 40, 6× at 50, 8× at 60, 10× at 67) compared to actual average and median 401(k) balances from Vanguard How America Saves 2025 (~5M participants) and Fidelity Q4 2025 Retirement Analysis (24.8M participants). Also includes 2026 IRS 401(k) contribution limits.",
+    "url": "https://www.plootus.com/401k-by-age",
+    "temporalCoverage": "2026",
+    "spatialCoverage": {"@type":"Place","name":"United States"},
+    "creator": {"@type":"Organization","name":"Plootus Research"},
+    "citation": ["Vanguard Group, How America Saves 2025 (year-end 2024 data, ~5M participants, 1,400+ plans)",
+        "Fidelity Investments, Q4 2025 Retirement Analysis (24.8M participants, 26,200 plans)",
+        "Fidelity Investments, How Much Should I Save for Retirement? — salary benchmark framework",
+        "IRS, Retirement Plan Contribution Limits 2026 (irs.gov)",
+        "Social Security Administration, Monthly Statistical Snapshot, November 2025",
+        "SECURE 2.0 Act (Consolidated Appropriations Act, 2023)",
+        "Plootus Research 2026"],
+    "variableMeasured": [{"@type":"PropertyValue","name":"Fidelity Salary-Multiple Benchmark","unitText":"Multiplier of annual salary"},
+      {"@type":"PropertyValue","name":"Average 401(k) Balance by Age Group","unitText":"USD"},
+      {"@type":"PropertyValue","name":"Median 401(k) Balance by Age Group","unitText":"USD"},
+      {"@type":"PropertyValue","name":"401(k) Standard Contribution Limit 2026","unitText":"USD annually"},
+      {"@type":"PropertyValue","name":"401(k) Catch-Up Limit Age 50+ (2026)","unitText":"USD annually"},
+      {"@type":"PropertyValue","name":"401(k) Super Catch-Up Limit Ages 60-63 (2026, SECURE 2.0)","unitText":"USD annually"}]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "How much should I have in my 401(k) at age 40?",
+      "acceptedAnswer": {"@type":"Answer","text":"Fidelity recommends 3 times your annual salary by age 40. On a $75,000 salary, that target is $225,000. The average 40-something has approximately $104,000 in their 401(k) — well below the Fidelity benchmark. Your 40s are peak earning years with 25+ years of compounding remaining. The most impactful step is raising your contribution rate, not trying to generate higher investment returns. Source: Fidelity Q4 2025 Retirement Analysis."}
+    },
+    {
+      "@type": "Question",
+      "name": "Is $200,000 in my 401(k) at age 50 enough?",
+      "acceptedAnswer": {"@type":"Answer","text":"It depends entirely on your salary. On a $50,000 salary, $200,000 equals 4 times salary — behind Fidelity's 6× benchmark for age 50. On a $33,000 salary, it meets or exceeds the benchmark. At age 50, you have 15–17 years until typical retirement age and access to $32,500 in annual 401(k) contributions (standard $24,500 + $8,000 catch-up). Consistent maximum contributions from age 50 onward can significantly close most gaps. Source: Fidelity Q4 2025."}
+    },
+    {
+      "@type": "Question",
+      "name": "What are the 401(k) contribution limits for 2026?",
+      "acceptedAnswer": {"@type":"Answer","text":"The 2026 standard 401(k) contribution limit is $24,500 (up from $23,500 in 2025). Workers age 50 and older can add an $8,000 catch-up contribution for a total of $32,500. Workers ages 60–63 qualify for an enhanced 'super catch-up' contribution of $11,250 (instead of $8,000) under the SECURE 2.0 Act, for a total of $35,750. These limits apply to both traditional and Roth 401(k) contributions combined. Source: IRS, 2026."}
+    },
+    {
+      "@type": "Question",
+      "name": "Should I contribute to a traditional or Roth 401(k)?",
+      "acceptedAnswer": {"@type":"Answer","text":"Traditional 401(k): pre-tax contributions reduce taxable income now, but all withdrawals in retirement are fully taxed as ordinary income. Roth 401(k): after-tax contributions provide no current deduction, but all qualified withdrawals in retirement are completely tax-free, including growth. If you expect higher tax rates in retirement (common for early-career workers or those expecting rising income), Roth typically wins. In peak earning years expecting lower retirement income, traditional often wins. Many financial planners recommend splitting contributions to create tax diversification across both account types."}
+    },
+    {
+      "@type": "Question",
+      "name": "What percentage of income should go to my 401(k)?",
+      "acceptedAnswer": {"@type":"Answer","text":"Fidelity recommends saving 15% of pre-tax income toward retirement in total — including employer contributions. The current average total savings rate (employee + employer) is 14.3% as of Q1 2025 (Fidelity). Always contribute at least enough to capture the full employer match, which is typically 3–6% of salary and represents an immediate 50–100% return on your contribution. If you are behind benchmark, targeting 18–20% with automatic annual escalation is appropriate. Source: Fidelity Q1 2025 Retirement Analysis."}
+    }]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{"@type":"ListItem","position":1,"name":"Home","item":"https://www.plootus.com"},
+      {"@type":"ListItem","position":2,"name":"Guides","item":"https://www.plootus.com/guides"},
+      {"@type":"ListItem","position":3,"name":"401(k) Savings by Age 2026","item":"https://www.plootus.com/401k-by-age"}]
+  }
+]
+</script>
+</head>
+<body>
+
+<div class="top-bar">Are you on track? <a href="https://plootus.com">Use Plootus to see your real retirement number in 60 seconds →</a></div>
+
+<header class="site-header">
+  <a class="logo" href="https://plootus.com">
+    <div class="logo-mark">P</div>
+    <span class="logo-text">Ploot<span>us</span></span>
+  </a>
+  <nav>
+    <a href="https://plootus.com/individual-users">Solutions</a>
+    <a href="https://plootus.com/finance-101">Finance 101</a>
+    <a href="https://plootus.com/resources">Resources</a>
+    <a href="https://plootus.com/about-us">About Us</a>
+  </nav>
+  <a class="header-cta" href="https://plootus.com/my-dashboard">My Dashboard →</a>
+</header>
+
+<div class="breadcrumb">
+  <a href="https://plootus.com">Home</a><span>›</span>
+  <a href="https://plootus.com/resources">Guides</a><span>›</span>
+  401(k) Savings by Age
+</div>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">📘 Plootus Guide · Updated 2026</div>
+      <h1>How Much Should You Have in Your 401(k) by Age?</h1>
+      <p class="hero-sub">Based on Fidelity benchmarks and data from over 30 million retirement plan participants, here's exactly where you should be at every age — and what to do if you're behind.</p>
+      <div class="hero-meta">
+        <span>By Plootus Research</span>
+        <span><time datetime="2026-03-01">Updated March 2026</time></span>
+        <span>15 min read</span>
+      </div>
+    </div>
+    <div class="quick-ref">
+      <div class="qr-title">Quick Reference: Fidelity Benchmarks</div>
+      <div class="qr-row"><span>By age 30</span><span class="qr-val">1× salary</span></div>
+      <div class="qr-row"><span>By age 40</span><span class="qr-val">3× salary</span></div>
+      <div class="qr-row"><span>By age 50</span><span class="qr-val">6× salary</span></div>
+      <div class="qr-row"><span>By age 60</span><span class="qr-val">8× salary</span></div>
+      <div class="qr-row"><span>By age 67</span><span class="qr-val">10× salary</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="page-body" itemscope itemtype="https://schema.org/Article">
+  <main class="main-content" role="main" aria-label="401(k) Savings Benchmarks by Age 2026 — Fidelity Standards vs. Reality">
+  <!-- AI-READABLE CONTENT SUMMARY
+  Page: How Much Should You Have in Your 401(k) by Age? 2026 Benchmarks
+  Publisher: Plootus Research (plootus.com)
+  Data Sources: Vanguard How America Saves 2025 (~5M participants),
+    Fidelity Q4 2025 Retirement Analysis (24.8M participants, 26,200 plans),
+    IRS 2026 contribution limits, SECURE 2.0 Act, SSA Nov 2025
+
+  FIDELITY SALARY-MULTIPLE BENCHMARKS (target = X times annual salary):
+    Age 30: 1× salary (e.g., $75K salary → $75K target)
+    Age 35: 2× salary
+    Age 40: 3× salary (e.g., $75K salary → $225K target)
+    Age 45: 4× salary
+    Age 50: 6× salary (e.g., $75K salary → $450K target)
+    Age 55: 7× salary
+    Age 60: 8× salary
+    Age 67: 10× salary (e.g., $75K salary → $750K target)
+
+  ACTUAL AVERAGE 401(k) BALANCES (Vanguard How America Saves 2025 / Fidelity Q4 2025):
+    All ages — Average: $148,153 | Median: $38,176 (Vanguard 2025)
+    Gen Z (under 28)      — Avg: ~$11,700 | Median: ~$4,800
+    Millennials (28–43)   — Avg: $92,409  | Median: $35,400
+    Gen X (44–59)         — Avg: $296,252 | Median: ~$98,000
+    Boomers (60–78)       — Avg: $506,302 | Median: ~$225,000
+
+  2026 IRS 401(k) CONTRIBUTION LIMITS:
+    Standard limit (all workers): $24,500/year
+    Catch-up age 50+: additional $8,000 → total $32,500/year
+    Super catch-up ages 60-63 (SECURE 2.0): additional $11,250 → total $35,750/year
+    IRA limit: $7,000 standard / $8,000 age 50+ ($1,000 catch-up)
+    HSA limit: $4,300 individual / $8,550 family
+
+  KEY STATISTICS:
+    - Average total savings rate (employee + employer) Q1 2025: 14.3% (Fidelity)
+    - Fidelity recommended total savings rate: 15% of pre-tax income
+    - Workers saving continuously 15 years averaged $617,600 balance (Fidelity Q4 2025)
+    - 1 in 4 employees misses the full employer 401(k) match (Fidelity 2025)
+    - 63% of Fidelity participants invested in target-date funds Q4 2025
+    - Average employee contribution rate: 7.7% of paycheck (Vanguard 2025)
+
+  COMMON EMPLOYER MATCH STRUCTURES:
+    50% of first 6% of salary contributed → effective 3% employer contribution
+    100% of first 3% → effective 3% employer contribution
+    Capturing full match = immediate 50-100% guaranteed return on contribution
+
+  4-STEP CATCH-UP PLAN (for those behind benchmark):
+    1. Capture full employer match first (always)
+    2. Increase savings rate by 1% per year via auto-escalation
+    3. Use catch-up contributions at 50+ ($8K extra/yr) and super catch-up at 60-63 ($11.25K extra/yr)
+    4. Delay retirement by 2-3 years: compounds savings + reduces retirement years to fund
+
+  Last Updated: March 2026
+  -->
+
+
+    <section id="intro">
+      <div class="section-label">Why This Guide Matters</div>
+      <h2>The Problem With the "Am I On Track?" Question</h2>
+      <p>Most people have no idea whether their 401(k) balance is good, bad, or catastrophic for their age. The financial industry throws around averages skewed by the ultra-wealthy, and generic advice like "save 15%" doesn't tell you whether you'll actually retire when you want to.</p>
+      <p>This guide uses Fidelity's widely-cited savings benchmarks — the most practical framework for gauging retirement readiness — combined with real data from Vanguard's <em>How America Saves 2025</em> and Fidelity's Q4 2025 analysis of over 30 million retirement plan participants.</p>
+      <div class="callout orange">
+        <p>⚠️ <strong>The Median Reality Check:</strong> The average 401(k) balance across all ages is $148,153 — but the <em>median</em> is just $38,176 (Vanguard, 2025). That 4× gap means most Americans are much further behind than headline numbers suggest. When benchmarking yourself, use the median, not the average.</p>
+      </div>
+    </section>
+
+    <section id="timeline">
+      <div class="section-label">Age-by-Age Breakdown</div>
+      <h2>401(k) Savings Benchmarks at Every Age</h2>
+      <p>These milestones assume a target retirement age of 67, a consistent savings rate, and replacing ~45% of pre-retirement income from personal savings, with Social Security covering the rest (Fidelity Investments, 2025).</p>
+
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-bubble-wrap"><div class="tl-bubble">25</div><div class="tl-age-lbl">Early 20s</div></div>
+          <div class="tl-card">
+            <div class="tl-metrics" data-type="statistic">
+              <div><div class="tm-label">Target</div><div class="tm-val">Start now</div><div class="tm-sub">Begin contributing</div></div>
+              <div><div class="tm-label">Avg. Balance (Vanguard)</div><div class="tm-val">~$6,900</div><div class="tm-sub">Under-25 average</div></div>
+              <div><div class="tm-label">Savings Rate Needed</div><div class="tm-val">6–10%</div><div class="tm-sub">Including employer match</div></div>
+            </div>
+            <div class="tl-body">At 25, your job is simply to start. Even $50/month invested now grows to over $10,000 by retirement at 7% average annual growth. The single most important action: capture your full employer match — that's an immediate 50–100% return on contributions.
+              <div class="tl-tags"><span class="tl-tag green">✓ Get the full match</span><span class="tl-tag">✓ Pick low-cost index funds</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-bubble-wrap"><div class="tl-bubble">30</div><div class="tl-age-lbl">Age 30</div></div>
+          <div class="tl-card">
+            <div class="tl-metrics" data-type="statistic">
+              <div><div class="tm-label">Fidelity Benchmark</div><div class="tm-val">1× salary</div><div class="tm-sub">On $75K: $75,000</div></div>
+              <div><div class="tm-label">Actual Avg. (Fidelity)</div><div class="tm-val">~$67,300</div><div class="tm-sub">Millennial 401(k) avg.</div></div>
+              <div><div class="tm-label">Estimated Median</div><div class="tm-val">~$22,000</div><div class="tm-sub">Most 30-year-olds</div></div>
+            </div>
+            <div class="tl-body">By 30, the benchmark is 1× your annual salary. Student debt, early-career salaries, and career changes mean most people are behind — and that's okay. At 30, you still have 35+ years of compounding ahead of you.
+              <div class="tl-tags"><span class="tl-tag">✓ Target 12–15% savings rate</span><span class="tl-tag">✓ Open a Roth <abbr title="Individual Retirement Account">IRA</abbr> alongside 401(k)</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-bubble-wrap"><div class="tl-bubble">40</div><div class="tl-age-lbl">Age 40</div></div>
+          <div class="tl-card">
+            <div class="tl-metrics" data-type="statistic">
+              <div><div class="tm-label">Fidelity Benchmark</div><div class="tm-val">3× salary</div><div class="tm-sub">On $90K: $270,000</div></div>
+              <div><div class="tm-label">Actual Avg. (Fidelity)</div><div class="tm-val">~$104,000</div><div class="tm-sub">401(k) only, 40s cohort</div></div>
+              <div><div class="tm-label">Estimated Median</div><div class="tm-val">~$40,000</div><div class="tm-sub">Vanguard estimate</div></div>
+            </div>
+            <div class="tl-body">Your 40s are your peak earning decade — and your most important savings decade. Salaries are typically highest, and every extra percentage point saved now has ~25 years to compound. Bump your savings rate 1% every time you get a raise.
+              <div class="tl-tags"><span class="tl-tag">✓ Target 15–20% savings rate</span><span class="tl-tag">✓ Diversify: IRA + taxable accounts</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item highlight">
+          <div class="tl-bubble-wrap"><div class="tl-bubble">50</div><div class="tl-age-lbl">Age 50 ⭐</div></div>
+          <div class="tl-card">
+            <div class="tl-metrics" data-type="statistic">
+              <div><div class="tm-label">Fidelity Benchmark</div><div class="tm-val">6× salary</div><div class="tm-sub">On $100K: $600,000</div></div>
+              <div><div class="tm-label">Actual Avg. (Fidelity)</div><div class="tm-val">~$192,300</div><div class="tm-sub">Gen X avg., 401(k)</div></div>
+              <div><div class="tm-label">2026 Catch-Up Limit</div><div class="tm-val">$32,500</div><div class="tm-sub">Catch-up starts at 50 (IRS)</div></div>
+            </div>
+            <div class="tl-body">Age 50 is critical: catch-up contributions begin. You can save $8,000 more per year above the standard limit. Consistently saving $32,500/year from age 50–65 can add over $700,000 to your balance at 7% growth.
+              <div class="tl-tags"><span class="tl-tag gold">⬆ Catch-Up: +$8,000/yr available</span><span class="tl-tag">✓ Max out catch-up if at all possible</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item highlight">
+          <div class="tl-bubble-wrap"><div class="tl-bubble">60</div><div class="tl-age-lbl">Age 60 ⭐</div></div>
+          <div class="tl-card">
+            <div class="tl-metrics" data-type="statistic">
+              <div><div class="tm-label">Fidelity Benchmark</div><div class="tm-val">8× salary</div><div class="tm-sub">On $100K: $800,000</div></div>
+              <div><div class="tm-label">Actual Avg. (Fidelity)</div><div class="tm-val">~$249,300</div><div class="tm-sub">Boomer avg., 401(k)</div></div>
+              <div><div class="tm-label">Super Catch-Up (60–63)</div><div class="tm-val">$35,750</div><div class="tm-sub">SECURE 2.0 Act (2026)</div></div>
+            </div>
+            <div class="tl-body">Under the SECURE 2.0 Act, workers aged 60–63 can contribute $35,750 in 2026 — the highest limit ever. This window closes at 64. Also: model Social Security timing, <abbr title="Required Minimum Distribution">RMD</abbr> strategy, and withdrawal order now to minimize retirement taxes.
+              <div class="tl-tags"><span class="tl-tag gold">🔥 Super Catch-Up: $35,750/yr (60–63)</span><span class="tl-tag">✓ Plan Social Security timing</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-bubble-wrap"><div class="tl-bubble">67</div><div class="tl-age-lbl">Retirement</div></div>
+          <div class="tl-card">
+            <div class="tl-metrics" data-type="statistic">
+              <div><div class="tm-label">Fidelity Benchmark</div><div class="tm-val">10× salary</div><div class="tm-sub">On $80K: $800,000</div></div>
+              <div><div class="tm-label">Actual Avg. (Vanguard)</div><div class="tm-val">~$232,000</div><div class="tm-sub">65+ group, 401(k)</div></div>
+              <div><div class="tm-label">Safe Withdrawal Rate</div><div class="tm-val">4%/year</div><div class="tm-sub">~30-year horizon (Bengen)</div></div>
+            </div>
+            <div class="tl-body">At retirement, the target is 10× your final salary. Combined with Social Security (~$24,894/yr avg. per <abbr title="Social Security Administration">SSA</abbr>, 2025), this should replace 80–90% of pre-retirement income. Each extra year of work can extend how long your money lasts by 3–5 years.
+              <div class="tl-tags"><span class="tl-tag green">✓ Delay SS to age 70 if possible</span><span class="tl-tag">✓ Withdrawal order: taxable accounts first</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:11px;color:var(--text-light)">Sources: Fidelity retirement benchmark framework; Vanguard How America Saves 2025; Fidelity Q4 2025 Retirement Analysis; IRS 2026 contribution limits. Plootus Research 2026.</p>
+    </section>
+
+    <div class="inline-cta">
+      <div class="inline-cta-text">
+        <h3>Where do you stand right now?</h3>
+        <p>Plootus connects to your actual accounts and shows progress against these exact benchmarks — personalized to your salary and age.</p>
+      </div>
+      <a class="inline-cta-btn" href="https://plootus.com/my-dashboard">See My Benchmarks →</a>
+    </div>
+
+    <section id="full-table">
+      <div class="section-label">Complete Benchmark Table</div>
+      <h2>Fidelity 401(k) Benchmarks at Every Income Level</h2>
+      <p>Fidelity's benchmarks are expressed as a multiple of annual salary. The table below maps those targets across three example income levels and compares them against actual average balances from Fidelity and Vanguard:</p>
+      <div class="tbl-wrap">
+        <table class="data-table" summary="Data table — sortable columns">
+          <th scope="col"ead>
+            <tr><th scope="col">Age</th><th scope="col">Benchmark (×Salary)</th><th scope="col">$60K Salary</th><th scope="col">$90K Salary</th><th scope="col">$130K Salary</th><th scope="col">Actual Avg. Balance</th><th scope="col">Status vs. Benchmark*</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>30</strong></td><td>1× salary</td><td>$60,000</td><td>$90,000</td><td>$130,000</td><td>~$67,300 (Fidelity Millennials)</td><td class="on-track">✓ Near-target</td></tr>
+            <tr><td><strong>35</strong></td><td>2× salary</td><td>$120,000</td><td>$180,000</td><td>$260,000</td><td>~$85,000 (est.)</td><td class="behind">⚠ Behind</td></tr>
+            <tr><td><strong>40</strong></td><td>3× salary</td><td>$180,000</td><td>$270,000</td><td>$390,000</td><td>~$104,000 (Fidelity)</td><td class="behind">⚠ Significantly behind</td></tr>
+            <tr><td><strong>45</strong></td><td>4× salary</td><td>$240,000</td><td>$360,000</td><td>$520,000</td><td>~$148,000 (est.)</td><td class="behind">⚠ Significantly behind</td></tr>
+            <tr><td><strong>50</strong></td><td>6× salary</td><td>$360,000</td><td>$540,000</td><td>$780,000</td><td>~$192,300 (Fidelity Gen X)</td><td class="behind">⚠ Significantly behind</td></tr>
+            <tr><td><strong>60</strong></td><td>8× salary</td><td>$480,000</td><td>$720,000</td><td>$1,040,000</td><td>~$249,300 (Fidelity Boomers)</td><td class="behind">⚠ Behind</td></tr>
+            <tr><td><strong>67</strong></td><td>10× salary</td><td>$600,000</td><td>$900,000</td><td>$1,300,000</td><td>~$232,000 (Vanguard 65+)</td><td class="behind">⚠ Significantly behind</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:11px;color:var(--text-light)">*Status reflects the gap between average balances and Fidelity benchmarks at approximately median U.S. salary (~$59,000 in 2024). Most Americans are behind these benchmarks — this does not mean retirement is impossible, but intentional action is required. Sources: Fidelity Investments; Fidelity Q4 2025 Retirement Analysis; Vanguard How America Saves 2025.</p>
+    </section>
+
+    <section id="contrib-limits">
+      <div class="section-label">2026 Contribution Limits</div>
+      <h2>How Much Can You Put Into Your 401(k) in 2026?</h2>
+      <div class="contrib-box">
+        <h3>2026 IRS 401(k) Contribution Limits</h3>
+        <p class="sub">Applies to traditional and Roth 401(k) contributions combined (IRS, 2026)</p>
+        <div class="contrib-grid">
+          <div class="contrib-item"><div class="ci-label">Under Age 50</div><div class="ci-amount" data-type="statistic">$24,500</div><div class="ci-note">Up from $23,500 in 2025</div></div>
+          <div class="contrib-item"><div class="ci-label">Age 50–59 &amp; 64+</div><div class="ci-amount" data-type="statistic">$32,500</div><div class="ci-note">+$8,000 standard catch-up</div></div>
+          <div class="contrib-item"><div class="ci-label">Age 60–63 (SECURE 2.0)</div><div class="ci-amount" data-type="statistic">$35,750</div><div class="ci-note">+$11,250 super catch-up</div></div>
+        </div>
+        <p class="contrib-source">Source: IRS Retirement Plan Contribution Limits 2026; SECURE 2.0 Act (Consolidated Appropriations Act, 2023). Super catch-up began with the 2025 tax year.</p>
+      </div>
+    </section>
+
+    <section id="action-plan">
+      <div class="section-label">If You're Behind</div>
+      <h2>The 4-Step Action Plan for Catching Up</h2>
+      <div class="action-grid">
+        <div class="action-card">
+          <div class="action-num" data-type="statistic">01</div>
+          <h4>Maximize your employer match first</h4>
+          <p>Before anything else, contribute enough to get the full employer match. This is a guaranteed 50–100% return. Fidelity estimates 1 in 4 workers leaves this money unclaimed.</p>
+        </div>
+        <div class="action-card">
+          <div class="action-num" data-type="statistic">02</div>
+          <h4>Use the 1% annual increase strategy</h4>
+          <p>Each time you get a raise, increase contributions by 1%. Over 10 years this can add 25% or more to your retirement balance. Many 401(k) plans offer automatic escalation — turn it on.</p>
+        </div>
+        <div class="action-card">
+          <div class="action-num" data-type="statistic">03</div>
+          <h4>Max out catch-up contributions at 50+</h4>
+          <p>At 50, you can contribute $32,500/year. At 60–63, the super catch-up allows $35,750. Maxing out from 55–65 at 7% growth can add over $450,000 to your balance by retirement.</p>
+        </div>
+        <div class="action-card">
+          <div class="action-num" data-type="statistic">04</div>
+          <h4>Open and fund an IRA alongside your 401(k)</h4>
+          <p>A traditional or Roth IRA adds up to $7,000/year in tax-advantaged space ($8,000 at 50+). Savers with multiple account types are significantly more likely to meet retirement goals.</p>
+        </div>
+      </div>
+      <div class="callout red">
+        <p>⚠️ <strong>Don't Chase Returns to Catch Up:</strong> Taking on excessive portfolio risk in the final 5–10 years before retirement can wipe out years of progress. Focus on maximizing contributions and broad index funds with low expense ratios instead.</p>
+      </div>
+    </section>
+
+    <section id="chart">
+      <div class="section-label">Visual</div>
+      <h2>Fidelity Benchmark vs. Actual Average Balances</h2>
+      <div class="chart-box">
+        <h3>Savings Benchmark vs. Reality at Each Decade (Assumes $75,000 Salary)</h3>
+        <canvas id="benchChart" height="80"></canvas>
+        <p class="chart-source">Benchmark = Fidelity target × $75,000 salary. Actual = Fidelity Q4 2025 / Vanguard How America Saves 2025 cohort averages. Source: Plootus Research 2026.</p>
+      </div>
+    </section>
+
+    <section id="faq" aria-label="Frequently Asked Questions">
+      <div class="section-label">FAQs</div>
+      <h2>Frequently Asked Questions</h2>
+      <details class="faq-item"><summary class="faq-q">How much should I have in my 401(k) at 40?</summary><div class="faq-a">Fidelity recommends 3× your annual salary by age 40. On a $75,000 salary, that's $225,000. The average 40-something has about $104,000 — well below benchmark. Your 40s are peak earning years with 25+ years of compounding remaining. Focus on raising your savings rate, not chasing returns. Source: Fidelity Q4 2025 Retirement Analysis.</div></details>
+      <details class="faq-item"><summary class="faq-q">Is $200,000 in my 401(k) at 50 enough?</summary><div class="faq-a">It depends on your salary. On a $50,000 salary, $200,000 at 50 equals 4× salary — behind Fidelity's 6× benchmark. On $33,000, it exceeds the benchmark. Context matters enormously. With 15–17 years until typical retirement and $32,500/year in available contributions, there is real ability to close gaps from age 50 onward. Use the <a href="https://plootus.com" style="color:var(--blue)">Plootus Calculator</a> for a personalized view.</div></details>
+      <details class="faq-item"><summary class="faq-q">What is the 401(k) contribution limit for 2026?</summary><div class="faq-a">The 2026 standard limit is $24,500. Workers 50+ can add $8,000 catch-up (total: $32,500). Ages 60–63 get an $11,250 super catch-up (total: $35,750) under the SECURE 2.0 Act. These limits apply to traditional and Roth 401(k) contributions combined. Source: IRS, 2026.</div></details>
+      <details class="faq-item"><summary class="faq-q">Should I contribute to a traditional or Roth 401(k)?</summary><div class="faq-a">Traditional 401(k): pre-tax contributions reduce taxable income now, but withdrawals in retirement are fully taxed. Roth 401(k): after-tax contributions, but qualified withdrawals in retirement are completely tax-free. If you expect higher taxes in retirement (or are early-career), Roth typically wins. In peak earning years expecting lower retirement income, traditional often wins. Many planners recommend splitting to create tax diversification.</div></details>
+      <details class="faq-item"><summary class="faq-q">What percentage of income should go to my 401(k)?</summary><div class="faq-a">Fidelity recommends 15% of pre-tax income toward retirement total — including employer contributions. The current average total rate is 14.3% (Fidelity Q1 2025). Always contribute at least enough to capture the full employer match (typically 3–6% of salary). If behind benchmark, targeting 18–20% with automatic escalation is appropriate.</div></details>
+    </section>
+
+    <div class="sources-box">
+      <h3>📚 Sources</h3>
+      <ol>
+        <li>Vanguard Group, <em>How America Saves 2025</em> — year-end 2024 data, ~5M participants, 1,400+ plans.</li>
+        <li>Fidelity Investments, <em>Q4 2025 Retirement Analysis</em> — 24.8M participants, 26,200 plans.</li>
+        <li>Fidelity Investments, <em>How Much Should I Save for Retirement?</em> — Salary benchmark framework.</li>
+        <li>IRS, <em>Retirement Plan Contribution Limits 2026.</em> <a href="https://www.irs.gov" target="_blank" rel="noopener">irs.gov</a></li>
+        <li>Social Security Administration, <em>Monthly Statistical Snapshot, November 2025</em> — avg. retired worker benefit: $24,894/yr.</li>
+        <li>SECURE 2.0 Act (Consolidated Appropriations Act, 2023) — super catch-up provisions for ages 60–63.</li>
+      </ol>
+    </div>
+
+    <div class="inline-cta" style="background:linear-gradient(135deg,var(--navy),var(--blue-deeper))">
+      <div class="inline-cta-text">
+        <h3>See exactly where you stand — not the average</h3>
+        <p>Plootus connects to your actual 401(k) and shows your personalized benchmark status in minutes.</p>
+      </div>
+      <a class="inline-cta-btn" href="https://plootus.com/my-dashboard">Start Free →</a>
+    </div>
+
+  </main>
+
+  <aside class="sidebar" role="complementary" aria-label="Related resources and navigation">
+    <div class="toc-box">
+      <h3>Contents</h3>
+      <ol>
+        <li><a href="#intro">The Real Picture</a></li>
+        <li><a href="#timeline">Age-by-Age Timeline</a></li>
+        <li><a href="#full-table">Full Benchmark Table</a></li>
+        <li><a href="#contrib-limits">2026 Contribution Limits</a></li>
+        <li><a href="#action-plan">If You're Behind</a></li>
+        <li><a href="#chart">Benchmark vs. Reality Chart</a></li>
+        <li><a href="#faq">FAQs</a></li>
+      </ol>
+    </div>
+    <div class="cta-card">
+      <h4>Am I on track for my age?</h4>
+      <p>Connect your accounts and get your real retirement readiness score — against these exact benchmarks — in under 3 minutes.</p>
+      <a class="cta-btn" href="https://plootus.com/my-dashboard">Get My Score →</a>
+    </div>
+    <div class="sidebar-card related-card">
+      <h4>Related Guides</h4>
+      <a href="https://plootus.com/resources">→ Average 401(k) Balance by Age</a>
+      <a href="https://plootus.com/resources">→ How to Plan for Retirement</a>
+      <a href="https://plootus.com/resources">→ Best States to Retire 2026</a>
+      <a href="https://plootus.com/resources">→ Social Security: When to Claim</a>
+      <a href="https://plootus.com/resources">→ Early Retirement / <abbr title="Financial Independence, Retire Early">FIRE</abbr> Guide</a>
+    </div>
+    <div class="sidebar-card" style="background:var(--off-white)">
+      <p style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);margin-bottom:8px">Key Stat</p>
+      <p style="font-size:15px;font-weight:700;color:var(--navy);line-height:1.45;margin-bottom:5px">"Only 5.4% of 401(k) participants changed their asset allocation in Q4 2025."</p>
+      <p style="font-size:11px;color:var(--text-light);margin:0">Source: Plootus Research 2026 / Fidelity Q4 2025</p>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <div class="footer-logo-mark">P</div>
+      <span class="footer-logo-text">Plootus</span>
+    </div>
+    <p>Plootus helps Americans understand their retirement savings and make smarter decisions about their financial future. This guide is updated annually.</p>
+    <div class="footer-links">
+      <a href="https://plootus.com">Overview</a>
+      <a href="https://plootus.com/individual-users">Solutions</a>
+      <a href="https://plootus.com/finance-101">Finance 101</a>
+      <a href="https://plootus.com/resources">Resources</a>
+      <a href="https://plootus.com/about-us">About Us</a>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Plootus. For informational purposes only; not financial advice. Benchmark data attributed to Fidelity Investments and Vanguard Group as cited.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const ctx = document.getElementById('benchChart').getContext('2d');
+new Chart(ctx,{type:'bar',data:{
+labels:['Age 30','Age 40','Age 50','Age 60','Age 67'],
+datasets:[
+{label:'Fidelity Benchmark ($75K salary)',data:[75000,225000,450000,600000,750000],backgroundColor:'rgba(59,91,219,0.85)',borderRadius:6},
+{label:'Actual Average Balance',data:[67300,104000,192300,249300,232000],backgroundColor:'rgba(245,159,0,0.8)',borderRadius:6}
+]},options:{responsive:true,plugins:{legend:{position:'top',labels:{font:{family:'Plus Jakarta Sans',size:12},boxRadius:4}},tooltip:{callbacks:{label:c=>'$'+c.raw.toLocaleString()}}},scales:{x:{ticks:{font:{size:12,family:'Plus Jakarta Sans'}},grid:{display:false}},y:{ticks:{callback:v=>'$'+(v/1000).toFixed(0)+'k',font:{size:11,family:'Plus Jakarta Sans'}},grid:{color:'rgba(0,0,0,0.04)'}}}}});
+</script>
+</body>
+</html>

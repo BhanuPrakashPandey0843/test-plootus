@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="0" dy="2"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.2"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect x="12" y="20" width="96" height="80" rx="12" fill="#ffffff" filter="url(#shadow)"/>
+  <rect x="24" y="16" width="72" height="18" rx="6" fill="#4A6B8A"/>
+  <rect x="20" y="36" width="80" height="56" rx="8" fill="#F5F7FB" stroke="#E2E8F0"/>
+  <rect x="30" y="48" width="60" height="8" rx="4" fill="#E8A85C"/>
+  <rect x="30" y="62" width="60" height="8" rx="4" fill="#3182CE" opacity="0.8"/>
+  <rect x="30" y="76" width="40" height="8" rx="4" fill="#48BB78"/>
+  <circle cx="84" cy="76" r="10" fill="#F59E0B"/>
+  <path d="M32 50 L38 56 L48 46" stroke="#38A169" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

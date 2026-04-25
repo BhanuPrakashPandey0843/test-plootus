@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Social Security Calculator 2026: Estimate Your Benefit | Plootus</title>
+  <meta name="description" content="Estimate your Social Security retirement benefit by claiming age (62, 67, or 70) and see the lifetime impact. Average benefit: $24,894/year. Maximum at 70: $5,108/month. Break-even analysis included. Free, instant, no account needed.">
+  <link rel="canonical" href="https://www.plootus.com/social-security-calculator">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="author" content="Plootus Research Team">
+  <meta name="date" content="2026-01-01">
+  <meta name="keywords" content="social security calculator,social security benefit estimator,when to claim social security,social security break-even,social security at 62 vs 70,social security FRA 2026">
+  <meta property="og:title" content="Social Security Calculator 2026: Estimate Your Benefit | Plootus">
+  <meta property="og:description" content="Estimate your Social Security retirement benefit by claiming age (62, 67, or 70) and see the lifetime impact. Average benefit: $24,894/year. Maximum at 70: $5,108/month. Break-even analysis included. Free, instant, no account needed.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.plootus.com/social-security-calculator">
+  <meta property="og:site_name" content="Plootus">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:publisher" content="https://www.plootus.com">
+  <meta property="article:published_time" content="2026-01-01T00:00:00+00:00">
+  <meta property="article:modified_time" content="2026-04-01T00:00:00+00:00">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@plootus">
+  <meta name="twitter:title" content="Social Security Calculator 2026 — When to Claim & Break-Even">
+  <meta name="twitter:description" content="SS avg: $24,894/yr. Max at 70: $5,108/mo. FRA for 1960+: 67. Claiming 62 vs 70: 77% higher monthly benefit. Break-even: ~age 82. Spousal: 50% of higher earner. Interactive calculator. Plootus 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+
+<style>
+:root{
+  --blue:#3B5BDB;--blue-dark:#2C47C5;--blue-light:#EEF2FF;--blue-mid:#E0E7FF;
+  --green:#2CB67D;--green-light:#ECFDF5;--gold:#F59F00;--gold-light:#FFF9DB;
+  --red:#E03131;--red-light:#FFF5F5;--navy:#0D1B3E;--white:#FFFFFF;
+  --off-white:#F7F9FC;--border:#E2E8F4;--text:#0D1B3E;--text-mid:#3A4D6E;
+  --text-light:#6B7FA8;--shadow-sm:0 1px 8px rgba(59,91,219,.07);
+  --shadow:0 4px 24px rgba(59,91,219,.10);--radius:12px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--text);background:var(--off-white);line-height:1.65;font-size:15px}
+.top-bar{background:var(--blue);color:rgba(255,255,255,.9);text-align:center;padding:9px 20px;font-size:13px;font-weight:500}
+.top-bar a{color:#fff;font-weight:700;text-decoration:underline}
+.site-header{background:var(--white);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;height:64px;box-shadow:var(--shadow-sm)}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none}
+.logo-mark{width:32px;height:32px;background:var(--blue);border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-size:16px;font-weight:800}
+.logo-text{font-size:20px;font-weight:800;color:var(--navy)}
+.logo-text span{color:var(--blue)}
+nav{display:flex;gap:28px}
+nav a{font-size:14px;font-weight:500;color:var(--text-mid);text-decoration:none}
+nav a:hover{color:var(--blue)}
+.header-cta{background:var(--blue);color:white;padding:9px 20px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600}
+.breadcrumb{max-width:1100px;margin:0 auto;padding:14px 40px;font-size:13px;color:var(--text-light)}
+.breadcrumb a{color:var(--blue);text-decoration:none}
+.breadcrumb span{margin:0 6px;color:var(--border)}
+.hero{background:var(--white);border-bottom:1px solid var(--border);padding:48px 40px 36px}
+.hero-inner{max-width:1100px;margin:0 auto}
+.hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+.hero h1{font-size:clamp(24px,3.5vw,42px);font-weight:800;line-height:1.12;color:var(--navy);margin-bottom:14px;letter-spacing:-.4px;max-width:820px}
+.hero-deck{font-size:16px;color:var(--text-mid);max-width:740px;margin-bottom:20px;line-height:1.68;border-left:3px solid var(--gold);padding-left:18px}
+.hero-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:0}
+.hero-meta span{font-size:12px;font-weight:500;background:var(--off-white);border:1px solid var(--border);color:var(--text-light);padding:4px 10px;border-radius:20px}
+.stat-strip{background:var(--navy);padding:24px 0}
+.stat-strip-inner{max-width:1100px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.1)}
+.stat-item{padding:20px 24px;text-align:center;background:var(--navy)}
+.stat-num{font-size:28px;font-weight:800;color:var(--gold);letter-spacing:-1px;line-height:1}
+.stat-label{font-size:11.5px;color:rgba(255,255,255,.6);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:5px}
+.page-body{max-width:1100px;margin:0 auto;padding:44px 40px;display:grid;grid-template-columns:1fr 284px;gap:40px;align-items:start}
+.main-content{min-width:0}
+.sidebar{position:sticky;top:80px;display:flex;flex-direction:column;gap:14px}
+.toc-box{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px}
+.toc-box h3{font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--text-light);margin-bottom:12px}
+.toc-box ol{padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.toc-box a{font-size:13px;color:var(--blue);text-decoration:none;font-weight:500}
+.cta-card{background:var(--navy);border-radius:var(--radius);padding:22px;color:white}
+.cta-card h4{font-size:15px;font-weight:700;color:white;margin-bottom:8px;line-height:1.35}
+.cta-card p{font-size:13px;color:rgba(255,255,255,.7);margin-bottom:16px;line-height:1.5}
+.cta-btn{display:block;background:var(--green);color:white;padding:11px 16px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:700;text-align:center}
+.sidebar-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px}
+.sidebar-card h4{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.sidebar-card a{display:block;font-size:13px;color:var(--blue);text-decoration:none;font-weight:500;padding:3px 0}
+.section-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+.main-content section{margin-bottom:44px}
+h2{font-size:22px;font-weight:800;color:var(--navy);margin-bottom:14px;letter-spacing:-.3px}
+h3{font-size:17px;font-weight:700;color:var(--navy);margin-bottom:10px}
+p{color:var(--text-mid);margin-bottom:12px;line-height:1.7}
+.data-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm)}
+.data-table th{background:var(--navy);color:white;padding:12px 14px;text-align:left;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.data-table td{padding:11px 14px;border-bottom:1px solid var(--border);color:var(--text-mid)}
+.data-table tr:nth-child(even) td{background:var(--off-white)}
+.data-table tr:hover td{background:var(--blue-light)}
+.data-table .hi{color:var(--blue);font-weight:700}
+.data-table .gold{color:var(--gold);font-weight:700}
+.data-table .green{color:var(--green);font-weight:700}
+.info-box{background:var(--blue-light);border:1px solid var(--blue-mid);border-radius:var(--radius);padding:18px 20px;margin:20px 0}
+.info-box p{color:var(--navy);margin:0;font-size:14px;line-height:1.6}
+.warn-box{background:var(--gold-light);border:1px solid #F0C050;border-radius:var(--radius);padding:18px 20px;margin:20px 0}
+.warn-box p{color:var(--navy);margin:0;font-size:14px}
+.green-box{background:var(--green-light);border:1px solid #A8E8CE;border-radius:var(--radius);padding:18px 20px;margin:20px 0}
+.green-box p{color:#0C5C3D;margin:0;font-size:14px}
+.card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:20px 0}
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow-sm)}
+.card h4{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.card p{font-size:13px;color:var(--text-mid);margin:0;line-height:1.55}
+.card .card-val{font-size:26px;font-weight:800;color:var(--blue);letter-spacing:-1px;margin-bottom:4px}
+.faq-section{margin-top:40px}
+.faq-item{border:1px solid var(--border);border-radius:var(--radius);margin-bottom:10px;overflow:hidden;background:var(--white)}
+.faq-q{padding:16px 20px;font-size:15px;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none}
+.faq-q:hover{background:var(--blue-light)}
+.faq-q span{font-size:20px;color:var(--blue);font-weight:400;transition:.2s}
+.faq-item.open .faq-q span{transform:rotate(45deg)}
+.faq-a{display:none;padding:0 20px 16px;color:var(--text-mid);font-size:14px;line-height:1.7;border-top:1px solid var(--border)}
+.faq-item.open .faq-a{display:block}
+.sources-box{background:var(--off-white);border:1px solid var(--border);border-radius:var(--radius);padding:16px 20px;margin-top:32px;font-size:12.5px;color:var(--text-light)}
+.sources-box strong{color:var(--navy);display:block;margin-bottom:8px;font-size:13px}
+.sources-box li{margin-bottom:4px}
+.cta-banner{background:linear-gradient(135deg,var(--navy) 0%,#1a2f6e 100%);border-radius:var(--radius);padding:32px;text-align:center;margin:32px 0;color:white}
+.cta-banner h3{font-size:20px;font-weight:800;color:white;margin-bottom:8px}
+.cta-banner p{color:rgba(255,255,255,.8);font-size:14px;margin-bottom:20px}
+.cta-banner a{background:var(--green);color:white;padding:12px 28px;border-radius:8px;text-decoration:none;font-size:15px;font-weight:700;display:inline-block}
+.site-footer{background:var(--navy);color:rgba(255,255,255,.6);padding:32px 40px;text-align:center;margin-top:60px}
+.footer-inner{max-width:1100px;margin:0 auto}
+.footer-logo{font-size:22px;font-weight:800;color:white;margin-bottom:14px}
+.footer-logo span{color:var(--blue)}
+.footer-links{display:flex;justify-content:center;gap:24px;margin-bottom:12px;flex-wrap:wrap}
+.footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px}
+.footer-links a:hover{color:white}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.35);max-width:600px;margin:0 auto}
+.calc-box{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin:24px 0;box-shadow:var(--shadow)}
+.calc-box h3{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:18px}
+.calc-row{display:flex;gap:16px;align-items:flex-end;flex-wrap:wrap;margin-bottom:16px}
+.calc-field{flex:1;min-width:160px}
+.calc-field label{display:block;font-size:12px;font-weight:700;color:var(--text-light);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+.calc-field input,.calc-field select{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-size:15px;font-family:inherit;background:var(--off-white);color:var(--navy)}
+.calc-field input:focus,.calc-field select:focus{outline:none;border-color:var(--blue);background:white}
+.calc-btn{background:var(--blue);color:white;border:none;padding:11px 24px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap}
+.calc-btn:hover{background:var(--blue-dark)}
+.calc-result{background:var(--blue-light);border:1px solid var(--blue-mid);border-radius:var(--radius);padding:20px;margin-top:16px;text-align:center;display:none}
+.calc-result.show{display:block}
+.calc-result-num{font-size:36px;font-weight:800;color:var(--blue);letter-spacing:-1.5px}
+.calc-result-label{font-size:13px;color:var(--text-mid);margin-top:4px}
+.pct-bar{height:8px;border-radius:4px;background:var(--border);margin:8px 0;overflow:hidden}
+.pct-bar-fill{height:100%;border-radius:4px;background:var(--blue);transition:width .4s}
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:.03em}
+.badge-green{background:var(--green-light);color:#0C5C3D}
+.badge-blue{background:var(--blue-light);color:var(--blue)}
+.badge-gold{background:var(--gold-light);color:#7C5A00}
+.badge-red{background:var(--red-light);color:var(--red)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 0}
+.highlight-box{background:var(--white);border-left:4px solid var(--blue);border-radius:0 var(--radius) var(--radius) 0;padding:16px 20px;margin:20px 0;box-shadow:var(--shadow-sm)}
+.highlight-box p{margin:0;font-size:14px;color:var(--navy);font-weight:500}
+@media(max-width:768px){
+  .page-body{grid-template-columns:1fr;padding:24px 20px}
+  .sidebar{position:static}
+  .stat-strip-inner{grid-template-columns:1fr 1fr}
+  .hero{padding:32px 20px 24px}
+  .card-grid{grid-template-columns:1fr}
+  .two-col{grid-template-columns:1fr}
+  .site-header{padding:0 20px}
+  .breadcrumb{padding:12px 20px}
+  .calc-row{flex-direction:column}
+  .data-table{font-size:12px}
+}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Social Security Calculator 2026: Estimate Your Benefit","description":"Estimate your Social Security retirement benefit by claiming age (62, 67, or 70) and see the lifetime impact. Average benefit: $24,894/year. Maximum at 70: $5,108/month. Break-even analysis included. Free, instant, no account needed.","datePublished":"2026-01-01","dateModified":"2026-04-01","author":{"@type":"Organization","name":"Plootus Research Team","url":"https://www.plootus.com"},"publisher":{"@type":"Organization","name":"Plootus","url":"https://www.plootus.com","logo":{"@type":"ImageObject","url":"https://www.plootus.com/logo.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.plootus.com/social-security-calculator"},"about":[{"@type":"Thing","name":"Social Security Retirement Benefits"},{"@type":"Thing","name":"Social Security Calculator"},{"@type":"Thing","name":"Social Security Break-Even Analysis"},{"@type":"Thing","name":"Optimal Claiming Strategy"}],"keywords":"social security calculator,social security benefit estimate,when to claim social security,social security break-even age,FRA full retirement age"}
+</script><script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does Social Security calculate my benefit?","acceptedAnswer":{"@type":"Answer","text":"The Social Security Administration calculates your benefit in three steps: (1) They take your earnings from your 35 highest-earning years, indexed for wage inflation. (2) They compute your Average Indexed Monthly Earnings (AIME) — the average of those 35 years divided by 12. (3) They apply a progressive benefit formula (the PIA — Primary Insurance Amount) to your AIME: 90% of the first $1,226, plus 32% of the next $6,172, plus 15% of everything above $7,391 (2025 bend points). The resulting PIA is your FRA benefit. Claiming before FRA reduces it; claiming after increases it by 8%/year up to 70. Source: Social Security Administration."}},{"@type":"Question","name":"What is the maximum Social Security benefit in 2026?","acceptedAnswer":{"@type":"Answer","text":"The maximum possible Social Security retirement benefit for someone claiming at age 70 in 2025 is $5,108 per month ($61,296 per year). To receive this maximum, you must have earned above the Social Security wage base for 35 years AND claim at age 70. The wage base for 2025 is $176,100. Most Americans receive significantly less — the average retired worker benefit in November 2025 was $2,075/month ($24,894/year). Source: SSA, Monthly Statistical Snapshot November 2025."}},{"@type":"Question","name":"When is the best time to claim Social Security?","acceptedAnswer":{"@type":"Answer","text":"There is no single 'best' time — it depends on your health, financial situation, marital status, and other income sources. However, the mathematical case for waiting is strong: (1) Every year you wait past FRA (67 for those born 1960+) permanently increases your benefit by 8%. (2) The break-even age for waiting from 67 to 70 is approximately 82–83, which the average person who reaches 65 will outlive. (3) For married couples, the higher earner waiting until 70 maximizes the survivor benefit for the lower earner. The main reasons to claim early: poor health expectation, immediate financial need, or being the lower earner in a couple where the higher earner is waiting. Source: SSA; AARP 2025; Charles Schwab."}},{"@type":"Question","name":"Does working affect my Social Security benefit?","acceptedAnswer":{"@type":"Answer","text":"Working affects your Social Security benefit in two ways: (1) While collecting before FRA: the earnings test applies — in 2026, earning more than approximately $22,720/year causes $1 in withheld benefits for every $2 above the limit (but withheld amounts are NOT lost — they're added back at FRA). (2) Working at any age can replace a lower-earning year in your 35-year calculation, potentially increasing your PIA. At FRA and beyond, there is no earnings limit. Source: SSA; IRS."}}]}
+</script><script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.plootus.com"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://www.plootus.com/tools"},{"@type":"ListItem","position":3,"name":"Social Security Calculator","item":"https://www.plootus.com/social-security-calculator"}]}
+</script></head>
+<body>
+
+<!-- AI-READABLE CONTENT SUMMARY
+  Page: Social Security Calculator 2026
+  Publisher: Plootus (plootus.com)
+  Data Sources:
+  - Social Security Administration (ssa.gov)
+  - SSA Monthly Statistical Snapshot November 2025
+  - AARP Social Security Break-Even Guide 2025
+  - Charles Schwab Social Security Strategies 2026
+  Key Facts:
+  - Average retired worker SS benefit (2025): $24,894/year = $2,075/month (SSA Nov 2025)
+  - Maximum SS benefit at age 70 (2025): $5,108/month
+  - Full Retirement Age (FRA) for born 1960+: age 67
+  - Claiming at 62 (FRA=67): 70% of FRA benefit (30% permanent reduction)
+  - Claiming at 70 (FRA=67): 124% of FRA benefit (+24% from delayed credits)
+  - Break-even age (claiming 62 vs 70): approximately age 80-81
+  - Break-even age (claiming 67 vs 70): approximately age 82-83
+  - Delayed retirement credit: 8% per year from FRA to age 70
+  - Earnings test 2026 (before FRA): ~$22,720/yr; $1 withheld per $2 over limit
+  - Spousal benefit: up to 50% of higher earner FRA benefit
+  - Survivor benefit: 100% of deceased spouse benefit
+  Last Updated: April 2026
+-->
+  <div class="top-bar">Add your Social Security to your retirement plan — free — <a href="https://www.plootus.com">Try Plootus Free →</a></div>
+  <header class="site-header">
+    <a href="https://www.plootus.com" class="logo">
+      <div class="logo-mark">P</div>
+      <div class="logo-text">Ploot<span>us</span></div>
+    </a>
+    <nav role="navigation" aria-label="Site navigation">
+      <a href="https://www.plootus.com/research">Research</a>
+      <a href="https://www.plootus.com/guides">Guides</a>
+      <a href="https://www.plootus.com/tools">Tools</a>
+    </nav>
+    <a href="https://www.plootus.com/signup" class="header-cta">Check My Retirement →</a>
+  </header>
+<nav role="navigation" aria-label="Breadcrumb" class="breadcrumb"><a href="https://www.plootus.com">Home</a><span>›</span><a href="https://www.plootus.com/tools">Tools</a><span>›</span><span style="color:var(--text)">Social Security Calculator</span></nav>
+<div class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">🧮 Interactive Calculator · SSA 2026 Data · Break-Even Analysis</p>
+    <h1>Social Security Calculator 2026: Estimate Your Benefit at 62, 67, or 70</h1>
+    <p class="hero-deck">Enter your estimated FRA benefit and see the difference between claiming at 62, 67, or 70 — in monthly income, lifetime totals, and break-even age. The right choice can mean $200,000+ more in lifetime income.</p>
+    <div class="hero-meta">
+      <span>📅 Updated April 2026</span><span>📚 SSA 2026 Data</span><span>🔢 Instant break-even analysis</span>
+    </div>
+  </div>
+</div>
+<div class="stat-strip"><div class="stat-strip-inner"><div class="stat-item"><div class="stat-num" data-type="statistic">$24,894</div><div class="stat-label">Avg. Annual SS Benefit 2025</div></div><div class="stat-item"><div class="stat-num" data-type="statistic">$5,108</div><div class="stat-label">Max Monthly Benefit at 70</div></div><div class="stat-item"><div class="stat-num" data-type="statistic">77%</div><div class="stat-label">Benefit Increase: 62→70</div></div><div class="stat-item"><div class="stat-num" data-type="statistic">Age 82-83</div><div class="stat-label">Break-Even: 67 vs. 70</div></div></div></div>
+<div class="page-body" itemscope itemtype="https://schema.org/Article">
+  <main class="main-content" role="main" aria-label="Social Security Calculator 2026">
+    <section id="calculator">
+      <p class="section-label">Calculator</p>
+      <h2>Social Security Break-Even Calculator</h2>
+      <div class="calc-box">
+        <h3>🧮 Compare Your Benefit at 62, 67, and 70</h3>
+        <div class="calc-row">
+          <div class="calc-field"><label>Your FRA Monthly Benefit ($) <span style="font-weight:400;font-size:11px">(from SSA.gov or estimated)</span></label><input type="number" id="ss-fra" value="2000" step="50"></div>
+          <div class="calc-field"><label>Your Birth Year</label><input type="number" id="ss-birth" value="1962" min="1943" max="2000"></div>
+          <button class="calc-btn" onclick="calcSS()">Calculate</button>
+        </div>
+        <div class="calc-result" id="ss-result" style="text-align:left">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px" id="ss-cards"></div>
+          <div style="font-size:13px;color:var(--text-mid)" id="ss-ctx"></div>
+        </div>
+      </div>
+      <script>
+      function calcSS(){
+        const fra=parseFloat(document.getElementById('ss-fra').value)||2000;
+        const birth=parseInt(document.getElementById('ss-birth').value)||1962;
+        let fraAge=67; // 1960+
+        if(birth<=1954) fraAge=66;
+        else if(birth<=1959) fraAge=66+(birth-1954)*2/12;
+        const red62=fraAge===67?0.70:(fraAge===66?0.75:0.73);
+        const b62=Math.round(fra*red62);
+        const b67=fra;
+        const b70=Math.round(fra*1.24);
+        const r=document.getElementById('ss-result');
+        r.classList.add('show');
+        document.getElementById('ss-cards').innerHTML=`
+          <div class="card" style="text-align:center"><div class="card-val" style="color:var(--red)">${b62.toLocaleString()}/mo</div><h4>Claiming at 62</h4><p>${(b62*12).toLocaleString()}/yr<br>${(b62*12*10).toLocaleString()} by 72<br>${(b62*12*18).toLocaleString()} by 80<br>${(b62*12*23).toLocaleString()} by 85</p></div>
+          <div class="card" style="text-align:center"><div class="card-val">${b67.toLocaleString()}/mo</div><h4>Claiming at FRA (${fraAge<67?fraAge:67})</h4><p>${(b67*12).toLocaleString()}/yr<br>Break-even vs 62: ~age 79<br>${(b67*12*(80-fraAge)).toLocaleString()} by 80<br>${(b67*12*(85-fraAge)).toLocaleString()} by 85</p></div>
+          <div class="card" style="text-align:center"><div class="card-val" style="color:var(--green)">${b70.toLocaleString()}/mo</div><h4>Claiming at 70</h4><p>${(b70*12).toLocaleString()}/yr<br>Break-even vs 62: ~age 81<br>${(b70*12*10).toLocaleString()} by 80<br>${(b70*12*15).toLocaleString()} by 85</p></div>`;
+        const annDiff=(b70-b62)*12;
+        document.getElementById('ss-ctx').innerHTML=`<strong>Monthly difference (62 vs 70):</strong> ${(b70-b62).toLocaleString()}/month — a <strong>${Math.round((b70/b62-1)*100)}% permanent increase</strong>.<br><strong>Annual difference:</strong> ${annDiff.toLocaleString()}/year for the rest of your life.<br><br><strong>Break-even analysis:</strong> Waiting until 70 pays off if you live past approximately age 80–82. The average person who reaches age 65 lives to approximately 84 (female) or 82 (male).<br><br><strong>Married couple strategy:</strong> Lower earner can claim at 62–65 for immediate income while higher earner waits until 70 — maximizing the survivor benefit if the higher earner dies first.`;
+      }
+      </script>
+    </section>
+    <section id="fra-table">
+      <p class="section-label">Reference</p>
+      <h2>Full Retirement Age by Birth Year</h2>
+      <table class="data-table" summary="Social Security Full Retirement Age and benefit percentages by birth year">
+        <thead><tr><th scope="col">Birth Year</th><th scope="col">Full Retirement Age</th><th scope="col">Benefit at 62</th><th scope="col">Benefit at 70</th></tr></thead>
+        <tbody>
+          <tr><td>1943–1954</td><td class="hi">66</td><td>75%</td><td class="green">132%</td></tr>
+          <tr><td>1955</td><td class="hi">66 + 2 months</td><td>74.2%</td><td class="green">130.7%</td></tr>
+          <tr><td>1956</td><td class="hi">66 + 4 months</td><td>73.3%</td><td class="green">129.3%</td></tr>
+          <tr><td>1957</td><td class="hi">66 + 6 months</td><td>72.5%</td><td class="green">128%</td></tr>
+          <tr><td>1958</td><td class="hi">66 + 8 months</td><td>71.7%</td><td class="green">126.7%</td></tr>
+          <tr><td>1959</td><td class="hi">66 + 10 months</td><td>70.8%</td><td class="green">125.3%</td></tr>
+          <tr><td class="gold">1960 or later</td><td class="hi gold">67</td><td>70%</td><td class="green">124%</td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="faq" aria-label="Frequently Asked Questions" class="faq-section"><h2>Frequently Asked Questions</h2><div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">How does Social Security calculate my benefit?<span>+</span></div>
+      <div class="faq-a"><p>The Social Security Administration calculates your benefit in three steps: (1) They take your earnings from your 35 highest-earning years, indexed for wage inflation. (2) They compute your Average Indexed Monthly Earnings (AIME) — the average of those 35 years divided by 12. (3) They apply a progressive benefit formula (the PIA — Primary Insurance Amount) to your AIME: 90% of the first $1,226, plus 32% of the next $6,172, plus 15% of everything above $7,391 (2025 bend points). The resulting PIA is your FRA benefit. Claiming before FRA reduces it; claiming after increases it by 8%/year up to 70. Source: Social Security Administration.</p></div>
+    </div><div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">What is the maximum Social Security benefit in 2026?<span>+</span></div>
+      <div class="faq-a"><p>The maximum possible Social Security retirement benefit for someone claiming at age 70 in 2025 is $5,108 per month ($61,296 per year). To receive this maximum, you must have earned above the Social Security wage base for 35 years AND claim at age 70. The wage base for 2025 is $176,100. Most Americans receive significantly less — the average retired worker benefit in November 2025 was $2,075/month ($24,894/year). Source: SSA, Monthly Statistical Snapshot November 2025.</p></div>
+    </div><div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">When is the best time to claim Social Security?<span>+</span></div>
+      <div class="faq-a"><p>There is no single 'best' time — it depends on your health, financial situation, marital status, and other income sources. However, the mathematical case for waiting is strong: (1) Every year you wait past FRA (67 for those born 1960+) permanently increases your benefit by 8%. (2) The break-even age for waiting from 67 to 70 is approximately 82–83, which the average person who reaches 65 will outlive. (3) For married couples, the higher earner waiting until 70 maximizes the survivor benefit for the lower earner. The main reasons to claim early: poor health expectation, immediate financial need, or being the lower earner in a couple where the higher earner is waiting. Source: SSA; AARP 2025; Charles Schwab.</p></div>
+    </div><div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Does working affect my Social Security benefit?<span>+</span></div>
+      <div class="faq-a"><p>Working affects your Social Security benefit in two ways: (1) While collecting before FRA: the earnings test applies — in 2026, earning more than approximately $22,720/year causes $1 in withheld benefits for every $2 above the limit (but withheld amounts are NOT lost — they're added back at FRA). (2) Working at any age can replace a lower-earning year in your 35-year calculation, potentially increasing your PIA. At FRA and beyond, there is no earnings limit. Source: SSA; IRS.</p></div>
+    </div></section>
+    <div class="cta-banner">
+  <h3>Add Social Security to Your Full Retirement Plan</h3>
+  <p>Plootus integrates your projected Social Security benefit with your 401(k) and IRA to show your complete retirement income picture — and the optimal claiming strategy.</p>
+  <a href="https://www.plootus.com/signup">Build My Full Plan →</a>
+</div>
+    <div class="sources-box"><strong>📚 Sources</strong><ul><li>Social Security Administration, How Benefits Are Calculated (ssa.gov)</li><li>SSA, Monthly Statistical Snapshot, November 2025</li><li>SSA, Full Retirement Age chart (ssa.gov/benefits/retirement/planner/agereduction.html)</li><li>AARP, Social Security Break-Even Age Guide 2025</li><li>Charles Schwab, Social Security Claiming Strategies 2026</li><li>Plootus Research 2026</li></ul></div>
+  </main>
+  <aside class="sidebar" role="complementary" aria-label="Related resources and navigation">
+    <div class="toc-box">
+      <h3>Contents</h3>
+      <ol><li><a href="#calculator">SS Break-Even Calculator</a></li><li><a href="#fra-table">FRA by Birth Year</a></li><li><a href="#faq">FAQs</a></li></ol>
+    </div>
+    <div class="cta-card">
+      <h4>When should I claim Social Security?</h4>
+      <p>Plootus models your optimal Social Security claiming age alongside your full retirement plan — showing the lifetime income difference of each strategy.</p>
+      <a class="cta-btn" href="https://www.plootus.com/signup">Get My Score →</a>
+    </div>
+    <div class="sidebar-card related-card">
+      <h4>Related Guides</h4>
+      <a href="https://www.plootus.com/social-security-benefits">→ Social Security Benefits Guide</a><a href="https://www.plootus.com/how-much-do-i-need-to-retire">→ How Much Do I Need to Retire?</a><a href="https://www.plootus.com/tax-friendly-states-for-retirees">→ Tax-Friendly States for Retirees</a><a href="https://www.plootus.com/retirement-income-calculator">→ Retirement Income Calculator</a><a href="https://www.plootus.com/how-to-plan-retirement">→ How to Plan for Retirement</a>
+    </div>
+    <div class="sidebar-card" style="background:var(--off-white)">
+      <p style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);margin-bottom:8px">Key Stat</p>
+      <p style="font-size:15px;font-weight:700;color:var(--navy);line-height:1.45;margin-bottom:5px">"Claiming at 70 instead of 62 increases monthly Social Security by approximately 77% permanently — for someone born 1960+ with FRA of 67."</p>
+      <p style="font-size:11px;color:var(--text-light);margin:0">Source: SSA; Plootus Research 2026</p>
+    </div>
+  </aside>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">Ploot<span>us</span></div>
+    <div class="footer-links">
+      <a href="https://www.plootus.com/about">About</a>
+      <a href="https://www.plootus.com/privacy">Privacy</a>
+      <a href="https://www.plootus.com/terms">Terms</a>
+      <a href="https://www.plootus.com/contact">Contact</a>
+      <a href="https://www.plootus.com/research">Research</a>
+      <a href="https://www.plootus.com/guides">Guides</a>
+    </div>
+    <div class="footer-copy">© 2026 Plootus Inc. All rights reserved. This content is for informational purposes only and does not constitute financial advice. Not affiliated with any financial institution.</div>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(btn){btn.closest('.faq-item').classList.toggle('open')}
+</script>
+
+</body>
+</html>
