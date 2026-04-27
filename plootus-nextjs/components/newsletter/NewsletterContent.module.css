@@ -1,0 +1,411 @@
+/* ── NewsletterContent ──────────────────────────────────────── */
+
+/* Wrapper card */
+.root {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.1), 0 1px 2px rgba(16, 24, 40, 0.06);
+}
+
+/* Header inside card */
+.headerSection {
+  padding: 24px;
+  padding-bottom: 0;
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.titleSubtitleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.cardTitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.subscribeButton {
+  background-color: #10b981;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 12px 32px;
+  color: #ffffff;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.subscribeButton:hover {
+  background-color: #059669;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(226, 232, 240, 0.8);
+}
+
+/* Content area */
+.contentSection {
+  padding: 32px;
+}
+
+.newsletterList {
+  display: flex;
+  flex-direction: column;
+}
+
+.newsletterItem {
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.newsletterItem:first-child {
+  padding-top: 0;
+}
+
+.newsletterItem:last-child {
+  border-bottom: none;
+}
+
+.contentWrapper {
+  display: flex;
+  gap: 32px;
+}
+
+.imageContainer {
+  flex: 1;
+  height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contentContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+}
+
+.date {
+  color: #4361ee;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.storiesTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 24px;
+}
+
+.headlinesList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.headlineItem {
+  display: flex;
+  align-items: flex-start;
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.headlineItem::before {
+  content: '•';
+  color: #94a3b8;
+  margin-right: 16px;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.description {
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-top: 24px;
+}
+
+/* Footer row inside each card */
+.itemFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.footerText {
+  color: #1e293b;
+  font-size: 16px;
+}
+
+.readMore {
+  color: #4361ee;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.readMore:hover {
+  opacity: 0.8;
+}
+
+.readMoreText {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.arrowIcon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Loader */
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #4361ee;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Pagination */
+.paginationContainer {
+  display: flex;
+  justify-content: center;
+  padding: 32px 0;
+  gap: 6px;
+}
+
+.pageBtn {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fff;
+  color: #64748b;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.pageBtn:hover {
+  border-color: #4361ee;
+  color: #4361ee;
+}
+
+.pageBtn.active {
+  background-color: #4361ee;
+  color: #fff;
+  border-color: #4361ee;
+}
+
+/* Subscribe modal overlay */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1300;
+  padding: 16px;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.modalTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 20px;
+}
+
+.inputField {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #1e293b;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+.inputField:focus {
+  border-color: #4361ee;
+}
+
+.inputField.error {
+  border-color: #ef4444;
+}
+
+.errorMsg {
+  color: #ef4444;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.helperText {
+  color: #64748b;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.cancelBtn {
+  padding: 10px 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fff;
+  color: #64748b;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.cancelBtn:hover {
+  background: #f8fafc;
+}
+
+.submitBtn {
+  padding: 10px 24px;
+  background: #10b981;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submitBtn:hover {
+  background: #059669;
+}
+
+.submitBtn:disabled {
+  background: #a7f3d0;
+  cursor: not-allowed;
+}
+
+/* Success toast */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #10b981;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  z-index: 1400;
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.35);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .headerSection {
+    padding: 24px;
+  }
+
+  .headerContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .titleSubtitleWrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .contentSection {
+    padding: 16px;
+  }
+
+  .contentWrapper {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .imageContainer {
+    height: auto;
+  }
+
+  .image {
+    height: auto;
+  }
+
+  .contentContainer {
+    min-height: auto;
+  }
+}

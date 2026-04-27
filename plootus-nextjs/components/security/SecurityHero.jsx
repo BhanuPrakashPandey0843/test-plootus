@@ -1,109 +1,116 @@
-import { Box, Typography } from '@mui/material';
+import React from 'react';
+import { Box, Container, Typography } from '@mui/material';
 import { makeStyles } from 'tss-react/mui';
 
 const useStyles = makeStyles()((theme) => ({
   root: {
-    position: 'relative',
-    height: '400px',
-    width: '100%',
-    backgroundColor: '#F8FAFC',
-    overflow: 'hidden',
-    display: 'flex',
-  },
-  leftContent: {
-    width: '50%',
-    height: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    paddingLeft: theme.spacing(6),
-    paddingRight: theme.spacing(4),
-    [theme.breakpoints.down('md')]: {
-      paddingLeft: theme.spacing(2),
-      paddingRight: theme.spacing(2),
+    backgroundColor: '#f0f4fb',
+    textAlign: 'center',
+    padding: theme.spacing(8.5, 5, 7.5),
+    [theme.breakpoints.down('sm')]: {
+      padding: theme.spacing(6, 2, 4),
     },
   },
   title: {
-    fontSize: '3rem',
-    fontWeight: 700,
+    fontSize: '2rem !important',
+    fontWeight: '700 !important',
     color: '#1E293B',
-    lineHeight: 1.2,
-    [theme.breakpoints.down('md')]: {
-      fontSize: '2.5rem',
+    marginBottom: theme.spacing(2),
+    [theme.breakpoints.up('md')]: {
+      fontSize: '2.5rem !important',
     },
   },
   titleHighlight: {
     color: '#4361EE',
-    display: 'block',
+  },
+  tagline: {
+    fontSize: '1.125rem',
+    fontWeight: '700',
+    color: '#1E293B',
     marginBottom: theme.spacing(1),
   },
-  subtitle: {
-    fontSize: '1.25rem',
+  subDescription: {
+    fontSize: '1.125rem',
     color: '#64748B',
-    fontWeight: 500,
-    marginBottom: theme.spacing(2),
-    marginTop: theme.spacing(3),
-  },
-  description: {
-    fontSize: '1rem',
-    color: '#64748B',
+    maxWidth: '800px',
+    margin: '0 auto 20px',
     lineHeight: 1.6,
   },
-  rightImage: {
-    position: 'absolute',
-    right: 0,
-    top: 0,
-    width: '50%',
-    height: '100%',
-    '& img': {
-      width: '100%',
-      height: '100%',
-      objectFit: 'contain',
-      objectPosition: 'right',
-      display: 'block',
-    },
+  heroBadges: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '14px',
+    flexWrap: 'wrap',
   },
-  backgroundPattern: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    opacity: 0.05,
-    backgroundImage:
-      'linear-gradient(rgba(67, 97, 238, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(67, 97, 238, 0.1) 1px, transparent 1px)',
-    backgroundSize: '20px 20px',
-    zIndex: 1,
-    pointerEvents: 'none',
+  heroBadgeItem: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '7px',
+    background: '#fff',
+    border: '1.5px solid #d1ddf5',
+    borderRadius: '30px',
+    padding: '8px 16px',
+    fontSize: '13px',
+    fontWeight: 600,
+    color: '#374151',
+    boxShadow: '0 1px 4px rgba(33,82,217,0.06)',
+  },
+  badgeIcon: {
+    width: '20px',
+    height: '20px',
+    color: '#2152d9',
+    flexShrink: 0,
   },
 }));
 
-export default function SecurityHero() {
+const SecurityHero = () => {
   const { classes } = useStyles();
 
   return (
     <Box className={classes.root}>
-      <Box className={classes.leftContent}>
-        <Box>
-          <Typography className={classes.title}>
-            <Box component="span" className={classes.titleHighlight}>
-              Security
-            </Box>
-            Is Our First Priority
-          </Typography>
+      <Container maxWidth="lg">
+        <Typography variant="h1" className={classes.title}>
+          Your Security. Our{' '}
+          <span className={classes.titleHighlight}>Top Priority.</span>
+        </Typography>
+        <Typography className={classes.tagline}>
+          Yes. 100% Secure. No Social Security Number Required.
+        </Typography>
+        <Typography className={classes.subDescription}>
+          At Plootus, we've built every layer of our platform with your protection in mind.
+          Bank-level encryption, read-only access, and zero storage of sensitive credentials.
+        </Typography>
 
-          <Typography className={classes.subtitle}>Bank-level security.</Typography>
-
-          <Typography className={classes.description}>
-            Data in transit is encrypted using 256-bit SSL encryption method.
-          </Typography>
+        <Box className={classes.heroBadges}>
+          <Box className={classes.heroBadgeItem}>
+            <svg className={classes.badgeIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><polyline points="9 12 11 14 15 10" />
+            </svg>
+            256-bit SSL Encryption
+          </Box>
+          <Box className={classes.heroBadgeItem}>
+            <svg className={classes.badgeIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="5" y="11" width="14" height="10" rx="2" /><path d="M8 11V7a4 4 0 0 1 8 0v4" />
+            </svg>
+            Read-Only Access
+          </Box>
+          <Box className={classes.heroBadgeItem}>
+            <svg className={classes.badgeIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            AWS Cloud Secured
+          </Box>
+          <Box className={classes.heroBadgeItem}>
+            <svg className={classes.badgeIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10" /><path d="M12 8v4l3 3" />
+            </svg>
+            Zero Credential Storage
+          </Box>
         </Box>
-      </Box>
-
-      <Box className={classes.rightImage}>
-        <img src="/images/security/security-illustration.png" alt="Security Illustration" />
-      </Box>
-
-      <Box className={classes.backgroundPattern} />
+      </Container>
     </Box>
   );
-}
+};
+
+export default SecurityHero;

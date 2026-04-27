@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import styles from './Average403bBalance.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -14,6 +15,34 @@ const Average403bBalance = () => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Average 403(b) Balance by Age (2026): Benchmarks for Teachers | Plootus</title>
+        <meta name="description" content="See the average 403(b) balance by age for teachers, healthcare, and nonprofit workers in 2026. Compare your savings against Fidelity benchmarks and learn about fee impacts." />
+        <link rel="canonical" href="https://www.plootus.com/average-403b-balance-by-age" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Average 403(b) Balance by Age (2026): Teacher, Nurse & Nonprofit Worker Benchmarks",
+            "description": "Research report on 403(b) retirement account balances for public sector and nonprofit employees, including age-based benchmarks and fee analysis.",
+            "author": {
+              "@type": "Organization",
+              "name": "Plootus Research Team"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Plootus",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.plootus.com/logo.png"
+              }
+            },
+            "datePublished": "2026-04-01",
+            "dateModified": "2026-04-01"
+          })}
+        </script>
+      </Head>
+
       <HubNav />
 
       <div className={styles.hero}>
@@ -223,16 +252,16 @@ const Average403bBalance = () => {
           <div className={styles['cta-card']}>
             <h4>What's my retirement number?</h4>
             <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
-            <a onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']}>
+            <div onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']} style={{cursor: 'pointer'}}>
               Check Here
-            </a>
+            </div>
           </div>
           <div className={`${styles['sidebar-card']} ${styles['related-card']}`}>
             <h4>Related Guides</h4>
-            <a href="/403b-guide">→ 403(b) Plan Guide</a>
-            <a href="/average-ira-balance-by-age">→ Average IRA Balance by Age</a>
-            <a href="/compound-interest-calculator">→ Compound Interest Calculator</a>
-            <a href="/how-to-plan-retirement">→ How to Plan for Retirement</a>
+            <div onClick={() => router.push('/403b-guide')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ 403(b) Plan Guide</div>
+            <div onClick={() => router.push('/average-ira-balance-by-age')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ Average IRA Balance by Age</div>
+            <div onClick={() => router.push('/compound-interest-calculator')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ Compound Interest Calculator</div>
+            <div onClick={() => router.push('/how-to-plan-retirement')} style={{cursor: 'pointer', color: 'var(--blue)'}}>→ How to Plan for Retirement</div>
           </div>
           <div className={styles['sidebar-card']} style={{ background: 'var(--off-white)' }}>
             <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--text-light)', marginBottom: '8px' }}>

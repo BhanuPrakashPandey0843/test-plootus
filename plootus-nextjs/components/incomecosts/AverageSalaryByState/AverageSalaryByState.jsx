@@ -1,5 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
+import Link from 'next/link';
 import styles from './AverageSalaryByState.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -93,6 +95,34 @@ const AverageSalaryByState = () => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Average Salary by State 2026: 50-State Rankings | Plootus</title>
+        <meta name="description" content="Compare average and median salaries by state for 2026. See 50-state rankings based on BLS data and learn how your salary impacts your retirement savings goal." />
+        <link rel="canonical" href="https://www.plootus.com/average-salary-by-state" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Average Salary by State 2026: Complete 50-State Table",
+            "description": "Comprehensive guide to average and median wages by U.S. state, including retirement tax grades and savings benchmarks.",
+            "author": {
+              "@type": "Organization",
+              "name": "Plootus Research Team"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Plootus",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.plootus.com/logo.png"
+              }
+            },
+            "datePublished": "2026-04-01",
+            "dateModified": "2026-04-01"
+          })}
+        </script>
+      </Head>
+
       <HubNav />
 
       <div className={styles.hero}>
@@ -140,7 +170,7 @@ const AverageSalaryByState = () => {
                 id="state-search"
                 type="text"
                 placeholder="🔍 Search a state..."
-                style={{ width: '100%', padding: '10px 14px', border: '1px solid var(--border)', borderRadius: '8px', fontSize: '15px', marginBottom: '12px', fontFamily: 'inherit' }}
+                className={styles.searchInput}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
@@ -231,17 +261,17 @@ const AverageSalaryByState = () => {
           <div className={styles['cta-card']}>
             <h4>What's my retirement number?</h4>
             <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
-            <div onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']}>
+            <div onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']} style={{cursor: 'pointer'}}>
               Check Here
             </div>
           </div>
           <div className={`${styles['sidebar-card']} ${styles['related-card']}`}>
             <h4>Related Guides</h4>
-            <a onClick={() => router.push('/best-states-to-retire')}>→ Best States to Retire 2026</a>
-            <a onClick={() => router.push('/median-household-income')}>→ Median Household Income by State</a>
-            <a onClick={() => router.push('/tax-friendly-states-for-retirees')}>→ Tax-Friendly States for Retirees</a>
-            <a onClick={() => router.push('/how-much-to-retire')}>→ How Much Do I Need to Retire?</a>
-            <a onClick={() => router.push('/cheapest-states-to-retire')}>→ Cheapest States to Retire</a>
+            <div onClick={() => router.push('/best-states-to-retire')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ Best States to Retire 2026</div>
+            <div onClick={() => router.push('/median-household-income')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ Median Household Income by State</div>
+            <div onClick={() => router.push('/tax-friendly-states-for-retirees')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ Tax-Friendly States for Retirees</div>
+            <div onClick={() => router.push('/how-much-to-retire')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ How Much Do I Need to Retire?</div>
+            <div onClick={() => router.push('/cheapest-states-to-retire')} style={{cursor: 'pointer', color: 'var(--blue)'}}>→ Cheapest States to Retire</div>
           </div>
           <div className={styles['sidebar-card']} style={{ background: 'var(--off-white)' }}>
             <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--text-light)', marginBottom: '8px' }}>
@@ -256,8 +286,7 @@ const AverageSalaryByState = () => {
           </div>
         </aside>
       </div>
-
-          <PartnersSection 
+      <PartnersSection 
         titleFontSize="22px"
         titleFontWeight={800}
         titleColor="var(--navy) !important"
@@ -266,7 +295,7 @@ const AverageSalaryByState = () => {
         subtitleColor="var(--text-mid)"
         rootPadding="40px 0 0"
       />
-      </div>
+    </div>
   );
 };
 

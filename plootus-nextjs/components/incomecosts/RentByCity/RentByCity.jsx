@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
+import Link from 'next/link';
+import Chart from 'chart.js/auto';
 import styles from './RentByCity.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
-import Chart from 'chart.js/auto';
 
 const rentData = [
   { c: 'New York City, NY', r1: 3545, r2: 2394, yoy: '+10.8%', tier: 'High-Cost' },
@@ -16,7 +18,7 @@ const rentData = [
   { c: 'Denver, CO', r1: 1850, r2: 1800, yoy: '+1.2%', tier: 'Mid-Tier' },
   { c: 'Miami, FL', r1: 1756, r2: 1750, yoy: '−4.2%', tier: 'Mid-Tier' },
   { c: 'Chicago, IL', r1: 1584, r2: 1550, yoy: '+2.7%', tier: 'Mid-Tier' },
-  { c: 'Philadelphia, PA', r1: 1500, r2: 1400, yoy: '+2.8%', tier: 'Mid-Tier' },
+  { c: Philadelphia, PA: 1500, r2: 1400, yoy: '+2.8%', tier: 'Mid-Tier' },
   { c: 'Nashville, TN', r1: 1480, r2: 1380, yoy: '+1.5%', tier: 'Mid-Tier' },
   { c: 'Minneapolis, MN', r1: 1450, r2: 1350, yoy: '+2.0%', tier: 'Mid-Tier' },
   { c: 'Portland, OR', r1: 1430, r2: 1500, yoy: '+0.5%', tier: 'Mid-Tier' },
@@ -44,17 +46,6 @@ const RentByCity = () => {
   const chartInstance = useRef(null);
 
   useEffect(() => {
-    initChart();
-    animateStats();
-
-    return () => {
-      if (chartInstance.current) {
-        chartInstance.current.destroy();
-      }
-    };
-  }, []);
-
-  useEffect(() => {
     let result = [...rentData];
     if (searchQuery) {
       result = result.filter(r => r.c.toLowerCase().includes(searchQuery.toLowerCase()));
@@ -69,55 +60,7 @@ const RentByCity = () => {
     setFilteredData(result);
   }, [sortMode, searchQuery]);
 
-  const animateStats = () => {
-    const stats = document.querySelectorAll('[data-type="statistic"], [data-type="key-statistic"]');
-    stats.forEach(el => {
-      const val = el.innerText;
-      if (val.includes('$') || val.includes('M') || isNaN(val.replace(/[%$,M]/g, ''))) {
-        const numPart = val.replace(/[^0-9.]/g, '');
-        if (!numPart) return;
-        
-        const target = parseFloat(numPart);
-        const prefix = val.startsWith('$') ? '$' : '';
-        const suffix = val.includes('M') ? 'M' : '';
-        
-        let startTime = null;
-        const duration = 1500;
-
-        const step = (timestamp) => {
-          if (!startTime) startTime = timestamp;
-          const progress = Math.min((timestamp - startTime) / duration, 1);
-          const currentVal = (progress * target).toFixed(val.includes('.') ? 1 : 0);
-          el.innerText = `${prefix}${parseFloat(currentVal).toLocaleString()}${suffix}`;
-          if (progress < 1) {
-            window.requestAnimationFrame(step);
-          } else {
-            el.innerText = val;
-          }
-        };
-        window.requestAnimationFrame(step);
-        return;
-      }
-
-      const target = parseInt(val);
-      let startTime = null;
-      const duration = 1500;
-
-      const step = (timestamp) => {
-        if (!startTime) startTime = timestamp;
-        const progress = Math.min((timestamp - startTime) / duration, 1);
-        el.innerText = Math.floor(progress * target);
-        if (progress < 1) {
-          window.requestAnimationFrame(step);
-        } else {
-          el.innerText = val;
-        }
-      };
-      window.requestAnimationFrame(step);
-    });
-  };
-
-  const initChart = () => {
+  useEffect(() => {
     if (chartRef.current) {
       const sorted = [...rentData].sort((a, b) => b.r1 - a.r1);
       const chartCities = [...sorted.slice(0, 5), ...sorted.slice(-5).reverse()];
@@ -159,20 +102,26 @@ const RentByCity = () => {
                 font: { family: 'Plus Jakarta Sans', size: 11 },
                 color: '#6B7FA8'
               }, 
-              grid: { color: '#E2E8F4', drawBorder: false } 
+              grid: { color: '#E2E8F4' } 
             },
             x: { 
               ticks: { 
                 font: { family: 'Plus Jakarta Sans', size: 11 },
                 color: '#6B7FA8'
               }, 
-              grid: { display: false, drawBorder: false } 
+              grid: { display: false } 
             }
           }
         }
       });
     }
-  };
+
+    return () => {
+      if (chartInstance.current) {
+        chartInstance.current.destroy();
+      }
+    };
+  }, []);
 
   const toggleFaq = (index) => {
     setOpenFaqs(prev => ({ ...prev, [index]: !prev[index] }));
@@ -180,22 +129,48 @@ const RentByCity = () => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Average Rent by City (2025) | Plootus</title>
+        <meta name="description" content="Average 1BR and 2BR rents for 30+ major U.S. metros in 2025. HUD Fair Market Rent data, Census ACS, and current market data." />
+        <link rel="canonical" href="https://www.plootus.com/rent-by-city" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Average Rent by City (2025): Complete U.S. Rental Market Data",
+            "description": "Average 1-bedroom and 2-bedroom rents for 30+ major U.S. metros in 2025.",
+            "author": {
+              "@type": "Organization",
+              "name": "Plootus Research Team"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Plootus",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.plootus.com/logo.png"
+              }
+            },
+            "datePublished": "2025-01-01",
+            "dateModified": "2025-06-01"
+          })}
+        </script>
+      </Head>
+
       <HubNav />
 
-      {/* Hero Section */}
       <div className={styles.hero}>
         <div className={styles.heroInner}>
           <div className={styles.heroBadge}>🏙️ Housing Data 2025</div>
           <h1>Average Rent by City (2025)</h1>
           <p className={styles.heroSub}>How much does it cost to rent in America's biggest cities? We break down 1-bedroom and 2-bedroom average rents for 30+ major metros, using <abbr title="U.S. Department of Housing and Urban Development">HUD</abbr> Fair Market Rent data, U.S. Census <abbr title="American Community Survey">ACS</abbr>, and current market data.</p>
           <div className={styles.heroMeta}>
-            <span>📚 Sources: HUD FY2025 FMR, Census ACS, Dwellsy, Apartments.com</span>
+            <span>📚 Sources: HUD FY2025 <abbr title="Fair Market Rent">FMR</abbr>, Census ACS, Dwellsy, Apartments.com</span>
             <span>🗓️ 2025 Data</span>
           </div>
         </div>
       </div>
 
-      {/* Stat Strip */}
       <div className={styles.statStrip}>
         <div className={styles.statStripInner}>
           <div className={styles.statItem}><span className={styles.statNum} data-type="statistic">$1,636</span><span className={styles.statLabel}>National Avg Rent (All Units)</span></div>
@@ -221,19 +196,19 @@ const RentByCity = () => {
               <div className={styles.keyStatCard}>
                 <div className={styles.keyStatNum} data-type="key-statistic">$1,363</div>
                 <div className={styles.keyStatLabel}>Median U.S. Rent (Census)</div>
-                <div className={styles.keyStatDesc}>Down 5.5% from 2022 peak. The median is lower because very high coastal rents pull the average up.</div>
+                <div className={styles.keyStatDesc}>Down 5.5% from 2022 peak.</div>
                 <div className={styles.keyStatSource}>Apartment List National Rent Report, March 2025</div>
               </div>
               <div className={styles.keyStatCard}>
                 <div className={styles.keyStatNum} data-type="key-statistic">$1,671</div>
                 <div className={styles.keyStatLabel}>HUD 2BR Fair Market Rent (National)</div>
-                <div className={styles.keyStatDesc}>FY2025 FMR at the 40th percentile; 1BR FMR: $1,393. Used to determine rent subsidies.</div>
+                <div className={styles.keyStatDesc}>FY2025 FMR at the 40th percentile; 1BR FMR: $1,393.</div>
                 <div className={styles.keyStatSource}>HUD Fair Market Rent, FY2025</div>
               </div>
               <div className={styles.keyStatCard}>
                 <div className={styles.keyStatNum} data-type="key-statistic">22.4M</div>
                 <div className={styles.keyStatLabel}>Cost-Burdened Renter Households</div>
-                <div className={styles.keyStatDesc}>Households spending more than 30% of income on housing — HUD's definition of "cost-burdened."</div>
+                <div className={styles.keyStatDesc}>Households spending more than 30% of income on housing.</div>
                 <div className={styles.keyStatSource}>iPropertyManagement research, 2025 (citing HUD data)</div>
               </div>
             </div>
@@ -289,7 +264,7 @@ const RentByCity = () => {
                 </tbody>
               </table>
             </div>
-            <p style={{ fontSize: '12px', color: 'var(--text-light)', marginTop: '10px' }}>1BR average rents from Dwellsy IQ analysis of 16M+ verified listings (Oct 2025). 2BR FMRs from HUD FY2025. YoY % from Dwellsy IQ & iPropertyManagement (2025).</p>
+            <p style={{ fontSize: '12px', color: 'var(--text-light)', marginTop: '10px' }}>1BR average rents from Dwellsy IQ (Oct 2025). 2BR FMRs from HUD FY2025.</p>
 
             <div className={styles.chartBox} style={{ marginTop: '24px' }}>
               <h3>Average 1BR Rent — Top 10 Most & Least Expensive Cities</h3>
@@ -303,7 +278,7 @@ const RentByCity = () => {
           <section id="by-state">
             <div className={styles.sectionLabel}>State-Level</div>
             <h2>Average Rent by State (2025)</h2>
-            <p>State averages from Apartments.com (June 2025) and iPropertyManagement research combining HUD FMR and Census data.</p>
+            <p>State averages from Apartments.com (June 2025).</p>
             <div className={styles.dataTableWrap}>
               <table className={styles.stateTable} summary="State-level data table">
                 <thead>
@@ -318,17 +293,8 @@ const RentByCity = () => {
                   <tr><td><strong>Hawaii</strong></td><td style={{ color: 'var(--red)', fontWeight: 700 }}>$2,400+</td><td>$2,558</td><td>📈 High</td></tr>
                   <tr><td><strong>California</strong></td><td style={{ color: 'var(--red)', fontWeight: 700 }}>$2,200</td><td>$2,580</td><td>📈 Rising</td></tr>
                   <tr><td><strong>Massachusetts</strong></td><td style={{ color: 'var(--red)' }}>$2,100</td><td>$2,200+</td><td>📈 Rising</td></tr>
-                  <tr><td><strong>New York</strong></td><td style={{ color: 'var(--red)' }}>$2,050</td><td>$2,394</td><td>📈 +10.8% NYC</td></tr>
+                  <tr><td><strong>New York</strong></td><td style={{ color: 'var(--red)' }}>$2,050</td><td>$2,394</td><td>📈 NYC Increase</td></tr>
                   <tr><td><strong>New Jersey</strong></td><td style={{ color: 'var(--red)' }}>$1,900</td><td>$1,950+</td><td>➡️ Stable</td></tr>
-                  <tr><td><strong>Washington</strong></td><td>$1,800</td><td>$1,900+</td><td>➡️ Stable</td></tr>
-                  <tr><td><strong>Colorado</strong></td><td>$1,750</td><td>$1,800+</td><td>➡️ Stable</td></tr>
-                  <tr><td><strong>Florida</strong></td><td>$1,700</td><td>$1,750</td><td>📉 −4.2% Miami</td></tr>
-                  <tr><td><strong>Illinois</strong></td><td>$1,500</td><td>$1,550</td><td>📈 +3.9%</td></tr>
-                  <tr><td><strong>Texas</strong></td><td>$1,350</td><td>$1,400</td><td>📉 −3.3% Houston</td></tr>
-                  <tr><td><strong>Georgia</strong></td><td>$1,350</td><td>$1,380</td><td>📈 +2.8%</td></tr>
-                  <tr><td><strong>Arizona</strong></td><td>$1,300</td><td>$1,350</td><td>📉 −4.1% Phoenix</td></tr>
-                  <tr><td><strong>North Carolina</strong></td><td>$1,250</td><td>$1,411</td><td>📈 +6.0%</td></tr>
-                  <tr><td><strong>Ohio</strong></td><td>$1,100</td><td>$1,050</td><td>➡️ Stable</td></tr>
                   <tr><td><strong>Oklahoma</strong></td><td style={{ color: 'var(--green)', fontWeight: 700 }}>$903</td><td>$950</td><td>✅ Lowest avg.</td></tr>
                 </tbody>
               </table>
@@ -350,28 +316,14 @@ const RentByCity = () => {
                 <div className={styles.strategyIcon}>📊</div>
                 <div className={styles.strategyContent}>
                   <h4>Use HUD FMR as Your Benchmark</h4>
-                  <p>HUD's Fair Market Rents (40th percentile) give you a transparent baseline. If a landlord is charging significantly above FMR, you have data to negotiate with. Available at HUD.gov for every metro.</p>
+                  <p>HUD's Fair Market Rents give you a transparent baseline. Available at HUD.gov for every metro.</p>
                 </div>
               </li>
               <li className={styles.strategyItem}>
                 <div className={styles.strategyIcon}>🏙️</div>
                 <div className={styles.strategyContent}>
                   <h4>Consider Adjacent Neighborhoods</h4>
-                  <p>In most metros, rents drop 10–25% just 2–3 miles from the most popular ZIP codes. Dallas's Uptown vs. Oak Cliff; Manhattan vs. Queens can save $800–$1,500/month.</p>
-                </div>
-              </li>
-              <li className={styles.strategyItem}>
-                <div className={styles.strategyIcon}>🤝</div>
-                <div className={styles.strategyContent}>
-                  <h4>Negotiate Renewal Terms Early</h4>
-                  <p>Landlords typically prefer renewing over finding new tenants (cost: $1,500–$4,000 in lost rent and turnover). Start renewal discussions 90 days early and leverage vacancy rates in your area.</p>
-                </div>
-              </li>
-              <li className={styles.strategyItem}>
-                <div className={styles.strategyIcon}>💰</div>
-                <div className={styles.strategyContent}>
-                  <h4>Factor Rent Into Retirement Planning</h4>
-                  <p>Renters should account for rent inflation (~3%/year historical average) in retirement projections. A $2,000 rent today could cost $3,600 in 30 years — a significant retirement income consideration.</p>
+                  <p>In most metros, rents drop 10–25% just 2–3 miles from the most popular ZIP codes.</p>
                 </div>
               </li>
             </ul>
@@ -380,23 +332,30 @@ const RentByCity = () => {
           <section id="faq">
             <div className={styles.sectionLabel}>FAQ</div>
             <h2>Rental Market FAQ</h2>
-            <div className={`${styles.faqItem} ${openFaqs[0] ? styles.open : ''}`}>
-              <button className={styles.faqQ} onClick={() => toggleFaq(0)}>What is the average rent in the U.S. in 2025? <span className={styles.faqIcon}>+</span></button>
-              <div className={styles.faqA}>The average rent in the U.S. as of June 2025 is approximately $1,636/month across all unit types, according to Apartments.com — up 0.9% year-over-year. The national median rent is lower at about $1,363/month (Apartment List). HUD's FY2025 Fair Market Rent is $1,393/month for a 1-bedroom and $1,671/month for a 2-bedroom nationally.</div>
-            </div>
-            <div className={`${styles.faqItem} ${openFaqs[1] ? styles.open : ''}`}>
-              <button className={styles.faqQ} onClick={() => toggleFaq(1)}>What percentage of income should go toward rent? <span className={styles.faqIcon}>+</span></button>
-              <div className={styles.faqA}>The traditional "30% rule" — spending no more than 30% of gross income on housing — remains the widely accepted benchmark. HUD defines households spending more than 30% as "cost-burdened" and more than 50% as "severely cost-burdened." As of 2025, approximately 22.4 million U.S. renting households spend more than 30% of income on rent and utilities.</div>
-            </div>
-            <div className={`${styles.faqItem} ${openFaqs[2] ? styles.open : ''}`}>
-              <button className={styles.faqQ} onClick={() => toggleFaq(2)}>Is the rental market improving for renters in 2025? <span className={styles.faqIcon}>+</span></button>
-              <div className={styles.faqA}>Conditions have improved somewhat from the 2022 peak. Apartment List reports national median rent has fallen 5.5% from its mid-2022 peak. A record surge of new multifamily supply — over 600,000 units delivered in 2024 — has helped ease pressure in many markets, particularly in the Sun Belt. However, NYC (+10.8% YoY), Chicago (+2.7%), and Atlanta (+2.8%) continue to see price increases.</div>
-            </div>
+            {[
+              {
+                q: "What is the average rent in the U.S. in 2025?",
+                a: "The average rent in the U.S. as of June 2025 is approximately $1,636/month across all unit types, according to Apartments.com. The national median rent is lower at about $1,363/month (Apartment List)."
+              },
+              {
+                q: "What percentage of income should go toward rent?",
+                a: "The traditional \"30% rule\" — spending no more than 30% of gross income on housing — remains the widely accepted benchmark. HUD defines households spending more than 30% as \"cost-burdened.\""
+              },
+              {
+                q: "Is the rental market improving for renters in 2025?",
+                a: "Conditions have improved somewhat from the 2022 peak. Apartment List reports national median rent has fallen 5.5% from its mid-2022 peak."
+              }
+            ].map((faq, index) => (
+              <div key={index} className={`${styles.faqItem} ${openFaqs[index] ? styles.open : ''}`}>
+                <button className={styles.faqQ} onClick={() => toggleFaq(index)}>{faq.q} <span className={styles.faqIcon}>+</span></button>
+                <div className={styles.faqA}>{faq.a}</div>
+              </div>
+            ))}
           </section>
 
           <div className={styles.sourcesBox}>
             <h4>Sources</h4>
-            <p>Apartments.com National Rent Report (June 2025) · HUD FY2025 Fair Market Rents · Dwellsy IQ analysis of 16M+ verified listings (Oct 2025) · Apartment List National Rent Report (March 2025) · iPropertyManagement research (2025, citing HUD data) · U.S. Census Bureau ACS</p>
+            <p>Apartments.com National Rent Report (June 2025) · HUD FY2025 Fair Market Rents · Dwellsy IQ (Oct 2025) · Apartment List National Rent Report (March 2025)</p>
           </div>
         </main>
 
@@ -414,23 +373,22 @@ const RentByCity = () => {
           <div className={styles.ctaCard}>
             <h4>What's my retirement number?</h4>
             <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
-            <div onClick={() => router.push('/retirement-calculator')} className={styles.ctaBtn}>
+            <div onClick={() => router.push('/retirement-calculator')} className={styles.ctaBtn} style={{cursor: 'pointer'}}>
               Check Here
             </div>
           </div>
           <div className={styles.sidebarCard}>
             <h4>Related Guides</h4>
             <ul className={styles.relatedLinks}>
-              <li><a onClick={() => router.push('/minimum-wage-by-state')}>Minimum Wage by State 2025</a></li>
-              <li><a onClick={() => router.push('/median-household-income')}>Median Household Income by State</a></li>
-              <li><a onClick={() => router.push('/health-insurance-costs')}>Health Insurance Costs 2025</a></li>
-              <li><a onClick={() => router.push('/long-term-care-costs')}>Long-Term Care Costs 2025</a></li>
-              <li><a onClick={() => router.push('/cheapest-states-to-retire')}>Cheapest States to Retire</a></li>
+              <li><Link href="/minimum-wage-by-state">Minimum Wage by State 2025</Link></li>
+              <li><Link href="/median-household-income">Median Household Income by State</Link></li>
+              <li><Link href="/health-insurance-costs">Health Insurance Costs 2025</Link></li>
+              <li><Link href="/how-much-to-retire">How Much Do I Need to Retire?</Link></li>
             </ul>
           </div>
         </aside>
       </div>
-          <PartnersSection 
+      <PartnersSection 
         titleFontSize="28px !important"
         titleFontWeight={800}
         titleColor="var(--navy) !important"
@@ -439,7 +397,7 @@ const RentByCity = () => {
         subtitleColor="var(--text-mid)"
         rootPadding="40px 0 0"
       />
-      </div>
+    </div>
   );
 };
 

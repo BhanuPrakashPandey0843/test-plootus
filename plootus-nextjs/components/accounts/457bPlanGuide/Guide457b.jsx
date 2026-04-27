@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState } from 'export default Guide457b;';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import styles from './Guide457b.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -14,6 +15,12 @@ const Guide457b = () => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>457(b) Plan Guide 2026: Contribution Limits, Rules & Strategies | Plootus</title>
+        <meta name="description" content="The 457(b) plan is one of the most powerful retirement accounts for government employees. Learn about 2026 limits and the unique no-penalty withdrawal advantage." />
+        <link rel="canonical" href="https://www.plootus.com/457b-plan-guide" />
+      </Head>
+
       <HubNav />
 
       <div className={styles.hero}>
@@ -166,7 +173,7 @@ const Guide457b = () => {
           <div className={styles['cta-banner']}>
             <h3>Plootus Supports 457(b) Plans</h3>
             <p>Unlike most retirement tools, Plootus is built for public sector employees. Connect your 457(b) and get personalized fund recommendations — free.</p>
-            <a href="/">Optimize My 457(b) →</a>
+            <div onClick={() => router.push('/')} style={{cursor: 'pointer'}}>Optimize My 457(b) →</div>
           </div>
 
           <div className={styles['sources-box']}>
@@ -194,16 +201,16 @@ const Guide457b = () => {
           <div className={styles['cta-card']}>
             <h4>What's my retirement number?</h4>
             <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
-            <a onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']}>
+            <div onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']}>
               Check Here
-            </a>
+            </div>
           </div>
           <div className={`${styles['sidebar-card']} ${styles['related-card']}`}>
             <h4>Related Guides</h4>
-            <a href="/403b-guide">→ 403(b) Plan Guide</a>
-            <a href="/hsa-contribution-limits">→ HSA Contribution Limits</a>
-            <a href="/roth-vs-traditional">→ Roth vs Traditional IRA</a>
-            <a href="/how-to-plan-retirement">→ How to Plan for Retirement</a>
+            <div onClick={() => router.push('/403b-guide')} style={{cursor: 'pointer'}}>→ 403(b) Plan Guide</div>
+            <div onClick={() => router.push('/hsa-contribution-limits')} style={{cursor: 'pointer'}}>→ HSA Contribution Limits</div>
+            <div onClick={() => router.push('/roth-vs-traditional')} style={{cursor: 'pointer'}}>→ Roth vs Traditional IRA</div>
+            <div onClick={() => router.push('/how-to-plan-retirement')} style={{cursor: 'pointer'}}>→ How to Plan for Retirement</div>
           </div>
           <div className={styles['sidebar-card']} style={{ background: 'var(--off-white)' }}>
             <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--text-light)', marginBottom: '8px' }}>
@@ -218,7 +225,7 @@ const Guide457b = () => {
           </div>
         </aside>
       </div>
-          <PartnersSection 
+      <PartnersSection 
         titleFontSize="22px"
         titleFontWeight={800}
         titleColor="var(--navy) !important"
@@ -227,7 +234,7 @@ const Guide457b = () => {
         subtitleColor="var(--text-mid)"
         rootPadding="40px 0 0"
       />
-      </div>
+    </div>
   );
 };
 

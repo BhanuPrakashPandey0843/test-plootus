@@ -21,15 +21,25 @@ const theme = createTheme({
   },
 });
 
+import { Provider } from 'react-redux';
+import { store } from '../lib/store';
+
 export default function App({ Component, pageProps, emotionCache = clientSideEmotionCache }) {
+  const disableLayout = Component.layout === 'none';
   return (
-    <CacheProvider value={emotionCache}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </ThemeProvider>
-    </CacheProvider>
+    <Provider store={store}>
+      <CacheProvider value={emotionCache}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          {disableLayout ? (
+            <Component {...pageProps} />
+          ) : (
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          )}
+        </ThemeProvider>
+      </CacheProvider>
+    </Provider>
   );
 }

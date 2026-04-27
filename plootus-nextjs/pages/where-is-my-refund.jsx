@@ -1,11 +1,11 @@
 import React from 'react';
 import WhereIsMyRefund from '../components/where-is-my-refund';
-import Layout from '../components/layout/Layout';
 import Head from 'next/head';
+import HubNav from '../components/HubNav/HubNav';
 
 const WhereIsMyRefundPage = () => {
   return (
-    <Layout>
+    <>
       <Head>
         <title>Where Is My Refund? - Plootus</title>
         <meta
@@ -13,8 +13,9 @@ const WhereIsMyRefundPage = () => {
           content="Track your federal and state tax refund status. Find links to IRS refund trackers and state-specific tax agencies."
         />
       </Head>
+      <HubNav />
       <WhereIsMyRefund />
-    </Layout>
+    </>
   );
 };
 

@@ -1,0 +1,159 @@
+.root {
+  background-color: #f8fafc;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.titleSection {
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.highlight {
+  color: #4361ee;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  margin-bottom: 32px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  padding: 24px;
+}
+
+.cardInner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.weeklySection {
+  flex: 1;
+}
+
+.weeklyTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.weeklyDesc {
+  font-size: 1rem;
+  color: #64748b;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.subscribeBtn {
+  background-color: #10b981;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.subscribeBtn:hover {
+  background-color: #059669;
+}
+
+.storiesSection {
+  flex: 1;
+  background-color: #f8fafc;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.storiesDate {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  margin-bottom: 16px;
+}
+
+.storiesTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 16px;
+}
+
+.storiesList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+}
+
+.storyItem {
+  display: flex;
+  align-items: flex-start;
+  color: #64748b;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.storyItem::before {
+  content: "•";
+  margin-right: 8px;
+  color: #94a3b8;
+}
+
+.storiesFooter {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.readMore {
+  background: none;
+  border: none;
+  color: #4361ee;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.readMore:hover {
+  opacity: 0.8;
+}
+
+@media (min-width: 768px) {
+  .root {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+  .cardInner {
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+  }
+  .card {
+    padding: 32px;
+  }
+}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import styles from './RmdCalculator.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -55,6 +56,25 @@ const RmdCalculator = () => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>RMD Calculator 2026: Required Minimum Distributions | Plootus</title>
+        <meta name="description" content="Calculate your 2026 Required Minimum Distribution (RMD) under SECURE 2.0 rules. Learn when to start withdrawals and how to minimize taxes." />
+        <link rel="canonical" href="https://www.plootus.com/rmd-calculator" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "RMD Calculator",
+            "operatingSystem": "All",
+            "applicationCategory": "FinancialApplication",
+            "description": "An interactive calculator to determine Required Minimum Distributions (RMDs) based on IRS Table III and SECURE 2.0 rules.",
+            "author": {
+              "@type": "Organization",
+              "name": "Plootus"
+            }
+          })}
+        </script>
+      </Head>
 
       <HubNav />
 
@@ -210,17 +230,17 @@ const RmdCalculator = () => {
           <div className={styles['cta-card']}>
             <h4>What's my retirement number?</h4>
             <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
-            <a onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']}>
+            <div onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']} style={{cursor: 'pointer'}}>
               Check Here
-            </a>
+            </div>
           </div>
           <div className={`${styles['sidebar-card']} ${styles['related-card']}`}>
             <h4>Related Guides</h4>
-            <a href="/roth-vs-traditional">→ Roth vs. Traditional IRA</a>
-            <a href="/average-ira-balance-by-age">→ Average IRA Balance by Age</a>
-            <a href="/social-security-benefits">→ Social Security Benefits Guide</a>
-            <a href="/tax-friendly-states-for-retirees">→ Tax-Friendly States for Retirees</a>
-            <a href="/how-to-plan-retirement">→ How to Plan for Retirement</a>
+            <div onClick={() => router.push('/roth-vs-traditional')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ Roth vs. Traditional IRA</div>
+            <div onClick={() => router.push('/average-ira-balance-by-age')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ Average IRA Balance by Age</div>
+            <div onClick={() => router.push('/social-security-benefits')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ Social Security Benefits Guide</div>
+            <div onClick={() => router.push('/tax-friendly-states-for-retirees')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ Tax-Friendly States for Retirees</div>
+            <div onClick={() => router.push('/how-to-plan-retirement')} style={{cursor: 'pointer', color: 'var(--blue)'}}>→ How to Plan for Retirement</div>
           </div>
           <div className={styles['sidebar-card']} style={{ background: 'var(--off-white)' }}>
             <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--text-light)', marginBottom: '8px' }}>Key Stat</p>
@@ -229,7 +249,7 @@ const RmdCalculator = () => {
           </div>
         </aside>
       </div>
-          <PartnersSection 
+      <PartnersSection 
         titleFontSize="28px !important"
         titleFontWeight={800}
         titleColor="var(--navy) !important"
@@ -238,7 +258,7 @@ const RmdCalculator = () => {
         subtitleColor="var(--text-mid)"
         rootPadding="40px 0 0"
       />
-      </div>
+    </div>
   );
 };
 

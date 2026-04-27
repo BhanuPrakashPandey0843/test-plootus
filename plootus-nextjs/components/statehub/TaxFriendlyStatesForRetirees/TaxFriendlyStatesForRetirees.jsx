@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import styles from './TaxFriendlyStatesForRetirees.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -12,15 +13,38 @@ const FAQItem = ({ question, answer }) => {
         {question} <span className={styles.faqIcon}>+</span>
       </button>
       <div className={styles.faqA}>{answer}</div>
-    </div>
+      </div>
   );
 };
 
 const TaxFriendlyStatesForRetirees = () => {
   const router = useRouter();
 
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Most Tax-Friendly States for Retirees in 2026: A–F Tax Grade for All 50 States",
+      "description": "A comprehensive guide grading all 50 U.S. states on four retirement tax factors: state income tax on 401(k)/IRA withdrawals, Social Security benefit taxation, property tax rates, and estate and inheritance taxes. 8 states have no income tax. 41 states plus D.C. do not tax Social Security benefits. Grades A+ through D assigned based on combined tax burden on retirees. Sources: Kiplinger State Tax Guide 2026, SmartAsset 2026, Tax Foundation 2026.",
+      "datePublished": "2026-01-01",
+      "dateModified": "2026-03-01",
+      "author": {"@type":"Organization","name":"Plootus Research Team","url":"https://www.plootus.com"},
+      "publisher": {
+        "@type": "Organization","name":"Plootus","url":"https://www.plootus.com",
+        "logo": {"@type":"ImageObject","url":"https://www.plootus.com/logo.png"}
+      },
+      "mainEntityOfPage": {"@type":"WebPage","@id":"https://www.plootus.com/tax-friendly-states-for-retirees"}
+    }
+  ];
+
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Most Tax-Friendly States for Retirees in 2026 | Complete Guide | Plootus</title>
+        <meta name="description" content="State taxes can cost retirees $5,000–$20,000 more per year — or nothing at all. We graded every state on income tax, Social Security tax, property tax, and estate taxes." />
+        <link rel="canonical" href="https://www.plootus.com/tax-friendly-states-for-retirees" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      </Head>
 
       <HubNav />
 
@@ -197,7 +221,7 @@ const TaxFriendlyStatesForRetirees = () => {
                   <tr><td><strong>Texas</strong></td><td><span className={`${styles.gradeBadge} ${styles.gradeA}`}>A</span></td><td>None</td><td className={styles.check}>No</td><td>1.68%</td><td className={styles.check}>None</td><td>Higher property tax</td></tr>
                   <tr><td><strong>Alaska</strong></td><td><span className={`${styles.gradeBadge} ${styles.gradeA}`}>A</span></td><td>None</td><td className={styles.check}>No</td><td>1.04%</td><td className={styles.check}>None</td><td>Annual PFD dividend</td></tr>
                   <tr><td><strong>Delaware</strong></td><td><span className={`${styles.gradeBadge} ${styles.gradeA}`}>A</span></td><td>6.6%</td><td className={styles.check}>No</td><td>0.56%</td><td className={styles.check}>None</td><td>No sales tax; low property tax</td></tr>
-                  <tr><td><strong>Pennsylvania</strong></td><td><span className={`${styles.gradeBadge} ${styles.gradeB}`}>B</span></td><td>3.07%</td><td className={styles.cross}>No</td><td>1.35%</td><td className={styles.cross}>Inheritance tax</td><td>Flat 3.07%; SS exempt</td></tr>
+                  <tr><td><strong>Pennsylvania</strong></td><td><span className={`${styles.gradeBadge} ${styles.gradeB}`}>B</span></td><td>3.07%</td><td className={styles.check}>No</td><td>1.35%</td><td className={styles.cross}>Inheritance tax</td><td>Flat 3.07%; SS exempt</td></tr>
                   <tr><td><strong>Mississippi</strong></td><td><span className={`${styles.gradeBadge} ${styles.gradeB}`}>B</span></td><td>5%</td><td className={styles.check}>No</td><td>0.79%</td><td className={styles.check}>None</td><td>Retirement income exempt</td></tr>
                   <tr><td><strong>Georgia</strong></td><td><span className={`${styles.gradeBadge} ${styles.gradeB}`}>B</span></td><td>5.49%</td><td className={styles.check}>No</td><td>0.90%</td><td className={styles.check}>None</td><td>Generous retirement exclusions</td></tr>
                   <tr><td><strong>North Carolina</strong></td><td><span className={`${styles.gradeBadge} ${styles.gradeB}`}>B</span></td><td>4.5%</td><td className={styles.check}>No</td><td>0.78%</td><td className={styles.check}>None</td><td>Flat rate; improving</td></tr>
@@ -220,7 +244,7 @@ const TaxFriendlyStatesForRetirees = () => {
             
             <FAQItem 
               question="Which states do NOT tax Social Security benefits?" 
-              answer="As of 2026, 41 states plus Washington D.C. do not tax Social Security benefits at the state level. The 8 states that still tax Social Security income are: Colorado, Connecticut, Minnesota, Montana, New Mexico, Rhode Island, Utah, and Vermont. West Virginia eliminated its Social Security tax in 2026, joining Missouri, Kansas, and Nebraska which did so in 2024."
+              answer="As of 2026, 41 states plus Washington D.C. do not tax Social Security benefits at the level. The 8 states that still tax Social Security income are: Colorado, Connecticut, Minnesota, Montana, New Mexico, Rhode Island, Utah, and Vermont. West Virginia eliminated its Social Security tax in 2026, joining Missouri, Kansas, and Nebraska which did so in 2024."
             />
             <FAQItem 
               question="What is the best state for taxes if I have a large IRA or 401(k)?" 
@@ -249,7 +273,6 @@ const TaxFriendlyStatesForRetirees = () => {
               <li>Nebraska, Missouri, Kansas — SS Tax Repeal Legislation, 2024</li>
             </ul>
           </div>
-
         </main>
 
         <aside className={styles.sidebar} role="complementary" aria-label="Related resources and navigation">
@@ -265,23 +288,23 @@ const TaxFriendlyStatesForRetirees = () => {
           <div className={styles.ctaCard}>
             <h4>What's my retirement number?</h4>
             <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
-            <a onClick={() => router.push('/retirement-calculator')} className={styles.ctaBtn}>
+            <div onClick={() => router.push('/retirement-calculator')} className={styles.ctaBtn} style={{cursor: 'pointer'}}>
               Check Here
-            </a>
+            </div>
           </div>
           <div className={styles.sidebarCard}>
             <h4>Related Guides</h4>
             <ul className={styles.relatedLinks}>
-              <li><a onClick={() => router.push('/best-states-to-retire')}>Best States to Retire 2026</a></li>
-              <li><a onClick={() => router.push('/cheapest-states-to-retire')}>Cheapest States to Retire</a></li>
-              <li><a onClick={() => router.push('/how-much-to-retire')}>How Much Do I Need?</a></li>
-              <li><a onClick={() => router.push('/social-security-benefits')}>Social Security Guide</a></li>
-              <li><a onClick={() => router.push('/how-to-plan-retirement')}>Retirement Planning Guide</a></li>
+              <li><div onClick={() => router.push('/best-states-to-retire')} style={{cursor: 'pointer'}}>Best States to Retire 2026</div></li>
+              <li><div onClick={() => router.push('/cheapest-states-to-retire')} style={{cursor: 'pointer'}}>Cheapest States to Retire</div></li>
+              <li><div onClick={() => router.push('/how-much-to-retire')} style={{cursor: 'pointer'}}>How Much Do I Need?</div></li>
+              <li><div onClick={() => router.push('/social-security-benefits')} style={{cursor: 'pointer'}}>Social Security Guide</div></li>
+              <li><div onClick={() => router.push('/how-to-plan-retirement')} style={{cursor: 'pointer'}}>Retirement Planning Guide</div></li>
             </ul>
           </div>
         </aside>
       </div>
-          <PartnersSection 
+        <PartnersSection 
         titleFontSize="22px"
         titleFontWeight={800}
         titleColor="var(--navy) !important"

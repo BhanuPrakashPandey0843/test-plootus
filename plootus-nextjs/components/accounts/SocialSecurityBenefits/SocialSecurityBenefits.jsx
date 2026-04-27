@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import Chart from 'chart.js/auto';
 import styles from './SocialSecurityBenefits.module.css';
 import HubNav from '../../HubNav/HubNav';
@@ -103,8 +104,37 @@ const SocialSecurityBenefits = () => {
     };
   }, []);
 
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Social Security Benefits in 2026: When to Claim, Spousal Benefits & the Break-Even Age",
+      "description": "A comprehensive guide to maximizing Social Security retirement benefits in 2026. Covers how benefits are calculated, Full Retirement Age by birth year, the financial impact of claiming at 62 vs. 67 vs. 70 (with cumulative lifetime totals), spousal and survivor benefit strategies, Social Security taxation by state, the 2035 trust fund depletion timeline, and a break-even analysis. Claiming at 70 instead of 62 increases monthly benefits by approximately 77%. Sources: Social Security Administration, AARP, Charles Schwab 2026.",
+      "datePublished": "2026-01-01",
+      "dateModified": "2026-03-01",
+      "author": { "@type": "Organization", "name": "Plootus Research Team", "url": "https://www.plootus.com" },
+      "publisher": {
+        "@type": "Organization", "name": "Plootus", "url": "https://www.plootus.com",
+        "logo": { "@type": "ImageObject", "url": "https://www.plootus.com/logo.png" }
+      },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.plootus.com/social-security-benefits" },
+      "about": [{ "@type": "Thing", "name": "Social Security Claiming Strategy" },
+      { "@type": "Thing", "name": "Social Security Spousal Benefits" },
+      { "@type": "Thing", "name": "Social Security Break-Even Age" },
+      { "@type": "Thing", "name": "Social Security Trust Fund" }],
+      "keywords": "social security claiming strategy, when to claim Social Security, social security break-even, spousal benefits social security, FRA full retirement age, social security 2026"
+    }
+  ];
+
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Social Security Benefits in 2026: When to Claim, Spousal Benefits & the Break-Even Age | Plootus</title>
+        <meta name="description" content="A comprehensive guide to maximizing Social Security retirement benefits in 2026. Covers how benefits are calculated, Full Retirement Age by birth year, and the financial impact of claiming." />
+        <link rel="canonical" href="https://www.plootus.com/social-security-benefits" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      </Head>
+
       <HubNav />
 
       <div className={styles.hero}>
@@ -330,23 +360,23 @@ const SocialSecurityBenefits = () => {
           <div className={styles.ctaCard}>
             <h4>What's my retirement number?</h4>
             <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
-            <a onClick={() => router.push('/retirement-calculator')} className={styles.ctaBtn}>
+            <div onClick={() => router.push('/retirement-calculator')} className={styles.ctaBtn} style={{cursor: 'pointer'}}>
               Check Here
-            </a>
+            </div>
           </div>
           <div className={styles.sidebarCard}>
             <h4>Related Guides</h4>
             <ul className={styles.relatedLinks}>
-              <li><a onClick={() => router.push('/how-much-to-retire')}>How Much Do I Need?</a></li>
-              <li><a onClick={() => router.push('/how-to-plan-retirement')}>Retirement Planning Guide</a></li>
-              <li><a onClick={() => router.push('/tax-friendly-states')}>Tax-Friendly States Guide</a></li>
-              <li><a onClick={() => router.push('/retirement-statistics')}>Retirement Statistics 2026</a></li>
-              <li><a onClick={() => router.push('/retire-early')}><abbr title="Financial Independence, Retire Early">FIRE</abbr> / Early Retirement Guide</a></li>
+              <li><div onClick={() => router.push('/how-much-to-retire')} style={{cursor: 'pointer'}}>How Much Do I Need?</div></li>
+              <li><div onClick={() => router.push('/how-to-plan-retirement')} style={{cursor: 'pointer'}}>Retirement Planning Guide</div></li>
+              <li><div onClick={() => router.push('/tax-friendly-states')} style={{cursor: 'pointer'}}>Tax-Friendly States Guide</div></li>
+              <li><div onClick={() => router.push('/retirement-statistics')} style={{cursor: 'pointer'}}>Retirement Statistics 2026</div></li>
+              <li><div onClick={() => router.push('/retire-early')} style={{cursor: 'pointer'}}><abbr title="Financial Independence, Retire Early">FIRE</abbr> / Early Retirement Guide</div></li>
             </ul>
           </div>
         </aside>
       </div>
-          <PartnersSection 
+      <PartnersSection 
         titleFontSize="28px !important"
         titleFontWeight={800}
         titleColor="var(--navy) !important"
@@ -355,7 +385,7 @@ const SocialSecurityBenefits = () => {
         subtitleColor="var(--text-mid)"
         rootPadding="40px 0 0"
       />
-      </div>
+    </div>
   );
 };
 

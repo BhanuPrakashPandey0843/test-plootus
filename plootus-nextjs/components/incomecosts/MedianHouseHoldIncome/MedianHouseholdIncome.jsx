@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
+import Link from 'next/link';
+import Chart from 'chart.js/auto';
 import styles from './MedianHouseholdIncome.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
-import Chart from 'chart.js/auto';
 
 const incData = [
   { s: 'Massachusetts', i: 113900, r: 'Northeast' }, { s: 'New Jersey', i: 105800, r: 'Northeast' },
@@ -45,65 +47,6 @@ const MedianHouseholdIncome = () => {
   const chartInstance = useRef(null);
 
   useEffect(() => {
-    initChart();
-    animateStats();
-
-    return () => {
-      if (chartInstance.current) {
-        chartInstance.current.destroy();
-      }
-    };
-  }, []);
-
-  const animateStats = () => {
-    const stats = document.querySelectorAll('[data-type="statistic"], [data-type="key-statistic"]');
-    stats.forEach(el => {
-      const val = el.innerText;
-      if (val.includes('$') || val.includes('~') || isNaN(val.replace(/[%$,~]/g, ''))) {
-        const numPart = val.replace(/[^0-9.]/g, '');
-        if (!numPart) return;
-        
-        const target = parseFloat(numPart);
-        const prefix = val.startsWith('$') ? '$' : (val.startsWith('~$') ? '~$' : '');
-        const suffix = val.includes('K') ? 'K' : '';
-        
-        let startTime = null;
-        const duration = 1500;
-
-        const step = (timestamp) => {
-          if (!startTime) startTime = timestamp;
-          const progress = Math.min((timestamp - startTime) / duration, 1);
-          const currentVal = Math.floor(progress * target);
-          el.innerText = `${prefix}${currentVal.toLocaleString()}${suffix}`;
-          if (progress < 1) {
-            window.requestAnimationFrame(step);
-          } else {
-            el.innerText = val;
-          }
-        };
-        window.requestAnimationFrame(step);
-        return;
-      }
-
-      const target = parseInt(val);
-      let startTime = null;
-      const duration = 1500;
-
-      const step = (timestamp) => {
-        if (!startTime) startTime = timestamp;
-        const progress = Math.min((timestamp - startTime) / duration, 1);
-        el.innerText = Math.floor(progress * target);
-        if (progress < 1) {
-          window.requestAnimationFrame(step);
-        } else {
-          el.innerText = val;
-        }
-      };
-      window.requestAnimationFrame(step);
-    });
-  };
-
-  const initChart = () => {
     if (chartRef.current) {
       const sorted = [...incData].sort((a, b) => b.i - a.i);
       const chartStates = [...sorted.slice(0, 10), ...sorted.slice(-10).reverse()];
@@ -145,7 +88,7 @@ const MedianHouseholdIncome = () => {
                 font: { family: 'Plus Jakarta Sans', size: 11 },
                 color: '#6B7FA8'
               }, 
-              grid: { color: '#E2E8F4', drawBorder: false } 
+              grid: { color: '#E2E8F4' } 
             },
             x: { 
               ticks: { 
@@ -153,13 +96,19 @@ const MedianHouseholdIncome = () => {
                 maxRotation: 40,
                 color: '#6B7FA8'
               }, 
-              grid: { display: false, drawBorder: false } 
+              grid: { display: false } 
             }
           }
         }
       });
     }
-  };
+
+    return () => {
+      if (chartInstance.current) {
+        chartInstance.current.destroy();
+      }
+    };
+  }, []);
 
   const sortInc = (mode) => {
     setSortMode(mode);
@@ -176,22 +125,48 @@ const MedianHouseholdIncome = () => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Median Household Income by State (2024) | Plootus</title>
+        <meta name="description" content="The U.S. median household income reached $83,730 in 2024 — an all-time high. But that masks a nearly $55,000 gap between states. Complete state-by-state data from the U.S. Census Bureau." />
+        <link rel="canonical" href="https://www.plootus.com/median-household-income" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Median Household Income by State 2024: U.S. Census Bureau Data",
+            "description": "Complete state-by-state median household income data for 2024 from the U.S. Census Bureau American Community Survey (ACS).",
+            "author": {
+              "@type": "Organization",
+              "name": "Plootus Research Team"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Plootus",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.plootus.com/logo.png"
+              }
+            },
+            "datePublished": "2025-09-01",
+            "dateModified": "2025-11-01"
+          })}
+        </script>
+      </Head>
+
       <HubNav />
 
-      {/* Hero Section */}
       <div className={styles.hero}>
         <div className={styles.heroInner}>
           <div className={styles.heroBadge}>📊 Census 2024 Data</div>
           <h1>Median Household Income by State (2024)</h1>
           <p className={styles.heroSub}>The U.S. median household income reached $83,730 in 2024 — an all-time high. But that number masks a nearly $55,000 gap between the highest and lowest-earning states. Here's the complete state-by-state picture from the U.S. Census Bureau.</p>
           <div className={styles.heroMeta}>
-            <span>📚 Sources: U.S. Census Bureau ACS 2024, CPS 2025 ASEC, Advisor Perspectives</span>
+            <span>📚 Sources: U.S. Census Bureau <abbr title="American Community Survey">ACS</abbr> 2024, <abbr title="Current Population Survey">CPS</abbr> 2025 ASEC, Advisor Perspectives</span>
             <span><time dateTime="2025-01-01">🗓️ 2024 ACS Data (Published Sept 2025)</time></span>
           </div>
         </div>
       </div>
 
-      {/* Stat Strip */}
       <div className={styles.statStrip}>
         <div className={styles.statStripInner}>
           <div className={styles.statItem}><span className={styles.statNum} data-type="statistic">$83,730</span><span className={styles.statLabel}>U.S. Median Income (CPS 2024) — All-Time High</span></div>
@@ -340,23 +315,30 @@ const MedianHouseholdIncome = () => {
           <section id="faq">
             <div className={styles.sectionLabel}>FAQ</div>
             <h2>Household Income FAQ</h2>
-            <div className={`${styles.faqItem} ${openFaqs[0] ? styles.open : ''}`}>
-              <button className={styles.faqQ} onClick={() => toggleFaq(0)}>What is the median household income in the U.S. in 2024? <span className={styles.faqIcon}>+</span></button>
-              <div className={styles.faqA}>The U.S. median household income in 2024 was $83,730, according to the Census Bureau's Current Population Survey (CPS ASEC), published September 2025. This represents a small increase from $82,690 in 2023 and is an all-time high in nominal dollars. The American Community Survey (ACS), which uses a different methodology, reported a slightly lower U.S. median of $81,604 for 2024. Both figures are from Census Bureau publications released in September 2025 (P60-286 and ACSBR-025, respectively).</div>
-            </div>
-            <div className={`${styles.faqItem} ${openFaqs[1] ? styles.open : ''}`}>
-              <button className={styles.faqQ} onClick={() => toggleFaq(1)}>What state has the highest median income? <span className={styles.faqIcon}>+</span></button>
-              <div className={styles.faqA}>Massachusetts has the highest median household income of any U.S. state, at approximately $113,900 (Advisor Perspectives, citing CPS data). New Jersey, Maryland, and Connecticut round out the top states. These states benefit from proximity to major financial and tech hubs, highly educated workforces, and concentrations of high-paying industries. D.C. ($109,707 per Visual Capitalist) has the highest of any jurisdiction but is not a state.</div>
-            </div>
-            <div className={`${styles.faqItem} ${openFaqs[2] ? styles.open : ''}`}>
-              <button className={styles.faqQ} onClick={() => toggleFaq(2)}>Why is median income a better measure than average income? <span className={styles.faqIcon}>+</span></button>
-              <div className={styles.faqA}>Median income divides the income distribution in half: 50% of households earn more, 50% earn less. It is less affected by extreme outliers — a billionaire's income doesn't skew the median the way it would the average. Average (mean) income is significantly higher than median in the U.S. because the income distribution is heavily right-skewed by top earners. For understanding what a typical family earns, the median is the more relevant and informative figure.</div>
-            </div>
+            {[
+              {
+                q: "What is the median household income in the U.S. in 2024?",
+                a: "The U.S. median household income in 2024 was $83,730, according to the Census Bureau's Current Population Survey (CPS ASEC), published September 2025. This represents a small increase from $82,690 in 2023 and is an all-time high in nominal dollars. The American Community Survey (ACS), which uses a different methodology, reported a slightly lower U.S. median of $81,604 for 2024."
+              },
+              {
+                q: "What state has the highest median income?",
+                a: "Massachusetts has the highest median household income of any U.S. state, at approximately $113,900 (Advisor Perspectives, citing CPS data). New Jersey, Maryland, and Connecticut round out the top states. These states benefit from proximity to major financial and tech hubs, highly educated workforces, and concentrations of high-paying industries."
+              },
+              {
+                q: "Why is median income a better measure than average income?",
+                a: "Median income divides the income distribution in half: 50% of households earn more, 50% earn less. It is less affected by extreme outliers — a billionaire's income doesn't skew the median the way it would the average. For understanding what a typical family earns, the median is the more relevant and informative figure."
+              }
+            ].map((faq, index) => (
+              <div key={index} className={`${styles.faqItem} ${openFaqs[index] ? styles.open : ''}`}>
+                <button className={styles.faqQ} onClick={() => toggleFaq(index)}>{faq.q} <span className={styles.faqIcon}>+</span></button>
+                <div className={styles.faqA}>{faq.a}</div>
+              </div>
+            ))}
           </section>
 
           <div className={styles.sourcesBox}>
             <h4>Sources</h4>
-            <p>U.S. Census Bureau — American Community Survey 2024 1-Year Estimates (ACSBR-025, September 2025) · Census Bureau Income in the United States: 2024 (P60-286, September 2025) · Advisor Perspectives analysis of CPS data (September 2025) · Visual Capitalist / TheWorldData (November 2025, citing Census ACS 2024)</p>
+            <p>U.S. Census Bureau — American Community Survey 2024 1-Year Estimates (ACSBR-025, September 2025) · Census Bureau Income in the United States: 2024 (P60-286, September 2025) · Advisor Perspectives analysis of CPS data (September 2025)</p>
           </div>
         </main>
 
@@ -373,23 +355,23 @@ const MedianHouseholdIncome = () => {
           <div className={styles.ctaCard}>
             <h4>What's my retirement number?</h4>
             <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
-            <div onClick={() => router.push('/retirement-calculator')} className={styles.ctaBtn}>
+            <div onClick={() => router.push('/retirement-calculator')} className={styles.ctaBtn} style={{cursor: 'pointer'}}>
               Check Here
             </div>
           </div>
           <div className={styles.sidebarCard}>
             <h4>Related Guides</h4>
             <ul className={styles.relatedLinks}>
-              <li><a onClick={() => router.push('/rent-by-city')}>Average Rent by City 2025</a></li>
-              <li><a onClick={() => router.push('/minimum-wage-by-state')}>Minimum Wage by State 2025</a></li>
-              <li><a onClick={() => router.push('/health-insurance-costs')}>Health Insurance Costs 2025</a></li>
-              <li><a onClick={() => router.push('/how-much-to-retire')}>How Much Do I Need to Retire?</a></li>
-              <li><a onClick={() => router.push('/cheapest-states-to-retire')}>Cheapest States to Retire</a></li>
+              <li><Link href="/rent-by-city">Average Rent by City 2025</Link></li>
+              <li><Link href="/minimum-wage-by-state">Minimum Wage by State 2025</Link></li>
+              <li><Link href="/health-insurance-costs">Health Insurance Costs 2025</Link></li>
+              <li><Link href="/how-much-to-retire">How Much Do I Need to Retire?</Link></li>
+              <li><Link href="/cheapest-states-to-retire">Cheapest States to Retire</Link></li>
             </ul>
           </div>
         </aside>
       </div>
-          <PartnersSection 
+      <PartnersSection 
         titleFontSize="28px !important"
         titleFontWeight={800}
         titleColor="var(--navy) !important"
@@ -398,7 +380,7 @@ const MedianHouseholdIncome = () => {
         subtitleColor="var(--text-mid)"
         rootPadding="40px 0 0"
       />
-      </div>
+    </div>
   );
 };
 

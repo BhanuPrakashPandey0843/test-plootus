@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
+import Link from 'next/link';
+import Chart from 'chart.js/auto';
 import styles from './MinimumWageByState.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
-import Chart from 'chart.js/auto';
 
 const wageData = [
   { s: 'Washington DC', r: 17.95, t: 6.00, idx: true, next: 'July 2026 increase scheduled' },
@@ -68,17 +70,6 @@ const MinimumWageByState = () => {
   const chartInstance = useRef(null);
 
   useEffect(() => {
-    initChart();
-    animateStats();
-
-    return () => {
-      if (chartInstance.current) {
-        chartInstance.current.destroy();
-      }
-    };
-  }, []);
-
-  useEffect(() => {
     let result = [...wageData];
     if (searchQuery) {
       result = result.filter(r => r.s.toLowerCase().includes(searchQuery.toLowerCase()));
@@ -95,55 +86,7 @@ const MinimumWageByState = () => {
     setFilteredData(result);
   }, [sortMode, searchQuery]);
 
-  const animateStats = () => {
-    const stats = document.querySelectorAll('[data-type="statistic"], [data-type="key-statistic"]');
-    stats.forEach(el => {
-      const val = el.innerText;
-      if (val.includes('$') || val.includes('+') || isNaN(val.replace(/[%$,+]/g, ''))) {
-        const numPart = val.replace(/[^0-9.]/g, '');
-        if (!numPart) return;
-        
-        const target = parseFloat(numPart);
-        const prefix = val.startsWith('$') ? '$' : '';
-        const suffix = val.includes('%') ? '%' : (val.includes('+') ? '+' : '');
-        
-        let startTime = null;
-        const duration = 1500;
-
-        const step = (timestamp) => {
-          if (!startTime) startTime = timestamp;
-          const progress = Math.min((timestamp - startTime) / duration, 1);
-          const currentVal = (progress * target).toFixed(2);
-          el.innerText = `${prefix}${currentVal}${suffix}`;
-          if (progress < 1) {
-            window.requestAnimationFrame(step);
-          } else {
-            el.innerText = val;
-          }
-        };
-        window.requestAnimationFrame(step);
-        return;
-      }
-
-      const target = parseInt(val);
-      let startTime = null;
-      const duration = 1500;
-
-      const step = (timestamp) => {
-        if (!startTime) startTime = timestamp;
-        const progress = Math.min((timestamp - startTime) / duration, 1);
-        el.innerText = Math.floor(progress * target);
-        if (progress < 1) {
-          window.requestAnimationFrame(step);
-        } else {
-          el.innerText = val;
-        }
-      };
-      window.requestAnimationFrame(step);
-    });
-  };
-
-  const initChart = () => {
+  useEffect(() => {
     if (chartRef.current) {
       const top15 = [...wageData].sort((a, b) => b.r - a.r).slice(0, 15);
       const ctx = chartRef.current.getContext('2d');
@@ -185,7 +128,7 @@ const MinimumWageByState = () => {
                 font: { family: 'Plus Jakarta Sans', size: 11 },
                 color: '#6B7FA8'
               }, 
-              grid: { color: '#E2E8F4', drawBorder: false } 
+              grid: { color: '#E2E8F4' } 
             },
             x: { 
               ticks: { 
@@ -193,13 +136,19 @@ const MinimumWageByState = () => {
                 maxRotation: 35,
                 color: '#6B7FA8'
               }, 
-              grid: { display: false, drawBorder: false } 
+              grid: { display: false } 
             }
           }
         }
       });
     }
-  };
+
+    return () => {
+      if (chartInstance.current) {
+        chartInstance.current.destroy();
+      }
+    };
+  }, []);
 
   const toggleFaq = (index) => {
     setOpenFaqs(prev => ({ ...prev, [index]: !prev[index] }));
@@ -207,22 +156,48 @@ const MinimumWageByState = () => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Minimum Wage by State (2025) | Plootus</title>
+        <meta name="description" content="The complete 2025 state minimum wage table for all 50 states plus D.C. The federal minimum wage has been $7.25 since 2009 — see where your state stands." />
+        <link rel="canonical" href="https://www.plootus.com/minimum-wage-by-state" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Minimum Wage by State 2025: Complete 50-State Table",
+            "description": "The complete 2025 state minimum wage table for all 50 states plus Washington D.C.",
+            "author": {
+              "@type": "Organization",
+              "name": "Plootus Research Team"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Plootus",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.plootus.com/logo.png"
+              }
+            },
+            "datePublished": "2025-01-01",
+            "dateModified": "2025-12-01"
+          })}
+        </script>
+      </Head>
+
       <HubNav />
 
-      {/* Hero Section */}
       <div className={styles.hero}>
         <div className={styles.heroInner}>
           <div className={styles.heroBadge}>💵 Labor Data 2025</div>
           <h1>Minimum Wage by State (2025)</h1>
           <p className={styles.heroSub}>The federal minimum wage has been $7.25 since 2009. But 30+ states have set their own higher floors. This is the complete 2025 state minimum wage table, sourced from the U.S. Department of Labor and state labor agencies.</p>
           <div className={styles.heroMeta}>
-            <span>📚 Sources: U.S. DOL, NCSL, Paycor, Workforce.com, Fingercheck</span>
+            <span>📚 Sources: U.S. <abbr title="U.S. Department of Labor">DOL</abbr>, <abbr title="National Conference of State Legislatures">NCSL</abbr>, Paycor, Workforce.com, Fingercheck</span>
             <span><time dateTime="2025-01-01">🗓️ Updated: 2025</time></span>
           </div>
         </div>
       </div>
 
-      {/* Stat Strip */}
       <div className={styles.statStrip}>
         <div className={styles.statStripInner}>
           <div className={styles.statItem}><span className={styles.statNum} data-type="statistic">$7.25</span><span className={styles.statLabel}>Federal Minimum Wage (Since 2009)</span></div>
@@ -254,13 +229,13 @@ const MinimumWageByState = () => {
               <div className={styles.keyStatCard}>
                 <div className={styles.keyStatNum} data-type="key-statistic">$15,080</div>
                 <div className={styles.keyStatLabel}>Annual Earnings at Federal Minimum</div>
-                <div className={styles.keyStatDesc}>Full-time (2,080 hrs/yr) at $7.25. vs. avg. consumer spending of $72,967 in 2022 — a $57,887 gap.</div>
+                <div className={styles.keyStatDesc}>Full-time (2,080 hrs/yr) at $7.25. vs. avg. consumer spending of $72,967 in 2022.</div>
                 <div className={styles.keyStatSource}>BLS Consumer Expenditures Report; OnPay (2025)</div>
               </div>
               <div className={styles.keyStatCard}>
                 <div className={styles.keyStatNum} data-type="key-statistic">21</div>
                 <div className={styles.keyStatLabel}>States Raising Wages in 2026</div>
-                <div className={styles.keyStatDesc}>Including CA ($16.90), CO ($15.16), CT ($16.94), HI ($16.00), NJ ($15.92) — state-level momentum continues.</div>
+                <div className={styles.keyStatDesc}>Including CA ($16.90), CO ($15.16), CT ($16.94), HI ($16.00), NJ ($15.92).</div>
                 <div className={styles.keyStatSource}>Paycom 2026 Minimum Wage Guide</div>
               </div>
             </div>
@@ -315,7 +290,7 @@ const MinimumWageByState = () => {
                 </tbody>
               </table>
             </div>
-            <p style={{ fontSize: '12px', color: 'var(--text-light)', marginTop: '10px' }}>Sources: U.S. Department of Labor (dol.gov); NCSL State Minimum Wages (Jan 2026); Paycor; Fingercheck. Some cities/counties have higher rates than state minimums. Always verify with your state's labor agency.</p>
+            <p style={{ fontSize: '12px', color: 'var(--text-light)', marginTop: '10px' }}>Sources: U.S. Department of Labor (dol.gov); NCSL State Minimum Wages (Jan 2026); Paycor; Fingercheck.</p>
 
             <div className={styles.chartBox} style={{ marginTop: '24px' }}>
               <h3>State Minimum Wages — $15+ States vs. Federal Floor</h3>
@@ -334,28 +309,14 @@ const MinimumWageByState = () => {
                 <div className={styles.contextIcon}>📈</div>
                 <div className={styles.contextContent}>
                   <h4>Federal Minimum Purchasing Power Has Declined</h4>
-                  <p>The federal minimum wage of $7.25 has lost approximately 27% of its purchasing power since 2009 due to inflation, according to Economic Policy Institute analysis. A worker earning $7.25 in 2025 has less real buying power than a minimum-wage worker had in 1968.</p>
-                </div>
-              </div>
-              <div className={styles.contextItem}>
-                <div className={styles.contextIcon}>🗺️</div>
-                <div className={styles.contextContent}>
-                  <h4>Seven States Have No State Minimum Wage Law</h4>
-                  <p>Alabama, Louisiana, Mississippi, South Carolina, Tennessee, and Wyoming have no state minimum wage law. Georgia has a state minimum of $5.15, lower than federal. All workers in these states are covered by the federal $7.25 FLSA rate. Source: DOL.</p>
+                  <p>The federal minimum wage of $7.25 has lost approximately 27% of its purchasing power since 2009 due to inflation. A worker earning $7.25 in 2025 has less real buying power than a minimum-wage worker had in 1968.</p>
                 </div>
               </div>
               <div className={styles.contextItem}>
                 <div className={styles.contextIcon}>🏙️</div>
                 <div className={styles.contextContent}>
                   <h4>Local Rates Can Far Exceed State Minimums</h4>
-                  <p>Cities and counties often set higher rates. In 2025, Tukwila, WA requires $21.65/hour — nearly 3× the federal rate. Denver: $18.81. Seattle: $20.29. Chicago: $16.60 for larger employers. Always check local ordinances.</p>
-                </div>
-              </div>
-              <div className={styles.contextItem}>
-                <div className={styles.contextIcon}>⚖️</div>
-                <div className={styles.contextContent}>
-                  <h4>The $15+ Federal Floor Debate</h4>
-                  <p>The Raise the Wage Act of 2023, introduced in Congress, would increase the federal minimum to $17/hour by 2028. As of 2025, no version has passed Congress. Meanwhile, 30+ states and hundreds of cities have independently enacted $15+ minimums. Source: OnPay; DOL history.</p>
+                  <p>Cities and counties often set higher rates. In 2025, Tukwila, WA requires $21.65/hour — nearly 3× the federal rate. Denver: $18.81. Seattle: $20.29. Chicago: $16.60 for larger employers.</p>
                 </div>
               </div>
             </div>
@@ -364,23 +325,30 @@ const MinimumWageByState = () => {
           <section id="faq">
             <div className={styles.sectionLabel}>FAQ</div>
             <h2>Minimum Wage FAQ</h2>
-            <div className={`${styles.faqItem} ${openFaqs[0] ? styles.open : ''}`}>
-              <button className={styles.faqQ} onClick={() => toggleFaq(0)}>What is the federal minimum wage in 2025? <span className={styles.faqIcon}>+</span></button>
-              <div className={styles.faqA}>The federal minimum wage remains $7.25 per hour in 2025, unchanged since July 24, 2009. The Fair Labor Standards Act (FLSA), enforced by the U.S. Department of Labor, sets this as the national floor. States may set higher rates; employees are entitled to whichever rate is higher — federal or state. Source: U.S. DOL.</div>
-            </div>
-            <div className={`${styles.faqItem} ${openFaqs[1] ? styles.open : ''}`}>
-              <button className={styles.faqQ} onClick={() => toggleFaq(1)}>Which state has the highest minimum wage in 2025? <span className={styles.faqIcon}>+</span></button>
-              <div className={styles.faqA}>Among the 50 states, New York has the highest minimum wage at $17.00/hour for New York City, Long Island, and Westchester County ($16.50 for the rest of the state). Washington State's statewide minimum is $16.66/hour. California is $16.50/hour statewide. Washington D.C. has the highest rate of any U.S. jurisdiction at $17.95/hour (effective July 1, 2025). Sources: NY DOL; Fingercheck; Paycor; Workforce.com.</div>
-            </div>
-            <div className={`${styles.faqItem} ${openFaqs[2] ? styles.open : ''}`}>
-              <button className={styles.faqQ} onClick={() => toggleFaq(2)}>What is the minimum wage for tipped employees? <span className={styles.faqIcon}>+</span></button>
-              <div className={styles.faqA}>Under federal law, employers may pay tipped employees as little as $2.13/hour — the "tip credit" — as long as tips bring the total to at least $7.25/hour. If tips don't cover the difference, the employer must make up the gap. In 8 states (AK, CA, MN, MT, NV, OR, WA, and others), employers must pay tipped workers the full state minimum wage before tips. Source: U.S. DOL; Paycor 2025.</div>
-            </div>
+            {[
+              {
+                q: "What is the federal minimum wage in 2025?",
+                a: "The federal minimum wage remains $7.25 per hour in 2025, unchanged since July 24, 2009. The Fair Labor Standards Act (FLSA), enforced by the U.S. Department of Labor, sets this as the national floor. States may set higher rates; employees are entitled to whichever rate is higher — federal or state."
+              },
+              {
+                q: "Which state has the highest minimum wage in 2025?",
+                a: "Among the 50 states, New York has the highest minimum wage at $17.00/hour for New York City, Long Island, and Westchester County ($16.50 for the rest of the state). Washington State's statewide minimum is $16.66/hour. Washington D.C. has the highest rate of any U.S. jurisdiction at $17.95/hour."
+              },
+              {
+                q: "What is the minimum wage for tipped employees?",
+                a: "Under federal law, employers may pay tipped employees as little as $2.13/hour — the \"tip credit\" — as long as tips bring the total to at least $7.25/hour. In 8 states (AK, CA, MN, MT, NV, OR, WA, and others), employers must pay tipped workers the full state minimum wage before tips."
+              }
+            ].map((faq, index) => (
+              <div key={index} className={`${styles.faqItem} ${openFaqs[index] ? styles.open : ''}`}>
+                <button className={styles.faqQ} onClick={() => toggleFaq(index)}>{faq.q} <span className={styles.faqIcon}>+</span></button>
+                <div className={styles.faqA}>{faq.a}</div>
+              </div>
+            ))}
           </section>
 
           <div className={styles.sourcesBox}>
             <h4>Sources</h4>
-            <p>U.S. Department of Labor State Minimum Wage Laws (dol.gov) · NCSL State Minimum Wages (Jan 2026) · Paycor Minimum Wage by State 2025 · Fingercheck 2025 State Minimum Wages · Workforce.com (Dec 2024) · Paycom 2026 guide · NY State DOL</p>
+            <p>U.S. Department of Labor State Minimum Wage Laws (dol.gov) · NCSL State Minimum Wages (Jan 2026) · Paycor Minimum Wage by State 2025 · Fingercheck 2025 State Minimum Wages</p>
           </div>
         </main>
 
@@ -397,23 +365,22 @@ const MinimumWageByState = () => {
           <div className={styles.ctaCard}>
             <h4>What's my retirement number?</h4>
             <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
-            <div onClick={() => router.push('/retirement-calculator')} className={styles.ctaBtn}>
+            <div onClick={() => router.push('/retirement-calculator')} className={styles.ctaBtn} style={{cursor: 'pointer'}}>
               Check Here
             </div>
           </div>
           <div className={styles.sidebarCard}>
             <h4>Related Guides</h4>
             <ul className={styles.relatedLinks}>
-              <li><a onClick={() => router.push('/rent-by-city')}>Average Rent by City 2025</a></li>
-              <li><a onClick={() => router.push('/median-household-income')}>Median Household Income by State</a></li>
-              <li><a onClick={() => router.push('/health-insurance-costs')}>Health Insurance Costs 2025</a></li>
-              <li><a onClick={() => router.push('/long-term-care-costs')}>Long-Term Care Costs 2025</a></li>
-              <li><a onClick={() => router.push('/how-much-to-retire')}>How Much Do I Need to Retire?</a></li>
+              <li><Link href="/rent-by-city">Average Rent by City 2025</Link></li>
+              <li><Link href="/median-household-income">Median Household Income by State</Link></li>
+              <li><Link href="/health-insurance-costs">Health Insurance Costs 2025</Link></li>
+              <li><Link href="/how-much-to-retire">How Much Do I Need to Retire?</Link></li>
             </ul>
           </div>
         </aside>
       </div>
-          <PartnersSection 
+      <PartnersSection 
         titleFontSize="28px !important"
         titleFontWeight={800}
         titleColor="var(--navy) !important"
@@ -422,7 +389,7 @@ const MinimumWageByState = () => {
         subtitleColor="var(--text-mid)"
         rootPadding="40px 0 0"
       />
-      </div>
+    </div>
   );
 };
 

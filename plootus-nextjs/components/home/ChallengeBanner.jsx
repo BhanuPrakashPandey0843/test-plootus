@@ -12,7 +12,7 @@ const useStyles = makeStyles()((theme) => ({
     position: 'relative',
     overflow: 'hidden',
     borderRadius: theme.spacing(2),
-    marginBottom: theme.spacing(2),
+    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
     [theme.breakpoints.up('md')]: {

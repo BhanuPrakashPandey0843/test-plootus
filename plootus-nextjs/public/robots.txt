@@ -1,0 +1,20 @@
+
+# https://www.robotstxt.org/robotstxt.html
+
+User-agent: *
+Disallow:
+
+# Explicit AI bot access
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://www.plootus.com/sitemap.xml

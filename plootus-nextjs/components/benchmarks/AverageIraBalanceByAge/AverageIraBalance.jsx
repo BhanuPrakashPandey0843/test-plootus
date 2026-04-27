@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import styles from './AverageIraBalance.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -33,6 +34,34 @@ const AverageIraBalance = () => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Average IRA Balance by Age in 2026: Roth & Traditional | Plootus</title>
+        <meta name="description" content="See average IRA and Roth IRA balances by age in 2026. Compare your savings against Vanguard and Fidelity benchmarks and learn 2026 contribution limits." />
+        <link rel="canonical" href="https://www.plootus.com/average-ira-balance-by-age" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Average IRA Balance by Age in 2026: Roth & Traditional Benchmarks",
+            "description": "Comprehensive guide on IRA savings trends, including average and median balances across age groups and 2026 tax rules.",
+            "author": {
+              "@type": "Organization",
+              "name": "Plootus Research Team"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Plootus",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.plootus.com/logo.png"
+              }
+            },
+            "datePublished": "2026-04-01",
+            "dateModified": "2026-04-01"
+          })}
+        </script>
+      </Head>
+
       <HubNav />
 
       <div className={styles.hero}>
@@ -208,7 +237,7 @@ const AverageIraBalance = () => {
                   <td>$126,000–$146,000</td>
                 </tr>
                 <tr>
-                  <td>Backdoor Roth IRA available above?</td>
+                  <td>Backdoor Roth IRA available?</td>
                   <td className={styles.green}>✅ Yes, any income</td>
                   <td className={styles.green}>✅ Yes, any income</td>
                 </tr>
@@ -249,7 +278,7 @@ const AverageIraBalance = () => {
             <p>
               Plootus connects to your IRA and 401(k) accounts, shows your real balance versus benchmarks, and recommends the optimal fund selections — completely free.
             </p>
-            <a href="/">Connect My IRA →</a>
+            <div onClick={() => router.push('/')} style={{cursor: 'pointer', color: 'white', textDecoration: 'underline'}}>Connect My IRA →</div>
           </div>
 
           <div className={styles['sources-box']}>
@@ -279,17 +308,17 @@ const AverageIraBalance = () => {
           <div className={styles['cta-card']}>
             <h4>What's my retirement number?</h4>
             <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
-            <a onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']}>
+            <div onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']} style={{cursor: 'pointer'}}>
               Check Here
-            </a>
+            </div>
           </div>
           <div className={`${styles['sidebar-card']} ${styles['related-card']}`}>
             <h4>Related Guides</h4>
-            <a href="/roth-vs-traditional">→ Roth vs. Traditional IRA Calculator</a>
-            <a href="/401k-balance-by-age">→ Average 401(k) Balance by Age</a>
-            <a href="/hsa-contribution-limits">→ HSA Guide 2026</a>
-            <a href="/how-much-to-retire">→ How Much Do I Need to Retire?</a>
-            <a href="/roth-vs-traditional">→ Backdoor Roth IRA Guide</a>
+            <div onClick={() => router.push('/roth-vs-traditional')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ Roth vs. Traditional IRA Calculator</div>
+            <div onClick={() => router.push('/401k-balance-by-age')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ Average 401(k) Balance by Age</div>
+            <div onClick={() => router.push('/hsa-contribution-limits')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ HSA Guide 2026</div>
+            <div onClick={() => router.push('/how-much-to-retire')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ How Much Do I Need to Retire?</div>
+            <div onClick={() => router.push('/roth-vs-traditional')} style={{cursor: 'pointer', color: 'var(--blue)'}}>→ Backdoor Roth IRA Guide</div>
           </div>
           <div className={styles['sidebar-card']} style={{ background: 'var(--off-white)' }}>
             <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--text-light)', marginBottom: '8px' }}>
@@ -305,7 +334,7 @@ const AverageIraBalance = () => {
         </aside>
       </div>
 
-          <PartnersSection 
+      <PartnersSection 
         titleFontSize="22px"
         titleFontWeight={800}
         titleColor="var(--navy) !important"
@@ -314,7 +343,7 @@ const AverageIraBalance = () => {
         subtitleColor="var(--text-mid)"
         rootPadding="40px 0 0"
       />
-      </div>
+    </div>
   );
 };
 

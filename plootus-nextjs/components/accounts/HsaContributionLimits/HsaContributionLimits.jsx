@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import styles from './HsaContributionLimits.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -38,6 +39,34 @@ const HsaContributionLimits = () => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>HSA Contribution Limits 2026: How to Use Your HSA as a Retirement Account | Plootus</title>
+        <meta name="description" content="The HSA is the only account in the U.S. tax code with a triple tax advantage. Learn the 2026 contribution limits and the retirement optimization strategy." />
+        <link rel="canonical" href="https://www.plootus.com/hsa-contribution-limits" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "HSA Contribution Limits 2026: How to Use Your HSA as a Retirement Account",
+            "description": "Complete guide to Health Savings Account (HSA) contribution limits for 2026, IRS rules, and the triple-tax-free retirement strategy.",
+            "author": {
+              "@type": "Organization",
+              "name": "Plootus Research Team"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Plootus",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.plootus.com/logo.png"
+              }
+            },
+            "datePublished": "2026-04-01",
+            "dateModified": "2026-04-25"
+          })}
+        </script>
+      </Head>
+
       <HubNav />
 
       <div className={styles.hero}>
@@ -257,17 +286,17 @@ const HsaContributionLimits = () => {
           <div className={styles['cta-card']}>
             <h4>What's my retirement number?</h4>
             <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
-            <a onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']}>
+            <div onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']}>
               Check Here
-            </a>
+            </div>
           </div>
           <div className={`${styles['sidebar-card']} ${styles['related-card']}`}>
             <h4>Related Guides</h4>
-            <a href="/403b-guide">→ 403(b) Plan Guide</a>
-            <a href="/roth-vs-traditional">→ Roth vs. Traditional IRA</a>
-            <a href="/healthcare-costs-in-retirement">→ Healthcare Costs in Retirement</a>
-            <a href="/401k-by-age">→ 401(k) Contribution Limits</a>
-            <a href="/how-much-to-retire">→ How Much Do I Need to Retire?</a>
+            <div onClick={() => router.push('/403b-guide')} style={{cursor: 'pointer'}}>→ 403(b) Plan Guide</div>
+            <div onClick={() => router.push('/roth-vs-traditional')} style={{cursor: 'pointer'}}>→ Roth vs. Traditional IRA</div>
+            <div onClick={() => router.push('/healthcare-costs-in-retirement')} style={{cursor: 'pointer'}}>→ Healthcare Costs in Retirement</div>
+            <div onClick={() => router.push('/401k-by-age')} style={{cursor: 'pointer'}}>→ 401(k) Contribution Limits</div>
+            <div onClick={() => router.push('/how-much-to-retire')} style={{cursor: 'pointer'}}>→ How Much Do I Need to Retire?</div>
           </div>
           <div className={styles['sidebar-card']} style={{ background: 'var(--off-white)' }}>
             <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--text-light)', marginBottom: '8px' }}>Key Stat</p>
@@ -276,7 +305,7 @@ const HsaContributionLimits = () => {
           </div>
         </aside>
       </div>
-          <PartnersSection 
+      <PartnersSection 
         titleFontSize="22px"
         titleFontWeight={800}
         titleColor="var(--navy) !important"
@@ -285,7 +314,7 @@ const HsaContributionLimits = () => {
         subtitleColor="var(--text-mid)"
         rootPadding="40px 0 0"
       />
-      </div>
+    </div>
   );
 };
 

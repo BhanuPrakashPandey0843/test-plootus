@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import styles from './MedicareSuplementMedigapComparison.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -14,6 +15,33 @@ const MedicareSuplementMedigapComparison = () => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Medigap vs. Medicare Advantage Comparison (2026) | Plootus</title>
+        <meta name="description" content="Compare Medigap Plan G, Plan N, and Medicare Advantage (Part C) for 2026. Learn about out-of-pocket costs, enrollment rules, and provider networks." />
+        <link rel="canonical" href="https://www.plootus.com/medicare-supplement-medigap-comparison" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Medigap vs. Medicare Advantage: Plan G, Plan N, and Part C Compared (2026)",
+            "description": "Comprehensive guide on Medicare supplement options, including detailed cost analysis and enrollment timelines.",
+            "author": {
+              "@type": "Organization",
+              "name": "Plootus Research Team"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Plootus",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.plootus.com/logo.png"
+              }
+            },
+            "datePublished": "2026-04-01",
+            "dateModified": "2026-04-01"
+          })}
+        </script>
+      </Head>
 
       <HubNav />
 
@@ -244,16 +272,16 @@ const MedicareSuplementMedigapComparison = () => {
           <div className={styles['cta-card']}>
             <h4>What's my retirement number?</h4>
             <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
-            <a onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']}>
+            <div onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']} style={{cursor: 'pointer'}}>
               Check Here
-            </a>
+            </div>
           </div>
           <div className={`${styles['sidebar-card']} ${styles['related-card']}`}>
             <h4>Related Guides</h4>
-            <a href="/healthcare-costs-in-retirement">→ Healthcare Costs in Retirement</a>
-            <a href="/long-term-care-costs">→ Long-Term Care Costs</a>
-            <a href="/hsa-contribution-limits">→ HSA Contribution Limits</a>
-            <a href="/how-much-to-retire">→ How Much Do I Need to Retire?</a>
+            <div onClick={() => router.push('/healthcare-costs-in-retirement')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ Healthcare Costs in Retirement</div>
+            <div onClick={() => router.push('/long-term-care-costs')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ Long-Term Care Costs</div>
+            <div onClick={() => router.push('/hsa-contribution-limits')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ HSA Contribution Limits</div>
+            <div onClick={() => router.push('/how-much-to-retire')} style={{cursor: 'pointer', color: 'var(--blue)'}}>→ How Much Do I Need to Retire?</div>
           </div>
           <div className={styles['sidebar-card']} style={{ background: 'var(--off-white)' }}>
             <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--text-light)', marginBottom: '8px' }}>Key Stat</p>
@@ -262,7 +290,7 @@ const MedicareSuplementMedigapComparison = () => {
           </div>
         </aside>
       </div>
-          <PartnersSection 
+      <PartnersSection 
         titleFontSize="22px"
         titleFontWeight={800}
         titleColor="var(--navy) !important"
@@ -271,7 +299,7 @@ const MedicareSuplementMedigapComparison = () => {
         subtitleColor="var(--text-mid)"
         rootPadding="40px 0 0"
       />
-      </div>
+    </div>
   );
 };
 

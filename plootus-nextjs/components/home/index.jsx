@@ -29,7 +29,7 @@ const Home = () => {
   return (
     <div className={classes.root}>
       <HubNav />
-      <Container style={{ maxWidth: '100%', padding: 0, margin: 0 }}>
+      <Container maxWidth="xl" sx={{ mt: 4, mb: 4, display: 'flex', flexDirection: 'column', gap: 4 }}>
         <ChallengeBanner />
         <HeroSection />
         <PartnersSection />

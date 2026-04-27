@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import styles from './AverageMonthlyExpensesByState.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -33,6 +34,11 @@ const AverageMonthlyExpensesByState = () => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Average Monthly Expenses by State 2026: Cost of Living Comparison | Plootus</title>
+        <meta name="description" content="See how monthly expenses range by state in 2026. From $3,500 in Mississippi to $7,200 in Hawaii. Learn how your location impacts your retirement savings goal." />
+        <link rel="canonical" href="https://www.plootus.com/average-monthly-expenses-by-state" />
+      </Head>
 
       <HubNav />
 
@@ -355,7 +361,7 @@ const AverageMonthlyExpensesByState = () => {
             <p>
               Plootus calculates your exact retirement number based on your actual monthly spending and state — not national averages that may be wildly off for you.
             </p>
-            <a href="/">Calculate My Number →</a>
+            <div onClick={() => router.push('/')} style={{cursor: 'pointer'}}>Calculate My Number →</div>
           </div>
 
           <div className={styles['sources-box']}>
@@ -382,17 +388,17 @@ const AverageMonthlyExpensesByState = () => {
           <div className={styles['cta-card']}>
             <h4>What's my retirement number?</h4>
             <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
-            <div onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']}>
+            <div onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']} style={{cursor: 'pointer'}}>
               Check Here
             </div>
           </div>
           <div className={`${styles['sidebar-card']} ${styles['related-card']}`}>
             <h4>Related Guides</h4>
-            <a href="/cheapest-states-to-retire">→ Cheapest States to Retire 2026</a>
-            <a href="/best-states-to-retire">→ Best States to Retire 2026</a>
-            <a href="/cost-of-raising-child-by-state">→ Cost of Raising a Child by State</a>
-            <a href="/tool-state-comparison">→ State Retirement Comparison Tool</a>
-            <a href="/how-much-to-retire">→ How Much Do I Need to Retire?</a>
+            <div onClick={() => router.push('/cheapest-states-to-retire')} style={{cursor: 'pointer'}}>→ Cheapest States to Retire 2026</div>
+            <div onClick={() => router.push('/best-states-to-retire')} style={{cursor: 'pointer'}}>→ Best States to Retire 2026</div>
+            <div onClick={() => router.push('/cost-of-raising-child-by-state')} style={{cursor: 'pointer'}}>→ Cost of Raising a Child by State</div>
+            <div onClick={() => router.push('/tool-state-comparison')} style={{cursor: 'pointer'}}>→ State Retirement Comparison Tool</div>
+            <div onClick={() => router.push('/how-much-to-retire')} style={{cursor: 'pointer'}}>→ How Much Do I Need to Retire?</div>
           </div>
           <div className={styles['sidebar-card']} style={{ background: 'var(--off-white)' }}>
             <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--text-light)', marginBottom: '8px' }}>
@@ -407,8 +413,7 @@ const AverageMonthlyExpensesByState = () => {
           </div>
         </aside>
       </div>
-
-          <PartnersSection 
+      <PartnersSection 
         titleFontSize="22px"
         titleFontWeight={800}
         titleColor="var(--navy) !important"
@@ -417,7 +422,7 @@ const AverageMonthlyExpensesByState = () => {
         subtitleColor="var(--text-mid)"
         rootPadding="40px 0 0"
       />
-      </div>
+    </div>
   );
 };
 

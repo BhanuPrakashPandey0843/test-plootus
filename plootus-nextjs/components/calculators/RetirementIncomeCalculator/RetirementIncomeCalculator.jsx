@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import styles from './RetirementIncomeCalculator.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -49,6 +50,25 @@ const RetirementIncomeCalculator = () => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Retirement Income Calculator: Portfolio Longevity | Plootus</title>
+        <meta name="description" content="Find out how long your retirement savings will last. Use our interactive calculator to project decumulation, including Social Security and inflation." />
+        <link rel="canonical" href="https://www.plootus.com/retirement-income-calculator" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Retirement Income Calculator",
+            "operatingSystem": "All",
+            "applicationCategory": "FinancialApplication",
+            "description": "An interactive tool to project how long a retirement portfolio will last based on withdrawal needs and Social Security.",
+            "author": {
+              "@type": "Organization",
+              "name": "Plootus"
+            }
+          })}
+        </script>
+      </Head>
 
       <HubNav />
 
@@ -240,7 +260,7 @@ const RetirementIncomeCalculator = () => {
           <div className={styles['cta-banner']}>
             <h3>See Your Personalized Retirement Income Plan</h3>
             <p>Connect your actual accounts and get a decumulation strategy tailored to your balance, tax situation, and Social Security timing — free with Plootus.</p>
-            <a href="/">Get My Retirement Plan →</a>
+            <div onClick={() => router.push('/')} style={{cursor: 'pointer', color: 'white', textDecoration: 'underline'}}>Get My Retirement Plan →</div>
           </div>
 
           <div className={styles['sources-box']}>
@@ -270,16 +290,16 @@ const RetirementIncomeCalculator = () => {
           <div className={styles['cta-card']}>
             <h4>What's my retirement number?</h4>
             <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
-            <a onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']}>
+            <div onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']} style={{cursor: 'pointer'}}>
               Check Here
-            </a>
+            </div>
           </div>
           <div className={`${styles['sidebar-card']} ${styles['related-card']}`}>
             <h4>Related Guides</h4>
-            <a href="/how-much-to-retire">→ How Much Do I Need to Retire?</a>
-            <a href="/roth-vs-traditional">→ Roth vs Traditional IRA</a>
-            <a href="/social-security-benefits">→ Social Security Benefits Guide</a>
-            <a href="/tax-friendly-states-for-retirees">→ Tax-Friendly States for Retirees</a>
+            <div onClick={() => router.push('/how-much-to-retire')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ How Much Do I Need to Retire?</div>
+            <div onClick={() => router.push('/roth-vs-traditional')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ Roth vs Traditional IRA</div>
+            <div onClick={() => router.push('/social-security-benefits')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ Social Security Benefits Guide</div>
+            <div onClick={() => router.push('/tax-friendly-states-for-retirees')} style={{cursor: 'pointer', color: 'var(--blue)'}}>→ Tax-Friendly States for Retirees</div>
           </div>
           <div className={styles['sidebar-card']} style={{ background: 'var(--off-white)' }}>
             <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--text-light)', marginBottom: '8px' }}>Key Stat</p>
@@ -288,7 +308,7 @@ const RetirementIncomeCalculator = () => {
           </div>
         </aside>
       </div>
-          <PartnersSection 
+      <PartnersSection 
         titleFontSize="22px"
         titleFontWeight={800}
         titleColor="var(--navy) !important"
@@ -297,7 +317,7 @@ const RetirementIncomeCalculator = () => {
         subtitleColor="var(--text-mid)"
         rootPadding="40px 0 0"
       />
-      </div>
+    </div>
   );
 };
 

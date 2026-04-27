@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import styles from './SocialSecurityCalculator.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -79,6 +80,25 @@ const SocialSecurityCalculator = () => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Social Security Calculator 2026: Break-Even Analysis | Plootus</title>
+        <meta name="description" content="Estimate your Social Security benefit at 62, 67, and 70. Use our break-even calculator to find the optimal age to claim based on birth year and FRA." />
+        <link rel="canonical" href="https://www.plootus.com/social-security-calculator" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Social Security Calculator",
+            "operatingSystem": "All",
+            "applicationCategory": "FinancialApplication",
+            "description": "An interactive calculator to compare Social Security benefits at different claiming ages (62, 67, 70) with break-even analysis.",
+            "author": {
+              "@type": "Organization",
+              "name": "Plootus"
+            }
+          })}
+        </script>
+      </Head>
 
       <HubNav />
 
@@ -221,17 +241,17 @@ const SocialSecurityCalculator = () => {
           <div className={styles['cta-card']}>
             <h4>What's my retirement number?</h4>
             <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
-            <a onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']}>
+            <div onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']} style={{cursor: 'pointer'}}>
               Check Here
-            </a>
+            </div>
           </div>
           <div className={`${styles['sidebar-card']} ${styles['related-card']}`}>
             <h4>Related Guides</h4>
-            <a href="https://www.plootus.com/social-security-benefits">→ Social Security Benefits Guide</a>
-            <a href="/how-much-to-retire">→ How Much Do I Need to Retire?</a>
-            <a href="https://www.plootus.com/tax-friendly-states-for-retirees">→ Tax-Friendly States for Retirees</a>
-            <a href="https://www.plootus.com/retirement-income-calculator">→ Retirement Income Calculator</a>
-            <a href="https://www.plootus.com/how-to-plan-retirement">→ How to Plan for Retirement</a>
+            <div onClick={() => router.push('/social-security-benefits')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ Social Security Benefits Guide</div>
+            <div onClick={() => router.push('/how-much-to-retire')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ How Much Do I Need to Retire?</div>
+            <div onClick={() => router.push('/tax-friendly-states-for-retirees')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ Tax-Friendly States for Retirees</div>
+            <div onClick={() => router.push('/retirement-income-calculator')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ Retirement Income Calculator</div>
+            <div onClick={() => router.push('/how-to-plan-retirement')} style={{cursor: 'pointer', color: 'var(--blue)'}}>→ How to Plan for Retirement</div>
           </div>
           <div className={styles['sidebar-card']} style={{ background: 'var(--off-white)' }}>
             <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--text-light)', marginBottom: '8px' }}>Key Stat</p>
@@ -240,7 +260,7 @@ const SocialSecurityCalculator = () => {
           </div>
         </aside>
       </div>
-          <PartnersSection 
+      <PartnersSection 
         titleFontSize="22px"
         titleFontWeight={800}
         titleColor="var(--navy) !important"
@@ -249,7 +269,7 @@ const SocialSecurityCalculator = () => {
         subtitleColor="var(--text-mid)"
         rootPadding="40px 0 0"
       />
-      </div>
+    </div>
   );
 };
 

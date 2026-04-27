@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import styles from './NavBar.module.css';
+
+import LogIn from '../auth/LogIn';
+import MainSignupModal from '../auth/MainSignupModal';
+import { LoginSignupContext } from '../auth/LoginSignupContext';
 
 const NavBar = () => {
   const [solutionsOpen, setSolutionsOpen] = useState(false);
@@ -15,6 +19,13 @@ const NavBar = () => {
   const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  
+  const { 
+    loginModal, setLoginModal, 
+    signupModal, setSignupModal 
+  } = useContext(LoginSignupContext);
+
   const router = useRouter();
 
   useEffect(() => {
@@ -39,13 +50,18 @@ const NavBar = () => {
   }, [solutionsOpen, resourcesOpen]);
 
   useEffect(() => {
-    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'unset';
-  }, [isMobileMenuOpen]);
+    document.body.style.overflow = (isMobileMenuOpen || loginModal || signupModal) ? 'hidden' : 'unset';
+  }, [isMobileMenuOpen, loginModal, signupModal]);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [router.pathname]);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsAuthenticated(!!localStorage.getItem('jwt_token'));
+    }
+  }, [router.pathname, loginModal, signupModal]);
 
   const isLinkActive = (path) => {
     if (path === '/') return router.pathname === path;
@@ -75,7 +91,7 @@ const NavBar = () => {
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
         <Link href="/" className={styles.logoContainer}>
-          <img src="/images/logo2.png" alt="Plootus" className={styles.logo} />
+          <img src="/images/Plootus.png" alt="Plootus" className={styles.logo} />
         </Link>
 
         {/* Desktop Navigation */}
@@ -166,10 +182,26 @@ const NavBar = () => {
         </button>
 
         {/* Desktop Auth Buttons */}
-        <div className={styles.authButtons}>
-          <a href="https://app.plootus.com/login" className={styles.loginBtn}>Sign In</a>
-          <a href="https://app.plootus.com/signup" className={styles.signupBtn}>Get Started</a>
-        </div>
+        {!isAuthenticated ? (
+          <div className={styles.authButtons}>
+            <div className={styles.loginWrapper}>
+              <LogIn
+                modalIsOpen={loginModal}
+                openModal={() => setLoginModal(true)}
+                closeModal={() => setLoginModal(false)}
+                signupopenModal={() => setSignupModal(true)}
+              />
+            </div>
+            <div className={styles.signupWrapper}>
+              <MainSignupModal
+                modalIsOpen={signupModal}
+                openModal={() => setSignupModal(true)}
+                closeModal={() => setSignupModal(false)}
+                loginopenModal={() => setLoginModal(true)}
+              />
+            </div>
+          </div>
+        ) : null}
       </div>
 
       {/* Mobile Menu */}
@@ -245,8 +277,8 @@ const NavBar = () => {
           </Link>
 
           <div className={styles.mobileAuthButtons}>
-            <a href="https://app.plootus.com/login" className={styles.mobileLoginBtn}>Sign In</a>
-            <a href="https://app.plootus.com/signup" className={styles.mobileSignupBtn}>Get Started</a>
+            <button onClick={() => { setLoginModal(true); setIsMobileMenuOpen(false); }} className={styles.mobileLoginBtn}>Sign In</button>
+            <button onClick={() => { setSignupModal(true); setIsMobileMenuOpen(false); }} className={styles.mobileSignupBtn}>Get Started</button>
           </div>
         </div>
       </div>

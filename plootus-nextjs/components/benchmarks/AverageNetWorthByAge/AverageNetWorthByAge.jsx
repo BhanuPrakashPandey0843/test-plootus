@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import styles from './AverageNetWorthByAge.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -75,6 +76,34 @@ const AverageNetWorthByAge = () => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Average Net Worth by Age in 2026: Official Benchmarks | Plootus</title>
+        <meta name="description" content="Report on average and median net worth by age in 2026 based on Federal Reserve data. Compare your net worth and retirement readiness today." />
+        <link rel="canonical" href="https://www.plootus.com/average-net-worth-by-age" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Average Net Worth by Age in 2026: Every Benchmark You Need",
+            "description": "Comprehensive guide on household net worth trends in the U.S., including percentile rankings and retirement impact analysis.",
+            "author": {
+              "@type": "Organization",
+              "name": "Plootus Research Team"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Plootus",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.plootus.com/logo.png"
+              }
+            },
+            "datePublished": "2026-04-01",
+            "dateModified": "2026-04-01"
+          })}
+        </script>
+      </Head>
+
       <HubNav />
 
       <div className={styles.hero}>
@@ -344,7 +373,7 @@ const AverageNetWorthByAge = () => {
           <div className={styles['cta-banner']}>
             <h3>See Your Real Retirement Readiness Score</h3>
             <p>Plootus connects to your actual 401(k) and shows exactly where you stand against these benchmarks — personalized to your salary, age, and state — in minutes.</p>
-            <a href="/">Connect My Accounts Free →</a>
+            <div onClick={() => router.push('/')} style={{cursor: 'pointer', color: 'white', textDecoration: 'underline'}}>Connect My Accounts Free →</div>
           </div>
 
           <div className={styles['sources-box']}>
@@ -376,17 +405,17 @@ const AverageNetWorthByAge = () => {
           <div className={styles['cta-card']}>
             <h4>What's my retirement number?</h4>
             <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
-            <a onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']}>
+            <div onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']} style={{cursor: 'pointer'}}>
               Check Here
-            </a>
+            </div>
           </div>
           <div className={`${styles['sidebar-card']} ${styles['related-card']}`}>
             <h4>Related Guides</h4>
-            <a href="/how-much-to-retire">→ How Much Do I Need to Retire?</a>
-            <a href="/401k-balance-by-age">→ Average 401(k) Balance by Age</a>
-            <a href="/average-savings-by-age">→ Average Savings by Age</a>
-            <a href="/best-states-to-retire">→ Best States to Retire 2026</a>
-            <a href="/roth-vs-traditional">→ Roth vs. Traditional IRA</a>
+            <div onClick={() => router.push('/how-much-to-retire')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ How Much Do I Need to Retire?</div>
+            <div onClick={() => router.push('/401k-balance-by-age')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ Average 401(k) Balance by Age</div>
+            <div onClick={() => router.push('/average-savings-by-age')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ Average Savings by Age</div>
+            <div onClick={() => router.push('/best-states-to-retire')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ Best States to Retire 2026</div>
+            <div onClick={() => router.push('/roth-vs-traditional')} style={{cursor: 'pointer', color: 'var(--blue)'}}>→ Roth vs. Traditional IRA</div>
           </div>
           <div className={styles['sidebar-card']} style={{ background: 'var(--off-white)' }}>
             <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--text-light)', marginBottom: '8px' }}>

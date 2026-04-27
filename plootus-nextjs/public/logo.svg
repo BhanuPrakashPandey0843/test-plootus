@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="216px" height="45px" viewBox="0 0 216 45" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 11</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#76FCFB" offset="0%"></stop>
+            <stop stop-color="#76EC77" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="5.72749429%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#070E73" offset="0%"></stop>
+            <stop stop-color="#12A6D3" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home_page" transform="translate(-74.000000, -40.000000)">
+            <g id="Group-11" transform="translate(74.000000, 35.000000)">
+                <g id="Group-4" transform="translate(54.000000, 0.000000)">
+                    <path d="M0.5,16.1875 L0.5,42.8125" id="Line-3" stroke="#0F4F9A" stroke-linecap="square"></path>
+                    <text id="Plootus" font-family="OpenSans-Semibold, Open Sans" font-size="40" font-weight="500" fill="#0F4F9A">
+                        <tspan x="19" y="43">Plootus</tspan>
+                    </text>
+                </g>
+                <g id="Group-60" transform="translate(0.000000, 5.000000)">
+                    <polygon id="Path-107" fill="url(#linearGradient-1)" points="4.41653316 24.1093952 4.41653316 7.47858489 9.09494702e-13 7.47858489 7.52483429 0.818181818 15.0342134 7.47858489 11.1931569 7.47858489 11.1931569 21.1081007"></polygon>
+                    <path d="M3.36363636,44.5300427 L3.36363636,26.7815106 C4.6292435,22.6626001 7.63203269,20.2709905 12.3720039,19.6066817 C19.3002947,19.6066817 27.815893,20.94561 28.063413,14.2193 C28.3109331,7.49299 23.542955,6.62467516 16.8962467,6.62909407 C12.3732655,3.07040253 9.76484313,0.860704507 9.07097957,0 L23.6151534,2.19857712e-07 C26.811741,2.19857712e-07 29.8502235,1.39052199 31.9397352,3.80963613 C36.0698655,8.59125898 37.190859,13.1669633 35.3027155,17.536749 C31.7267463,25.8127191 26.7364936,26.7815106 22.3485004,26.7815106 C17.9605072,26.7815106 12.3720039,24.9800703 12.3720039,31.9302714 C12.3720039,36.5637389 12.4431222,40.9120784 12.5853586,44.9752901 L10.8668406,44.9752901 L10.8668406,37.968071 L10.0087929,37.968071 L10.0087929,44.9752901 L8.43880766,44.9752901 L8.43880766,39.9027567 L7.4885803,39.9027567 L7.4885803,44.9752901 L5.88659361,44.9752901 L5.88659361,41.7219517 L4.86267359,41.7219517 L4.86267359,44.9752901 L3.36363636,44.9752901 L3.36363636,44.5300427 Z" id="Path-106" fill="url(#linearGradient-2)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

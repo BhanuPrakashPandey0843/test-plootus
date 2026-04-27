@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import Chart from 'chart.js/auto';
 import styles from './CompoundInterestCalculator.module.css';
 import PartnersSection from '../../home/PartnersSection';
@@ -126,6 +127,25 @@ const CompoundInterestCalculator = () => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Compound Interest Calculator — With 401(k) Match (2026) | Plootus</title>
+        <meta name="description" content="Use our compound interest calculator to see how your money grows. Includes employer 401(k) match for high-fidelity retirement projections." />
+        <link rel="canonical" href="https://www.plootus.com/compound-interest-calculator" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Compound Interest Calculator",
+            "operatingSystem": "All",
+            "applicationCategory": "FinancialApplication",
+            "description": "An interactive calculator to project investment growth including employer 401(k) match and compounding interest.",
+            "author": {
+              "@type": "Organization",
+              "name": "Plootus"
+            }
+          })}
+        </script>
+      </Head>
 
       <HubNav />
 
@@ -298,7 +318,7 @@ const CompoundInterestCalculator = () => {
           <div className={styles['cta-banner']}>
             <h3>Make Compound Interest Work Harder for You</h3>
             <p>The real lever in your 401(k) is fund selection — high-expense-ratio funds can reduce your effective compound return by 1% or more per year. Plootus identifies and replaces high-fee funds in your specific plan with better alternatives.</p>
-            <a href="/">Optimize My Funds →</a>
+            <div onClick={() => router.push('/')} style={{cursor: 'pointer', color: 'white', textDecoration: 'underline'}}>Optimize My Funds →</div>
           </div>
 
           <div className={styles['sources-box']}>
@@ -326,17 +346,17 @@ const CompoundInterestCalculator = () => {
           <div className={styles['cta-card']}>
             <h4>What's my retirement number?</h4>
             <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
-            <a onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']}>
+            <div onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']} style={{cursor: 'pointer'}}>
               Check Here
-            </a>
+            </div>
           </div>
           <div className={`${styles['sidebar-card']} ${styles['related-card']}`}>
             <h4>Related Guides</h4>
-            <a href="/401k-by-age">→ 401(k) Contribution Limits 2026</a>
-            <a href="/roth-vs-traditional">→ Roth vs. Traditional IRA</a>
-            <a href="/hsa-contribution-limits">→ HSA Guide 2026</a>
-            <a href="/average-net-worth-by-age">→ Average Net Worth by Age</a>
-            <a href="/how-much-to-retire">→ How Much Do I Need to Retire?</a>
+            <div onClick={() => router.push('/401k-by-age')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ 401(k) Contribution Limits 2026</div>
+            <div onClick={() => router.push('/roth-vs-traditional')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ Roth vs. Traditional IRA</div>
+            <div onClick={() => router.push('/hsa-contribution-limits')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ HSA Guide 2026</div>
+            <div onClick={() => router.push('/average-net-worth-by-age')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ Average Net Worth by Age</div>
+            <div onClick={() => router.push('/how-much-to-retire')} style={{cursor: 'pointer', color: 'var(--blue)'}}>→ How Much Do I Need to Retire?</div>
           </div>
           <div className={styles['sidebar-card']} style={{ background: 'var(--off-white)' }}>
             <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--text-light)', marginBottom: '8px' }}>Key Stat</p>
@@ -345,7 +365,7 @@ const CompoundInterestCalculator = () => {
           </div>
         </aside>
       </div>
-          <PartnersSection 
+      <PartnersSection 
         titleFontSize="22px"
         titleFontWeight={800}
         titleColor="var(--navy) !important"
@@ -354,7 +374,7 @@ const CompoundInterestCalculator = () => {
         subtitleColor="var(--text-mid)"
         rootPadding="40px 0 0"
       />
-      </div>
+    </div>
   );
 };
 

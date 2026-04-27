@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import styles from './BestStatesForEarlyRetirement.module.css';
-import PartnersSection from '../../home/PartnersSection';
 import HubNav from '../../HubNav/HubNav';
+import PartnersSection from '../../home/PartnersSection';
 
 const BestStatesForEarlyRetirement = () => {
   const router = useRouter();
@@ -39,6 +40,31 @@ const BestStatesForEarlyRetirement = () => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Best States for Early Retirement (FIRE) in 2026: FIRE Number for All 50 States | Plootus</title>
+        <meta name="description" content="Calculate your FIRE number by state. Tennessee and South Dakota rank top for early retirement due to zero income tax and low cost of living. Full 50-state data." />
+        <link rel="canonical" href="https://www.plootus.com/best-states-for-early-retirement" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Best States for Early Retirement (FIRE) in 2026: FIRE Number for All 50 States",
+            "description": "Comprehensive guide to the best U.S. states for early retirement based on cost of living, taxation, and healthcare, using a 3.5% safe withdrawal rate.",
+            "author": {
+              "@type": "Organization",
+              "name": "Plootus Research Team"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Plootus",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.plootus.com/logo.png"
+              }
+            }
+          })}
+        </script>
+      </Head>
 
       <HubNav />
 
@@ -341,16 +367,16 @@ const BestStatesForEarlyRetirement = () => {
           <div className={styles['cta-card']}>
             <h4>What's my retirement number?</h4>
             <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
-            <div onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']}>
+            <div onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']} style={{cursor: 'pointer'}}>
               Check Here
             </div>
           </div>
           <div className={`${styles['sidebar-card']} ${styles['related-card']}`}>
             <h4>Related Guides</h4>
-            <a href="/retire-early">→ Retire Early — FIRE Guide</a>
-            <a href="/cheapest-states-to-retire">→ Cheapest States to Retire</a>
-            <a href="/tax-friendly-states-for-retirees">→ Tax-Friendly States</a>
-            <a href="/healthcare-costs-in-retirement">→ Healthcare in Retirement</a>
+            <div onClick={() => router.push('/retire-early')} style={{cursor: 'pointer'}}>→ Retire Early — FIRE Guide</div>
+            <div onClick={() => router.push('/cheapest-states-to-retire')} style={{cursor: 'pointer'}}>→ Cheapest States to Retire</div>
+            <div onClick={() => router.push('/tax-friendly-states-for-retirees')} style={{cursor: 'pointer'}}>→ Tax-Friendly States</div>
+            <div onClick={() => router.push('/healthcare-costs-in-retirement')} style={{cursor: 'pointer'}}>→ Healthcare in Retirement</div>
           </div>
           <div className={styles['sidebar-card']} style={{ background: 'var(--off-white)' }}>
             <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--text-light)', marginBottom: '8px' }}>Key Stat</p>
@@ -359,7 +385,7 @@ const BestStatesForEarlyRetirement = () => {
           </div>
         </aside>
       </div>
-          <PartnersSection 
+      <PartnersSection 
         titleFontSize="22px"
         titleFontWeight={800}
         titleColor="var(--navy) !important"
@@ -368,7 +394,7 @@ const BestStatesForEarlyRetirement = () => {
         subtitleColor="var(--text-mid)"
         rootPadding="40px 0 0"
       />
-      </div>
+    </div>
   );
 };
 

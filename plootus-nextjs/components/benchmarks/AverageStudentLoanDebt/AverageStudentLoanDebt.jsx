@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import styles from './AverageStudentLoanDebt.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -14,6 +15,34 @@ const AverageStudentLoanDebt = () => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Average Student Loan Debt by Age (2026) | Plootus</title>
+        <meta name="description" content="Report on average student loan debt by age in 2026. Learn how student loans delay retirement and find the best payoff vs. invest strategies." />
+        <link rel="canonical" href="https://www.plootus.com/average-student-loan-debt" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Average Student Loan Debt by Age (2026): The Retirement Delay Nobody Talks About",
+            "description": "Comprehensive guide on student loan trends in the U.S., including average balances by demographic and impact on retirement timelines.",
+            "author": {
+              "@type": "Organization",
+              "name": "Plootus Research Team"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Plootus",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.plootus.com/logo.png"
+              }
+            },
+            "datePublished": "2026-04-01",
+            "dateModified": "2026-04-01"
+          })}
+        </script>
+      </Head>
+
       <HubNav />
 
       <div className={styles.hero}>
@@ -222,16 +251,16 @@ const AverageStudentLoanDebt = () => {
           <div className={styles['cta-card']}>
             <h4>What's my retirement number?</h4>
             <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
-            <a onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']}>
+            <div onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']} style={{cursor: 'pointer'}}>
               Check Here
-            </a>
+            </div>
           </div>
           <div className={`${styles['sidebar-card']} ${styles['related-card']}`}>
             <h4>Related Guides</h4>
-            <a href="/compound-interest-calculator">→ Compound Interest Calculator</a>
-            <a href="/average-savings-by-age">→ Average Savings by Age</a>
-            <a href="/hsa-contribution-limits">→ HSA Contribution Limits</a>
-            <a href="/roth-vs-traditional">→ Roth vs Traditional IRA</a>
+            <div onClick={() => router.push('/compound-interest-calculator')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ Compound Interest Calculator</div>
+            <div onClick={() => router.push('/average-savings-by-age')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ Average Savings by Age</div>
+            <div onClick={() => router.push('/hsa-contribution-limits')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ HSA Contribution Limits</div>
+            <div onClick={() => router.push('/roth-vs-traditional')} style={{cursor: 'pointer', color: 'var(--blue)'}}>→ Roth vs Traditional IRA</div>
           </div>
           <div className={styles['sidebar-card']} style={{ background: 'var(--off-white)' }}>
             <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--text-light)', marginBottom: '8px' }}>Key Stat</p>
@@ -240,7 +269,7 @@ const AverageStudentLoanDebt = () => {
           </div>
         </aside>
       </div>
-          <PartnersSection 
+      <PartnersSection 
         titleFontSize="28px !important"
         titleFontWeight={800}
         titleColor="var(--navy) !important"
@@ -249,7 +278,7 @@ const AverageStudentLoanDebt = () => {
         subtitleColor="var(--text-mid)"
         rootPadding="40px 0 0"
       />
-      </div>
+    </div>
   );
 };
 

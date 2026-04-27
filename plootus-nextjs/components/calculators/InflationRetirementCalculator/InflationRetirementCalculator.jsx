@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import styles from './InflationRetirementCalculator.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -58,6 +59,25 @@ const InflationRetirementCalculator = () => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Inflation Retirement Calculator: Eroding Savings Impact | Plootus</title>
+        <meta name="description" content="Calculate how inflation and healthcare cost rises affect your retirement savings. Find strategies to inflation-proof your financial plan." />
+        <link rel="canonical" href="https://www.plootus.com/inflation-retirement-calculator" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Inflation Retirement Calculator",
+            "operatingSystem": "All",
+            "applicationCategory": "FinancialApplication",
+            "description": "An interactive tool to project the impact of general and healthcare inflation on retirement spending needs.",
+            "author": {
+              "@type": "Organization",
+              "name": "Plootus"
+            }
+          })}
+        </script>
+      </Head>
 
       <HubNav />
 
@@ -311,16 +331,16 @@ const InflationRetirementCalculator = () => {
           <div className={styles['cta-card']}>
             <h4>What's my retirement number?</h4>
             <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
-            <a onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']}>
+            <div onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']} style={{cursor: 'pointer'}}>
               Check Here
-            </a>
+            </div>
           </div>
           <div className={`${styles['sidebar-card']} ${styles['related-card']}`}>
             <h4>Related Guides</h4>
-            <a href="/how-much-to-retire">→ How Much Do I Need to Retire?</a>
-            <a href="/hsa-contribution-limits">→ HSA Contribution Limits</a>
-            <a href="/healthcare-costs-in-retirement">→ Healthcare Costs in Retirement</a>
-            <a href="/social-security-benefits">→ Social Security Benefits Guide</a>
+            <div onClick={() => router.push('/how-much-to-retire')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ How Much Do I Need to Retire?</div>
+            <div onClick={() => router.push('/hsa-contribution-limits')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ HSA Contribution Limits</div>
+            <div onClick={() => router.push('/healthcare-costs-in-retirement')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ Healthcare Costs in Retirement</div>
+            <div onClick={() => router.push('/social-security-benefits')} style={{cursor: 'pointer', color: 'var(--blue)'}}>→ Social Security Benefits Guide</div>
           </div>
           <div className={styles['sidebar-card']} style={{ background: 'var(--off-white)' }}>
             <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--text-light)', marginBottom: '8px' }}>Key Stat</p>
@@ -329,7 +349,7 @@ const InflationRetirementCalculator = () => {
           </div>
         </aside>
       </div>
-          <PartnersSection 
+      <PartnersSection 
         titleFontSize="22px"
         titleFontWeight={800}
         titleColor="var(--navy) !important"
@@ -338,7 +358,7 @@ const InflationRetirementCalculator = () => {
         subtitleColor="var(--text-mid)"
         rootPadding="40px 0 0"
       />
-      </div>
+    </div>
   );
 };
 

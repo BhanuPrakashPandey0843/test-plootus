@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import styles from './Guide403b.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -41,6 +42,12 @@ const Guide403b = () => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>403(b) Retirement Plan: Contribution Limits, Rules & Optimization Guide (2026) | Plootus</title>
+        <meta name="description" content="Complete guide to 403(b) retirement plans for teachers, nurses, and nonprofit workers. Covers 2026 contribution limits, catch-up rules, and investment strategies." />
+        <link rel="canonical" href="https://www.plootus.com/403b-guide" />
+      </Head>
+
       <HubNav />
 
       <div className={styles.hero}>
@@ -337,7 +344,7 @@ const Guide403b = () => {
               Plootus analyzes your specific 403(b) plan's investment options and tells you exactly which funds to choose — minimizing
               fees and maximizing long-term returns. Supports all major 403(b) providers including TIAA, Fidelity, Vanguard, and more.
             </p>
-            <a href="/">Optimize My 403(b) →</a>
+            <div onClick={() => router.push('/')} style={{cursor: 'pointer'}}>Optimize My 403(b) →</div>
           </div>
 
           <div className={styles['sources-box']}>
@@ -368,17 +375,17 @@ const Guide403b = () => {
           <div className={styles['cta-card']}>
             <h4>What's my retirement number?</h4>
             <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
-            <a onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']}>
+            <div onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']}>
               Check Here
-            </a>
+            </div>
           </div>
           <div className={`${styles['sidebar-card']} ${styles['related-card']}`}>
             <h4>Related Guides</h4>
-            <a href="/401k-by-age">→ 401(k) Contribution Limits 2026</a>
-            <a href="/roth-vs-traditional">→ Roth vs. Traditional IRA</a>
-            <a href="/hsa-contribution-limits">→ HSA Guide 2026</a>
-            <a href="/how-much-to-retire">→ How Much Do I Need to Retire?</a>
-            <a href="/457b-plan-guide">→ 457(b) Plan Guide</a>
+            <div onClick={() => router.push('/401k-by-age')} style={{cursor: 'pointer'}}>→ 401(k) Contribution Limits 2026</div>
+            <div onClick={() => router.push('/roth-vs-traditional')} style={{cursor: 'pointer'}}>→ Roth vs. Traditional IRA</div>
+            <div onClick={() => router.push('/hsa-contribution-limits')} style={{cursor: 'pointer'}}>→ HSA Guide 2026</div>
+            <div onClick={() => router.push('/how-much-to-retire')} style={{cursor: 'pointer'}}>→ How Much Do I Need to Retire?</div>
+            <div onClick={() => router.push('/457b-plan-guide')} style={{cursor: 'pointer'}}>→ 457(b) Plan Guide</div>
           </div>
           <div className={styles['sidebar-card']} style={{ background: 'var(--off-white)' }}>
             <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--text-light)', marginBottom: '8px' }}>
@@ -393,7 +400,7 @@ const Guide403b = () => {
           </div>
         </aside>
       </div>
-          <PartnersSection 
+      <PartnersSection 
         titleFontSize="22px"
         titleFontWeight={800}
         titleColor="var(--navy) !important"
@@ -402,7 +409,7 @@ const Guide403b = () => {
         subtitleColor="var(--text-mid)"
         rootPadding="40px 0 0"
       />
-      </div>
+    </div>
   );
 };
 

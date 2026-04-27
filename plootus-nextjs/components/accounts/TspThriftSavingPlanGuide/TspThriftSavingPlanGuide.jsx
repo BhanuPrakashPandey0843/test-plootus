@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import styles from './TspThriftSavingPlanGuide.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -14,6 +15,12 @@ const TspThriftSavingPlanGuide = () => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>TSP (Thrift Savings Plan) Guide 2026: Best Funds, Limits & Strategy | Plootus</title>
+        <meta name="description" content="Complete guide to the Thrift Savings Plan (TSP) for federal employees and military. Covers 2026 contribution limits, fund selection (C, S, I, F, G), and matching strategies." />
+        <link rel="canonical" href="https://www.plootus.com/tsp-thrift-savings-plan-guide" />
+      </Head>
+
       <HubNav />
 
       <div className={styles.hero}>
@@ -223,12 +230,6 @@ const TspThriftSavingPlanGuide = () => {
             ))}
           </section>
 
-          <div className={styles['cta-banner']}>
-            <h3>Plootus Supports TSP Accounts</h3>
-            <p>We help federal employees and military members maximize their Thrift Savings Plan. Get a personalized analysis of your TSP funds today — free.</p>
-            <a href="/">Analyze My TSP →</a>
-          </div>
-
           <div className={styles['sources-box']}>
             <strong>📚 Sources</strong>
             <ul>
@@ -254,16 +255,16 @@ const TspThriftSavingPlanGuide = () => {
           <div className={styles['cta-card']}>
             <h4>What's my retirement number?</h4>
             <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
-            <a onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']}>
+            <div onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']} style={{cursor: 'pointer'}}>
               Check Here
-            </a>
+            </div>
           </div>
           <div className={`${styles['sidebar-card']} ${styles['related-card']}`}>
             <h4>Related Guides</h4>
-            <a href="/457b-plan-guide">→ 457(b) Plan Guide</a>
-            <a href="/403b-guide">→ 403(b) Contribution Limits</a>
-            <a href="/hsa-contribution-limits">→ HSA Contribution Limits</a>
-            <a href="/how-to-plan-retirement">→ How to Plan for Retirement</a>
+            <div onClick={() => router.push('/457b-plan-guide')} style={{cursor: 'pointer'}}>→ 457(b) Plan Guide</div>
+            <div onClick={() => router.push('/403b-guide')} style={{cursor: 'pointer'}}>→ 403(b) Contribution Limits</div>
+            <div onClick={() => router.push('/hsa-contribution-limits')} style={{cursor: 'pointer'}}>→ HSA Contribution Limits</div>
+            <div onClick={() => router.push('/how-to-plan-retirement')} style={{cursor: 'pointer'}}>→ How to Plan for Retirement</div>
           </div>
           <div className={styles['sidebar-card']} style={{ background: 'var(--off-white)' }}>
             <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--text-light)', marginBottom: '8px' }}>Key Stat</p>
@@ -272,7 +273,7 @@ const TspThriftSavingPlanGuide = () => {
           </div>
         </aside>
       </div>
-          <PartnersSection 
+      <PartnersSection 
         titleFontSize="22px"
         titleFontWeight={800}
         titleColor="var(--navy) !important"
@@ -281,7 +282,7 @@ const TspThriftSavingPlanGuide = () => {
         subtitleColor="var(--text-mid)"
         rootPadding="40px 0 0"
       />
-      </div>
+    </div>
   );
 };
 

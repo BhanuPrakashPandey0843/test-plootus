@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import Link from 'next/link';
 import Chart from 'chart.js/auto';
 import styles from './ChildCareCost.module.css';
 import HubNav from '../../HubNav/HubNav';
@@ -52,7 +53,6 @@ const ChildCareCost = () => {
         },
         options: {
           responsive: true,
-          maintainAspectRatio: false,
           plugins: {
             legend: { position: 'bottom', labels: { font: { family: 'Plus Jakarta Sans' }, boxWidth: 12 } },
             tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': $' + ctx.parsed.y.toLocaleString() + '/yr' } }
@@ -78,43 +78,27 @@ const ChildCareCost = () => {
         <title>Childcare Costs in the U.S. by Age & Care Type (2024) | Plootus</title>
         <meta name="description" content="How much does childcare actually cost? Real pricing data by child age, care setting, and state — so you can budget smarter and plan ahead." />
         <link rel="canonical" href="https://www.plootus.com/childcare-costs" />
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-        <meta name="author" content="Plootus Research Team" />
-        <meta name="date" content="2024-01-01" />
-        <meta name="keywords" content="childcare costs 2024, average cost of childcare, infant daycare cost, nanny cost per year, childcare cost by state, childcare tax credit 2024, childcare affordability" />
-        
-        <meta property="og:title" content="Childcare Costs in the U.S. by Age & Care Type (2024) | Plootus" />
-        <meta property="og:description" content="National avg childcare: $13,128/year. Infant center care: $1,230/mo. Nanny: $43,004/year. +29% since 2020. 38+ states: infant care costs more than public college. Full data by age, care type, and state. DOL, Child Care Aware, EPI 2024-25 data." />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://www.plootus.com/childcare-costs" />
-        <meta property="og:site_name" content="Plootus" />
-        <meta property="og:locale" content="en_US" />
-        <meta property="article:publisher" content="https://www.plootus.com" />
-        <meta property="article:published_time" content="2024-01-01T00:00:00+00:00" />
-        <meta property="article:modified_time" content="2025-03-01T00:00:00+00:00" />
-        
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@plootus" />
-        <meta name="twitter:title" content="Childcare Costs 2024 — By Age, Care Type & State" />
-        <meta name="twitter:description" content="Avg childcare: $13,128/yr. Infant center: $1,230/mo. Nanny: $43K/yr. DC most expensive: $24,243/yr. +29% since 2020. 38 states: infant care > public college tuition. Full breakdown by age and state." />
-        
         <script type="application/ld+json">
-          {`[
-            {
-              "@context": "https://schema.org",
-              "@type": "Article",
-              "headline": "Childcare Costs in the U.S.: By Age, Care Type & State (2024)",
-              "description": "Comprehensive childcare cost data for 2024, covering national averages by age group and care type (center-based, family home, nanny, relative care), state-by-state annual costs, and affordability benchmarks. National average: $13,128/year per child. Infant center care: $1,230/month. Nanny cost: $43,004/year. Costs have increased 29% since 2020. In 38 states plus D.C., infant center care exceeds the cost of in-state public college tuition. Sources: DOL National Database of Childcare Prices, Child Care Aware of America 2024, Economic Policy Institute 2025.",
-              "datePublished": "2024-01-01",
-              "dateModified": "2025-03-01",
-              "author": {"@type":"Organization","name":"Plootus Research Team","url":"https://www.plootus.com"},
-              "publisher": {
-                "@type": "Organization","name":"Plootus","url":"https://www.plootus.com",
-                "logo": {"@type":"ImageObject","url":"https://www.plootus.com/logo.png"}
-              },
-              "mainEntityOfPage": {"@type":"WebPage","@id":"https://www.plootus.com/childcare-costs"}
-            }
-          ]`}
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Childcare Costs in the U.S.: By Age, Care Type & State (2024)",
+            "description": "Comprehensive childcare cost data for 2024, covering national averages by age group and care type (center-based, family home, nanny, relative care), state-by-state annual costs, and affordability benchmarks. National average: $13,128/year per child. Infant center care: $1,230/month. Nanny cost: $43,004/year. Costs have increased 29% since 2020. In 38 states plus D.C., infant center care exceeds the cost of in-state public college tuition. Sources: DOL National Database of Childcare Prices, Child Care Aware of America 2024, Economic Policy Institute 2025.",
+            "author": {
+              "@type": "Organization",
+              "name": "Plootus Research Team"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Plootus",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.plootus.com/logo.png"
+              }
+            },
+            "datePublished": "2024-01-01",
+            "dateModified": "2025-03-01"
+          })}
         </script>
       </Head>
 
@@ -204,9 +188,7 @@ const ChildCareCost = () => {
 
             <div className={styles.chartBox}>
               <h3>Annual Center-Based Childcare Cost by Age Group</h3>
-              <div style={{ height: '220px' }}>
-                <canvas ref={chartRef}></canvas>
-              </div>
+              <canvas ref={chartRef} height="220"></canvas>
               <p className={styles.chartSource}>Source: Child Care Aware of America 2024; HHS/ACF Market Rate Surveys 2025; DOL NDCP 2022.</p>
             </div>
           </section>
@@ -457,18 +439,18 @@ const ChildCareCost = () => {
           <div className={styles.ctaCard}>
             <h4>What's my retirement number?</h4>
             <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
-            <div onClick={() => router.push('/retirement-calculator')} className={styles.ctaBtn}>
+            <div onClick={() => router.push('/retirement-calculator')} className={styles.ctaBtn} style={{cursor: 'pointer'}}>
               Check Here
             </div>
           </div>
           <div className={styles.sidebarCard}>
             <h4>Related Guides</h4>
             <ul className={styles.relatedLinks}>
-              <li><a onClick={() => router.push('/how-much-to-retire')} style={{cursor: 'pointer'}}>How Much Do I Need to Retire?</a></li>
-              <li><a onClick={() => router.push('/how-to-plan-retirement')} style={{cursor: 'pointer'}}>Retirement Planning Guide</a></li>
-              <li><a onClick={() => router.push('/healthcare-costs-in-retirement')} style={{cursor: 'pointer'}}>Healthcare Costs in Retirement</a></li>
-              <li><a onClick={() => router.push('/social-security-benefits')} style={{cursor: 'pointer'}}>Social Security Benefits 2026</a></li>
-              <li><a onClick={() => router.push('/retirement-statistics')} style={{cursor: 'pointer'}}>Retirement Statistics 2026</a></li>
+              <li><Link href="/how-much-to-retire">How Much Do I Need to Retire?</Link></li>
+              <li><Link href="/how-to-plan-retirement">Retirement Planning Guide</Link></li>
+              <li><Link href="/healthcare-costs-in-retirement">Healthcare Costs in Retirement</Link></li>
+              <li><Link href="/social-security-benefits">Social Security Benefits 2026</Link></li>
+              <li><Link href="/retirement-statistics">Retirement Statistics 2026</Link></li>
             </ul>
           </div>
         </aside>

@@ -1,18 +1,28 @@
 import React from 'react';
-import Philosophy from '../components/about/Philosophy';
-import Layout from '../components/layout/Layout';
 import Head from 'next/head';
+import PhilosophyPage from '../components/philosophy/PhilosophyPage';
+import HubNav from '../components/HubNav/HubNav';
 
-const PhilosophyPage = () => {
+const Philosophy = () => {
   return (
-    <Layout>
+    <>
       <Head>
-        <title>Our Philosophy | Plootus</title>
-        <meta name="description" content="Democratize retirement planning for all. Technology-enabled, expert financial advice that does not break your bank." />
+        <meta charSet="utf-8" />
+        <title>Our Philosophy - Plootus</title>
+        <meta
+          name="description"
+          content="Learn about Plootus' approach to retirement planning and financial wellness. Our philosophy centers on transparency, education, and empowering individuals."
+        />
+        <meta
+          name="keywords"
+          content="Plootus philosophy, retirement planning approach, financial wellness, transparent investing, financial education"
+        />
+        <link rel="canonical" href="https://www.plootus.com/philosophy" />
       </Head>
-      <Philosophy />
-    </Layout>
+      <HubNav />
+      <PhilosophyPage />
+    </>
   );
 };
 
-export default PhilosophyPage;
+export default Philosophy;

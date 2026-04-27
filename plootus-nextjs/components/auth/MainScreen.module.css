@@ -1,0 +1,76 @@
+/* MainScreen.module.css */
+.signupButton {
+  padding: 9px 16px;
+  border-radius: 6px;
+  background-color: #4361ee;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signupButton:hover {
+  background-color: #3651de;
+}
+
+/* Modal Styles */
+.modal {
+  background-color: #ffffff;
+  border-radius: 24px;
+  outline: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.startModal {
+  background-color: #ffffff;
+  border-radius: 24px;
+  outline: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Animations */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.modal,
+.startModal {
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+/* Mobile Styles */
+@media (max-width: 640px) {
+  .modal,
+  .startModal {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: none;
+    max-height: 100vh;
+    animation: none;
+  }
+}

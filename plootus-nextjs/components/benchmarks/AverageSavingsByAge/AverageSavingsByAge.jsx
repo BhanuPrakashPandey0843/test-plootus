@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import styles from './AverageSavingsByAge.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -28,6 +29,34 @@ const AverageSavingsByAge = () => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Average Savings by Age in 2026: Benchmarks & Gaps | Plootus</title>
+        <meta name="description" content="Report on average savings by age in 2026 based on Federal Reserve and FDIC data. Use our emergency fund calculator and see if you're on track." />
+        <link rel="canonical" href="https://www.plootus.com/average-savings-by-age" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Average Savings by Age in 2026: Benchmarks, Gaps & What to Do About Them",
+            "description": "Comprehensive guide on household savings trends, including emergency fund targets and retirement savings progress.",
+            "author": {
+              "@type": "Organization",
+              "name": "Plootus Research Team"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Plootus",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.plootus.com/logo.png"
+              }
+            },
+            "datePublished": "2026-04-01",
+            "dateModified": "2026-04-01"
+          })}
+        </script>
+      </Head>
+
       <HubNav />
 
       <div className={styles.hero}>
@@ -278,17 +307,17 @@ const AverageSavingsByAge = () => {
           <div className={styles['cta-card']}>
             <h4>What's my retirement number?</h4>
             <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
-            <a onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']}>
+            <div onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']} style={{cursor: 'pointer'}}>
               Check Here
-            </a>
+            </div>
           </div>
           <div className={`${styles['sidebar-card']} ${styles['related-card']}`}>
             <h4>Related Guides</h4>
-            <a href="https://www.plootus.com/average-net-worth-by-age">→ Average Net Worth by Age</a>
-            <a href="https://www.plootus.com/401k-balance-by-age">→ Average 401(k) Balance by Age</a>
-            <a href="/how-much-to-retire">→ How Much Do I Need to Retire?</a>
-            <a href="https://www.plootus.com/roth-vs-traditional">→ Roth vs. Traditional IRA</a>
-            <a href="https://www.plootus.com/compound-interest-calculator">→ Compound Interest Calculator</a>
+            <div onClick={() => router.push('/average-net-worth-by-age')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ Average Net Worth by Age</div>
+            <div onClick={() => router.push('/401k-balance-by-age')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ Average 401(k) Balance by Age</div>
+            <div onClick={() => router.push('/how-much-to-retire')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ How Much Do I Need to Retire?</div>
+            <div onClick={() => router.push('/roth-vs-traditional')} style={{cursor: 'pointer', color: 'var(--blue)', marginBottom: '8px'}}>→ Roth vs. Traditional IRA</div>
+            <div onClick={() => router.push('/compound-interest-calculator')} style={{cursor: 'pointer', color: 'var(--blue)'}}>→ Compound Interest Calculator</div>
           </div>
           <div className={styles['sidebar-card']} style={{ background: 'var(--off-white)' }}>
             <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--text-light)', marginBottom: '8px' }}>Key Stat</p>
@@ -297,7 +326,7 @@ const AverageSavingsByAge = () => {
           </div>
         </aside>
       </div>
-          <PartnersSection 
+      <PartnersSection 
         titleFontSize="22px"
         titleFontWeight={800}
         titleColor="var(--navy) !important"
@@ -306,7 +335,7 @@ const AverageSavingsByAge = () => {
         subtitleColor="var(--text-mid)"
         rootPadding="40px 0 0"
       />
-      </div>
+    </div>
   );
 };
 

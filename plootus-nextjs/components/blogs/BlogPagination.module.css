@@ -1,0 +1,68 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 48px;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 12px;
+  transition: opacity 0.2s;
+}
+
+.navButton:hover:not(:disabled) {
+  opacity: 0.8;
+}
+
+.navButton:disabled {
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.navButtonEnabled {
+  color: #1e293b;
+}
+
+.paginationContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pageButton {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #64748b;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.pageButton:hover:not(.active) {
+  background-color: rgba(67, 97, 238, 0.08);
+}
+
+.active {
+  background-color: #4361ee;
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .navButton span {
+    display: none;
+  }
+}

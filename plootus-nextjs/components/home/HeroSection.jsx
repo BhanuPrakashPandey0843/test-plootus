@@ -6,6 +6,7 @@ const useStyles = makeStyles()((theme) => ({
   root: {
     backgroundColor: '#4361EE',
     borderRadius: theme.spacing(2),
+    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
     overflow: 'hidden',
     position: 'relative',
     paddingTop: theme.spacing(1),
