@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import moment from 'moment';
+import { format } from 'date-fns';
 import { fetchBlog, fetchBlogs, fetchWordpressPostByLink } from '../../lib/blogsApi';
 import styles from './BlogContent.module.css';
 
@@ -97,7 +97,7 @@ const BlogContent = ({ slug }) => {
 
       <div>
         <p className={styles.metadata}>
-          {post?.date ? `Posted on ${moment(post.date).format('MMMM D, YYYY')}` : ''}
+          {post?.date ? `Posted on ${format(new Date(post.date), 'MMMM d, yyyy')}` : ''}
         </p>
 
         <h1 className={styles.title}>{post?.heading || post?.title || ''}</h1>

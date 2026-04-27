@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
-import moment from 'moment';
+import { format } from 'date-fns';
 import { fetchNewsletter, fetchNewsletters } from '../../lib/newsletterApi';
 import styles from './NewsletterDetails.module.css';
 
@@ -115,7 +115,7 @@ const NewsletterDetails = ({ slug }) => {
             {/* Date */}
             <p className={styles.metadata}>
               {item?.date
-                ? `Published on ${moment(item.date).format('MMMM D, YYYY')}`
+                ? `Published on ${format(new Date(item.date), 'MMMM d, yyyy')}`
                 : ''}
             </p>
 

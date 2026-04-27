@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import moment from 'moment';
+import { format } from 'date-fns';
 import { fetchNews } from '../../lib/pressApi';
 import styles from './PressNewsList.module.css';
 
@@ -83,7 +83,7 @@ const PressNewsList = () => {
           {/* Content */}
           <div className={styles.contentContainer}>
             <p className={styles.date}>
-              {item.date ? moment(item.date).format('MMMM D, YYYY') : ''}
+              {item.date ? format(new Date(item.date), 'MMMM d, yyyy') : ''}
             </p>
             <h3 className={styles.title}>{item.title}</h3>
             <p className={styles.description}>{item.description}</p>

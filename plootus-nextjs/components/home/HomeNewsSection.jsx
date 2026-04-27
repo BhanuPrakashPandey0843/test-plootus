@@ -6,7 +6,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Navigation, Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import moment from 'moment';
+import { format } from 'date-fns';
 import useWindowDimensions from '../../lib/useWindowDimensions';
 import { fetchNews as fetchNewsApi } from '../../lib/newsApi';
 
@@ -213,7 +213,7 @@ const HomeNewsSection = () => {
                   />
                   <Box className={classes.newsContent}>
                     <Typography className={classes.newsDate}>
-                      {item.date ? moment(item.date).format('MMMM D, YYYY') : ''}
+                      {item.date ? format(new Date(item.date), 'MMMM d, yyyy') : ''}
                     </Typography>
                     <Typography className={classes.newsTitle}>{item.title}</Typography>
                   </Box>
