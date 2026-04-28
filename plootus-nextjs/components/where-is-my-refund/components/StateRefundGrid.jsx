@@ -1,10 +1,10 @@
 import React from 'react';
 import { makeStyles } from 'tss-react/mui';
-import { Container, Box, Typography, Grid } from '@mui/material';
+import { Container, Box, Typography } from '@mui/material';
 
 const useStyles = makeStyles()((theme) => ({
   root: {
-    paddingTop: theme.spacing(2), // Reduced from 8 to 2
+    paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(8),
   },
   resourcesHeader: {
@@ -22,51 +22,6 @@ const useStyles = makeStyles()((theme) => ({
     backgroundColor: '#4361EE',
     border: 'none',
     margin: 0,
-  },
-  cardContainer: {
-    display: 'grid',
-    gridTemplateColumns: '1fr',
-    gap: theme.spacing(4),
-    marginTop: theme.spacing(4),
-    [theme.breakpoints.up('md')]: {
-      gridTemplateColumns: '340px 1fr',
-    },
-  },
-  logoContainer: {
-    display: 'flex',
-    justifyContent: 'center',
-  },
-  logo: {
-    maxWidth: '300px',
-    height: '260px',
-    objectFit: 'contain',
-  },
-  contentContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  description: {
-    color: '#262626',
-    lineHeight: 1.4,
-    fontSize: '1rem',
-    marginBottom: theme.spacing(3),
-  },
-  subtitle: {
-    fontSize: '1.25rem',
-    fontWeight: 600,
-    color: '#1e3a8a',
-    marginBottom: theme.spacing(2),
-  },
-  list: {
-    margin: 0,
-    padding: '0 0 0 1.2rem',
-    listStyle: 'disc',
-    color: '#262626',
-    '& li': {
-      marginBottom: theme.spacing(1),
-      lineHeight: 1.35,
-      fontSize: '1rem',
-    },
   },
   statesGrid: {
     display: 'grid',
@@ -137,7 +92,7 @@ const stateRefundLinks = [
   { state: 'Ohio', url: 'https://tax.ohio.gov/individual/refunds/wheres-my-refund' },
   { state: 'Oklahoma', url: 'https://oktap.tax.ok.gov/oktap/Web/_/' },
   { state: 'Oregon', url: 'https://revenueonline.dor.oregon.gov/tap/_/' },
-  { state: 'Pennsylvania', url: 'https://www.revenue.pa.gov/OnlineServices/PersonalIncomeTax_e-Services/Pages/Where\'s-My-Income-Tax-Refund.aspx' },
+  { state: 'Pennsylvania', url: "https://www.revenue.pa.gov/OnlineServices/PersonalIncomeTax_e-Services/Pages/Where's-My-Income-Tax-Refund.aspx" },
   { state: 'Rhode Island', url: 'https://tax.ri.gov/tax-sections/personal-income-tax/wheres-my-refund' },
   { state: 'South Carolina', url: 'https://dor.sc.gov/refund' },
   { state: 'Utah', url: 'https://incometax.utah.gov/refunds/' },
@@ -151,12 +106,11 @@ const stateRefundLinks = [
 const StateRefundGrid = () => {
   const { classes } = useStyles();
 
-  // Split states into 5 columns
   const numCols = 5;
   const statesPerCol = Math.ceil(stateRefundLinks.length / numCols);
-  const columns = Array.from({ length: numCols }, (_, i) => {
-    return stateRefundLinks.slice(i * statesPerCol, (i + 1) * statesPerCol);
-  });
+  const columns = Array.from({ length: numCols }, (_, i) =>
+    stateRefundLinks.slice(i * statesPerCol, (i + 1) * statesPerCol)
+  );
 
   return (
     <Container maxWidth="lg" className={classes.root} id="state-refund-grid">

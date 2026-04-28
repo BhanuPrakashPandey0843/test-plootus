@@ -23,6 +23,7 @@ const useStyles = makeStyles()((theme) => ({
       fontSize: '1.125rem',
       color: '#475569',
       paddingLeft: '1.5rem',
+      marginBottom: theme.spacing(1.5),
       '&::before': {
         content: '"•"',
         color: '#4361EE',

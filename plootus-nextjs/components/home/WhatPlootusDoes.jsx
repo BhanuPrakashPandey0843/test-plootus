@@ -170,7 +170,7 @@ const WhatPlootusDoes = () => {
 
   return (
     <div className={classes.root}>
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" disableGutters>
         <div className={classes.sectionHeader}>
           <Typography className={classes.title}>
             What Plootus does — Better than anyone else!

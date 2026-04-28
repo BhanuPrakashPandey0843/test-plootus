@@ -101,7 +101,6 @@ const ValuesSection = () => {
           Principles that guide our mission
         </Typography>
         <Box className={`${classes.valuesGrid} reveal d2`}>
-          {/* Card 1 */}
           <Box className={classes.valCard}>
             <Box className={classes.valIconWrap}>
               <svg className={classes.valIconSvg} viewBox="0 0 24 24">
@@ -115,11 +114,10 @@ const ValuesSection = () => {
               Democratize Retirement Planning for All
             </Typography>
             <Typography className={classes.cardDesc}>
-              Retirement planning shouldn't be complicated or out of reach. We make it simple, personalized, and accessible—so whether you're just starting your career or nearing retirement, you can confidently plan for the life you want.
+              Retirement planning shouldn&apos;t be complicated or out of reach. We make it simple, personalized, and accessible—so whether you&apos;re just starting your career or nearing retirement, you can confidently plan for the life you want.
             </Typography>
           </Box>
 
-          {/* Card 2 */}
           <Box className={classes.valCard}>
             <Box className={classes.valIconWrap}>
               <svg className={classes.valIconSvg} viewBox="0 0 24 24">
@@ -135,7 +133,6 @@ const ValuesSection = () => {
             </Typography>
           </Box>
 
-          {/* Card 3 */}
           <Box className={classes.valCard}>
             <Box className={classes.valIconWrap}>
               <svg className={classes.valIconSvg} viewBox="0 0 24 24">

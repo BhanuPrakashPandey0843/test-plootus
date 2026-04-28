@@ -3,63 +3,34 @@ import { Box, Container, Typography } from '@mui/material';
 import { makeStyles } from 'tss-react/mui';
 
 const useStyles = makeStyles()((theme) => ({
-  section: {
-    padding: theme.spacing(6, 0),
-    marginBottom: 0,
-  },
+  section: { padding: theme.spacing(6, 0), marginBottom: 0 },
   secLabel: {
-    fontSize: '0.7rem',
-    fontWeight: 700,
-    letterSpacing: 2.5,
-    textTransform: 'uppercase',
-    color: '#3B5FDB',
-    marginBottom: 11,
-    textAlign: 'center',
-    display: 'block',
-    width: '100%',
+    fontSize: '0.7rem', fontWeight: 700, letterSpacing: 2.5,
+    textTransform: 'uppercase', color: '#3B5FDB', marginBottom: 11,
+    textAlign: 'center', display: 'block', width: '100%',
   },
   title: {
-    fontSize: 'clamp(1.85rem, 3vw, 2.6rem)',
-    fontWeight: 800,
-    color: '#1A2B4A',
-    lineHeight: 1.15,
-    letterSpacing: -0.4,
-    marginBottom: 14,
-    textAlign: 'center',
-    display: 'block',
-    width: '100%',
+    fontSize: 'clamp(1.85rem, 3vw, 2.6rem)', fontWeight: 800, color: '#1A2B4A',
+    lineHeight: 1.15, letterSpacing: -0.4, marginBottom: 14,
+    textAlign: 'center', display: 'block', width: '100%',
   },
-  problemContent: {
-    margin: '40px auto 0',
-    textAlign: 'left',
-  },
+  problemContent: { margin: '40px auto 0', textAlign: 'left' },
   problemText: {
     '& p': {
-      fontSize: '0.95rem',
-      color: '#444F5E',
-      lineHeight: 1.8,
-      marginBottom: 16,
-      '& strong': {
-        color: '#1A2B4A',
-      },
+      fontSize: '0.95rem', color: '#444F5E', lineHeight: 1.8, marginBottom: 16,
+      '& strong': { color: '#1A2B4A' },
     },
   },
   highlightBox: {
-    background: '#EEF2FF',
-    borderLeft: '4px solid #3B5FDB',
-    borderRadius: '0 12px 12px 0',
-    padding: '18px 22px',
-    fontSize: '0.92rem',
-    color: '#1A2B4A',
-    fontWeight: 600,
-    lineHeight: 1.55,
-    margin: '22px 0',
+    background: '#EEF2FF', borderLeft: '4px solid #3B5FDB',
+    borderRadius: '0 12px 12px 0', padding: '18px 22px',
+    fontSize: '0.92rem', color: '#1A2B4A', fontWeight: 600,
+    lineHeight: 1.55, margin: '22px 0',
   },
 }));
 
 const ProblemSection = () => {
   const { classes } = useStyles();
-
   return (
     <section className={classes.section}>
       <Container maxWidth="lg" style={{ textAlign: 'center' }}>

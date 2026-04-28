@@ -118,7 +118,7 @@ const PressSection = () => {
           Featured and Recognized By
         </Typography>
         <Typography className={`${classes.secIntro} reveal d2`}>
-          Plootus's mission to democratize retirement planning has been featured by leading financial publications and institutions.
+          Plootus&apos;s mission to democratize retirement planning has been featured by leading financial publications and institutions.
         </Typography>
 
         <Box className={`${classes.pressWrap} reveal d3`}>

@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import RetirementSolutions from '../components/individual-users';
-import HubNav from '../components/HubNav/HubNav';
 
 export default function IndividualUsers() {
   return (
@@ -12,7 +11,6 @@ export default function IndividualUsers() {
         <meta property="og:description" content="Plootus helps individuals optimize their 401k and 403b plans for free — personalized fund picks, fee analysis, and retirement goal tracking in one place." />
         <link rel="canonical" href="https://www.plootus.com/individual-users" />
       </Head>
-      <HubNav />
       <main>
         <RetirementSolutions />
       </main>
@@ -20,3 +18,5 @@ export default function IndividualUsers() {
   );
 }
 
+// Disable the default layout to avoid double navigation bars
+IndividualUsers.layout = 'none';

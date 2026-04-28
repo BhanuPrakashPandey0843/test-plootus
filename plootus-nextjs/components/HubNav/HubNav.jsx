@@ -1,16 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { 
+  Map, 
+  Compass, 
+  TrendingUp, 
+  Briefcase, 
+  Landmark, 
+  Calculator, 
+  Banknote, 
+  Users, 
+  Activity, 
+  FileText,
+  ArrowLeft,
+  ArrowRight
+} from 'lucide-react';
 import styles from './HubNav.module.css';
 
 const hubData = [
   {
     id: 'planning',
     label: 'Planning',
-    icon: '🗺',
+    icon: Map,
     links: [
       { title: 'Complete Retirement Planning Guide', path: '/how-to-plan-retirement' },
+      { title: 'How to Plan for Retirement', path: '/how-to-plan-retirement' },
       { title: 'How Much Do You Need to Retire?', path: '/how-much-to-retire' },
       { title: 'How to Retire Early (FIRE)', path: '/retire-early' },
       { title: 'How Much You Need to Earn', path: '/average-salary-by-state' },
@@ -21,11 +35,22 @@ const hubData = [
     ],
   },
   {
+    id: 'life-stages',
+    label: 'By Life Stage',
+    icon: Compass,
+    links: [
+      { title: 'Retirement Planning in Your 30s', path: '/retirement-planning-in-your-30s' },
+      { title: 'Retirement Planning in Your 40s', path: '/retirement-planning-in-your-40s' },
+      { title: 'Retirement Planning in Your 50s', path: '/retirement-planning-in-your-50s' },
+    ],
+  },
+  {
     id: 'benchmarks',
     label: 'Benchmarks',
-    icon: '📊',
+    icon: TrendingUp,
     links: [
       { title: 'Average 401(k) Balance by Age', path: '/401k-by-age' },
+      { title: '401(k) Savings Guide by Age', path: '/401k-by-age' },
       { title: 'Average 403(b) Balance by Age', path: '/average-403b-balance-by-age' },
       { title: 'Average IRA Balance by Age', path: '/average-ira-balance-by-age' },
       { title: 'Average Net Worth by Age', path: '/average-net-worth-by-age' },
@@ -37,7 +62,7 @@ const hubData = [
   {
     id: 'accounts',
     label: 'Accounts',
-    icon: '💼',
+    icon: Briefcase,
     links: [
       { title: '403(b) Plan Guide', path: '/403b-guide' },
       { title: '457(b) Plan Guide', path: '/457b-plan-guide' },
@@ -45,72 +70,88 @@ const hubData = [
       { title: 'HSA Contribution Limits', path: '/hsa-contribution-limits' },
       { title: 'Social Security Benefits Guide', path: '/social-security-benefits' },
       { title: 'Roth IRA vs. Traditional IRA', path: '/roth-vs-traditional' },
+      { title: 'Backdoor Roth IRA Guide', path: '/backdoor-roth-ira' },
+      { title: 'Switching Jobs 401(k) Guide', path: '/switching-jobs-401k' },
+      { title: 'Self-Employed Retirement Plans', path: '/self-employed-retirement-plans' },
     ],
   },
   {
     id: 'state-hub',
     label: 'By State',
-    icon: '🏛',
+    icon: Landmark,
     links: [
       { title: 'Retire by State Rankings', path: '/best-states-to-retire' },
+      { title: 'Best States to Retire (2026)', path: '/best-states-to-retire' },
       { title: 'Cheapest States to Retire', path: '/cheapest-states-to-retire' },
       { title: 'Best States for Early Retirement', path: '/best-states-for-early-retirement' },
       { title: 'Tax-Friendly States for Retirees', path: '/tax-friendly-states-for-retirees' },
-      { title: 'Average Monthly Expenses by State', path: '/average-monthly-expenses-by-state' },
+      { title: 'Most Tax-Friendly States', path: '/tax-friendly-states-for-retirees' },
+      { title: 'State Retirement Data Comparison', path: '/tool-state-comparison' },
       { title: 'State Retirement Comparison Tool', path: '/tool-state-comparison' },
+      { title: 'Average Monthly Expenses by State', path: '/average-monthly-expenses-by-state' },
     ],
   },
   {
     id: 'calculators',
     label: 'Calculators',
-    icon: '🧮',
+    icon: Calculator,
     links: [
       { title: 'Retirement Income Calculator', path: '/retirement-income-calculator' },
       { title: 'Compound Interest Calculator', path: '/compound-interest-calculator' },
       { title: 'Inflation Impact Calculator', path: '/inflation-retirement-calculator' },
       { title: 'Social Security Calculator', path: '/social-security-calculator' },
       { title: 'RMD Calculator', path: '/rmd-calculator' },
+      { title: 'State Comparison Tool', path: '/tool-state-comparison' },
       { title: 'Medicare Supplement Comparison', path: '/medicare-supplement-medigap-comparison' },
+      { title: 'Best Retirement Tools Comparison', path: '/plootus-vs-best-retirement-tools' },
     ],
   },
   {
     id: 'income-costs',
     label: 'Income & Costs',
-    icon: '💰',
+    icon: Banknote,
     links: [
       { title: 'Average Salary by State', path: '/average-salary-by-state' },
       { title: 'Median Household Income', path: '/median-household-income' },
       { title: 'Minimum Wage by State', path: '/minimum-wage-by-state' },
       { title: 'Average Rent by City', path: '/rent-by-city' },
+      { title: 'Average Monthly Expenses by State', path: '/average-monthly-expenses-by-state' },
+      { title: 'Average Net Worth by Age', path: '/average-net-worth-by-age' },
     ],
   },
   {
     id: 'family-debt',
     label: 'Family & Debt',
-    icon: '👨‍👩‍👧',
+    icon: Users,
     links: [
       { title: 'Cost of Raising a Child', path: '/cost-of-raising-child-by-state' },
       { title: 'Childcare Costs by State', path: '/childcare-costs' },
       { title: 'Average Student Loan Debt', path: '/average-student-loan-debt' },
       { title: 'Average Credit Card Debt', path: '/average-credit-card-debt' },
+      { title: 'Retirement Savings Gap', path: '/retirement-savings-gap-gender-race' },
+      { title: 'Average Savings by Age', path: '/average-savings-by-age' },
+      { title: 'Divorce & Retirement', path: '/divorce-and-retirement' },
+      { title: 'Estate Planning Basics', path: '/estate-planning-basics' },
     ],
   },
   {
     id: 'health',
     label: 'Healthcare',
-    icon: '🏥',
+    icon: Activity,
     links: [
+      { title: 'Medicare Guide 2026', path: '/medicare-guide' },
       { title: 'Healthcare Costs in Retirement', path: '/healthcare-costs-in-retirement' },
       { title: 'Medigap Plan Comparison', path: '/medicare-supplement-medigap-comparison' },
       { title: 'Health Insurance Costs by State', path: '/health-insurance-costs' },
       { title: 'Long-Term Care Costs by State', path: '/long-term-care-costs' },
       { title: 'HSA Contribution Limits & Strategy', path: '/hsa-contribution-limits' },
+      { title: 'Social Security & Medicare Timing', path: '/social-security-benefits' },
     ],
   },
   {
     id: 'taxes',
     label: 'Taxes',
-    icon: '🧾',
+    icon: FileText,
     links: [
       { title: 'Retirement Tax Guide 2026', path: '/retirement-tax-guide' },
       { title: 'Federal Income Tax Brackets', path: '/federal-income-tax-brackets' },
@@ -216,7 +257,9 @@ const HubNav = ({ activeTab, setActiveTab }) => {
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 <div className={styles.sectionTrigger} onClick={() => handleSectionClick(section.id)}>
-                  <span className={styles.sectionIcon}>{section.icon}</span>
+                  <span className={styles.sectionIcon}>
+                    <section.icon size={16} strokeWidth={2.5} />
+                  </span>
                   <span className={styles.sectionLabel}>{section.label}</span>
                   <span className={styles.dropdownArrow}>▾</span>
                 </div>

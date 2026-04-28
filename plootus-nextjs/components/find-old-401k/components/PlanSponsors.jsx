@@ -29,6 +29,7 @@ const useStyles = makeStyles()((theme) => ({
       fontSize: '1.125rem',
       color: '#475569',
       paddingLeft: '1.5rem',
+      marginBottom: theme.spacing(1.5),
       '&::before': {
         content: '"•"',
         color: '#4361EE',
@@ -53,7 +54,9 @@ const PlanSponsors = () => {
         The effectiveness of the database depends on accurate and complete data submission.
       </Typography>
       <Typography className={classes.paragraph}>
-        Workforce mobility has increased significantly. Individuals born between 1957–1964 held an average of 12.7 jobs between ages 18 and 56. Each job change increases the likelihood of losing track of retirement accounts.
+        Workforce mobility has increased significantly. Individuals born between 1957–1964 held an average of
+        12.7 jobs between ages 18 and 56. Each job change increases the likelihood of losing track of retirement
+        accounts.
       </Typography>
       <Typography className={classes.paragraph}>
         To support the system:

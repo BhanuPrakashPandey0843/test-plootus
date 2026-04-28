@@ -19,7 +19,6 @@ export const faqData = {
       },
     ],
   },
-
   security: {
     title: 'Security & Privacy',
     items: [
@@ -31,7 +30,7 @@ export const faqData = {
       {
         question: 'What information do you collect?',
         answer:
-          'We collect only the minimum necessary information to provide our services. We do not ask for sensitive PII such as your Social Security Number. For linked accounts, we only have read-only access to your transaction data.',
+          'We collect only the minimum necessary information to provide our services. We do not ask for sensitive PII such as your Social Security Number. For linked accounts, we only have read-only access to your transaction data.',
       },
       {
         question: 'Can Plootus make changes to my accounts?',
@@ -40,18 +39,15 @@ export const faqData = {
       },
       {
         question: 'How is my financial data protected?',
-        answer:
-          'We comply with relevant financial regulations and data protection standards.',
+        answer: 'We comply with relevant financial regulations and data protection standards.',
       },
     ],
   },
-
   investments: {
     title: 'Investment & Retirement',
     items: [
       {
-        question:
-          'How does Plootus optimize my 401k, 403b, 457 or TSP retirement plan account?',
+        question: 'How does Plootus optimize my 401k, 403b, 457 or TSP retirement plan account?',
         answer:
           'Plootus analyzes the fund options within your retirement plan account and recommends the most optimal investment allocation based on your risk tolerance, age, and retirement goals. We consider factors like expense ratios, historical performance, and diversification to ensure better returns with lower fees.',
       },
@@ -72,7 +68,6 @@ export const faqData = {
       },
     ],
   },
-
   features: {
     title: 'Features & Integration',
     items: [
@@ -98,7 +93,6 @@ export const faqData = {
       },
     ],
   },
-
   support: {
     title: 'Support & Updates',
     items: [

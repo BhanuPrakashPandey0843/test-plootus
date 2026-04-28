@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { format } from 'date-fns';
+import moment from 'moment';
 import styles from './BlogCard.module.css';
 
 const BlogCard = ({ post }) => {
@@ -15,7 +15,7 @@ const BlogCard = ({ post }) => {
         {/* Content */}
         <div className={styles.content}>
           <p className={styles.date}>
-            {post.date ? format(new Date(post.date), 'MMMM d, yyyy') : ''}
+            {post.date ? moment(post.date).format('MMMM D, YYYY') : ''}
           </p>
 
           <h3 className={styles.title}>{post.title}</h3>

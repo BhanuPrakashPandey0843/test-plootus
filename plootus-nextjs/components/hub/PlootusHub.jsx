@@ -31,7 +31,7 @@ const PlootusHub = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['planning', 'benchmarks', 'accounts', 'state-hub', 'calculators', 'income-costs', 'family-debt', 'health', 'taxes', 'faq'];
+      const sections = ['planning', 'life-stages', 'benchmarks', 'accounts', 'state-hub', 'calculators', 'income-costs', 'family-debt', 'health', 'taxes', 'faq'];
       const scrollPosition = window.scrollY + 180;
 
       for (const section of sections) {
@@ -53,13 +53,14 @@ const PlootusHub = () => {
   }, []);
 
   return (
+
     <div className={styles.container}>
       <HubNav activeTab={activeTab} setActiveTab={setActiveTab} />
       <section className={styles.hero}>
         <div className={styles.heroInner}>
           <div className={styles.hubBadge}>📚 Complete Resource Hub · 2026</div>
           <h1>Your <em>Complete</em> Retirement &amp;<br />Personal Finance Library</h1>
-          <p className={styles.heroSub}>Every calculator, data report, state comparison, and planning guide — built for people who want real answers, not guesswork. 44 free resources. All in one place.</p>
+          <p className={styles.heroSub}>Every calculator, data report, state comparison, planning guide, and tax strategy — built for people who want real answers, not guesswork. 57 free resources. All in one place.</p>
           <div className={styles.heroCtaRow}>
             <Link href="/how-to-plan-retirement" className={styles.heroBtnPrimary}>Start Planning →</Link>
             <Link href="/tool-state-comparison" className={styles.heroBtnOutline}>Compare States</Link>
@@ -133,6 +134,44 @@ const PlootusHub = () => {
               <div className={styles.ccTitle}>Best Retirement Planning Tools 2026</div>
               <div className={styles.ccDesc}>Plootus vs. Personal Capital, Fidelity, Vanguard, and other top retirement tools. Honest comparison of features, costs, and accuracy of projections.</div>
               <div className={styles.ccMeta}><span>Unbiased comparison</span><span className={styles.ccArrow}>→</span></div>
+            </Link>
+          </div>
+        </section>
+
+        {/* LIFE STAGES SECTION */}
+        <section className={styles.hubSection} id="life-stages">
+          <div className={styles.sectionLabel}>Plan at Every Career Stage</div>
+          <h2>Retirement Planning by Life Stage</h2>
+          <p className={styles.sectionSub}>The right retirement strategy depends entirely on where you are in your career. Each decade brings different priorities, different tools, and different risks. Find your stage.</p>
+
+          <div className={styles.callout}>
+            <strong>Not sure which guide is right for you?</strong> Start with your decade. Each guide gives you the benchmarks, the contribution limits, and the specific decisions that matter most right now — not generic advice that applies to everyone.
+          </div>
+
+          <div className={styles.cardGrid3}>
+            <Link href="/retirement-planning-in-your-30s" className={styles.contentCard} style={{ borderTop: '3px solid #2CB67D' }}>
+              <span className={`${styles.ccBadge} ${styles.guide}`} style={{ background: '#ECFDF5', color: '#065f46' }}>🌱 Life Stage</span>
+              <div className={styles.ccTitle}>Retirement Planning in Your 30s</div>
+              <div className={styles.ccStat} style={{ color: '#2CB67D' }}>1–2×</div>
+              <div className={styles.ccStatLabel}>Salary savings target by 30–35 (Fidelity)</div>
+              <div className={styles.ccDesc}>Build the foundation. Roth vs. Traditional, 401(k) match capture, asset allocation, and why the decisions you make now matter more than anything you'll do in your 50s. Includes 2026 contribution limits and a complete checklist.</div>
+              <div className={styles.ccMeta}><span>Ages 30–39 · Updated 2026</span><span className={styles.ccArrow}>→</span></div>
+            </Link>
+            <Link href="/retirement-planning-in-your-40s" className={`${styles.contentCard} ${styles.featured}`} style={{ borderTop: '3px solid #3B5BDB' }}>
+              <span className={`${styles.ccBadge} ${styles.popular}`}>⚡ Most Searched</span>
+              <div className={styles.ccTitle}>Retirement Planning in Your 40s</div>
+              <div className={styles.ccStat}>3–6×</div>
+              <div className={styles.ccStatLabel}>Salary savings target by 40–50 (Fidelity)</div>
+              <div className={styles.ccDesc}>Peak earning years, peak expenses — and the most critical catch-up window. Backdoor Roth, Mega Backdoor Roth, asset allocation shifts, and the priority order for competing financial goals. If you're behind, this is your guide.</div>
+              <div className={styles.ccMeta}><span>Ages 40–49 · Updated 2026</span><span className={styles.ccArrow}>→</span></div>
+            </Link>
+            <Link href="/retirement-planning-in-your-50s" className={styles.contentCard} style={{ borderTop: '3px solid #7C3AED' }}>
+              <span className={`${styles.ccBadge} ${styles.data}`} style={{ background: '#F5F3FF', color: '#7C3AED' }}>🏁 Life Stage</span>
+              <div className={styles.ccTitle}>Retirement Planning in Your 50s</div>
+              <div className={styles.ccStat} style={{ color: '#7C3AED' }}>$31–35K</div>
+              <div className={styles.ccStatLabel}>Max 401(k) with catch-up in 2026 (ages 50–63)</div>
+              <div className={styles.ccDesc}>The final push. Catch-up contributions, Social Security timing (62 vs. 70), healthcare before Medicare, RMD planning, and de-risking your portfolio without going too conservative too soon.</div>
+              <div className={styles.ccMeta}><span>Ages 50–59 · Updated 2026</span><span className={styles.ccArrow}>→</span></div>
             </Link>
           </div>
         </section>
@@ -245,6 +284,30 @@ const PlootusHub = () => {
               <div className={styles.ccTitle}>Roth vs. Traditional — The Full Comparison</div>
               <div className={styles.ccDesc}>Roth IRA vs. Traditional IRA vs. Roth 401(k) — tax implications, income limits, RMDs, and conversion strategies. Includes the Roth conversion ladder for early retirees.</div>
               <div className={styles.ccMeta}><span>All account types compared</span><span className={styles.ccArrow}>→</span></div>
+            </Link>
+            <Link href="/backdoor-roth-ira" className={`${styles.contentCard} ${styles.featured}`}>
+              <span className={`${styles.ccBadge} ${styles.popular}`}>Must-Read</span>
+              <div className={styles.ccTitle}>Backdoor Roth IRA: Step-by-Step Guide for High Earners (2026)</div>
+              <div className={styles.ccStat}>$0</div>
+              <div className={styles.ccStatLabel}>Tax owed on a correctly executed backdoor Roth</div>
+              <div className={styles.ccDesc}>If your income exceeds the Roth IRA limit, this IRS-approved workaround is essential. Step-by-step process, how to avoid the pro-rata trap, Form 8606 rules, and the Mega Backdoor Roth.</div>
+              <div className={styles.ccMeta}><span>High earners guide · IRS 2026 rules</span><span className={styles.ccArrow}>→</span></div>
+            </Link>
+            <Link href="/switching-jobs-401k" className={`${styles.contentCard} ${styles.pillar}`}>
+              <span className={`${styles.ccBadge} ${styles.guide}`}>Complete Guide</span>
+              <div className={styles.ccTitle}>What to Do With Your 401(k) When Switching Jobs</div>
+              <div className={styles.ccStat}>40%</div>
+              <div className={styles.ccStatLabel}>Of your balance lost overnight if you cash out early (taxes + penalty)</div>
+              <div className={styles.ccDesc}>All four options compared side by side — vesting schedules decoded, 401(k) loan deadline traps, forced-cashout thresholds ($1K / $5K / $7K), the true tax cost of cashing out, and the Rule of 55.</div>
+              <div className={styles.ccMeta}><span>Vesting · Loans · Cashout costs · SECURE 2.0</span><span className={styles.ccArrow}>→</span></div>
+            </Link>
+            <Link href="/self-employed-retirement-plans" className={`${styles.contentCard} ${styles.pillar}`}>
+              <span className={`${styles.ccBadge} ${styles.guide}`}>Complete Guide</span>
+              <div className={styles.ccTitle}>Self-Employed Retirement Plans — Solo 401(k) vs. SEP-IRA vs. SIMPLE IRA</div>
+              <div className={styles.ccStat}>$70,000</div>
+              <div className={styles.ccStatLabel}>Solo 401(k) max contribution 2026</div>
+              <div className={styles.ccDesc}>Full side-by-side comparison for freelancers and business owners: 2026 contribution limits at every income level, who each plan is best for, Roth options, employee rules, and a decision guide by situation.</div>
+              <div className={styles.ccMeta}><span>Solo 401k · SEP-IRA · SIMPLE IRA · 2026 limits</span><span className={styles.ccArrow}>→</span></div>
             </Link>
           </div>
         </section>
@@ -475,6 +538,22 @@ const PlootusHub = () => {
               <div className={styles.ccDesc}>Liquid savings (checking, savings) by age bracket. Includes emergency fund benchmarks and how liquid savings interact with retirement.</div>
               <div className={styles.ccMeta}><span>FDIC + Fed data</span><span className={styles.ccArrow}>→</span></div>
             </Link>
+            <Link href="/divorce-and-retirement" className={`${styles.contentCard} ${styles.featured}`}>
+              <span className={`${styles.ccBadge} ${styles.popular}`}>Must-Read</span>
+              <div className={styles.ccTitle}>Divorce &amp; Retirement: QDRO, Splitting Your 401(k) &amp; Social Security</div>
+              <div className={styles.ccStat}>$0</div>
+              <div className={styles.ccStatLabel}>Tax owed on a correctly executed QDRO transfer</div>
+              <div className={styles.ccDesc}>How a QDRO works step by step, how each account type is divided (401k, IRA, pension, military), Social Security divorced spousal benefit rules (10-year marriage minimum, 50% of ex's FRA benefit), and the mistakes that permanently destroy the retirement you were awarded.</div>
+              <div className={styles.ccMeta}><span>ERISA · IRC §414(p) · SSA rules · 2026</span><span className={styles.ccArrow}>→</span></div>
+            </Link>
+            <Link href="/estate-planning-basics" className={`${styles.contentCard} ${styles.pillar}`}>
+              <span className={`${styles.ccBadge} ${styles.guide}`}>Complete Guide</span>
+              <div className={styles.ccTitle}>Estate Planning Basics — Wills, Trusts, Beneficiaries &amp; Powers of Attorney</div>
+              <div className={styles.ccStat}>68%</div>
+              <div className={styles.ccStatLabel}>of Americans have no will</div>
+              <div className={styles.ccDesc}>The 4 documents every adult needs, will vs. revocable living trust (probate costs, privacy, timeline), beneficiary designations that override your will, probate costs by state, a 9-step checklist, and the most expensive estate planning mistakes families make.</div>
+              <div className={styles.ccMeta}><span>4 core docs · Will vs. trust · Probate by state</span><span className={styles.ccArrow}>→</span></div>
+            </Link>
           </div>
         </section>
 
@@ -485,6 +564,18 @@ const PlootusHub = () => {
           <p className={styles.sectionSub}>Healthcare is the #1 underestimated retirement expense. A 65-year-old couple needs an estimated $315,000 for healthcare alone.</p>
 
           <div className={styles.cardGrid3}>
+            <Link href="/medicare-guide" className={`${styles.contentCard} ${styles.featured}`} style={{ gridColumn: 'span 3' }}>
+              <span className={`${styles.ccBadge} ${styles.popular}`}>Complete Guide — New</span>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: '14px', margin: '10px 0 12px' }}>
+                <div style={{ background: 'var(--blue-light)', borderRadius: '8px', padding: '12px 14px', textAlign: 'center' }}><div style={{ fontSize: '18px', fontWeight: 800, color: 'var(--blue)' }}>Part A</div><div style={{ fontSize: '11px', color: 'var(--text-mid)', marginTop: '3px' }}>Hospital · $0/mo</div></div>
+                <div style={{ background: 'var(--green-light)', borderRadius: '8px', padding: '12px 14px', textAlign: 'center' }}><div style={{ fontSize: '18px', fontWeight: 800, color: 'var(--green)' }}>Part B</div><div style={{ fontSize: '11px', color: 'var(--text-mid)', marginTop: '3px' }}>Medical · $185/mo</div></div>
+                <div style={{ background: 'var(--gold-light)', borderRadius: '8px', padding: '12px 14px', textAlign: 'center' }}><div style={{ fontSize: '18px', fontWeight: 800, color: 'var(--gold)' }}>Part C</div><div style={{ fontSize: '11px', color: 'var(--text-mid)', marginTop: '3px' }}>Advantage · ~$17/mo</div></div>
+                <div style={{ background: 'var(--red-light)', borderRadius: '8px', padding: '12px 14px', textAlign: 'center' }}><div style={{ fontSize: '18px', fontWeight: 800, color: 'var(--red)' }}>Part D</div><div style={{ fontSize: '11px', color: 'var(--text-mid)', marginTop: '3px' }}>Drugs · ~$46/mo</div></div>
+              </div>
+              <div className={styles.ccTitle}>Medicare Guide 2026 — Parts A, B, C &amp; D Explained</div>
+              <div className={styles.ccDesc}>All four Parts explained side-by-side with 2026 official costs, every enrollment window and penalty, IRMAA surcharge thresholds, Medigap plan comparison, and Original Medicare vs. Medicare Advantage decision guide.</div>
+              <div className={styles.ccMeta}><span>CMS 2026 data · Enrollment windows · IRMAA · Medigap</span><span className={styles.ccArrow}>→</span></div>
+            </Link>
             <Link href="/healthcare-costs-in-retirement" className={`${styles.contentCard} ${styles.pillar}`}>
               <span className={`${styles.ccBadge} ${styles.guide}`}>Pillar Guide</span>
               <div className={styles.ccStat}>$315K</div>

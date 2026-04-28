@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from 'tss-react/mui';
+import HubNav from '../HubNav/HubNav';
 import HeroSection from './HeroSection';
 import FeaturesSection from './FeaturesSection';
 import SignUpBanner from './SignUpBanner';
@@ -17,6 +18,8 @@ const FinancialAdvisorsPage = () => {
 
   return (
     <div className={classes.root}>
+      <HubNav />
+      {/* PageHeaders handled in pages/financial-advisors.jsx via next/head */}
       <HeroSection />
       <FeaturesSection />
       <SignUpBanner />

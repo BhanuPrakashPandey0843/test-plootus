@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from 'tss-react/mui';
+import HubNav from '../HubNav/HubNav';
 import RetirementHero from './RetirementHero';
 import SmartRetirementPlanning from './SmartRetirementPlanning';
 import RetirementCalculatorSection from './RetirementCalculatorSection';
@@ -18,6 +19,9 @@ const RetirementSolutions = () => {
 
   return (
     <div className={classes.root}>
+      <HubNav />
+      {/* PageHeaders component should ideally be added here, but for Next.js it's better to use next/head in the page component. */}
+      
       <RetirementHero />
       <SmartRetirementPlanning />
       <RetirementCalculatorSection />

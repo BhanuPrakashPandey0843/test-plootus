@@ -18,7 +18,7 @@ const rentData = [
   { c: 'Denver, CO', r1: 1850, r2: 1800, yoy: '+1.2%', tier: 'Mid-Tier' },
   { c: 'Miami, FL', r1: 1756, r2: 1750, yoy: '−4.2%', tier: 'Mid-Tier' },
   { c: 'Chicago, IL', r1: 1584, r2: 1550, yoy: '+2.7%', tier: 'Mid-Tier' },
-  { c: 'Philadelphia, PA', r1: 1500, r2: 1400, yoy: '+2.8%', tier: 'Mid-Tier' },
+  { c: Philadelphia, PA: 1500, r2: 1400, yoy: '+2.8%', tier: 'Mid-Tier' },
   { c: 'Nashville, TN', r1: 1480, r2: 1380, yoy: '+1.5%', tier: 'Mid-Tier' },
   { c: 'Minneapolis, MN', r1: 1450, r2: 1350, yoy: '+2.0%', tier: 'Mid-Tier' },
   { c: 'Portland, OR', r1: 1430, r2: 1500, yoy: '+0.5%', tier: 'Mid-Tier' },

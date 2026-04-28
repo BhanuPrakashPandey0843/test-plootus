@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://www.plootus.com/sitemap_core.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.plootus.com/sitemap_blogs.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.plootus.com/sitemap_newsletters.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.plootus.com/sitemap_employers_401k_1.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.plootus.com/sitemap_employers_403b_1.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.plootus.com/sitemap_resource_hub.xml</loc>
+  </sitemap>
+</sitemapindex>

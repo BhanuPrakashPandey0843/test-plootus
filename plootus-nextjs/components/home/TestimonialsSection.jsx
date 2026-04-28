@@ -142,7 +142,7 @@ const TestimonialsSection = () => {
 
   return (
     <Box className={classes.root}>
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" disableGutters>
         <Box className={classes.header}>
           <Typography className={classes.headerTitle}>What Our Users Say!</Typography>
         </Box>

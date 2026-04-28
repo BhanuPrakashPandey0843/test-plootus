@@ -6,7 +6,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Navigation, Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { format } from 'date-fns';
+import moment from 'moment';
 import useWindowDimensions from '../../lib/useWindowDimensions';
 import { fetchNews as fetchNewsApi } from '../../lib/newsApi';
 
@@ -154,7 +154,7 @@ const HomeNewsSection = () => {
   if (loading) {
     return (
       <Box className={classes.root}>
-        <Container maxWidth="lg">
+        <Container maxWidth="lg" disableGutters>
           <Typography className={classes.headerTitle}>Plootus In The News</Typography>
           <Box className={classes.loaderContainer}>
             <CircularProgress style={{ color: BLUE_PLOOT }} size={40} />
@@ -168,7 +168,7 @@ const HomeNewsSection = () => {
 
   return (
     <Box className={classes.root}>
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" disableGutters>
         <Box className={classes.header}>
           <Typography className={classes.headerTitle}>Plootus In The News</Typography>
           <Box component="a" href="/press" className={classes.viewAllLink}>
@@ -213,7 +213,7 @@ const HomeNewsSection = () => {
                   />
                   <Box className={classes.newsContent}>
                     <Typography className={classes.newsDate}>
-                      {item.date ? format(new Date(item.date), 'MMMM d, yyyy') : ''}
+                      {item.date ? moment(item.date).format('MMMM D, YYYY') : ''}
                     </Typography>
                     <Typography className={classes.newsTitle}>{item.title}</Typography>
                   </Box>

@@ -3,7 +3,6 @@ import { Box, Container, Typography } from '@mui/material';
 import { makeStyles } from 'tss-react/mui';
 
 const useStyles = makeStyles()((theme) => ({
-  /* ── 3 SECURITY PILLARS ── */
   pillarsSection: {
     padding: theme.spacing(0, 5, 7),
     maxWidth: '1040px',
@@ -143,8 +142,6 @@ const useStyles = makeStyles()((theme) => ({
       backgroundRepeat: 'no-repeat',
     },
   },
-
-  /* ── HOW IT WORKS CARDS ── */
   howSection: {
     background: '#f0f4fb',
     padding: theme.spacing(7, 5),
@@ -230,7 +227,7 @@ const SecurityPillars = () => {
 
   return (
     <Box>
-      {/* ── 3 SECURITY PILLARS ── */}
+      {/* 3 SECURITY PILLARS */}
       <Box className={classes.pillarsSection}>
         <Box className={classes.pillarsHeader}>
           <img
@@ -250,7 +247,6 @@ const SecurityPillars = () => {
         </Box>
 
         <Box className={classes.pillarsGrid}>
-          {/* Pillar 1 */}
           <Box className={classes.pillarCard}>
             <Typography className={classes.pillarNum}>Pillar One</Typography>
             <Box className={classes.pillarTitleRow}>
@@ -269,13 +265,11 @@ const SecurityPillars = () => {
                 Bank-level security and 256 bit SSL encryption
               </li>
               <li className={classes.pillarListItem}>
-                Store data in a highly secure, encrypted cloud environment with
-                robust access controls
+                Store data in a highly secure, encrypted cloud environment with robust access controls
               </li>
             </ul>
           </Box>
 
-          {/* Pillar 2 */}
           <Box className={classes.pillarCard}>
             <Typography className={classes.pillarNum}>Pillar Two</Typography>
             <Box className={classes.pillarTitleRow}>
@@ -290,17 +284,14 @@ const SecurityPillars = () => {
             </Box>
             <ul className={classes.pillarList}>
               <li className={classes.pillarListItem}>
-                Collect minimum and only necessary user data while avoiding
-                sensitive details like SSN, home address
+                Collect minimum and only necessary user data while avoiding sensitive details like SSN, home address
               </li>
               <li className={classes.pillarListItem}>
-                Employ strict access controls and anonymization techniques to
-                safeguard user identities
+                Employ strict access controls and anonymization techniques to safeguard user identities
               </li>
             </ul>
           </Box>
 
-          {/* Pillar 3 */}
           <Box className={classes.pillarCard}>
             <Typography className={classes.pillarNum}>Pillar Three</Typography>
             <Box className={classes.pillarTitleRow}>
@@ -317,19 +308,17 @@ const SecurityPillars = () => {
             </Box>
             <ul className={classes.pillarList}>
               <li className={classes.pillarListItem}>
-                Ensure third-party adherence to key regulations and ISO and SOC2
-                standards
+                Ensure third-party adherence to key regulations and ISO and SOC2 standards
               </li>
               <li className={classes.pillarListItem}>
-                Continuously adapt security measures based on evolving threats
-                and best practices.
+                Continuously adapt security measures based on evolving threats and best practices.
               </li>
             </ul>
           </Box>
         </Box>
       </Box>
 
-      {/* ── HOW IT WORKS ── */}
+      {/* HOW IT WORKS */}
       <Box className={classes.howSection}>
         <Box className={classes.howInner}>
           <Box className={classes.howHeader}>
@@ -349,12 +338,9 @@ const SecurityPillars = () => {
                 </svg>
               </Box>
               <Box className={classes.howCardBody}>
-                <Typography variant="h3" className={classes.howCardTitle}>
-                  Zero Credential Storage
-                </Typography>
+                <Typography variant="h3" className={classes.howCardTitle}>Zero Credential Storage</Typography>
                 <Typography className={classes.howCardText}>
-                  Your bank username and password are never stored or seen by Plootus. We use secure
-                  tokenized connections so your login credentials stay completely private — even from us.
+                  Your bank username and password are never stored or seen by Plootus. We use secure tokenized connections so your login credentials stay completely private — even from us.
                 </Typography>
               </Box>
             </Box>
@@ -367,12 +353,9 @@ const SecurityPillars = () => {
                 </svg>
               </Box>
               <Box className={classes.howCardBody}>
-                <Typography variant="h3" className={classes.howCardTitle}>
-                  256-bit SSL Encryption
-                </Typography>
+                <Typography variant="h3" className={classes.howCardTitle}>256-bit SSL Encryption</Typography>
                 <Typography className={classes.howCardText}>
-                  All data transmitted between your device and our servers is encrypted using 256-bit SSL
-                  — the gold standard in financial data security, used by the world's largest banks.
+                  All data transmitted between your device and our servers is encrypted using 256-bit SSL — the gold standard in financial data security, used by the world&apos;s largest banks.
                 </Typography>
               </Box>
             </Box>
@@ -384,13 +367,9 @@ const SecurityPillars = () => {
                 </svg>
               </Box>
               <Box className={classes.howCardBody}>
-                <Typography variant="h3" className={classes.howCardTitle}>
-                  Read-Only Access
-                </Typography>
+                <Typography variant="h3" className={classes.howCardTitle}>Read-Only Access</Typography>
                 <Typography className={classes.howCardText}>
-                  Plootus's connection to your accounts is strictly read-only. We can view your account
-                  information to give you better recommendations — but we can never move, transfer, or
-                  modify your funds.
+                  Plootus&apos;s connection to your accounts is strictly read-only. We can view your account information to give you better recommendations — but we can never move, transfer, or modify your funds.
                 </Typography>
               </Box>
             </Box>
@@ -404,12 +383,9 @@ const SecurityPillars = () => {
                 </svg>
               </Box>
               <Box className={classes.howCardBody}>
-                <Typography variant="h3" className={classes.howCardTitle}>
-                  AWS Cloud Infrastructure
-                </Typography>
+                <Typography variant="h3" className={classes.howCardTitle}>AWS Cloud Infrastructure</Typography>
                 <Typography className={classes.howCardText}>
-                  Your data is stored on Amazon Web Services (AWS) — the same enterprise cloud
-                  infrastructure trusted by government agencies and Fortune 500 companies around the world.
+                  Your data is stored on Amazon Web Services (AWS) — the same enterprise cloud infrastructure trusted by government agencies and Fortune 500 companies around the world.
                 </Typography>
               </Box>
             </Box>
@@ -424,13 +400,9 @@ const SecurityPillars = () => {
                 </svg>
               </Box>
               <Box className={classes.howCardBody}>
-                <Typography variant="h3" className={classes.howCardTitle}>
-                  Minimum Data Collection
-                </Typography>
+                <Typography variant="h3" className={classes.howCardTitle}>Minimum Data Collection</Typography>
                 <Typography className={classes.howCardText}>
-                  We only ask for what we need — nothing more. No Social Security Number, no complete
-                  home address, no sensitive personal identifiers. Your privacy is not a tradeoff for
-                  better features.
+                  We only ask for what we need — nothing more. No Social Security Number, no complete home address, no sensitive personal identifiers. Your privacy is not a tradeoff for better features.
                 </Typography>
               </Box>
             </Box>
@@ -444,12 +416,9 @@ const SecurityPillars = () => {
                 </svg>
               </Box>
               <Box className={classes.howCardBody}>
-                <Typography variant="h3" className={classes.howCardTitle}>
-                  You Stay in Control
-                </Typography>
+                <Typography variant="h3" className={classes.howCardTitle}>You Stay in Control</Typography>
                 <Typography className={classes.howCardText}>
-                  You can revoke Plootus's access to any of your accounts at any time, instantly. We
-                  provide AI-powered recommendations, but every decision remains entirely yours to make.
+                  You can revoke Plootus&apos;s access to any of your accounts at any time, instantly. We provide AI-powered recommendations, but every decision remains entirely yours to make.
                 </Typography>
               </Box>
             </Box>

@@ -1,13 +1,6 @@
-import React from 'react';
-import { makeStyles } from 'tss-react/mui';
-import {
-  Box,
-  Typography,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-} from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { Accordion, AccordionDetails, AccordionSummary, Box, Typography } from '@mui/material';
+import { makeStyles } from 'tss-react/mui';
 
 const useStyles = makeStyles()((theme) => ({
   title: {
@@ -42,11 +35,6 @@ const useStyles = makeStyles()((theme) => ({
       transition: 'border-color 0.2s ease-in-out',
     },
   },
-  accordionSummary: {
-    '& .MuiExpansionPanelSummary-content': {
-      margin: theme.spacing(2, 0),
-    },
-  },
   question: {
     fontSize: '1.125rem',
     fontWeight: 500,
@@ -63,7 +51,7 @@ const useStyles = makeStyles()((theme) => ({
   },
 }));
 
-const FAQCategory = ({ title, items }) => {
+export default function FAQCategory({ title, items }) {
   const { classes } = useStyles();
 
   return (
@@ -73,19 +61,10 @@ const FAQCategory = ({ title, items }) => {
       </Typography>
 
       <Box className={classes.accordionContainer}>
-        {items.map((item, index) => (
-          <Accordion
-            key={index}
-            elevation={0}
-            className={classes.accordion}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              className={classes.accordionSummary}
-            >
-              <Typography className={classes.question}>
-                {item.question}
-              </Typography>
+        {items.map((item) => (
+          <Accordion key={item.question} elevation={0} className={classes.accordion}>
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <Typography className={classes.question}>{item.question}</Typography>
             </AccordionSummary>
             <AccordionDetails className={classes.accordionDetails}>
               <Typography className={classes.answer}>{item.answer}</Typography>
@@ -95,6 +74,4 @@ const FAQCategory = ({ title, items }) => {
       </Box>
     </Box>
   );
-};
-
-export default FAQCategory;
+}

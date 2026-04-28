@@ -9,7 +9,7 @@ SwiperCore.use([Pagination, Navigation]);
 
 const useStyles = makeStyles()((theme, _params, classes) => ({
   root: {
-    padding: theme.spacing(0, 0, 4), // Reduced padding (top: 0, bottom: 4)
+    padding: theme.spacing(0, 0, 4),
     backgroundColor: '#FFFFFF',
     textAlign: 'center',
   },
@@ -116,7 +116,7 @@ const partners = [
   {
     id: 1,
     name: 'Insurify',
-    logo: '/images/partners/insurify.jpg',
+    logo: '/images/partners/Insurify.jpg',
     text: 'Compare real-time, personalized insurance quotes—all in one place',
     link: 'https://insurify.com/start/auto/partner/plootus/?utm_source=plootus&utm_medium=auto&utm_campaign=Website&utm_content=Partnerspage',
   },
@@ -147,7 +147,7 @@ const partners = [
     logo: '/images/partners/nfcc.png',
     text: 'Get nonprofit counseling and guidance to manage debt and finances.',
     link: 'https://nfcc.org/Plootus',
-  }
+  },
 ];
 
 const PartnersCarousel = () => {

@@ -49,7 +49,7 @@ const RefundInfo = () => {
           >
             IRS direct deposit
           </Link>{' '}
-          payment option, you can receive your tax refund quickly and won’t have
+          payment option, you can receive your tax refund quickly and won't have
           to wait or wonder when a paper check will arrive.
         </Typography>
       </Box>

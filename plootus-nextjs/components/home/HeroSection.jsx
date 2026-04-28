@@ -9,19 +9,15 @@ const useStyles = makeStyles()((theme) => ({
     boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
     overflow: 'hidden',
     position: 'relative',
-    paddingTop: theme.spacing(1),
-    paddingBottom: theme.spacing(1),
+    padding: theme.spacing(1, 3),
     [theme.breakpoints.up('sm')]: {
-      paddingTop: theme.spacing(2),
-      paddingBottom: theme.spacing(2),
+      padding: theme.spacing(2, 4),
     },
     [theme.breakpoints.up('md')]: {
-      paddingTop: theme.spacing(2),
-      paddingBottom: theme.spacing(2),
+      padding: theme.spacing(2, 5),
     },
     [theme.breakpoints.up('lg')]: {
-      paddingTop: theme.spacing(3),
-      paddingBottom: theme.spacing(3),
+      padding: theme.spacing(3, 6),
     },
   },
   contentContainer: {
@@ -307,7 +303,6 @@ const HeroSection = () => {
 
   return (
     <div className={classes.root}>
-      <Container maxWidth="xl">
         <div className={classes.contentContainer}>
           <div className={classes.leftContent}>
             <div className={classes.titleContainer}>
@@ -346,7 +341,6 @@ const HeroSection = () => {
 
           <StoreButtons className={classes.mobileStoreButtons} />
         </div>
-      </Container>
     </div>
   );
 };

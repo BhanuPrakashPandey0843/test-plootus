@@ -5,7 +5,7 @@ import { Container, Grid, Typography, Box, Link } from '@mui/material';
 const useStyles = makeStyles()((theme) => ({
   root: {
     paddingTop: theme.spacing(1),
-    paddingBottom: theme.spacing(4), // Reduced from 8 to 4
+    paddingBottom: theme.spacing(4),
   },
   logoGrid: {
     marginBottom: theme.spacing(4),
@@ -26,7 +26,7 @@ const useStyles = makeStyles()((theme) => ({
     },
   },
   textContainer: {
-    textAlign: 'left', // Changed from center to left to match RefundInfo
+    textAlign: 'left',
   },
   title: {
     fontSize: '1.5rem',
@@ -105,7 +105,7 @@ const TaxPartners = () => {
           Looking for more ways to improve your finances?
         </Typography>
         <Typography className={classes.text}>
-          Explore Plootus'{' '}
+          Explore Plootus&apos;{' '}
           <Link href="/partners" className={classes.link}>
             partners
           </Link>{' '}

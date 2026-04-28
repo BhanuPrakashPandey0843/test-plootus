@@ -91,7 +91,7 @@ const TestimonialsSection = () => {
           <Box className={classes.testiCard}>
             <div className={classes.stars}>★★★★★</div>
             <Typography className={classes.testiText}>
-              "This is an awesome app which gives you all flexibility to plan and invest. Especially for novice users like me who do not want to spend time but still want to plan finances. I have tried Betterment, Wealthfront and Financial Engines — none gives the same flexibility and features as Plootus."
+              &ldquo;This is an awesome app which gives you all flexibility to plan and invest. Especially for novice users like me who do not want to spend time but still want to plan finances. I have tried Betterment, Wealthfront and Financial Engines — none gives the same flexibility and features as Plootus.&rdquo;
             </Typography>
             <Typography className={classes.testiAuthor}>Verified App Store User</Typography>
             <Typography className={classes.testiSource}>
@@ -104,7 +104,7 @@ const TestimonialsSection = () => {
           <Box className={classes.testiCard}>
             <div className={classes.stars}>★★★★★</div>
             <Typography className={classes.testiText}>
-              "Easy and free to use app for 401(k) allocation. I was able to pick the right investment strategy for my retirement. They also provide a budgeting and planning tool — all for FREE. Excellent tool for anyone looking to take control of their financial future."
+              &ldquo;Easy and free to use app for 401(k) allocation. I was able to pick the right investment strategy for my retirement. They also provide a budgeting and planning tool — all for FREE. Excellent tool for anyone looking to take control of their financial future.&rdquo;
             </Typography>
             <Typography className={classes.testiAuthor}>Verified Trustpilot User</Typography>
             <Typography className={classes.testiSource}>
@@ -117,7 +117,7 @@ const TestimonialsSection = () => {
           <Box className={classes.testiCard}>
             <div className={classes.stars}>★★★★★</div>
             <Typography className={classes.testiText}>
-              "Plootus makes every user unafraid and excited to tackle the world of investing. By asking for limited information, the app chooses retirement plans suited to the user's needs — while also telling you exactly how much you need to save before retiring."
+              &ldquo;Plootus makes every user unafraid and excited to tackle the world of investing. By asking for limited information, the app chooses retirement plans suited to the user&apos;s needs — while also telling you exactly how much you need to save before retiring.&rdquo;
             </Typography>
             <Typography className={classes.testiAuthor}>Verified App Store User</Typography>
             <Typography className={classes.testiSource}>

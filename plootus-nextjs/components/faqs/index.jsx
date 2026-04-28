@@ -78,8 +78,7 @@ const FAQ = () => {
         setEmail('');
         setQuery('');
         setSnack({ open: true, msg: 'Your query is sent. Our support team will reach out to resolve your query.', severity: 'success' });
-      }
-      else {
+      } else {
         setSnack({ open: true, msg: 'Internal server error, please try later.', severity: 'error' });
       }
     } finally {

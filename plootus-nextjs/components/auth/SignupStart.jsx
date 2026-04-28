@@ -7,19 +7,17 @@ const SignupStart = ({ closeModal, nextPress, setSignupData, loginopenModal }) =
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState('');
 
-  const handleEmailSignup = async () => {
+  const handleEmailSignup = () => {
     if (!email) {
       setEmailError('Email is required');
       return;
     }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setEmailError('Please enter a valid email address');
-      return;
-    }
     setLoading(true);
-    setSignupData((prev) => ({ ...prev, email, socialLogin: null, socialId: null }));
-    setLoading(false);
-    nextPress();
+    setTimeout(() => {
+      setSignupData((prev) => ({ ...prev, email }));
+      setLoading(false);
+      nextPress();
+    }, 1000);
   };
 
   const handleLogin = () => {
@@ -30,7 +28,7 @@ const SignupStart = ({ closeModal, nextPress, setSignupData, loginopenModal }) =
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <h1 className={styles.title}>Get Started!</h1>
+        <h1 className={styles.title}>Ready to start planning?</h1>
         <button onClick={closeModal} className={styles.closeButton}>
           <img src="/cross-thin.png" alt="close" className={styles.closeIcon} />
         </button>
@@ -82,12 +80,12 @@ const SignupStart = ({ closeModal, nextPress, setSignupData, loginopenModal }) =
         </div>
 
         <div className={styles.socialButtons}>
-          <button className={styles.socialButton} disabled={loading}>
-            <img src="/google-logo.svg" alt="" className={styles.socialIcon} />
+          <button className={styles.socialButton}>
+            <img src="/images/googlesign.png" alt="" className={styles.socialIcon} />
             <span>Continue with Google</span>
           </button>
-          <button className={styles.socialButton} disabled={loading}>
-            <img src="/facebook-logo.svg" alt="" className={styles.socialIcon} />
+          <button className={styles.socialButton}>
+            <img src="/images/facesign.png" alt="" className={styles.socialIcon} />
             <span>Continue with Facebook</span>
           </button>
         </div>

@@ -51,7 +51,7 @@ const RefundHeader = () => {
           </Typography>
           <Typography className={classes.description}>
             Track the status of your tax refund and see when your money may
-            arrive. Whether you’re waiting on a federal refund, state refund, or
+            arrive. Whether you're waiting on a federal refund, state refund, or
             an amended return, our tools help you quickly find the latest
             updates from the appropriate tax agency.
           </Typography>

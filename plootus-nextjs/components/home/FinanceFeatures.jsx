@@ -143,7 +143,7 @@ const FinanceFeatures = () => {
 
   return (
     <Box className={classes.root}>
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" disableGutters>
         <Box className={classes.sectionHeader}>
           <Typography className={classes.headerTitle}>
             Everything You Need to Take Control of Your Finances

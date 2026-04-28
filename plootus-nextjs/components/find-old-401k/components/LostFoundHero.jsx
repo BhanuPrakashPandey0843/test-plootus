@@ -32,12 +32,12 @@ const LostFoundHero = () => {
     <Box className={classes.heroSection}>
       <Container maxWidth="lg">
         <Typography variant="h1" className={classes.heroTitle}>
-          Find Your Old 401k - Retirement Savings Lost & Found
+          Find Your Old 401k - Retirement Savings Lost &amp; Found
         </Typography>
         <Typography className={classes.heroSubtitle}>
           Easily locate forgotten retirement accounts like 401(k)s, pensions, and other employer-sponsored plans.
-          Learn how the database works, who it's for, and how to securely access your information to reclaim the
-          benefits you've earned.
+          Learn how the database works, who it&apos;s for, and how to securely access your information to reclaim the
+          benefits you&apos;ve earned.
         </Typography>
       </Container>
     </Box>

@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
-import { TextField, Checkbox, FormControlLabel, CircularProgress } from '@mui/material';
+import { 
+  TextField, 
+  Checkbox, 
+  FormControlLabel, 
+  Button, 
+  Box, 
+  CircularProgress,
+  Typography
+} from '@mui/material';
 import styles from './InputCard.module.css';
 
 const InputCard = ({
@@ -10,47 +18,14 @@ const InputCard = ({
   index,
   loginStyle,
 }) => {
-  const [email, setEmail] = useState(
-    typeof window !== 'undefined' ? localStorage.getItem('email') || '' : ''
-  );
-  const [password, setPassword] = useState(
-    typeof window !== 'undefined' ? localStorage.getItem('password') || '' : ''
-  );
-  const [remember, setRemember] = useState(
-    typeof window !== 'undefined'
-      ? localStorage.getItem('rememberStorage') === 'true'
-      : false
-  );
-  const [emailError, setEmailError] = useState('');
-  const [passwordError, setPasswordError] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [remember, setRemember] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setEmailError('');
-    setPasswordError('');
-
-    const validEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email);
-    if (!validEmail) {
-      setEmailError('Enter valid email address');
-      return;
-    }
-    if (!password.length) {
-      setPasswordError('Password is empty');
-      return;
-    }
-
-    if (remember) {
-      localStorage.setItem('email', email);
-      localStorage.setItem('password', password);
-      localStorage.setItem('rememberStorage', 'true');
-    } else {
-      localStorage.removeItem('email');
-      localStorage.removeItem('password');
-      localStorage.removeItem('rememberStorage');
-    }
-
-    // Auth API wiring is handled separately in the platform layer.
-    closeModal?.();
+    // Logic for login would go here
+    console.log('Login attempt:', { email, password, index });
   };
 
   return (
@@ -63,8 +38,6 @@ const InputCard = ({
             variant="outlined"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            error={!!emailError}
-            helperText={emailError}
             sx={{ width: '90%', '& .MuiOutlinedInput-root': { borderRadius: '10px' } }}
           />
         </div>
@@ -76,8 +49,6 @@ const InputCard = ({
             variant="outlined"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            error={!!passwordError}
-            helperText={passwordError}
             sx={{ width: '90%', '& .MuiOutlinedInput-root': { borderRadius: '10px' } }}
           />
         </div>
@@ -142,14 +113,14 @@ const InputCard = ({
           <div className={styles.oAuth}>
             <div className={styles.fb}>
               <img 
-                src="/facebook-logo.svg" 
+                src="/images/fb.png" 
                 alt="FB" 
                 style={{ height: '50px', width: '50px', cursor: 'pointer' }} 
               />
             </div>
             <div className={styles.google}>
               <img 
-                src="/google-logo.svg" 
+                src="/images/google.jpg" 
                 alt="Google" 
                 style={{ height: '50px', width: '50px', cursor: 'pointer' }} 
               />

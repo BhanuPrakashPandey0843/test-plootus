@@ -55,25 +55,20 @@ const MainSignupModal = ({
   };
 
   return (
-    <>
-      <button onClick={openModal} className={styles.signupButton}>
-        Get Started
-      </button>
-      <Dialog
-        open={modalIsOpen}
-        onClose={handleCloseModal}
-        PaperProps={{
-          className: currentStep === 0 ? styles.startModal : styles.modal,
-        }}
-        BackdropProps={{
-          className: styles.overlay
-        }}
-        maxWidth={currentStep === 0 ? "xs" : "sm"}
-        fullWidth={true}
-      >
-        {renderStep()}
-      </Dialog>
-    </>
+    <Dialog
+      open={modalIsOpen}
+      onClose={handleCloseModal}
+      PaperProps={{
+        className: currentStep === 0 ? styles.startModal : styles.modal,
+      }}
+      BackdropProps={{
+        className: styles.overlay
+      }}
+      maxWidth={currentStep === 0 ? "xs" : "sm"}
+      fullWidth={true}
+    >
+      {renderStep()}
+    </Dialog>
   );
 };
 

@@ -25,19 +25,14 @@ import { Provider } from 'react-redux';
 import { store } from '../lib/store';
 
 export default function App({ Component, pageProps, emotionCache = clientSideEmotionCache }) {
-  const disableLayout = Component.layout === 'none';
   return (
     <Provider store={store}>
       <CacheProvider value={emotionCache}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          {disableLayout ? (
+          <Layout>
             <Component {...pageProps} />
-          ) : (
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
-          )}
+          </Layout>
         </ThemeProvider>
       </CacheProvider>
     </Provider>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { format } from 'date-fns';
+import moment from 'moment';
 import { fetchNewsletters, subscribeNewsletter } from '../../lib/newsletterApi';
 import PartnersSection from '../home/PartnersSection';
 import styles from './NewsletterContent.module.css';
@@ -8,7 +8,7 @@ import styles from './NewsletterContent.module.css';
 // ── helpers ────────────────────────────────────────────────────
 const ITEMS_PER_PAGE = 5;
 
-const formatDate = (dateString) => format(new Date(dateString), 'MMMM d, yyyy');
+const formatDate = (dateString) => moment(dateString).format('MMMM D, YYYY');
 
 const renderHtml = (raw) => {
   if (!raw) return '';

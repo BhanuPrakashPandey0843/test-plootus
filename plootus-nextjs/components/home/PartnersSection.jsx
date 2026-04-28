@@ -164,7 +164,7 @@ const partners = [
   {
     id: 2,
     name: 'Insurify',
-    logo: '/images/partners/insurify.jpg',
+    logo: '/images/partners/Insurify.jpg',
     text: 'Compare real-time, personalized insurance quotes—all in one place',
     link: 'https://insurify.com/start/auto/partner/plootus/?utm_source=plootus&utm_medium=auto&utm_campaign=Website&utm_content=Partnerspage',
   },
@@ -282,7 +282,7 @@ const PartnersSection = ({
 
   return (
     <Box className={classes.root}>
-      <Container maxWidth="lg" style={{ textAlign: 'center' }}>
+      <Container maxWidth="lg" disableGutters style={{ textAlign: 'center' }}>
         {!titleDisabled && (
           <>
             {isAboutPage && (

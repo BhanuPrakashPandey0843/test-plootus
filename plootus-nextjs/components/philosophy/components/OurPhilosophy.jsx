@@ -159,7 +159,6 @@ const OurPhilosophy = () => {
             <rect x="0" y="195" width="380" height="65" fill="#6aaa42"/>
             <rect x="0" y="210" width="380" height="50" fill="#5a9435"/>
             <ellipse cx="190" cy="215" rx="160" ry="8" fill="#8bc665" opacity="0.5"/>
-            {/* Person 1 */}
             <rect x="45" y="148" width="14" height="26" rx="4" fill="#e74c4c"/>
             <circle cx="52" cy="138" r="12" fill="#f5c5a0"/>
             <rect x="40" y="127" width="24" height="10" rx="5" fill="#5c3a1e"/>
@@ -169,7 +168,6 @@ const OurPhilosophy = () => {
             <ellipse cx="49" cy="191" rx="5" ry="3" fill="#1a1a1a"/>
             <ellipse cx="57" cy="189" rx="5" ry="3" fill="#1a1a1a"/>
             <line x1="59" y1="156" x2="66" y2="165" stroke="#f5c5a0" strokeWidth="4" strokeLinecap="round"/>
-            {/* Person 2 */}
             <rect x="115" y="138" width="18" height="36" rx="5" fill="#c0392b"/>
             <circle cx="124" cy="126" r="14" fill="#f0b090"/>
             <rect x="110" y="113" width="28" height="12" rx="6" fill="#8B4513"/>
@@ -179,7 +177,6 @@ const OurPhilosophy = () => {
             <rect x="126" y="174" width="8" height="20" rx="3" fill="#2c3e6e"/>
             <ellipse cx="120" cy="195" rx="6" ry="4" fill="#1a1a1a"/>
             <ellipse cx="130" cy="193" rx="6" ry="4" fill="#1a1a1a"/>
-            {/* Person 3 */}
             <rect x="198" y="128" width="22" height="46" rx="5" fill="#1a2a4a"/>
             <rect x="205" y="128" width="8" height="20" fill="#fff"/>
             <polygon points="208,132 210,132 209,148" fill="#c0392b"/>
@@ -190,7 +187,6 @@ const OurPhilosophy = () => {
             <rect x="210" y="174" width="9" height="22" rx="3" fill="#0d1b36"/>
             <ellipse cx="204" cy="197" rx="7" ry="4" fill="#111"/>
             <ellipse cx="215" cy="195" rx="7" ry="4" fill="#111"/>
-            {/* Person 4 */}
             <rect x="298" y="140" width="20" height="40" rx="5" fill="#e67e22"/>
             <circle cx="308" cy="128" r="15" fill="#f0b090"/>
             <rect x="293" y="114" width="30" height="12" rx="6" fill="#d0d0d0"/>

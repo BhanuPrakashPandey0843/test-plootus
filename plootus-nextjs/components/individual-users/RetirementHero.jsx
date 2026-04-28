@@ -168,18 +168,18 @@ const useStyles = makeStyles()((theme) => ({
 }));
 
 const companyLogos = [
-  { name: 'AMAZON.COM SERVICES,INC. 401k', logo: '/images/companies/amazon.png', ein: '911986545' },
-  { name: 'GENERAL ELECTRIC COMPANY 401k', logo: '/images/companies/ge.png', ein: '140689340' },
-  { name: 'FACEBOOK, INC. 401k', logo: '/images/companies/facebook.png', ein: '201665019' },
-  { name: 'TESLA, INC. 401k', logo: '/images/companies/tesla.png', ein: '912197729' },
-  { name: 'APPLE INC. 401k', logo: '/images/companies/apple.png', ein: '942404110' },
-  { name: 'STARBUCKS CORPORATION 401k', logo: '/images/companies/starbucks.png', ein: '911325671' },
-  { name: 'NISSAN NORTH AMERICA, INC. 401k', logo: '/images/companies/nissan.png', ein: '952108010' },
-  { name: 'NEW YORK UNIVERSITY 401k', logo: '/images/companies/nyu.png', ein: '135562308' },
-  { name: 'FAIRFIELD UNIVERSITY 403B', logo: '/images/companies/fairuni.png', ein: '60646623' },
-  { name: 'THE UNIVERSITY OF ALABAMA SYSTEM 403(B) PLAN', logo: '/images/companies/alabama.png', ein: '999994609' },
-  { name: 'Sacred Heart University 403b plan', logo: '/images/companies/uh.png', ein: '140689340' },
-  { name: 'UNIVERSITY OF MICHIGAN 401A RETIREMENT PLAN', logo: '/images/companies/michan.png', ein: '999994755' },
+  { name: 'AMAZON.COM SERVICES,INC. 401k', logo: '/images/employee-logos/amazon.png', ein: '911986545' },
+  { name: 'GENERAL ELECTRIC COMPANY 401k', logo: '/images/employee-logos/ge.png', ein: '140689340' },
+  { name: 'FACEBOOK, INC. 401k', logo: '/images/employee-logos/fb.png', ein: '201665019' },
+  { name: 'TESLA, INC. 401k', logo: '/images/employee-logos/testla.png', ein: '912197729' },
+  { name: 'APPLE INC. 401k', logo: '/images/employee-logos/apple.png', ein: '942404110' },
+  { name: 'STARBUCKS CORPORATION 401k', logo: '/images/employee-logos/star.png', ein: '911325671' },
+  { name: 'NISSAN NORTH AMERICA, INC. 401k', logo: '/images/employee-logos/nissan.png', ein: '952108010' },
+  { name: 'NEW YORK UNIVERSITY 401k', logo: '/images/employee-logos/newyork.png', ein: '135562308' },
+  { name: 'FAIRFIELD UNIVERSITY 403B', logo: '/images/employee-logos/fairuni.png', ein: '60646623' },
+  { name: 'THE UNIVERSITY OF ALABAMA SYSTEM 403(B) PLAN', logo: '/images/employee-logos/alabama.png', ein: '999994609' },
+  { name: 'Sacred Heart University 403b plan', logo: '/images/employee-logos/sacri.png', ein: '140689340' },
+  { name: 'UNIVERSITY OF MICHIGAN 401A RETIREMENT PLAN', logo: '/images/employee-logos/michan.png', ein: '999994755' },
 ];
 
 const RetirementHero = () => {

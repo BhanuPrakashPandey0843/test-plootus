@@ -23,20 +23,14 @@ const useStyles = makeStyles()((theme) => ({
     textAlign: 'center',
     padding: theme.spacing(1.75, 2.5),
     borderRight: '1px solid rgba(255, 255, 255, 0.1)',
-    '&:last-child': {
-      borderRight: 'none',
-    },
+    '&:last-child': { borderRight: 'none' },
     [theme.breakpoints.down('md')]: {
-      '&:nth-of-type(2)': {
-        borderRight: 'none',
-      },
+      '&:nth-of-type(2)': { borderRight: 'none' },
     },
     [theme.breakpoints.down('sm')]: {
       borderRight: 'none',
       borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-      '&:last-child': {
-        borderBottom: 'none',
-      },
+      '&:last-child': { borderBottom: 'none' },
     },
   },
   ssNum: {
@@ -46,9 +40,7 @@ const useStyles = makeStyles()((theme) => ({
     lineHeight: 1,
     marginBottom: 5,
   },
-  greenText: {
-    color: '#5DFF9F',
-  },
+  greenText: { color: '#5DFF9F' },
   ssLabel: {
     fontSize: '0.75rem',
     color: 'rgba(255, 255, 255, 0.5)',
@@ -66,15 +58,12 @@ const useStyles = makeStyles()((theme) => ({
 
 const StatStrip = () => {
   const { classes } = useStyles();
-
   return (
     <div className={classes.statStrip}>
       <Container maxWidth="lg">
         <Box className={`${classes.statStripInner} reveal`}>
           <Box className={`${classes.ssItem} reveal d1`}>
-            <Typography className={classes.ssNum}>
-              <span className={classes.greenText}>$100K</span>
-            </Typography>
+            <Typography className={classes.ssNum}><span className={classes.greenText}>$100K</span></Typography>
             <Typography className={classes.ssLabel}>
               <strong>Average Hidden Fees Per Worker</strong>
               Paid unnecessarily over a career of poor 401(k) fund selection
@@ -88,18 +77,14 @@ const StatStrip = () => {
             </Typography>
           </Box>
           <Box className={`${classes.ssItem} reveal d3`}>
-            <Typography className={classes.ssNum}>
-              28<span style={{ fontSize: '1.2rem' }}>%</span>
-            </Typography>
+            <Typography className={classes.ssNum}>28<span style={{ fontSize: '1.2rem' }}>%</span></Typography>
             <Typography className={classes.ssLabel}>
               <strong>Retirement Balance Lost to Excess Fees</strong>
               Per U.S. Department of Labor: 1% higher fees = 28% less at retirement
             </Typography>
           </Box>
           <Box className={`${classes.ssItem} reveal d4`}>
-            <Typography className={classes.ssNum}>
-              60<span style={{ fontSize: '1.2rem' }}>%</span>
-            </Typography>
+            <Typography className={classes.ssNum}>60<span style={{ fontSize: '1.2rem' }}>%</span></Typography>
             <Typography className={classes.ssLabel}>
               <strong>Rely Solely on Their 401(k)</strong>
               For most Americans it is their only or largest retirement vehicle (Koski Research)

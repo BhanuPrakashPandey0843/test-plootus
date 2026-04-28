@@ -71,7 +71,6 @@
 .navList {
   display: flex;
   align-items: center;
-  gap: 4px;
   width: 100%;
 }
 
@@ -84,7 +83,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 8px 7px;
+  padding: 8px 5px;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -101,10 +100,17 @@
 
 .sectionIcon {
   font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .sectionLabel {
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  line-height: 1;
 }
 
 .dropdownArrow {

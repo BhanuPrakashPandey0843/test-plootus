@@ -1,5 +1,5 @@
 .container {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 64px 24px;
 }
@@ -30,6 +30,73 @@
 .content p {
   margin-bottom: 16px;
   line-height: 1.6;
+}
+
+.introContent {
+  margin-bottom: 32px;
+}
+
+.introContent p {
+  font-size: 18px;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+.gridContent {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.storyBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.storyBlock img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0 !important;
+}
+
+.storyText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.storyText p:last-of-type {
+  margin-bottom: 0;
+}
+
+.storyText p:first-of-type {
+  font-weight: 600;
+  color: #1e293b;
+  margin-top: 0;
+}
+
+.sourceLine {
+  margin-top: auto !important;
+  color: #64748b !important;
+  font-size: 14px !important;
+}
+
+@media (min-width: 768px) {
+  .storyBlock {
+    flex-direction: row;
+    align-items: stretch; /* Align items to stretch to make flex column height work */
+    gap: 32px;
+  }
+
+  .storyBlock img {
+    width: 320px !important;
+    height: 200px !important;
+    flex-shrink: 0;
+  }
 }
 
 .footerSource {

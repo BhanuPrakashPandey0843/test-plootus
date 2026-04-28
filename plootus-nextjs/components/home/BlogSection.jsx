@@ -180,7 +180,7 @@ const BlogSection = () => {
   if (loading) {
     return (
       <Box className={classes.root}>
-        <Container maxWidth="lg">
+        <Container maxWidth="lg" disableGutters>
           <Typography className={classes.headerTitle}>Read Our Blogs</Typography>
           <Box className={classes.loaderContainer}>
             <CircularProgress style={{ color: BLUE_PLOOT }} size={40} />
@@ -192,7 +192,7 @@ const BlogSection = () => {
 
   return (
     <Box className={classes.root}>
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" disableGutters>
         <Box className={classes.header}>
           <Typography className={classes.headerTitle}>Read Our Blogs</Typography>
           <Box

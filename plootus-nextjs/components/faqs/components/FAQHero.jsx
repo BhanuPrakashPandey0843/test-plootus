@@ -1,13 +1,6 @@
-import React from 'react';
-import { makeStyles } from 'tss-react/mui';
-import {
-  Box,
-  Container,
-  Typography,
-  TextField,
-  InputAdornment,
-} from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
+import { Box, Container, InputAdornment, TextField, Typography } from '@mui/material';
+import { makeStyles } from 'tss-react/mui';
 
 const useStyles = makeStyles()((theme) => ({
   root: {
@@ -80,7 +73,7 @@ const useStyles = makeStyles()((theme) => ({
   },
 }));
 
-const FAQHero = ({ searchQuery, setSearchQuery, onSupportClick }) => {
+export default function FAQHero({ searchQuery, setSearchQuery, onSupportClick }) {
   const { classes } = useStyles();
 
   return (
@@ -92,8 +85,7 @@ const FAQHero = ({ searchQuery, setSearchQuery, onSupportClick }) => {
           </Box>
         </Typography>
         <Typography className={classes.description}>
-          Find quick answers to common questions about Plootus. Can't find what
-          you're looking for?{' '}
+          Find quick answers to common questions about Plootus. Can&apos;t find what you&apos;re looking for?{' '}
           <Box component="span" className={classes.supportLink} onClick={onSupportClick}>
             Contact our support team
           </Box>
@@ -103,23 +95,21 @@ const FAQHero = ({ searchQuery, setSearchQuery, onSupportClick }) => {
         <Box className={classes.searchContainer}>
           <TextField
             fullWidth
-            placeholder="Search FAQs..."
             variant="outlined"
+            placeholder="Search for answers..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className={classes.searchField}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
-                  <SearchIcon sx={{ color: '#64748B' }} />
+                  <SearchIcon color="action" />
                 </InputAdornment>
               ),
             }}
+            className={classes.searchField}
           />
         </Box>
       </Container>
     </Box>
   );
-};
-
-export default FAQHero;
+}

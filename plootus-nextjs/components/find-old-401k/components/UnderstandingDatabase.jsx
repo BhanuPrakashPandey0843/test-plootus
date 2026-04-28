@@ -26,14 +26,14 @@ const UnderstandingDatabase = () => {
   return (
     <Box className={classes.section}>
       <Typography variant="h2" className={classes.sectionTitle}>
-        Understanding the Retirement Savings Lost & Found Database
+        Understanding the Retirement Savings Lost &amp; Found Database
       </Typography>
       <Typography className={classes.paragraph}>
         The Retirement Savings Lost and Found Database helps individuals recover lost or forgotten retirement
         accounts, including 401(k)s, 403(b)s, pensions, and other employer-sponsored plans.
         Created by the U.S. Department of Labor under the SECURE 2.0 Act, it provides a centralized way to
         find retirement savings from previous employers. With workers changing jobs more frequently, this tool
-        makes it easier to track down your benefits and ensure you receive the money you've earned.
+        makes it easier to track down your benefits and ensure you receive the money you&apos;ve earned.
       </Typography>
     </Box>
   );

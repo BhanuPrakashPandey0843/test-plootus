@@ -78,7 +78,7 @@ const SecurityHero = () => {
           Yes. 100% Secure. No Social Security Number Required.
         </Typography>
         <Typography className={classes.subDescription}>
-          At Plootus, we've built every layer of our platform with your protection in mind.
+          At Plootus, we&apos;ve built every layer of our platform with your protection in mind.
           Bank-level encryption, read-only access, and zero storage of sensitive credentials.
         </Typography>
 

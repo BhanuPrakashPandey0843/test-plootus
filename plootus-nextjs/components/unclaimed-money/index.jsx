@@ -155,7 +155,6 @@ const stateLinks = [
 const UnclaimedMoney = () => {
   const { classes } = useStyles();
 
-  // Split states into 5 columns
   const numCols = 5;
   const statesPerCol = Math.ceil(stateLinks.length / numCols);
   const columns = Array.from({ length: numCols }, (_, i) => {

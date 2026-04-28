@@ -14,14 +14,9 @@ const LogIn = ({
 }) => {
   const [loading, setLoading] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const { loginModal, idx, setIdx, setLoginModal } = useContext(LoginSignupContext);
- 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setIsAuthenticated(!!localStorage.getItem('jwt_token'));
-    }
-  }, [modalIsOpen]);
+
+  const isAuthenticated = false; 
 
   useEffect(() => {
     if (modalIsOpen && (idx === 0 || idx == null)) {

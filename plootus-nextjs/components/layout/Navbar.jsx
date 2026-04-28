@@ -19,7 +19,6 @@ const NavBar = () => {
   const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
   
   const { 
     loginModal, setLoginModal, 
@@ -56,12 +55,6 @@ const NavBar = () => {
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [router.pathname]);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setIsAuthenticated(!!localStorage.getItem('jwt_token'));
-    }
-  }, [router.pathname, loginModal, signupModal]);
 
   const isLinkActive = (path) => {
     if (path === '/') return router.pathname === path;
@@ -182,26 +175,27 @@ const NavBar = () => {
         </button>
 
         {/* Desktop Auth Buttons */}
-        {!isAuthenticated ? (
-          <div className={styles.authButtons}>
-            <div className={styles.loginWrapper}>
-              <LogIn
-                modalIsOpen={loginModal}
-                openModal={() => setLoginModal(true)}
-                closeModal={() => setLoginModal(false)}
-                signupopenModal={() => setSignupModal(true)}
-              />
-            </div>
-            <div className={styles.signupWrapper}>
-              <MainSignupModal
-                modalIsOpen={signupModal}
-                openModal={() => setSignupModal(true)}
-                closeModal={() => setSignupModal(false)}
-                loginopenModal={() => setLoginModal(true)}
-              />
-            </div>
+        <div className={styles.authButtons}>
+          <div className={styles.loginWrapper}>
+            <LogIn 
+              modalIsOpen={loginModal}
+              openModal={() => setLoginModal(true)}
+              closeModal={() => setLoginModal(false)}
+              signupopenModal={() => setSignupModal(true)}
+            />
           </div>
-        ) : null}
+          <div className={styles.signupWrapper}>
+            <MainSignupModal 
+              modalIsOpen={signupModal}
+              openModal={() => setSignupModal(true)}
+              closeModal={() => setSignupModal(false)}
+              loginopenModal={() => setLoginModal(true)}
+            />
+            <button onClick={() => setSignupModal(true)} className={styles.signupBtn}>
+              Get Started
+            </button>
+          </div>
+        </div>
       </div>
 
       {/* Mobile Menu */}

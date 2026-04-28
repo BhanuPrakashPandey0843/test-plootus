@@ -13,11 +13,9 @@ const useStyles = makeStyles()((theme) => ({
     overflow: 'hidden',
     borderRadius: theme.spacing(2),
     boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-    paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(2),
+    padding: theme.spacing(2, 3),
     [theme.breakpoints.up('md')]: {
-      paddingTop: theme.spacing(3),
-      paddingBottom: theme.spacing(3),
+      padding: theme.spacing(3, 6),
     },
   },
   challengeHeroContentWrapper: {
@@ -111,47 +109,45 @@ const ChallengeBanner = () => {
 
   return (
     <Box className={classes.challengeHeroSection}>
-      <Container maxWidth="xl">
-        <Box className={classes.challengeHeroContentWrapper}>
-          <Box className={classes.challengeHeroContent}>
-            <Typography variant="h3" className={classes.challengeHeroTitle}>
-              Plootus 21-Day Financial Habits Challenge
-            </Typography>
-            <Typography className={classes.challengeHeroTagline}>
-              Small Steps. Big Change. Master Your Money in 21 Days.
-            </Typography>
-            <Typography className={classes.challengeHeroDescription}>
-              Join the Plootus 21-Day Financial Habits Challenge. <br />
-              Daily 5-minute tasks to build confidence, reduce stress, and win prizes!
-            </Typography>
+      <Box className={classes.challengeHeroContentWrapper}>
+        <Box className={classes.challengeHeroContent}>
+          <Typography variant="h3" className={classes.challengeHeroTitle}>
+            Plootus 21-Day Financial Habits Challenge
+          </Typography>
+          <Typography className={classes.challengeHeroTagline}>
+            Small Steps. Big Change. Master Your Money in 21 Days.
+          </Typography>
+          <Typography className={classes.challengeHeroDescription}>
+            Join the Plootus 21-Day Financial Habits Challenge. <br />
+            Daily 5-minute tasks to build confidence, reduce stress, and win prizes!
+          </Typography>
 
-            <Box className={classes.challengeHeroActionContainer}>
-              <Box className={classes.challengeHeroDateContainer}>
-                <Typography style={{ color: '#E2E8F0', fontWeight: 700, fontSize: '1rem', marginBottom: 2 }}>
-                  Challenge starts May 1, 2026
-                </Typography>
-                <Typography style={{ color: '#E0E7FF', fontSize: '0.75rem', fontWeight: 500 }}>
-                  (Registration closes April 28)
-                </Typography>
-              </Box>
-              <Button
-                variant="contained"
-                className={classes.challengeHeroCtaButton}
-                onClick={() => router.push('/21dayfinancialchallenge')}
-              >
-                Register FREE!
-              </Button>
+          <Box className={classes.challengeHeroActionContainer}>
+            <Box className={classes.challengeHeroDateContainer}>
+              <Typography style={{ color: '#E2E8F0', fontWeight: 700, fontSize: '1rem', marginBottom: 2 }}>
+                Challenge starts May 1, 2026
+              </Typography>
+              <Typography style={{ color: '#E0E7FF', fontSize: '0.75rem', fontWeight: 500 }}>
+                (Registration closes April 28)
+              </Typography>
             </Box>
-          </Box>
-          <Box className={classes.challengeHeroImageContainer}>
-            <img
-              src="/HOMEPAGE.svg"
-              alt="Financial planning illustration"
-              className={classes.challengeHeroImage}
-            />
+            <Button
+              variant="contained"
+              className={classes.challengeHeroCtaButton}
+              onClick={() => router.push('/21dayfinancialchallenge')}
+            >
+              Register FREE!
+            </Button>
           </Box>
         </Box>
-      </Container>
+        <Box className={classes.challengeHeroImageContainer}>
+          <img
+            src="/images/HOMEPAGE.svg"
+            alt="Financial planning illustration"
+            className={classes.challengeHeroImage}
+          />
+        </Box>
+      </Box>
     </Box>
   );
 };

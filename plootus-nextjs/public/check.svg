@@ -1,0 +1,18 @@
+<svg width="81" height="81" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <clipPath id="clip-Artboard_4">
+   <rect id="svg_1" height="81" width="81"/>
+  </clipPath>
+ </defs>
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="602" width="802" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_3">
+   <path fill="#41d287" d="m40.5,4.457a36.043,36.043 0 1 1 -36.043,36.043a36.043,36.043 0 0 1 36.043,-36.043z" id="Path_3895"/>
+   <path stroke="#f8f8f8" stroke-width="5" stroke-linecap="round" fill="none" d="m17.31236,35.8851l8.90624,14.32571l37.46903,-19.42163" id="Path_3897"/>
+  </g>
+ </g>
+</svg>

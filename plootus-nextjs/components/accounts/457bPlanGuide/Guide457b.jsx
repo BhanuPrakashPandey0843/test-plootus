@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'export default Guide457b;';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import styles from './Guide457b.module.css';

@@ -150,7 +150,7 @@ const RetirementCalculator = () => {
 
   return (
     <Box className={classes.root}>
-      <Container maxWidth="lg" className={classes.container}>
+      <Box className={classes.container}>
         <Typography className={classes.subtitleText}>
           Calculate your savings journey with our
         </Typography>
@@ -202,7 +202,7 @@ const RetirementCalculator = () => {
 
         <Box className={classes.greenGradient} />
         <Box className={classes.blueGradient} />
-      </Container>
+      </Box>
     </Box>
   );
 };

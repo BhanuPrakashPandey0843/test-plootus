@@ -39,7 +39,7 @@ const useStyles = makeStyles()((theme, _params, classes) => ({
     color: '#1E293B',
     marginBottom: theme.spacing(1),
     transition: 'color 0.3s ease',
-    minHeight: '3.5rem', // Added minHeight to ensure titles align
+    minHeight: '3.5rem',
     display: 'flex',
     alignItems: 'center',
   },

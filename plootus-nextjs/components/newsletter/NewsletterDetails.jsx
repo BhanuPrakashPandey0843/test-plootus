@@ -1,20 +1,40 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
-import { format } from 'date-fns';
+import moment from 'moment';
 import { fetchNewsletter, fetchNewsletters } from '../../lib/newsletterApi';
+import PartnersSection from '../home/PartnersSection';
 import styles from './NewsletterDetails.module.css';
 
 // ── helpers ────────────────────────────────────────────────────
 const renderHtml = (item) => {
-  const raw =
+  return (
     item?.content ||
     item?.contentHtml ||
     item?.html ||
     item?.htmlData ||
-    '';
-  if (typeof raw === 'string' && /<[^>]+>/.test(raw)) return raw;
-  if (raw) return String(raw).replace(/\n/g, '<br />');
-  return item?.description || '';
+    item?.description ||
+    ''
+  );
+};
+
+const splitHtml = (html) => {
+  if (!html) return ['', ''];
+  // Look for the first closing p tag
+  const match = html.match(/<\/p>/i);
+  if (!match) return [html, ''];
+  const index = match.index + 4;
+  return [html.substring(0, index), html.substring(index)];
+};
+
+const wrapStories = (html) => {
+  if (!html) return '';
+  // Match an img tag and all following content until the next img tag or end of string
+  const storyRegex = /(<img[^>]+>)([\s\S]*?)(?=<img|$)/gi;
+  return html.replace(storyRegex, (match, img, text) => {
+    // Inject class for source line to align it to bottom
+    const textWithSource = text.replace(/<p>Source:/gi, `<p class="${styles.sourceLine}">Source:`);
+    return `<div class="${styles.storyBlock}">${img}<div class="${styles.storyText}">${textWithSource}</div></div>`;
+  });
 };
 
 // ── Component ──────────────────────────────────────────────────
@@ -115,18 +135,33 @@ const NewsletterDetails = ({ slug }) => {
             {/* Date */}
             <p className={styles.metadata}>
               {item?.date
-                ? `Published on ${format(new Date(item.date), 'MMMM d, yyyy')}`
+                ? `Published on ${moment(item.date).format('MMMM D, YYYY')}`
                 : ''}
             </p>
 
             {/* Title */}
             <h1 className={styles.title}>{item?.heading || ''}</h1>
 
-            {/* Rich HTML body */}
-            <div
-              className={styles.content}
-              dangerouslySetInnerHTML={{ __html: renderHtml(item) }}
-            />
+            {/* Content split by Partners Section */}
+            {(() => {
+              const fullHtml = renderHtml(item);
+              const [part1, part2] = splitHtml(fullHtml);
+              return (
+                <>
+                  <div
+                    className={styles.introContent}
+                    dangerouslySetInnerHTML={{ __html: part1 }}
+                  />
+                  
+                  <PartnersSection titleDisabled={true} rootPadding="24px 0" />
+
+                  <div
+                    className={styles.gridContent}
+                    dangerouslySetInnerHTML={{ __html: wrapStories(part2) }}
+                  />
+                </>
+              );
+            })()}
 
             {/* Source */}
             {item?.source && (

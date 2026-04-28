@@ -23,6 +23,7 @@ const useStyles = makeStyles()((theme) => ({
       fontSize: '1.125rem',
       color: '#475569',
       paddingLeft: '1.5rem',
+      marginBottom: theme.spacing(2),
       '&::before': {
         content: '"•"',
         color: '#4361EE',
@@ -53,10 +54,18 @@ const AccessDatabase = () => {
       </Typography>
       <ul className={classes.list}>
         <li>
-          Verify your identity through <Link href="https://login.gov" target="_blank" className={classes.link}>Login.gov</Link> To keep personal information secure, participants must first register with valid legal identification.
+          Verify your identity through{' '}
+          <Link href="https://login.gov" target="_blank" rel="noopener noreferrer" className={classes.link}>
+            Login.gov
+          </Link>{' '}
+          To keep personal information secure, participants must first register with valid legal identification.
         </li>
         <li>
-          You will then be redirected to the Lost and Found Database to search for retirement plans using their social security number, or visit <Link href="https://lostandfound.dol.gov/" target="_blank" className={classes.link}>https://lostandfound.dol.gov/</Link>
+          You will then be redirected to the Lost and Found Database to search for retirement plans using their
+          social security number, or visit{' '}
+          <Link href="https://lostandfound.dol.gov/" target="_blank" rel="noopener noreferrer" className={classes.link}>
+            https://lostandfound.dol.gov/
+          </Link>
         </li>
         <li>Search for retirement plans using your Social Security number</li>
       </ul>
