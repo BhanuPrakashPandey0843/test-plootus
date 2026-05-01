@@ -75,6 +75,15 @@ const partners = [
     ),
   },
   {
+      logo: '/images/partners/ID-watchdog-by-equifax.jpg',
+      logoAlt: 'ID Watchdog logo',
+      description: "Identity theft is no longer a possibility—it’s a probability. In 2024 alone, identity fraud cost Americans $47 billion, impacting 18 million adults. Through our partners at ID Watchdog from Equifax, you and your family can enjoy greater peace of mind with award-winning protection. This includes lock and block features, credit alerts to help prevent unauthorized access, dark web and phishing monitoring, and family protection tools such as child credit lock. Protect yourself and your family with identity theft insurance and support from certified restoration specialists. Don’t face fraud alone.",
+      link:
+        'https://www.idwatchdog.com/myplan/plootus',
+      hyperlinkText: 'https://www.idwatchdog.com ',
+      infoPrefix: 'For more information and 20% off the price, visit ',
+    },
+  {
     logo: '/images/partners/engine_by_moneylion_black.png',
     logoAlt: 'Engine by MoneyLion logo',
     description: (

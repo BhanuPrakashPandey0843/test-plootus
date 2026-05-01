@@ -279,13 +279,7 @@ const EstatePlanningBasics = () => {
               </table>
             </div>
 
-            <div className={styles.inlineCta}>
-              <div className={styles.inlineCtaText}>
-                <h4>Integrate Your Estate Plan Into Your Full Retirement Picture</h4>
-                <p>Plootus helps you model how your assets will transfer — so your retirement savings reach the people you intend.</p>
-              </div>
-              <Link href="/retirement-calculator" className={styles.inlineCtaBtn}>Check Here</Link>
-            </div>
+
           </section>
 
           {/* PROBATE BY STATE */}
@@ -383,8 +377,8 @@ const EstatePlanningBasics = () => {
             </ul>
           </div>
           <div className={styles.ctaCard}>
-            <h4>Integrate Estate Planning Into Your Retirement Plan</h4>
-            <p>Plootus helps you see how your assets will transfer — tax-efficiently.</p>
+            <h4>What's my retirement number?</h4>
+            <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
             <Link href="/retirement-calculator" className={styles.ctaBtn}>Check Here</Link>
           </div>
           <div className={styles.sidebarCard}>

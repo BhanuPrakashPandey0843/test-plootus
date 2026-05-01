@@ -1,0 +1,53 @@
+/* Spin button styles moved to global CSS */
+
+
+.input {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 90%;
+}
+.textContent {
+  font-size: 15px;
+}
+.root {
+  height: 30px;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2.5px solid #416ce1;
+  padding: 0 5px;
+}
+
+.inputBox {
+  height: 100%;
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: #416ce1;
+  outline: none !important;
+  font-size: 15px;
+  padding-left: 8px;
+}
+
+.inputIcon {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: #416ce1;
+  font-size: 15px;
+}
+
+@media (max-width: 768px) {
+  .root {
+    width: 110px;
+  }
+  .inputIcon {
+    width: 4vw;
+  }
+  .inputBox {
+    max-width: 110px;
+    padding-left: 4vw;
+  }
+}

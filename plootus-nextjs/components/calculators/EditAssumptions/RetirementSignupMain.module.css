@@ -1,0 +1,132 @@
+/* RetirementSignupMain.module.css
+   Exact port of RetirementStatus.module.css (unauthenticated styles only)
+*/
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.text {
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* ── Pop-up modal (unauthenticated user) ── */
+.aModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 337px;
+  height: 211px;
+  border-radius: 5px;
+  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border: none;
+  z-index: 2;
+  padding: 15px 20px;
+  outline: none;
+}
+
+.aModal:focus { outline: 0; }
+
+.Overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  -webkit-backdrop-filter: blur(2.3px);
+  backdrop-filter: blur(2.3px);
+  background-color: #7070702a;
+  z-index: 9999;
+}
+
+.mCont {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.buttonCont {
+  width: 100%;
+}
+
+.closeButton {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 45px;
+  width: 45px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.crossImage {
+  height: 35px;
+  width: 35px;
+}
+
+.header {
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 0.14px;
+  color: #777777;
+  margin-top: 10px;
+}
+
+.content {
+  font-size: 14px;
+  line-height: 1.25;
+  letter-spacing: 0.12px;
+  color: #777777;
+  margin-top: 16px;
+}
+
+.btnsDiv {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0 5px 0;
+  margin-top: auto;
+}
+
+.confirmBtn {
+  border-radius: 5px;
+  background-color: #416ce1;
+  color: #ffffff;
+  border: 0;
+  text-align: center;
+  font-size: 14px;
+  padding: 5px 20px;
+  flex: 1;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.confirmBtn:hover {
+  background-color: #2355e0;
+  color: #fff;
+}
+
+@media (max-width: 576px) {
+  .aModal {
+    width: 90vw;
+    height: auto;
+    min-height: 200px;
+  }
+  .container {
+    font-size: 14px;
+  }
+  .text {
+    padding: 0 10px;
+    font-size: 12px;
+  }
+}

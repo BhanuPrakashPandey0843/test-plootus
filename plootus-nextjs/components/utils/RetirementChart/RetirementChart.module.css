@@ -1,0 +1,23 @@
+.toolTip {
+  color: #535353;
+  border-radius: 5px;
+  border: 1px solid rgb(97, 97, 97);
+  background-color: white;
+  padding: 5px;
+  font-size: 13px;
+  pointer-events: none !important;
+}
+
+.chartCont {
+  height: 100%;
+}
+
+.tooltip {
+  pointer-events: none !important;
+}
+
+@media (max-width: 576px) {
+  .toolTip {
+    max-width: 100px;
+  }
+}

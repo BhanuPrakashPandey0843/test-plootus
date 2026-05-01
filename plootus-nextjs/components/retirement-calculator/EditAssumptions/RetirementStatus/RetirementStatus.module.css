@@ -1,0 +1,210 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.text {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.aModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  outline: none;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.mCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttonCont {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.crossImage {
+  height: 20px;
+  width: 20px;
+}
+
+.header {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.content {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.btnsDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.confirmBtn {
+  background-color: #416ce1;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.loggedInModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 10px;
+  width: 500px;
+  max-width: 95%;
+  outline: none;
+  overflow: hidden;
+}
+
+.grayDiv {
+  padding: 20px;
+}
+
+.cross {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.closeDiv {
+  cursor: pointer;
+}
+
+.warningText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.warning {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.warningCont {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.header2 {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  padding: 20px;
+  border-bottom: 1px solid #ededed;
+}
+
+.pointCont {
+  padding: 20px;
+}
+
+.circleDiv {
+  display: flex;
+  align-items: center;
+  padding-right: 15px;
+}
+
+.radio {
+  height: 18px;
+  width: 18px;
+  border-radius: 9px;
+  border: 1px solid #416ce1;
+}
+
+.circleRadio {
+  height: 18px;
+  width: 18px;
+  border-radius: 9px;
+  background-color: #416ce1;
+  border: 4px solid #fff;
+  box-shadow: 0 0 0 1px #416ce1;
+}
+
+.warningContainer {
+  flex: 1;
+}
+
+.msg {
+  font-size: 14px;
+  margin: 0;
+}
+
+.editInputs {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid #ededed;
+}
+
+.confirmSelection {
+  color: white;
+  border: none;
+  padding: 10px 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.info {
+  font-size: 12px;
+  color: #727272;
+  margin: 0;
+  margin-left: 5px;
+}
+
+.iImage {
+  height: 15px;
+  width: 15px;
+}
+
+.exclaim {
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+}

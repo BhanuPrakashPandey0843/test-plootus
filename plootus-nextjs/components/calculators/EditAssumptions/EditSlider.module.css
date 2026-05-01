@@ -1,0 +1,58 @@
+/* EditSlider.module.css — exact port, font-face removed */
+
+.edit {
+  height: 100%; padding: 0px 20px; width: 100%;
+  display: grid; place-items: center;
+}
+.header { width: 90%; align-self: center; text-align: center; }
+.editCard {
+  display: flex; flex-direction: column;
+  justify-content: space-evenly; padding: 10px; height: 100%;
+}
+.innerSlider {
+  display: flex; flex-direction: column;
+  justify-content: space-between; flex: 1;
+}
+.btnDiv {
+  display: flex; flex-direction: row; flex-wrap: wrap;
+  justify-content: space-evenly; align-items: center; box-sizing: border-box;
+}
+.editButton {
+  min-width: 100px; width: auto; padding: 5px 10px; height: auto;
+  font-size: 12px; border: 1px solid #416ce1; color: #416ce1;
+  background-color: white; border-radius: 5px; outline: none !important;
+  margin-bottom: 10px; cursor: pointer;
+}
+.editButton:hover { background-color: #f0f4ff; }
+.selectedBtn {
+  min-width: 100px; width: auto; height: 30px; font-size: 12px;
+  border: 1px solid #416ce1; background-color: #416ce1; color: white;
+  border-radius: 5px; outline: none !important; margin-bottom: 10px; cursor: pointer;
+}
+.crossBtn { display: none; }
+.inputDiv { width: 100%; margin-left: 5%; }
+.stratDiv { width: 100%; }
+
+@media (max-width: 1440px) {
+  .edit { height: auto; }
+  .editCard { flex-direction: row; }
+  .innerSlider {
+    display: flex; flex-direction: column;
+    justify-content: space-evenly; align-items: center; flex: 1;
+  }
+  .stratDiv { width: 100%; padding: 0px 10px; }
+  .inputDiv { margin-left: 10%; }
+}
+@media (max-width: 868px) {
+  .edit { padding: 10px; }
+  .crossBtn {
+    display: block; position: absolute; top: 10px; right: 10px;
+    height: 30px; width: 30px; cursor: pointer;
+  }
+}
+@media (max-width: 768px) {
+  .edit { padding: 20px 10px; }
+  .editButton { font-size: 11px; }
+  .selectedBtn { font-size: 11px; }
+  .stratDiv { width: 90%; }
+}

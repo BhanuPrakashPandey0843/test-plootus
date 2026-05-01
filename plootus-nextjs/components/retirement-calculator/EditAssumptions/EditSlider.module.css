@@ -1,0 +1,135 @@
+.edit {
+  height: 100%;
+  padding: 0px 20px;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.header {
+  width: 90%;
+  align-self: center;
+  text-align: center;
+}
+
+.editCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 10px;
+  height: 100%;
+}
+
+.innerSlider {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.btnDiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 10px 8px;
+  box-sizing: border-box;
+}
+
+.editButton, .selectedBtn {
+  width: 100%;
+  min-width: 0;
+  padding: 6px 4px;
+  font-size: 13px;
+  border: 1px solid #416ce1;
+  border-radius: 5px;
+  outline: none !important;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.editButton {
+  color: #416ce1;
+  background-color: white;
+}
+
+.selectedBtn {
+  background-color: #416ce1;
+  color: white;
+}
+
+.crossBtn {
+  position: relative;
+  display: none;
+}
+
+.inputDiv {
+  width: 100%;
+  margin-left: 5%;
+}
+
+@media (max-width: 1440px) {
+  .edit {
+    height: auto;
+  }
+  .editCard {
+    flex-direction: row;
+  }
+
+  .innerSlider {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 1;
+  }
+  .stratDiv {
+    width: 100%;
+    padding: 0px 10px;
+  }
+
+  .inputDiv {
+    margin-left: 10%;
+  }
+}
+
+@media (max-width: 868px) {
+  .edit {
+    padding: 10px;
+  }
+
+  .crossBtn {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .edit {
+    padding: 20px 10px;
+  }
+
+  .editButton {
+    font-size: 11px;
+  }
+
+  .selectedBtn {
+    font-size: 11px;
+  }
+
+  .crossBtn {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 35px;
+    width: 35px;
+  }
+
+  .stratDiv {
+    width: 90%;
+  }
+}

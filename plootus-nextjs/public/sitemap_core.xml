@@ -1,37 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url> <loc>https://www.plootus.com/</loc> </url>
-<url> <loc>https://www.plootus.com/retirement-solutions</loc> </url>
-<url> <loc>https://www.plootus.com/about</loc> </url>
-<url> <loc>https://www.plootus.com/individual-users</loc> </url>
-<url> <loc>https://www.plootus.com/financial-advisors</loc> </url>
-<url> <loc>https://www.plootus.com/partners</loc> </url>
-<url> <loc>https://www.plootus.com/newsletter</loc> </url>
-<url> <loc>https://www.plootus.com/press</loc> </url>
-<url> <loc>https://www.plootus.com/where-is-my-refund</loc> </url>
-<url> <loc>https://www.plootus.com/find-old-401k</loc> </url>
-<url> <loc>https://www.plootus.com/find-lost-retirement-accounts</loc> </url>
-<url> <loc>https://www.plootus.com/lost-retirement-accounts</loc> </url>
-<url> <loc>https://www.plootus.com/unclaimed-retirement-money</loc> </url>
-<url> <loc>https://www.plootus.com/retirement-savings-lost-and-found</loc> </url>
-<url> <loc>https://www.plootus.com/unclaimed-money</loc> </url>
-<url> <loc>https://www.plootus.com/retirement-calculator</loc> </url>
-<url> <loc>https://www.plootus.com/ai-retirement-calculator</loc> </url>
-<url> <loc>https://www.plootus.com/401k-retirement-calculator</loc> </url>
-<url> <loc>https://www.plootus.com/403b-retirement-calculator</loc> </url>
-<url> <loc>https://www.plootus.com/457b-retirement-calculator</loc> </url>
-<url> <loc>https://www.plootus.com/free-retirement-calculator</loc> </url>
-<url> <loc>https://www.plootus.com/21dayfinancialchallenge</loc> </url>
-<url> <loc>https://www.plootus.com/blogs</loc> </url>
-<url> <loc>https://www.plootus.com/finance-101</loc> </url>
-<url> <loc>https://www.plootus.com/pricing</loc> </url>
-<url> <loc>https://www.plootus.com/philosophy</loc> </url>
-<url> <loc>https://www.plootus.com/algorithm</loc> </url>
-<url> <loc>https://www.plootus.com/security</loc> </url>
-<url> <loc>https://www.plootus.com/faq</loc> </url>
-<url> <loc>https://www.plootus.com/faqs</loc> </url>
-<url> <loc>https://www.plootus.com/employer</loc> </url>
-<url> <loc>https://www.plootus.com/401kCalculator</loc> </url>
-<url> <loc>https://www.plootus.com/termsandcondition</loc> </url>
-<url> <loc>https://www.plootus.com/privacy</loc> </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+  xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://www.plootus.com/</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/about</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/individual-users</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/financial-advisors</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/partners</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/newsletter</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/press</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/where-is-my-refund</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/find-old-401k</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/find-lost-retirement-accounts</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/lost-retirement-accounts</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/unclaimed-retirement-money</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/retirement-savings-lost-and-found</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/unclaimed-money</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/retirement-calculator</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/ai-retirement-calculator</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/401k-retirement-calculator</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/403b-retirement-calculator</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/457b-retirement-calculator</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/free-retirement-calculator</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/21dayfinancialchallenge</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/blogs</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/finance-101</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/pricing</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/philosophy</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/algorithm</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/security</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/faq</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/faqs</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/employer</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/401kCalculator</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/termsandcondition</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/privacy</loc>
+  </url>
 </urlset>

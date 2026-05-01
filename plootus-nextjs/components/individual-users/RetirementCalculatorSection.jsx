@@ -5,7 +5,7 @@ import { Container, Typography } from '@mui/material';
 // from components/home if CalculatorStatic is too complex to port immediately, or I will port it.
 // The user wants an EXACT match. So I must import CalculatorStatic once ported.
 // I will create a placeholder import that points to the expected location.
-import CalculatorStatic from '../calculators/CalculatorStatic/CalculatorStatic';
+import CalculatorStatic from '../retirement-calculator/CalculatorStatic/CalculatorStatic';
 
 const useStyles = makeStyles()((theme) => ({
   root: {

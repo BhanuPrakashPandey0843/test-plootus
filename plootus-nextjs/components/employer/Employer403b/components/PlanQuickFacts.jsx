@@ -32,7 +32,7 @@ const DEFAULT_FACTS = [
 
 const useStyles = makeStyles()((theme) => ({
   section: {
-    marginBottom: theme.spacing(8),
+    marginBottom: theme.spacing(4),
   },
   title: {
     fontSize: '1.75rem',

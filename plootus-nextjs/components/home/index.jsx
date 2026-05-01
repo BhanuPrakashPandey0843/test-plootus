@@ -2,7 +2,6 @@ import React from 'react';
 import { Container } from '@mui/material';
 import { makeStyles } from 'tss-react/mui';
 import HeroSection from './HeroSection';
-import ChallengeBanner from './ChallengeBanner';
 import PartnersSection from './PartnersSection';
 import WhatPlootusDoes from './WhatPlootusDoes';
 import FinanceFeatures from './FinanceFeatures';
@@ -29,8 +28,7 @@ const Home = () => {
   return (
     <div className={classes.root}>
       <HubNav />
-      <Container maxWidth="lg" sx={{ mt: 4, mb: 8, display: 'flex', flexDirection: 'column', gap: { xs: 4, md: 10 } }}>
-        <ChallengeBanner />
+      <Container maxWidth="lg" sx={{ mb: 8, display: 'flex', flexDirection: 'column', gap: { xs: 4, md: 4 } }}>
         <HeroSection />
         <PartnersSection />
         <WhatPlootusDoes />

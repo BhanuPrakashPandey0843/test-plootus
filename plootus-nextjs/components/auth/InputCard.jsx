@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   TextField, 
   Checkbox, 
   FormControlLabel, 
-  Button, 
-  Box, 
   CircularProgress,
-  Typography
+  Typography,
+  Box
 } from '@mui/material';
+import { GoogleLogin } from '@react-oauth/google';
 import styles from './InputCard.module.css';
+import { signIn, googleLogin, resendActivationEmail } from '../../lib/authApi';
 
 const InputCard = ({
   closeModal,
@@ -21,11 +22,68 @@ const InputCard = ({
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [remember, setRemember] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const REACT_APP_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.plootus.com';
+
+  const handleRedirect = (userType) => {
+    const path = userType === 'advisor' ? '/auth/adash' : '/auth/dashboard';
+    window.location.href = `${REACT_APP_URL}${path}`;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Logic for login would go here
-    console.log('Login attempt:', { email, password, index });
+    setError('');
+    setLoading(true);
+
+    const userType = index === 2 ? 'advisor' : 'primary';
+    const result = await signIn(email, password, userType);
+
+    if (result.error) {
+      if (result.status === 403) {
+        setError('Please verify your email. Check your inbox for the activation link.');
+      } else {
+        setError(result.error || 'Incorrect email or password');
+      }
+      setLoading(false);
+    } else {
+      const token = result.data?.token;
+      if (token) {
+        localStorage.setItem('jwt_token', token);
+        if (remember) {
+          localStorage.setItem('email', email);
+        } else {
+          localStorage.removeItem('email');
+        }
+        handleRedirect(userType);
+      } else {
+        setError('Authentication failed. No token received.');
+        setLoading(false);
+      }
+    }
+  };
+
+  const handleGoogleSuccess = async (credentialResponse) => {
+    setLoading(true);
+    const result = await googleLogin(credentialResponse.credential);
+
+    if (result.error) {
+      setError(result.error);
+      setLoading(false);
+    } else {
+      const token = result.data?.token;
+      if (token) {
+        localStorage.setItem('jwt_token', token);
+        handleRedirect('primary');
+      } else {
+        setError('Google authentication failed.');
+        setLoading(false);
+      }
+    }
+  };
+
+  const handleGoogleError = () => {
+    setError('Google login failed. Please try again.');
   };
 
   return (
@@ -53,6 +111,12 @@ const InputCard = ({
           />
         </div>
         
+        {error && (
+          <Typography color="error" variant="caption" sx={{ ml: 4, mb: 1, display: 'block' }}>
+            {error}
+          </Typography>
+        )}
+
         <div className={styles.forgotContainer}>
           <div className={styles.forgotWrapper}>
             <div className={styles.forgot}>
@@ -111,18 +175,11 @@ const InputCard = ({
             </p>
           </div>
           <div className={styles.oAuth}>
-            <div className={styles.fb}>
-              <img 
-                src="/images/fb.png" 
-                alt="FB" 
-                style={{ height: '50px', width: '50px', cursor: 'pointer' }} 
-              />
-            </div>
             <div className={styles.google}>
-              <img 
-                src="/images/google.jpg" 
-                alt="Google" 
-                style={{ height: '50px', width: '50px', cursor: 'pointer' }} 
+              <GoogleLogin
+                onSuccess={handleGoogleSuccess}
+                onError={handleGoogleError}
+                useOneTap
               />
             </div>
           </div>
@@ -133,3 +190,5 @@ const InputCard = ({
 };
 
 export default InputCard;
+
+

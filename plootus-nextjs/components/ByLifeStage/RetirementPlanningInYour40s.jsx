@@ -43,14 +43,14 @@ const RetirementPlanningInYour40s = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Retirement Planning in Your 40s: The Complete 2026 Guide | Plootus</title>
+        <title>Retirement Planning in Your 40s | Plootus</title>
         <meta name="description" content="The complete guide to retirement planning in your 40s. Peak earning years, catch-up contributions, asset allocation shifts, mortgage vs. investing tradeoffs, and the decisions that define your retirement outcome." />
         <link rel="canonical" href="https://www.plootus.com/retirement-planning-in-your-40s" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            "headline": "Retirement Planning in Your 40s: The Complete 2026 Guide",
+            "headline": "Retirement Planning in Your 40s",
             "description": "How to accelerate retirement savings in your 40s — contribution strategy, asset allocation shifts, and making the most of peak earnings.",
             "datePublished": "2026-01-01",
             "dateModified": "2026-04-01",
@@ -77,7 +77,7 @@ const RetirementPlanningInYour40s = () => {
       <div className={styles.hero}>
         <div className={styles.heroInner}>
           <div className={styles.heroEyebrow}>⚡ Life Stage Guide</div>
-          <h1>Retirement Planning in Your 40s:<br />The Complete 2026 Guide</h1>
+          <h1>Retirement Planning in Your 40s</h1>
           <p className={styles.heroDeck}>Your 40s are typically your highest-earning decade — and your last chance to course-correct without radical sacrifices. Whether you're on track or behind, this guide covers exactly what to prioritize, what to change, and what the numbers actually mean.</p>
           <div className={styles.heroMeta}>
             <span>📅 Updated April 2026</span>
@@ -90,10 +90,10 @@ const RetirementPlanningInYour40s = () => {
 
       <div className={styles.statStrip}>
         <div className={styles.statStripInner}>
-          <div className={styles.statItem}><div className={styles.statNum}>3×</div><div className={styles.statLabel}>Salary saved by age 40 (Fidelity target)</div></div>
-          <div className={styles.statItem}><div className={styles.statNum}>6×</div><div className={styles.statLabel}>Salary saved by age 50 (Fidelity target)</div></div>
+          <div className={styles.statItem}><div className={styles.statNum}>3×</div><div className={styles.statLabel}>Salary saved by age 40</div></div>
+          <div className={styles.statItem}><div className={styles.statNum}>6×</div><div className={styles.statLabel}>Salary saved by age 50</div></div>
           <div className={styles.statItem}><div className={styles.statNum}>$23,500</div><div className={styles.statLabel}>2026 401(k) employee contribution limit</div></div>
-          <div className={styles.statItem}><div className={styles.statNum}>20 yrs</div><div className={styles.statLabel}>Until typical retirement — still powerful compounding</div></div>
+          <div className={styles.statItem}><div className={styles.statNum}>20 yrs</div><div className={styles.statLabel}>Until typical retirement</div></div>
         </div>
       </div>
 
@@ -332,8 +332,8 @@ const RetirementPlanningInYour40s = () => {
           </div>
 
           <div className={styles.ctaCard}>
-            <h4>See Your 40s Retirement Plan</h4>
-            <p>Plootus calculates your real retirement number, your gap, and exactly how much you need to save each month to close it.</p>
+            <h4>What's my retirement number?</h4>
+            <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
             <Link href="/retirement-calculator" className={styles.ctaBtn}>Check Here</Link>
           </div>
 
@@ -354,7 +354,15 @@ const RetirementPlanningInYour40s = () => {
         </aside>
       </div>
 
-      <PartnersSection />
+      <PartnersSection
+        titleFontSize="28px !important"
+        titleFontWeight={800}
+        titleColor="var(--navy) !important"
+        titleLetterSpacing="-0.3px"
+        subtitleFontSize="15px"
+        subtitleColor="var(--text-mid)"
+        rootPadding="40px 0 0"
+      />
     </div>
   );
 };

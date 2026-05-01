@@ -92,7 +92,7 @@ const useStyles = makeStyles()((theme) => ({
     boxShadow: '0 10px 40px rgba(0,0,0,0.08)',
   },
   mainContentRow: {
-    marginTop: theme.spacing(8),
+    marginTop: theme.spacing(4),
   },
   tableContainer: {
     position: 'relative',

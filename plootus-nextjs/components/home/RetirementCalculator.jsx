@@ -172,7 +172,7 @@ const RetirementCalculator = () => {
               your goals.
             </Typography>
 
-            <Link href="/retirement-solutions#calculator-section" passHref legacyBehavior>
+            <Link href="/individual-users#calculator-section" passHref legacyBehavior>
               <Button
                 variant="contained"
                 endIcon={<ArrowForwardIcon />}

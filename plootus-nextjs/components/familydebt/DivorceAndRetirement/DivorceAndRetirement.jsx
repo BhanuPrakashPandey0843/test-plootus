@@ -312,13 +312,7 @@ const DivorceAndRetirement = () => {
               <li className={styles.strategyItem}><div className={styles.strategyIcon}>🔒</div><div className={styles.strategyContent}><h4>Your Ex's Remarriage Has No Effect on Your Benefit</h4><p>Many divorced spouses mistakenly believe they lose their entitlement if their ex remarries. They do not. Your divorced spousal benefit is completely independent of what happens in your ex-spouse's life after your divorce. Their new spouse may also claim spousal benefits on the same record — the SSA pays all eligible claimants without reduction.</p></div></li>
             </ul>
 
-            <div className={styles.inlineCta}>
-              <div className={styles.inlineCtaText}>
-                <h4>Model Your Post-Divorce Retirement Income</h4>
-                <p>Plootus can help you project your retirement income after divorce — including Social Security scenarios, split account balances, and a new savings trajectory.</p>
-              </div>
-              <Link href="/retirement-calculator" className={styles.inlineCtaBtn}>Check Here</Link>
-            </div>
+
           </section>
 
           {/* IRA DIVISION */}
@@ -460,8 +454,8 @@ const DivorceAndRetirement = () => {
             </ul>
           </div>
           <div className={styles.ctaCard}>
-            <h4>Rebuild Your Retirement Plan After Divorce</h4>
-            <p>Plootus helps you project your new retirement income — with your updated account balances, Social Security scenarios, and a fresh savings trajectory.</p>
+            <h4>What's my retirement number?</h4>
+            <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
             <Link href="/retirement-calculator" className={styles.ctaBtn}>Check Here</Link>
           </div>
           <div className={styles.sidebarCard}>

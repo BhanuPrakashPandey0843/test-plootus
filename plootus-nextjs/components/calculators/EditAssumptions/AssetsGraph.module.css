@@ -1,0 +1,72 @@
+/* AssetsGraph.module.css — exact port, font-face removed */
+
+.cardHeader {
+  border: solid 1px #416ce1;
+  border-radius: 10px;
+  height: 150px;
+  width: 90%;
+  padding: 15px 0px;
+}
+.topLeft {
+  display: flex; justify-content: flex-start;
+  align-items: center; flex: 2;
+}
+.topLeft h5 { margin: 0; padding: 0; }
+.myGraph {
+  height: 100%; display: flex; justify-content: center;
+  max-height: 630px; width: 100%;
+}
+.topContainer { display: flex; padding: 10px 30px 10px 30px; }
+.myinnerG { height: 400px; }
+.circle {
+  display: flex; justify-content: center; align-items: center;
+  height: 60px; max-height: 60px; width: 60px; max-width: 70px;
+  border-radius: 30px; border: solid 1px #1bad53; padding: 0px 5px;
+  font-size: 11px; color: #404a57; font-weight: 600;
+}
+.afterDecimal { font-size: 14px; padding-top: 5px; }
+.image { height: 18px; width: 18px; }
+.imageMul {
+  height: 18px; width: 18px;
+  transform: rotate(45deg);
+}
+.middle { display: flex; padding-top: 10px; }
+.topRight {
+  display: flex; justify-content: flex-end; align-items: center;
+  flex: 1; font-size: 22px; font-weight: 600;
+}
+.headerText { font-size: 18px; font-weight: 600; margin: 0; }
+.number { font-size: 15px; }
+.text { font-size: 12px; width: 100%; }
+.text p { margin: 0; padding: 0; text-align: center; font-size: 12px; width: 100%; }
+.titlel { font-size: 15px; flex: 4; padding: 0; }
+.titler { font-size: 15px; flex: 4; padding: 0; }
+.container { display: flex; justify-content: center; align-items: center; width: 100%; }
+.leftb { flex: 1; display: flex; justify-content: flex-end; }
+.c1 { flex: 4; display: flex; justify-content: center; align-items: center; }
+.plus { flex: 1; display: flex; justify-content: center; align-items: center; height: 60px; }
+.c2 { flex: 4; display: flex; justify-content: center; align-items: center; }
+.rightb { flex: 1; }
+.downl { flex: 1; }
+
+@media (max-width: 1024px) {
+  .myGraph { height: 100%; padding: 20px 0px; }
+  .myinnerG { height: 350px; }
+  .image { height: 20px; width: 20px; }
+  .number { font-size: 13px; }
+}
+@media (max-width: 900px) {
+  .circle { height: 50px; width: 50px; border-radius: 25px; }
+}
+@media (max-width: 576px) {
+  .myGraph { height: 100%; padding: 20px 0px; }
+  .number { font-size: 13px; }
+  .image { height: 15px; width: 15px; }
+  .text { font-size: 11px; }
+  .cardHeader { width: 95%; height: 130px; padding: 10px; }
+  .headerText { font-size: 16px; }
+  .topContainer { padding: 10px 15px; }
+}
+@media (max-width: 400px) {
+  .circle { height: 50px; width: 50px; border-radius: 25px; }
+}

@@ -264,7 +264,7 @@ const RetirementIncomeCalculator = () => {
           </div>
 
           <div className={styles['sources-box']}>
-            <strong>📚 Sources</strong>
+            <strong> Sources</strong>
             <ul>
               <li>Bengen, W.P. (1994). Determining Withdrawal Rates Using Historical Data. Journal of Financial Planning — original 4% rule study</li>
               <li>Cooley, Hubbard & Walz (1998). Retirement Savings: Choosing a Withdrawal Rate That Is Sustainable — Trinity Study</li>

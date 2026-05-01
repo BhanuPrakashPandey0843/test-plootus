@@ -1,4 +1,4 @@
-/* Roth vs Traditional IRA Comparison Styles */
+/* Roth vs Traditional IRA Comparison Styles - FULL PARITY */
 
 .container {
   --blue: #3B5BDB;
@@ -189,7 +189,7 @@
 
 .sidebar {
   position: sticky;
-  top: 80px;
+  top: 160px; /* SYNCED:NavBar+HubNav */
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -211,7 +211,7 @@
   margin-bottom: 14px;
   line-height: 1.2;
   letter-spacing: -.3px;
-  scroll-margin-top: 80px;
+  scroll-margin-top: 160px;
 }
 
 .container h3 {
@@ -790,6 +790,10 @@
   transition: transform .2s;
 }
 
+.faqItem.open .faqIcon {
+  transform: rotate(45deg);
+}
+
 .faqA {
   padding: 0 20px 16px;
   font-size: 14px;
@@ -802,11 +806,7 @@
   display: block;
 }
 
-.faqItem.open .faqIcon {
-  transform: rotate(45deg);
-}
-
-/* Sidebar cards */
+/* Sidebar */
 .sidebarCard {
   background: var(--white);
   border: 1px solid var(--border);
@@ -841,6 +841,9 @@
   color: var(--blue);
   text-decoration: none;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
   cursor: pointer;
 }
 
@@ -919,35 +922,6 @@
   text-decoration: underline;
 }
 
-/* Sources list */
-.sourcesBox {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 22px;
-  margin-top: 32px;
-}
-
-.sourcesBox h4 {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 12px;
-  text-transform: uppercase;
-  letter-spacing: .06em;
-}
-
-.sourcesBox ol {
-  padding-left: 18px;
-}
-
-.sourcesBox li {
-  font-size: 12px;
-  color: var(--text-light);
-  margin-bottom: 6px;
-  line-height: 1.55;
-}
-
 @media (max-width: 900px) {
   .pageBody {
     grid-template-columns: 1fr;
@@ -956,74 +930,22 @@
   .sidebar {
     position: static;
   }
+  .iraCompare {
+    grid-template-columns: 1fr;
+  }
   .calcGrid {
     grid-template-columns: 1fr;
   }
   .resultsRow {
     grid-template-columns: 1fr;
   }
-  .iraCompare {
-    grid-template-columns: 1fr;
+  .resultStats {
+    grid-template-columns: 1fr 1fr;
   }
   .limitBoxes {
     grid-template-columns: 1fr 1fr;
   }
-  .inlineCta {
-    flex-direction: column;
-    text-align: center;
+  .statStripInner {
+    grid-template-columns: 1fr 1fr;
   }
-}
-
-.ctaBtn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: white;
-}
-
-
-/* FOOLPROOF TOC STANDARDIZATION */
-.tocBox ul, .tocBox ol, .tocList ul, .tocList ol, .toc ul, .toc ol, .toc-box ul, .toc-box ol, .toc-list ul, .toc-list ol {
-  list-style: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  counter-reset: none !important;
-}
-
-.tocBox li, .tocList li, .toc li, .toc-box li, .toc-list li {
-  padding: 8px 0 !important;
-  border-bottom: 1px solid var(--border) !important;
-  display: block !important;
-  counter-increment: none !important;
-  background: none !important;
-  margin: 0 !important;
-}
-
-.tocBox li:last-child, .tocList li:last-child, .toc li:last-child, .toc-box li:last-child, .toc-list li:last-child {
-  border-bottom: none !important;
-}
-
-.tocBox li::before, .tocList li::before, .toc li::before, .toc-box li::before, .toc-list li::before {
-  content: none !important;
-  display: none !important;
-}
-
-.tocBox a, .tocList a, .toc a, .toc-box a, .toc-list a {
-  color: var(--blue) !important;
-  text-decoration: none !important;
-  font-size: 14px !important;
-  font-weight: 500 !important;
-  display: block !important;
-}
-
-.tocBox a:hover, .tocList a:hover, .toc a:hover, .toc-box a:hover, .toc-list a:hover {
-  text-decoration: underline !important;
-  color: var(--blue-dark) !important;
-}
-
-.tocBox h3, .tocList h3, .toc h3, .sidebarCard h3, .toc-box h3, .toc-list h3 {
-  font-size: 13px !important;
-  font-weight: 700 !important;
-  letter-spacing: .05em !important;
-  text-transform: uppercase !important;
-  color: var(--text-light) !important;
-  margin-bottom: 12px !important;
 }

@@ -1,11 +1,28 @@
 import React, { useState } from 'react';
 import { CircularProgress } from '@mui/material';
+import { GoogleLogin } from '@react-oauth/google';
+import { getUserType, googleLogin } from '../../lib/authApi';
 import styles from './Start.module.css';
+
+const decodeJwt = (token) => {
+  try {
+    const base64Url = token.split('.')[1];
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+    return JSON.parse(jsonPayload);
+  } catch (e) {
+    return null;
+  }
+};
 
 const SignupStart = ({ closeModal, nextPress, setSignupData, loginopenModal }) => {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState('');
+
+  const REACT_APP_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.plootus.com';
 
   const handleEmailSignup = () => {
     if (!email) {
@@ -23,6 +40,54 @@ const SignupStart = ({ closeModal, nextPress, setSignupData, loginopenModal }) =
   const handleLogin = () => {
     closeModal();
     loginopenModal();
+  };
+
+  const handleGoogleSuccess = async (credentialResponse) => {
+    try {
+      setLoading(true);
+      setEmailError('');
+      
+      const decoded = decodeJwt(credentialResponse.credential);
+      if (!decoded || !decoded.email) {
+        setEmailError('Invalid Google token received.');
+        setLoading(false);
+        return;
+      }
+
+      const { email: googleEmail, given_name, family_name, sub } = decoded;
+
+      // Check if user exists
+      const userTypeRes = await getUserType(googleEmail);
+      
+      if (userTypeRes.data && userTypeRes.data.types && userTypeRes.data.types.length > 0) {
+        // User exists, try to log in instead
+        const loginResult = await googleLogin(credentialResponse.credential);
+        
+        if (!loginResult.error && loginResult.data?.token) {
+          localStorage.setItem('jwt_token', loginResult.data.token);
+          closeModal();
+          window.location.href = `${REACT_APP_URL}/auth/dashboard`;
+        } else {
+          setEmailError('Google login failed for existing user.');
+        }
+      } else {
+        // User does not exist, proceed to signup steps
+        setSignupData((prev) => ({
+          ...prev,
+          email: googleEmail,
+          firstName: given_name || '',
+          lastName: family_name || '',
+          socialLogin: 'google',
+          socialId: sub
+        }));
+        nextPress();
+      }
+    } catch (error) {
+      console.error('Google signup error:', error);
+      setEmailError('Google signup failed. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -80,14 +145,13 @@ const SignupStart = ({ closeModal, nextPress, setSignupData, loginopenModal }) =
         </div>
 
         <div className={styles.socialButtons}>
-          <button className={styles.socialButton}>
-            <img src="/images/googlesign.png" alt="" className={styles.socialIcon} />
-            <span>Continue with Google</span>
-          </button>
-          <button className={styles.socialButton}>
-            <img src="/images/facesign.png" alt="" className={styles.socialIcon} />
-            <span>Continue with Facebook</span>
-          </button>
+          <GoogleLogin
+            onSuccess={handleGoogleSuccess}
+            onError={() => {
+              setEmailError('Google login failed. Please try again.');
+            }}
+            useOneTap
+          />
         </div>
       </div>
     </div>

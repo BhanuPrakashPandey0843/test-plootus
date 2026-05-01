@@ -1,21 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url> <loc>https://www.plootus.com/newsletters/edition-350-3-things-investors-need-to-know-from-last-week</loc> </url>
-<url> <loc>https://www.plootus.com/newsletters/edition-349-3-things-investors-need-to-know-from-last-week</loc> </url>
-<url> <loc>https://www.plootus.com/newsletters/edition-348-3-things-investors-need-to-know-from-last-week</loc> </url>
-<url> <loc>https://www.plootus.com/newsletters/edition-347-3-things-investors-need-to-know-from-last-week</loc> </url>
-<url> <loc>https://www.plootus.com/newsletters/edition-346-3-things-investors-need-to-know-from-last-week</loc> </url>
-<url> <loc>https://www.plootus.com/newsletters/edition-345-3-things-investors-need-to-know-from-last-week</loc> </url>
-<url> <loc>https://www.plootus.com/newsletters/edition-344-3-things-investors-need-to-know-from-last-week</loc> </url>
-<url> <loc>https://www.plootus.com/newsletters/edition-343-3-things-investors-need-to-know-from-last-week</loc> </url>
-<url> <loc>https://www.plootus.com/newsletters/edition-342-3-things-investors-need-to-know-from-last-week</loc> </url>
-<url> <loc>https://www.plootus.com/newsletters/edition-341-3-things-investors-need-to-know-from-last-week-meta-nvidia</loc> </url>
-<url> <loc>https://www.plootus.com/newsletters/edition-340-3-things-investors-bitcoin-amazon-meta-alphabet-gold</loc> </url>
-<url> <loc>https://www.plootus.com/newsletters/3-things-investors-need-know-from-last-week-oil-jobs-software-anthropic</loc> </url>
-<url> <loc>https://www.plootus.com/newsletters/things-investors-need-to-know-from-last-week-dollar-capital-one-brex</loc> </url>
-<url> <loc>https://www.plootus.com/newsletters/things-investors-need-to-know-gas-last-week-amazon-tariff-cold-energy</loc> </url>
-<url> <loc>https://www.plootus.com/newsletters/news-finance-weekly-Nvidia-Fed-credit-card-AI-China</loc> </url>
-<url> <loc>https://www.plootus.com/newsletters/warner-bros-discovery-netflix-alaska-airlines-AI-news-boeing</loc> </url>
-<url> <loc>https://www.plootus.com/newsletters/goldman-sachs-openai-chatgpt-energy-infrastructure-news</loc> </url>
-<url> <loc>https://www.plootus.com/newsletters/newsletter-news-finance-credit-card-rates-economic-equipment-borrowing</loc> </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+  xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://www.plootus.com/newsletters/edition-350-3-things-investors-need-to-know-from-last-week</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/newsletters/edition-349-3-things-investors-need-to-know-from-last-week</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/newsletters/edition-348-3-things-investors-need-to-know-from-last-week</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/newsletters/edition-347-3-things-investors-need-to-know-from-last-week</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/newsletters/edition-346-3-things-investors-need-to-know-from-last-week</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/newsletters/edition-345-3-things-investors-need-to-know-from-last-week</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/newsletters/edition-344-3-things-investors-need-to-know-from-last-week</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/newsletters/edition-343-3-things-investors-need-to-know-from-last-week</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/newsletters/edition-342-3-things-investors-need-to-know-from-last-week</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/newsletters/edition-341-3-things-investors-need-to-know-from-last-week-meta-nvidia</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/newsletters/edition-340-3-things-investors-bitcoin-amazon-meta-alphabet-gold</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/newsletters/3-things-investors-need-know-from-last-week-oil-jobs-software-anthropic</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/newsletters/things-investors-need-to-know-from-last-week-dollar-capital-one-brex</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/newsletters/things-investors-need-to-know-gas-last-week-amazon-tariff-cold-energy</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/newsletters/news-finance-weekly-Nvidia-Fed-credit-card-AI-China</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/newsletters/warner-bros-discovery-netflix-alaska-airlines-AI-news-boeing</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/newsletters/goldman-sachs-openai-chatgpt-energy-infrastructure-news</loc>
+  </url>
+  <url>
+    <loc>https://www.plootus.com/newsletters/newsletter-news-finance-credit-card-rates-economic-equipment-borrowing</loc>
+  </url>
 </urlset>

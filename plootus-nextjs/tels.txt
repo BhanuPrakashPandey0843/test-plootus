@@ -7,16 +7,6 @@ this  is the place where all the chnages will be done  C:\Users\user\Desktop\Plo
    this  is the place where all the chnages will be migrated from    C:\Users\user\Desktop\Plootus-Next\plootus-nextjs
 
 
-About Us
-FAQs
-Contact Us
-Security
-Unclaimed Money
-Where Is My Refund
-Find Old 401k
-Philosophy
-Retirement Solutions
-Privacy Policy
 
 
 1. Pixel-Perfect Migration
@@ -83,7 +73,6 @@ Example structure:
   /refund-status
   /find-old-401k
   /philosophy
-  /retirement-solutions
   /privacy-policy
 
 /components

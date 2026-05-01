@@ -4,11 +4,11 @@ import { Box, Container, Typography, Grid } from '@mui/material';
 
 const useStyles = makeStyles()((theme) => ({
   root: {
-    paddingTop: theme.spacing(8),
+    paddingTop: theme.spacing(0),
     paddingBottom: theme.spacing(8),
     backgroundColor: '#fff',
     [theme.breakpoints.up('md')]: {
-      paddingTop: theme.spacing(12),
+      paddingTop: theme.spacing(0),
       paddingBottom: theme.spacing(12),
     },
   },

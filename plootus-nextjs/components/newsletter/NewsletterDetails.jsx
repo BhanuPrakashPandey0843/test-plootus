@@ -172,8 +172,8 @@ const NewsletterDetails = ({ slug }) => {
             )}
 
             {/* Sign-off */}
-            <p className={styles.signoffTitle}>Have a great week ahead!</p>
-            <p className={styles.signoffSub}>Co-founders, Plootus</p>
+            {/* <p className={styles.signoffTitle}>Have a great week ahead!</p>
+            <p className={styles.signoffSub}>Co-founders, Plootus</p> */}
             <hr className={styles.hr} />
 
             {/* Vision */}

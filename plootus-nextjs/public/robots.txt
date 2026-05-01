@@ -2,7 +2,9 @@
 # https://www.robotstxt.org/robotstxt.html
 
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /auth/
+Disallow: /api/
 
 # Explicit AI bot access
 User-agent: GPTBot
@@ -17,4 +19,6 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
+# Sitemap index — all sub-sitemaps listed here
+Sitemap: https://www.plootus.com/sitemap_index.xml
 Sitemap: https://www.plootus.com/sitemap.xml

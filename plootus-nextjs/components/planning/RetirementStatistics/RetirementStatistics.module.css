@@ -1,4 +1,4 @@
-/* Retirement Statistics 2026 - New UI Styles */
+/* Retirement Statistics 2026 - New UI Styles - FULL PARITY */
 
 .container {
   --blue: #3B5BDB;
@@ -186,7 +186,8 @@
 
 .sidebar {
   position: sticky;
-  top: 80px;
+  top: 160px;
+  /* SYNCED:NavBar+HubNav */
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -208,7 +209,7 @@
   margin-bottom: 14px;
   line-height: 1.2;
   letter-spacing: -.3px;
-  scroll-margin-top: 80px;
+  scroll-margin-top: 160px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -684,18 +685,23 @@
     grid-template-columns: 1fr;
     padding: 24px 20px;
   }
+
   .sidebar {
     position: static;
   }
+
   .statCards {
     grid-template-columns: 1fr;
   }
+
   .limitBoxes {
     grid-template-columns: 1fr 1fr;
   }
+
   .statStripInner {
     grid-template-columns: 1fr 1fr;
   }
+
   .inlineCta {
     flex-direction: column;
     text-align: center;
@@ -707,34 +713,47 @@
   border-color: white;
 }
 
-
 /* FOOLPROOF TOC STANDARDIZATION */
-.tocBox ul, .tocBox ol, .tocList ul, .tocList ol, .toc ul, .toc ol, .toc-box ul, .toc-box ol, .toc-list ul, .toc-list ol {
+.tocBox ul,
+.tocBox ol,
+.tocList ul,
+.tocList ol,
+.toc ul,
+.toc ol,
+.toc-box ul,
+.toc-box ol,
+.toc-list ul,
+.toc-list ol {
   list-style: none !important;
   padding: 0 !important;
   margin: 0 !important;
-  counter-reset: none !important;
 }
 
-.tocBox li, .tocList li, .toc li, .toc-box li, .toc-list li {
+.tocBox li,
+.tocList li,
+.toc li,
+.toc-box li,
+.toc-list li {
   padding: 8px 0 !important;
   border-bottom: 1px solid var(--border) !important;
   display: block !important;
-  counter-increment: none !important;
   background: none !important;
   margin: 0 !important;
 }
 
-.tocBox li:last-child, .tocList li:last-child, .toc li:last-child, .toc-box li:last-child, .toc-list li:last-child {
+.tocBox li:last-child,
+.tocList li:last-child,
+.toc li:last-child,
+.toc-box li:last-child,
+.toc-list li:last-child {
   border-bottom: none !important;
 }
 
-.tocBox li::before, .tocList li::before, .toc li::before, .toc-box li::before, .toc-list li::before {
-  content: none !important;
-  display: none !important;
-}
-
-.tocBox a, .tocList a, .toc a, .toc-box a, .toc-list a {
+.tocBox a,
+.tocList a,
+.toc a,
+.toc-box a,
+.toc-list a {
   color: var(--blue) !important;
   text-decoration: none !important;
   font-size: 14px !important;
@@ -742,16 +761,11 @@
   display: block !important;
 }
 
-.tocBox a:hover, .tocList a:hover, .toc a:hover, .toc-box a:hover, .toc-list a:hover {
+.tocBox a:hover,
+.tocList a:hover,
+.toc a:hover,
+.toc-box a:hover,
+.toc-list a:hover {
   text-decoration: underline !important;
   color: var(--blue-dark) !important;
-}
-
-.tocBox h3, .tocList h3, .toc h3, .sidebarCard h3, .toc-box h3, .toc-list h3 {
-  font-size: 13px !important;
-  font-weight: 700 !important;
-  letter-spacing: .05em !important;
-  text-transform: uppercase !important;
-  color: var(--text-light) !important;
-  margin-bottom: 12px !important;
 }

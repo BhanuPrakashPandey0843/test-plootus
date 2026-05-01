@@ -496,13 +496,7 @@ const SwitchingJobs401k = () => {
             </div>
             <p style={{ fontSize: '12px', color: 'var(--text-light)', marginTop: '10px' }}>*Rollover value assumes 7% annualized growth from age 30 to 65 (35 years). State tax estimate of 5% is illustrative — your actual state tax depends on your state of residence. Federal withholding is 20%; additional ordinary income tax may be owed at filing depending on your marginal rate. Early withdrawal penalty applies if under age 59½. This table is for educational illustration only — consult a tax professional for your specific situation.</p>
 
-            <div className={styles.inlineCta}>
-              <div className={styles.inlineCtaText}>
-                <h4>See How Your 401(k) Rollover Fits Your Retirement Timeline</h4>
-                <p>Plootus models your rollover alongside projected contributions, Social Security, and retirement income — all in one place, free.</p>
-              </div>
-              <Link href="/retirement-calculator" className={styles.inlineCtaBtn}>Check Here</Link>
-            </div>
+
           </section>
 
           <section id="planning">
@@ -560,8 +554,8 @@ const SwitchingJobs401k = () => {
             </ul>
           </div>
           <div className={styles.ctaCard}>
-            <h4>See Your Full Retirement Picture</h4>
-            <p>Plootus models your rollover alongside all your accounts, Social Security, and state taxes — so you can see exactly where you stand.</p>
+            <h4>What's my retirement number?</h4>
+            <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
             <Link href="/retirement-calculator" className={styles.ctaBtn}>Check Here</Link>
           </div>
           <div className={styles.sidebarCard}>

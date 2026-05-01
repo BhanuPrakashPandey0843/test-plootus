@@ -9,6 +9,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -24,17 +25,22 @@ const theme = createTheme({
 import { Provider } from 'react-redux';
 import { store } from '../lib/store';
 
+const GOOGLE_CLIENT_ID = "489405425763-cghs67b7r4ein9iimqaunnaip8j4h05d.apps.googleusercontent.com";
+
 export default function App({ Component, pageProps, emotionCache = clientSideEmotionCache }) {
   return (
     <Provider store={store}>
       <CacheProvider value={emotionCache}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
+          <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </GoogleOAuthProvider>
         </ThemeProvider>
       </CacheProvider>
     </Provider>
   );
 }
+

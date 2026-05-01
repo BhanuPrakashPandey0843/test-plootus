@@ -1,0 +1,56 @@
+/* SmallScreen.module.css — exact port */
+
+.Modal {
+  position: fixed; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto; width: 70vw;
+  background-color: #ffffff; border: none;
+  border-radius: 12px; padding: 20px;
+  outline: none; z-index: 10000;
+  max-height: 90vh; overflow-y: auto;
+}
+.Overlay {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  backdrop-filter: blur(2.3px);
+  background-color: #7070702a; z-index: 9999;
+}
+.container {
+  display: flex; flex-direction: column;
+  justify-content: space-evenly; padding: 40px 0px 0px 0px;
+}
+.head { display: flex; padding: 0px 20px; font-size: 20px; font-weight: 700; }
+.exclaim { height: 25px; width: 25px; margin-left: 5px; }
+.header { padding: 20px; font-size: 20px; font-weight: 700; }
+.topPart {}
+.text {}
+.btnDiv { display: flex; justify-content: center; }
+.btnDown { display: flex; justify-content: center; padding: 10px 0px; }
+.graph { height: 480px; }
+.leftDiv { padding-right: 10px; }
+.rightDiv { padding-left: 10px; }
+.button {
+  width: 150px; background-color: white;
+  box-sizing: border-box; border: 1px solid #d8d8d8;
+  outline: none !important; border-radius: 5px; height: 40px; cursor: pointer;
+}
+.buttonSelected {
+  width: 150px; background-color: #635ae7;
+  border-radius: 5px; border: none; outline: none !important;
+  height: 40px; color: white; cursor: pointer;
+}
+.editButton {
+  width: 180px; background-color: #406bdf;
+  border-radius: 5px; border: none; outline: none !important;
+  height: 40px; color: white; cursor: pointer; font-size: 15px;
+}
+.smallFutureModal {}
+
+@media (max-width: 1280px) { .graph { height: 600px; padding: 10px; } }
+@media (max-width: 1024px) { .graph { height: 580px; padding: 10px; } }
+@media (max-width: 576px) {
+  .Modal { width: 95vw; }
+  .graph { height: 540px; padding: 20px 0px; }
+  .header { font-size: 13px; padding: 5px 20px; }
+  .button { font-size: 14px; }
+  .buttonSelected { font-size: 14px; }
+}

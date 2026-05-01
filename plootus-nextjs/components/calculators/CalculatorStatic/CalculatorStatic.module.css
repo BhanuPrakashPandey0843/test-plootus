@@ -1,0 +1,46 @@
+/* CalculatorStatic.module.css
+   Exact port of packages/web/src/components/401kCalculatorStatic/CalculatorStatic.module.css
+*/
+
+.main {
+  margin-top: 30px;
+}
+
+.mytestHeader {
+  font-size: 25px;
+  color: black;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-left: 45px;
+}
+
+.editA {
+  margin-bottom: 25px;
+}
+
+@media (max-width: 1280px) {
+  .mytestHeader {
+    margin-bottom: 0;
+    padding-left: 30px;
+  }
+}
+
+@media (max-width: 868px) {
+  .mytestHeader {
+    padding-left: 20px;
+  }
+  .editA {
+    padding: 0 70px;
+  }
+}
+
+@media (max-width: 576px) {
+  .editA {
+    padding: 0;
+  }
+  .mytestHeader {
+    font-size: 30px;
+    margin-top: 5px;
+  }
+}

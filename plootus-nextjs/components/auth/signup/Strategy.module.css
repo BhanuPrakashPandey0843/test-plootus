@@ -1,0 +1,346 @@
+.container {
+  padding: 34px;
+  width: 100%;
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 500;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+/* Stepper - Exactly matching PersonalInfo */
+.stepperContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+  position: relative;
+  width: 100%;
+}
+
+.stepperContainer::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 24px;
+  right: 24px;
+  height: 1px;
+  background-color: #e5e7eb;
+  z-index: 0;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+
+.step:first-child {
+  align-items: flex-start;
+}
+
+.step:nth-child(2) {
+  align-items: center;
+}
+
+.step:last-child {
+  align-items: flex-end;
+}
+
+.stepDot {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #e5e7eb;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.stepDot::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e5e7eb;
+}
+
+.activeStep .stepDot,
+.completedStep .stepDot {
+  border-color: #4361ee;
+}
+
+.activeStep .stepDot::after,
+.completedStep .stepDot::after {
+  background: #4361ee;
+}
+
+.stepLabel {
+  font-size: 14px;
+  color: #666666;
+  white-space: nowrap;
+}
+
+.activeStep .stepLabel,
+.completedStep .stepLabel {
+  color: #4361ee;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #666666;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+/* Form Layout - Exactly matching PersonalInfo */
+.formSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.formGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 14px;
+  color: #666666;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.required {
+  color: #ff4d4f;
+}
+
+/* Form Controls - Matching PersonalInfo */
+.input {
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #1a1a1a;
+  width: 100%;
+  transition: all 0.2s;
+  background: white;
+}
+
+.input::placeholder {
+  color: #666666;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #4361ee;
+  box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.1);
+}
+
+/* Fix for the select dropdown with custom arrow */
+.customSelect {
+  position: relative;
+}
+
+.selectBox {
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #1a1a1a;
+  width: 100%;
+  transition: all 0.2s;
+  background: white;
+  appearance: none; /* Hide default arrow in modern browsers */
+  -webkit-appearance: none; /* For older WebKit browsers */
+  -moz-appearance: none; /* For Firefox */
+}
+
+.selectBox::-ms-expand {
+  display: none; /* Hide default arrow in IE/Edge */
+}
+
+.selectBox:focus {
+  outline: none;
+  border-color: #4361ee;
+  box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.1);
+}
+
+.customArrow {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #666666;
+}
+
+.checkboxWrap {
+  margin-top: 8px;
+  background: rgba(67, 97, 238, 0.04);
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.checkboxLabel {
+  font-size: 14px;
+  color: #666666;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  cursor: pointer;
+  appearance: none;
+  border: 2px solid #d1d5db;
+  border-radius: 50%;
+  background: white;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.checkbox:checked {
+  border-color: #4361ee;
+}
+
+.checkbox:checked::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #4361ee;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.errorText {
+  font-size: 12px;
+  color: #ff4d4f;
+  margin-top: 4px;
+}
+
+/* Button Group - Exactly matching PersonalInfo */
+.buttonGroup {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.backButton,
+.nextButton {
+  flex: 1;
+  height: 48px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.backButton {
+  background: white;
+  border: 1px solid #d1d5db;
+  color: #666666;
+}
+
+.backButton:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.nextButton {
+  background: #4361ee;
+  border: none;
+  color: white;
+}
+
+.nextButton:hover:not(:disabled) {
+  background: #3651de;
+}
+
+/* Responsive Styles */
+@media (max-width: 640px) {
+  .container {
+    padding: 24px 20px;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  .input,
+  .selectBox,
+  .backButton,
+  .nextButton {
+    height: 44px;
+  }
+
+  .buttonGroup {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    background: white;
+    box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin: 0;
+  }
+}

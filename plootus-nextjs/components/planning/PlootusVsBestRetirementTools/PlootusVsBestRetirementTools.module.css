@@ -1,4 +1,4 @@
-/* Plootus vs. Best Retirement Tools - Exact Match from HTML */
+/* Plootus vs. Best Retirement Tools - FULL PARITY */
 
 .container {
   --blue: #3B5BDB;
@@ -45,83 +45,6 @@
   color: white;
   font-weight: 700;
   text-decoration: underline;
-}
-
-/* Site Header - If needed, though usually handled globally */
-.siteHeader {
-  background: var(--white);
-  border-bottom: 1px solid var(--border);
-  padding: 0 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  height: 64px;
-  box-shadow: var(--shadow-sm);
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-}
-
-.logoMark {
-  width: 32px;
-  height: 32px;
-  background: var(--blue);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 16px;
-  font-weight: 800;
-}
-
-.logoText {
-  font-size: 20px;
-  font-weight: 800;
-  color: var(--navy);
-  letter-spacing: -.3px;
-}
-
-.logoText span {
-  color: var(--blue);
-}
-
-.nav {
-  display: flex;
-  gap: 28px;
-}
-
-.nav a {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text-mid);
-  text-decoration: none;
-  transition: color .15s;
-}
-
-.nav a:hover {
-  color: var(--blue);
-}
-
-.headerCta {
-  background: var(--blue);
-  color: white;
-  padding: 9px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.headerCta:hover {
-  background: var(--blue-dark);
 }
 
 .breadcrumb {
@@ -273,7 +196,7 @@
 
 .sidebar {
   position: sticky;
-  top: 80px;
+  top: 160px; /* SYNCED:NavBar+HubNav */
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -295,7 +218,7 @@
   margin-bottom: 14px;
   line-height: 1.2;
   letter-spacing: -.3px;
-  scroll-margin-top: 80px;
+  scroll-margin-top: 160px;
 }
 
 .container h3 {
@@ -750,6 +673,7 @@
   color: var(--blue);
   text-decoration: none;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .tocList a:hover {
@@ -796,32 +720,9 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.freeBadge {
-  background: var(--blue-light);
-  border: 1px solid var(--blue-mid);
-  border-radius: var(--radius);
-  padding: 16px;
-  text-align: center;
-}
-
-.fbTop {
-  font-size: 22px;
-  font-weight: 800;
-  color: var(--blue);
-  letter-spacing: -.3px;
-}
-
-.fbLabel {
-  font-size: 12px;
-  color: var(--text-mid);
-  margin-top: 4px;
-  font-weight: 500;
-}
-
 .relatedLinks {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 .relatedLinks li {
@@ -838,6 +739,7 @@
   color: var(--blue);
   text-decoration: none;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .relatedLinks a::before {
@@ -849,169 +751,21 @@
   text-decoration: underline;
 }
 
-/* Footer - usually handled globally, but here for completeness */
-.siteFooter {
-  background: var(--navy);
-  padding: 40px;
-  margin-top: 60px;
-}
-
-.footerInner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.footerLogo {
-  font-size: 18px;
-  font-weight: 800;
-  color: white;
-  letter-spacing: -.3px;
-}
-
-.footerLogo span {
-  color: var(--blue);
-}
-
-.footerLinks {
-  display: flex;
-  gap: 20px;
-}
-
-.footerLinks a {
-  font-size: 13px;
-  color: rgba(255, 255, 255, .55);
-  text-decoration: none;
-}
-
-.footerLinks a:hover {
-  color: white;
-}
-
-.footerCopy {
-  font-size: 12px;
-  color: rgba(255, 255, 255, .35);
-  width: 100%;
-  text-align: center;
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, .1);
-}
-
-/* RESPONSIVE */
 @media (max-width: 900px) {
   .pageBody {
     grid-template-columns: 1fr;
-    padding: 30px 20px;
+    padding: 24px 20px;
   }
-
   .sidebar {
-    display: none;
+    position: static;
   }
-
   .statStripInner {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
   }
-
-  .statItem {
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, .15);
-  }
-
-  .statItem:nth-child(even) {
-    border-right: none;
-  }
-
-  .statItem:nth-last-child(-n+2) {
-    border-bottom: none;
-  }
-}
-
-@media (max-width: 600px) {
-  .hero {
-    padding: 40px 20px;
-  }
-
-  .statStripInner {
-    grid-template-columns: 1fr;
-  }
-
-  .statItem {
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, .15);
-  }
-
-  .statItem:last-child {
-    border-bottom: none;
-  }
-
-  .decisionGrid {
-    grid-template-columns: 1fr;
-  }
-
   .plootusMeta {
     grid-template-columns: 1fr;
   }
-
-  .ctaBanner {
-    padding: 30px 20px;
+  .decisionGrid {
+    grid-template-columns: 1fr;
   }
-}
-
-.ctaBtn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: white;
-}
-
-
-/* FOOLPROOF TOC STANDARDIZATION */
-.tocBox ul, .tocBox ol, .tocList ul, .tocList ol, .toc ul, .toc ol, .toc-box ul, .toc-box ol, .toc-list ul, .toc-list ol {
-  list-style: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  counter-reset: none !important;
-}
-
-.tocBox li, .tocList li, .toc li, .toc-box li, .toc-list li {
-  padding: 8px 0 !important;
-  border-bottom: 1px solid var(--border) !important;
-  display: block !important;
-  counter-increment: none !important;
-  background: none !important;
-  margin: 0 !important;
-}
-
-.tocBox li:last-child, .tocList li:last-child, .toc li:last-child, .toc-box li:last-child, .toc-list li:last-child {
-  border-bottom: none !important;
-}
-
-.tocBox li::before, .tocList li::before, .toc li::before, .toc-box li::before, .toc-list li::before {
-  content: none !important;
-  display: none !important;
-}
-
-.tocBox a, .tocList a, .toc a, .toc-box a, .toc-list a {
-  color: var(--blue) !important;
-  text-decoration: none !important;
-  font-size: 14px !important;
-  font-weight: 500 !important;
-  display: block !important;
-}
-
-.tocBox a:hover, .tocList a:hover, .toc a:hover, .toc-box a:hover, .toc-list a:hover {
-  text-decoration: underline !important;
-  color: var(--blue-dark) !important;
-}
-
-.tocBox h3, .tocList h3, .toc h3, .sidebarCard h3, .toc-box h3, .toc-list h3 {
-  font-size: 13px !important;
-  font-weight: 700 !important;
-  letter-spacing: .05em !important;
-  text-transform: uppercase !important;
-  color: var(--text-light) !important;
-  margin-bottom: 12px !important;
 }

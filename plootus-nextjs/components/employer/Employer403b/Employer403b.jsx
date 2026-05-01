@@ -292,7 +292,7 @@ const Employer403b = () => {
           </Container>
         </div>
 
-        <Container maxWidth="lg" sx={{ mt: 8 }}>
+        <Container maxWidth="lg" sx={{ mt: 3 }}>
           <PlanQuickFacts
             title={null}
             facts={FACTS.map((fact) => ({
@@ -312,7 +312,6 @@ const Employer403b = () => {
                     },
             }))}
           />
-
           <PlanAnalysis
             planType="403(b)"
             strategy={strategy}

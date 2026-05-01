@@ -25,8 +25,8 @@ const HowMuchRetire = () => {
     document.head.appendChild(link2);
 
     return () => {
-      document.head.removeChild(link1);
-      document.head.removeChild(link2);
+      if (document.head.contains(link1)) document.head.removeChild(link1);
+      if (document.head.contains(link2)) document.head.removeChild(link2);
     };
   }, []);
 
@@ -43,7 +43,7 @@ const HowMuchRetire = () => {
           <div className={styles.heroMeta}>
             <span>By the Plootus Research Team</span>
             <span>Last updated: March 2026</span>
-            <span>Sources: Fidelity, <abbr title="Social Security Administration">SSA</abbr>, <abbr title="Bureau of Labor Statistics">BLS</abbr>, Schwab</span>
+            <span>Sources: Fidelity, SSA, BLS, Schwab</span>
           </div>
         </div>
       </section>
@@ -52,26 +52,26 @@ const HowMuchRetire = () => {
       <div className={styles.statStrip}>
         <div className={styles.statStripInner}>
           <div className={styles.statItem}>
-            <span className={styles.statNum} data-type="statistic">4%</span>
+            <span className={styles.statNum}>4%</span>
             <span className={styles.statLabel}>Safe Withdrawal Rate (Baseline)</span>
           </div>
           <div className={styles.statItem}>
-            <span className={styles.statNum} data-type="statistic">$877K</span>
+            <span className={styles.statNum}>$877K</span>
             <span className={styles.statLabel}>Moderate Retirement Nest Egg</span>
           </div>
           <div className={styles.statItem}>
-            <span className={styles.statNum} data-type="statistic">80%</span>
+            <span className={styles.statNum}>80%</span>
             <span className={styles.statLabel}>Pre-Retirement Income to Replace</span>
           </div>
           <div className={styles.statItem}>
-            <span className={styles.statNum} data-type="statistic">$24,894</span>
+            <span className={styles.statNum}>$24,894</span>
             <span className={styles.statLabel}>Avg Annual Social Security Benefit</span>
           </div>
         </div>
       </div>
 
-      <div className={styles.pageBody} itemscope itemtype="https://schema.org/Article">
-        <main className={styles.mainContent} role="main" aria-label="How Much Do I Need to Retire — 4% Rule Calculator and Guide 2026">
+      <div className={styles.pageBody}>
+        <main className={styles.mainContent}>
           {/* Overview Section */}
           <section id="formula">
             <div className={styles.sectionLabel}>The Core Question</div>
@@ -111,7 +111,7 @@ const HowMuchRetire = () => {
             </div>
 
             <div className={styles.dataTableWrap}>
-              <table className={styles.dataTable} summary="Data table with sortable columns">
+              <table className={styles.dataTable}>
                 <thead>
                   <tr>
                     <th scope="col">Annual Spending Need (After SS)</th>
@@ -148,7 +148,7 @@ const HowMuchRetire = () => {
                 <div className={styles.incomePct} style={{ color: 'var(--blue)' }}>~45%</div>
                 <div>
                   <div className={styles.incomeLabel}>Personal Savings</div>
-                  <div className={styles.incomeDesc}>401(k), <abbr title="Individual Retirement Account">IRA</abbr>, investments, taxable accounts</div>
+                  <div className={styles.incomeDesc}>401(k), IRA, investments, taxable accounts</div>
                 </div>
               </div>
               <div className={styles.incomeSource}>
@@ -213,11 +213,10 @@ const HowMuchRetire = () => {
                 <div className={styles.scenarioNumberLabel}>Required Nest Egg (4% Rule)</div>
               </div>
             </div>
-
           </section>
 
           {/* FAQ Section */}
-          <section id="faq" aria-label="Frequently Asked Questions">
+          <section id="faq">
             <div className={styles.sectionLabel}>FAQ</div>
             <h2>Frequently Asked Questions</h2>
             {[
@@ -240,7 +239,7 @@ const HowMuchRetire = () => {
             ].map((faq, idx) => (
               <div key={idx} className={`${styles.faqItem} ${openFaqIndex === idx ? styles.open : ''}`}>
                 <button className={styles.faqQ} onClick={() => toggleFaq(idx)}>
-                  {faq.q} <span className={styles.faqIcon}>+</span>
+                  {faq.q} <span className={styles.faqIcon}>{openFaqIndex === idx ? '−' : '+'}</span>
                 </button>
                 <div className={styles.faqA}>{faq.a}</div>
               </div>
@@ -261,9 +260,19 @@ const HowMuchRetire = () => {
               <li>GOBankingRates — 2026 State Retirement Cost Analysis</li>
             </ul>
           </div>
+
+          <div className={styles.inlineCta}>
+            <div className={styles.inlineCtaText}>
+              <h4>What year can you actually retire?</h4>
+              <p>Plootus connects to your real accounts and calculates your FIRE date — personalized to your savings rate, state, and target spending.</p>
+            </div>
+            <a className={styles.inlineCtaBtn} onClick={() => router.push('/my-dashboard')}>
+              Find My Date →
+            </a>
+          </div>
         </main>
 
-        <aside className={styles.sidebar} role="complementary" aria-label="Related resources and navigation">
+        <aside className={styles.sidebar}>
           <div className={styles.sidebarCard}>
             <h4>On This Page</h4>
             <ul className={styles.tocList}>
@@ -288,12 +297,13 @@ const HowMuchRetire = () => {
               <li><a onClick={() => router.push('/social-security-benefits')}>Social Security Guide 2026</a></li>
               <li><a onClick={() => router.push('/best-states-to-retire')}>Best States to Retire</a></li>
               <li><a onClick={() => router.push('/tax-friendly-states')}>Tax-Friendly States Guide</a></li>
-              <li><a onClick={() => router.push('/retire-early')}><abbr title="Financial Independence, Retire Early">FIRE</abbr> / Early Retirement Guide</a></li>
+              <li><a onClick={() => router.push('/retire-early')}>FIRE / Early Retirement Guide</a></li>
             </ul>
           </div>
         </aside>
       </div>
-          <PartnersSection 
+
+      <PartnersSection 
         titleFontSize="22px"
         titleFontWeight={800}
         titleColor="var(--navy) !important"
@@ -302,7 +312,7 @@ const HowMuchRetire = () => {
         subtitleColor="var(--text-mid)"
         rootPadding="40px 0 0"
       />
-      </div>
+    </div>
   );
 };
 

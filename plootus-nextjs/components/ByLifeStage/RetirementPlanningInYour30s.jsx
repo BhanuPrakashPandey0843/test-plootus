@@ -43,14 +43,14 @@ const RetirementPlanningInYour30s = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Retirement Planning in Your 30s: The Complete 2026 Guide | Plootus</title>
+        <title>Retirement Planning in Your 30s | Plootus</title>
         <meta name="description" content="The complete guide to retirement planning in your 30s. 401(k) targets, Roth vs. Traditional, how much to save, investing strategy, and the most important decisions of your financial life." />
         <link rel="canonical" href="https://www.plootus.com/retirement-planning-in-your-30s" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            "headline": "Retirement Planning in Your 30s: The Complete 2026 Guide",
+            "headline": "Retirement Planning in Your 30s",
             "description": "How to build a retirement foundation in your 30s — savings targets, account strategy, and investing principles.",
             "datePublished": "2026-01-01",
             "dateModified": "2026-04-01",
@@ -77,7 +77,7 @@ const RetirementPlanningInYour30s = () => {
       <div className={styles.hero}>
         <div className={styles.heroInner}>
           <div className={styles.heroEyebrow}>🌱 Life Stage Guide</div>
-          <h1>Retirement Planning in Your 30s:<br />The Complete 2026 Guide</h1>
+          <h1>Retirement Planning in Your 30s</h1>
           <p className={styles.heroDeck}>Your 30s are the decade where retirement is won or lost. The decisions you make now — contribution rate, account type, asset allocation — have more impact than anything you'll do in your 50s or 60s. Here's exactly what to do, in order.</p>
           <div className={styles.heroMeta}>
             <span>📅 Updated April 2026</span>
@@ -90,10 +90,10 @@ const RetirementPlanningInYour30s = () => {
 
       <div className={styles.statStrip}>
         <div className={styles.statStripInner}>
-          <div className={styles.statItem}><div className={styles.statNum}>1×</div><div className={styles.statLabel}>Salary saved by age 30 (Fidelity target)</div></div>
-          <div className={styles.statItem}><div className={styles.statNum}>2×</div><div className={styles.statLabel}>Salary saved by age 35 (Fidelity target)</div></div>
+          <div className={styles.statItem}><div className={styles.statNum}>1×</div><div className={styles.statLabel}>Salary saved by age 30</div></div>
+          <div className={styles.statItem}><div className={styles.statNum}>2×</div><div className={styles.statLabel}>Salary saved by age 35</div></div>
           <div className={styles.statItem}><div className={styles.statNum}>$23,500</div><div className={styles.statLabel}>2026 401(k) contribution limit</div></div>
-          <div className={styles.statItem}><div className={styles.statNum}>30 yrs</div><div className={styles.statLabel}>Until typical retirement — compounding starts now</div></div>
+          <div className={styles.statItem}><div className={styles.statNum}>30 yrs</div><div className={styles.statLabel}>Until typical retirement</div></div>
         </div>
       </div>
 
@@ -338,8 +338,8 @@ const RetirementPlanningInYour30s = () => {
           </div>
 
           <div className={styles.ctaCard}>
-            <h4>See Your 30s Retirement Plan</h4>
-            <p>Plootus analyzes your 401(k), spending, and income to show exactly how much you need to save — and whether you're on track.</p>
+            <h4>What's my retirement number?</h4>
+            <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
             <Link href="/retirement-calculator" className={styles.ctaBtn}>Check Here</Link>
           </div>
 
@@ -360,7 +360,15 @@ const RetirementPlanningInYour30s = () => {
         </aside>
       </div>
 
-      <PartnersSection />
+      <PartnersSection
+        titleFontSize="28px !important"
+        titleFontWeight={800}
+        titleColor="var(--navy) !important"
+        titleLetterSpacing="-0.3px"
+        subtitleFontSize="15px"
+        subtitleColor="var(--text-mid)"
+        rootPadding="40px 0 0"
+      />
     </div>
   );
 };

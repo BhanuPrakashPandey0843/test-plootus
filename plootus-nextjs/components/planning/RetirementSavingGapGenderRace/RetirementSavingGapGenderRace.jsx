@@ -185,7 +185,7 @@ const RetirementSavingGapGenderRace = () => {
           <div className={styles['cta-card']}>
             <h4>What's my retirement number?</h4>
             <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
-            <div onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']} style={{cursor: 'pointer'}}>
+            <div onClick={() => router.push('/retirement-calculator')} className={styles['cta-btn']} style={{ cursor: 'pointer' }}>
               Check Here
             </div>
           </div>
@@ -196,7 +196,7 @@ const RetirementSavingGapGenderRace = () => {
           </div>
         </aside>
       </div>
-      <PartnersSection 
+      <PartnersSection
         titleFontSize="22px"
         titleFontWeight={800}
         titleColor="var(--navy) !important"

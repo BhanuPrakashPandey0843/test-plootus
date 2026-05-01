@@ -507,7 +507,6 @@ const Challenge21Days = () => {
                 Join the Plootus 21-Day Financial Habits Challenge. Daily 5-minute tasks to build confidence, reduce stress, and master your money!
               </Typography>
 
-              <Box className={classes.heroActionContainer}>
                 <Box className={classes.heroDateContainer}>
                   <Typography style={{ color: '#E2E8F0', fontWeight: 700, fontSize: '1.25rem' }}>
                     Next cohort starts May 1, 2026
@@ -516,10 +515,6 @@ const Challenge21Days = () => {
                     (Registration closes April 28)
                   </Typography>
                 </Box>
-                <Button variant="contained" className={classes.heroCtaButton} onClick={scrollToForm}>
-                  Register FREE!
-                </Button>
-              </Box>
             </Box>
             <Box className={classes.heroImageContainer}>
               <img src="/HOMEPAGE.svg" alt="Challenge" className={classes.heroImage} />
@@ -601,7 +596,6 @@ const Challenge21Days = () => {
             <Box>
               <Typography variant="h5" className={classes.amazonTitle}>Building habits is rewarding.</Typography>
               <Typography className={classes.amazonDescription}>Complete the challenge for a chance to win one of several $50 Amazon gift cards!</Typography>
-              <Typography className={classes.amazonCta}>Sign up below to get started.</Typography>
             </Box>
           </Box>
         </Container>
@@ -609,186 +603,9 @@ const Challenge21Days = () => {
 
       <Box className={classes.formSection} ref={formRef}>
         <Container maxWidth="sm">
-          <Box sx={{ textAlign: 'center', mb: 3 }}>
-            <Typography style={{ color: '#1E293B', fontWeight: 700, fontSize: '1.25rem' }}>
-              Challenge starts May 1, 2026
-            </Typography>
-            <Typography style={{ color: '#64748B', fontSize: '0.875rem', fontWeight: 500 }}>
-              Registration closes April 28
-            </Typography>
-          </Box>
-          <Paper className={`${classes.formPaper} ${highlightFormPaper ? classes.formPaperHighlight : ''}`} elevation={3}>
-            <Typography variant="h4" className={classes.formTitle}>
-              Ready to Start Your 21-Day Journey?
-            </Typography>
-            <form onSubmit={handleSubmit}>
-              <Grid container spacing={2}>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    fullWidth
-                    label="First Name"
-                    name="firstName"
-                    value={formData.firstName}
-                    onChange={handleChange}
-                    required
-                    error={!!errors.firstName}
-                    helperText={errors.firstName}
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    fullWidth
-                    label="Last Name"
-                    name="lastName"
-                    value={formData.lastName}
-                    onChange={handleChange}
-                    required
-                    error={!!errors.lastName}
-                    helperText={errors.lastName}
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    fullWidth
-                    label="Email Address"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    error={!!errors.email}
-                    helperText={errors.email}
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <FormControl component="fieldset" error={!!errors.ageGroup} sx={{ mt: 1 }}>
-                    <FormLabel component="legend" sx={{ color: '#1E293B', mb: 1 }}>
-                      Age Group *
-                    </FormLabel>
-                    <RadioGroup name="ageGroup" value={formData.ageGroup} onChange={handleChange}>
-                      {ageGroups.map((age) => (
-                        <FormControlLabel
-                          key={age.value}
-                          value={age.value}
-                          control={<Radio />}
-                          label={age.label}
-                        />
-                      ))}
-                    </RadioGroup>
-                    {errors.ageGroup && (
-                      <Typography color="error" variant="caption">{errors.ageGroup}</Typography>
-                    )}
-                  </FormControl>
-                </Grid>
-                <Grid item xs={12}>
-                  <FormControl component="fieldset" error={!!errors.annualHouseholdIncome} sx={{ mt: 1 }}>
-                    <FormLabel component="legend" sx={{ color: '#1E293B', mb: 1 }}>
-                      Annual Household Income *
-                    </FormLabel>
-                    <RadioGroup
-                      name="annualHouseholdIncome"
-                      value={formData.annualHouseholdIncome}
-                      onChange={handleChange}
-                    >
-                      {incomeRanges.map((income) => (
-                        <FormControlLabel
-                          key={income.value}
-                          value={income.value}
-                          control={<Radio />}
-                          label={income.label}
-                        />
-                      ))}
-                    </RadioGroup>
-                    {errors.annualHouseholdIncome && (
-                      <Typography color="error" variant="caption">{errors.annualHouseholdIncome}</Typography>
-                    )}
-                  </FormControl>
-                </Grid>
-                <Grid item xs={12}>
-                  <FormControl component="fieldset" error={!!errors.gender} sx={{ mt: 1 }}>
-                    <FormLabel component="legend" sx={{ color: '#1E293B', mb: 1 }}>
-                      Gender *
-                    </FormLabel>
-                    <RadioGroup
-                      name="gender"
-                      value={formData.gender}
-                      onChange={handleChange}
-                      row
-                    >
-                      {genders.map((g) => (
-                        <FormControlLabel
-                          key={g.value}
-                          value={g.value}
-                          control={<Radio />}
-                          label={g.label}
-                        />
-                      ))}
-                    </RadioGroup>
-                    {errors.gender && (
-                      <Typography color="error" variant="caption">{errors.gender}</Typography>
-                    )}
-                  </FormControl>
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    fullWidth
-                    label="Zip Code"
-                    name="zipCode"
-                    value={formData.zipCode}
-                    onChange={handleChange}
-                    required
-                    inputProps={{ maxLength: 5 }}
-                    error={!!errors.zipCode}
-                    helperText={errors.zipCode}
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <FormControlLabel
-                    control={
-                      <Checkbox
-                        name="agreeToSubscribe"
-                        checked={formData.agreeToSubscribe}
-                        onChange={handleChange}
-                      />
-                    }
-                    label="I agree to subscribe to Plootus and receive daily challenge emails and related communications *"
-                  />
-                  {errors.agreeToSubscribe && (
-                    <Typography color="error" variant="caption" display="block">{errors.agreeToSubscribe}</Typography>
-                  )}
-                </Grid>
-                <Grid item xs={12}>
-                  {statusType === 'success' ? (
-                    <Box sx={{ textAlign: 'center', mt: 2 }}>
-                      <Typography sx={{ color: '#38A169', fontWeight: 600, fontSize: '1rem' }}>
-                        Successfully registered for the 21-Day Challenge!
-                      </Typography>
-                      <Typography sx={{ color: '#64748B', fontSize: '0.875rem', mt: 0.5 }}>
-                        Keep an eye out for further details that will be sent to you via email.
-                      </Typography>
-                    </Box>
-                  ) : (
-                    <>
-                      <Button
-                        type="submit"
-                        variant="contained"
-                        fullWidth
-                        className={classes.submitButton}
-                        disabled={!formData.agreeToSubscribe || loading}
-                      >
-                        {loading ? 'Registering...' : 'Register for Free'}
-                      </Button>
-                      {statusMessage && statusType === 'error' && (
-                        <Typography color="error" sx={{ textAlign: 'center', mt: 2 }}>
-                          {statusMessage}
-                        </Typography>
-                      )}
-                    </>
-                  )}
-                </Grid>
-              </Grid>
-            </form>
-          </Paper>
+          <Typography variant="h5" sx={{ textAlign: 'center', color: '#1E293B', fontWeight: 700, py: 4 }}>
+            Registration for the challenge is now closed.
+          </Typography>
         </Container>
       </Box>
 

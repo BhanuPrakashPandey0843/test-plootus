@@ -10,7 +10,8 @@ import FundsTable from '../../FundsTable';
 const useStyles = makeStyles()((theme) => ({
   analysisContainer: {
     padding: theme.spacing(0),
-    marginTop: theme.spacing(2.5),
+    marginTop: theme.spacing(0),
+    marginBottom: theme.spacing(0),
   },
   header: {
     display: 'flex',

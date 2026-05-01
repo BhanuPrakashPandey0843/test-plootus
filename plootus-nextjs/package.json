@@ -5,26 +5,37 @@
   "scripts": {
     "dev": "next dev -p 3002",
     "build": "next build",
-    "start": "next start -p 3002"
+    "start": "next start -p 3002",
+    "sitemap": "node scripts/generate-sitemap.js",
+    "prebuild": "node scripts/generate-sitemap.js"
   },
   "dependencies": {
     "@emotion/cache": "^11.11.0",
-    "@emotion/react": "^11.11.0",
+    "@emotion/react": "^11.14.0",
     "@emotion/server": "^11.11.0",
-    "@emotion/styled": "^11.11.0",
-    "@mui/icons-material": "^5.15.15",
-    "@mui/material": "^5.15.15",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^5.18.0",
+    "@mui/material": "^5.18.0",
+    "@nivo/core": "^0.99.0",
+    "@nivo/line": "^0.99.0",
+    "@react-oauth/google": "^0.13.5",
     "@reduxjs/toolkit": "^2.11.2",
     "axios": "^1.6.0",
     "chart.js": "^4.5.1",
     "framer-motion": "^11.18.2",
+    "gapi-script": "^1.2.0",
+    "lodash": "^4.18.1",
     "lucide-react": "^0.400.0",
     "moment": "^2.30.1",
     "next": "^14.2.0",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
+    "react-modal": "^3.16.3",
     "react-redux": "^9.2.0",
+    "react-slider": "^2.0.6",
+    "reactstrap": "^9.2.3",
+    "styled-components": "^6.4.1",
     "swiper": "^8.4.7",
-    "tss-react": "^4.9.0"
+    "tss-react": "^4.9.20"
   }
 }

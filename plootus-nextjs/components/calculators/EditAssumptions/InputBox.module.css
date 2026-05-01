@@ -1,0 +1,28 @@
+/* InputBox.module.css */
+
+.input {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 90%;
+}
+.textContent { font-size: 15px; }
+.root { height: 5vh; width: 120px; display: flex; position: relative; }
+.inputBox {
+  height: 30px; width: auto; max-width: 120px;
+  padding-left: 18px; border: none;
+  border-bottom: 2.5px solid #416ce1; color: #416ce1;
+  outline: none !important; font-size: 14px; background: transparent;
+}
+.inputIcon {
+  border: none; border-bottom: 2.5px solid #416ce1; height: 30px;
+  width: 18px; position: absolute; left: 0; display: flex;
+  justify-content: center; align-items: center;
+  background-color: white; color: #416ce1; font-size: 14px; z-index: 1;
+}
+@media (max-width: 768px) {
+  .root { width: 110px; }
+  .inputBox { max-width: 110px; padding-left: 16px; }
+  .inputIcon { width: 16px; }
+}

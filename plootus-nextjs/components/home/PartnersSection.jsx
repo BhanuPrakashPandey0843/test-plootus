@@ -6,7 +6,7 @@ import { Pagination, Navigation } from 'swiper';
 
 const useStyles = makeStyles()((theme, { isAboutPage, rootPadding, titleFontSize, titleFontWeight, titleColor, titleLineHeight, titleLetterSpacing, subtitleFontSize, subtitleColor, platformLinkColor }) => ({
   root: {
-    padding: rootPadding || (isAboutPage ? theme.spacing(4.5, 0) : theme.spacing(8, 0, 0)),
+    padding: rootPadding || (isAboutPage ? theme.spacing(4.5, 0) : theme.spacing(4, 0, 0)),
     backgroundColor: '#FFFFFF',
     textAlign: 'center',
   },
@@ -164,7 +164,7 @@ const partners = [
   {
     id: 2,
     name: 'Insurify',
-    logo: '/images/partners/insurify-banner.png',
+    logo: '/images/partners/insurify.jpg',
     text: 'Compare real-time, personalized insurance quotes—all in one place',
     link: 'https://insurify.com/start/auto/partner/plootus/?utm_source=plootus&utm_medium=auto&utm_campaign=Website&utm_content=Partnerspage',
   },
@@ -181,6 +181,13 @@ const partners = [
     logo: '/images/partners/policy-genius-logo.png',
     text: <span><strong>Auto Insurance - </strong>Compare personalized auto insurance quotes and choose the right coverage</span>,
     link: 'https://visit.policygenius.com/auto-insurance-quotes/plootus/',
+  },
+  {
+    id: 12,
+    name: 'ID Watchdog',
+    logo: '/images/partners/ID-watchdog-by-equifax.jpg',
+    text: 'Compare real-time, personalized insurance quotes—all in one place',
+    link: 'https://www.idwatchdog.com/myplan/plootus',
   },
   {
     id: 11,

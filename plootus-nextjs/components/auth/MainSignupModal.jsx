@@ -3,6 +3,9 @@ import { Dialog } from '@mui/material';
 import styles from './MainScreen.module.css';
 import SignupStart from './SignupStart';
 import { LoginSignupContext } from './LoginSignupContext';
+import PersonalInfo from './signup/PersonalInfo';
+import Strategy from './signup/Strategy';
+import Preferences from './signup/Preferences';
 
 const MainSignupModal = ({
   modalIsOpen,
@@ -20,6 +23,10 @@ const MainSignupModal = ({
     gender: 0,
     zipcode: '',
     strategy: -1,
+    approx_401k_bal: 10000,
+    sponser_name: '',
+    employerEin: null,
+    termsAccepted: false,
   });
 
   const { setLoginModal } = useContext(LoginSignupContext);
@@ -43,14 +50,14 @@ const MainSignupModal = ({
     switch (currentStep) {
       case 0:
         return <SignupStart {...commonProps} nextPress={nextStep} />;
+      case 1:
+        return <PersonalInfo {...commonProps} nextPress={nextStep} prevStep={prevStep} />;
+      case 2:
+        return <Strategy {...commonProps} nextPress={nextStep} prevStep={prevStep} />;
+      case 3:
+        return <Preferences {...commonProps} prevStep={prevStep} />;
       default:
-        return (
-          <div style={{ padding: '40px', textAlign: 'center' }}>
-            <h2>Step {currentStep}</h2>
-            <p>This part is still being migrated.</p>
-            <button onClick={prevStep} className={styles.signupButton}>Back</button>
-          </div>
-        );
+        return null;
     }
   };
 

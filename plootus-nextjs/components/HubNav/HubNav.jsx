@@ -261,7 +261,6 @@ const HubNav = ({ activeTab, setActiveTab }) => {
                     <section.icon size={16} strokeWidth={2.5} />
                   </span>
                   <span className={styles.sectionLabel}>{section.label}</span>
-                  <span className={styles.dropdownArrow}>▾</span>
                 </div>
 
                 <div

@@ -1,0 +1,216 @@
+.cardHeader {
+  border: solid 1px #416ce1;
+  border-radius: 10px;
+  height: 140px; /* Slightly reduced as grid is more compact */
+  padding: 10px 5px;
+  margin: 0 auto;
+}
+
+.topLeft {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 2;
+}
+
+.topLeft h5 {
+  margin: 0;
+  padding: 0;
+}
+
+.myGraph {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  max-height: 630px;
+  width: 100%;
+}
+
+.topContainer {
+  display: flex;
+  padding: 10px 0px 10px 0px;
+}
+
+.myinnerG {
+  height: 400px;
+  width: 100%;
+}
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+  width: 64px;
+  min-width: 64px;
+  min-height: 64px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: solid 1px #1bad53;
+  padding: 0px 2px;
+  font-size: 10px;
+  color: #404a57;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.afterDecimal {
+  font-size: 14px;
+  padding-top: 5px;
+}
+
+.image {
+  height: 18px;
+  width: 18px;
+  display: block;
+}
+
+.imageMul {
+  height: 18px;
+  width: 18px;
+  display: block;
+  transform: rotate(45deg);
+}
+
+.topRight {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+  color: #449e42;
+  font-size: 22px;
+}
+
+.number {
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.leftb {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 64px;
+}
+
+.c1 {
+  flex: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+}
+
+.plus {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+}
+
+.c2 {
+  flex: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+}
+
+.rightb {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 64px;
+}
+
+/* Custom Grid helpers for ported JSX */
+.headerGrid {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.headerCol {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.headerColMiddle {
+  flex: 6;
+  display: flex;
+  flex-direction: column;
+}
+
+.row64 {
+  display: flex;
+  width: 100%;
+  height: 64px;
+  align-items: center;
+}
+
+.rowAuto {
+  display: flex;
+  width: 100%;
+  height: auto;
+  align-items: flex-start;
+}
+
+.col9 { flex: 9; display: flex; justify-content: center; align-items: center; }
+.col3 { flex: 3; display: flex; justify-content: center; align-items: center; }
+.col1 { flex: 1; display: flex; justify-content: center; align-items: center; }
+.col4 { flex: 4; display: flex; justify-content: center; align-items: center; }
+.col2 { flex: 2; display: flex; justify-content: center; align-items: center; }
+
+.titleText {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 4px;
+  width: 100%;
+  color: #64748B;
+  line-height: 1.2;
+}
+
+.middleTitles {
+  display: flex;
+  width: 100%;
+  padding: 0 10%;
+}
+
+.titleSub {
+  flex: 1;
+  font-size: 11px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+@media (max-width: 1024px) {
+  .myGraph {
+    padding: 20px 0px;
+  }
+  .myinnerG {
+    height: 350px;
+  }
+}
+
+@media (max-width: 576px) {
+  .topContainer {
+    padding: 10px 15px;
+  }
+  .cardHeader {
+    width: 95%;
+    height: 130px;
+  }
+  .headerText {
+    font-size: 16px;
+  }
+}

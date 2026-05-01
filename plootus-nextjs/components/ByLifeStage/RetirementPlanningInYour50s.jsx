@@ -43,14 +43,14 @@ const RetirementPlanningInYour50s = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Retirement Planning in Your 50s: The Complete 2026 Guide | Plootus</title>
+        <title>Retirement Planning in Your 50s | Plootus</title>
         <meta name="description" content="The complete guide to retirement planning in your 50s. Catch-up contributions, Social Security timing, healthcare before Medicare, asset allocation, and the final push to retire on your terms." />
         <link rel="canonical" href="https://www.plootus.com/retirement-planning-in-your-50s" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            "headline": "Retirement Planning in Your 50s: The Complete 2026 Guide",
+            "headline": "Retirement Planning in Your 50s",
             "description": "The final decade of wealth accumulation — catch-up contributions, Social Security timing, healthcare strategy, and retirement income planning.",
             "datePublished": "2026-01-01",
             "dateModified": "2026-04-01",
@@ -77,7 +77,7 @@ const RetirementPlanningInYour50s = () => {
       <div className={styles.hero}>
         <div className={styles.heroInner}>
           <div className={styles.heroEyebrow}>🏁 Life Stage Guide</div>
-          <h1>Retirement Planning in Your 50s:<br />The Complete 2026 Guide</h1>
+          <h1>Retirement Planning in Your 50s</h1>
           <p className={styles.heroDeck}>Your 50s are the decade where retirement stops being abstract and starts being a real date on a calendar. Catch-up contributions unlock extra savings power, Social Security decisions loom, and the question shifts from "am I saving enough?" to "will my money last?" Here's your complete playbook.</p>
           <div className={styles.heroMeta}>
             <span>📅 Updated April 2026</span>
@@ -337,8 +337,8 @@ const RetirementPlanningInYour50s = () => {
           </div>
 
           <div className={styles.ctaCard}>
-            <h4>Model Your Retirement Date</h4>
-            <p>Plootus shows you exactly when you can retire — factoring in Social Security, healthcare, withdrawal order, and RMDs in a single projection.</p>
+            <h4>What's my retirement number?</h4>
+            <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
             <Link href="/retirement-calculator" className={styles.ctaBtn}>Check Here</Link>
           </div>
 
@@ -359,7 +359,15 @@ const RetirementPlanningInYour50s = () => {
         </aside>
       </div>
 
-      <PartnersSection />
+      <PartnersSection
+        titleFontSize="28px !important"
+        titleFontWeight={800}
+        titleColor="var(--navy) !important"
+        titleLetterSpacing="-0.3px"
+        subtitleFontSize="15px"
+        subtitleColor="var(--text-mid)"
+        rootPadding="40px 0 0"
+      />
     </div>
   );
 };

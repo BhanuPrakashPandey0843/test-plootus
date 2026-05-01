@@ -388,10 +388,7 @@ const BackdoorRothIra = () => {
               <p><strong>⚠️ Plan Availability:</strong> Only about 22% of 401(k) plans allow after-tax contributions, and fewer still allow in-service conversions or withdrawals needed to complete the mega backdoor Roth. Check your plan's Summary Plan Description (SPD) or call your HR department. Large tech company and self-employed Solo 401(k) plans are most likely to support this. Source: Vanguard How America Saves 2024.</p>
             </div>
 
-            <div className={styles.inlineCta}>
-              <div className={styles.inlineCtaText}><h4>Model Your Backdoor Roth in Your Full Retirement Plan</h4><p>Plootus shows how backdoor Roth contributions affect your projected retirement balance, tax liability, and RMD exposure — alongside all your other accounts.</p></div>
-              <Link href="/retirement-calculator" className={styles.inlineCtaBtn}>Check Here</Link>
-            </div>
+
           </section>
 
           <section id="mistakes" className={styles.section}>
@@ -463,18 +460,18 @@ const BackdoorRothIra = () => {
           <div className={styles.sidebarCard}>
             <h4>On This Page</h4>
             <ul className={styles.tocList}>
-              <li><a href="#overview">💡 What Is It?</a></li>
-              <li><a href="#limits">📊 2026 Income Limits</a></li>
-              <li><a href="#steps">✅ 5-Step Process</a></li>
-              <li><a href="#pro-rata">⚠️ The Pro-Rata Rule</a></li>
-              <li><a href="#mega">🚀 Mega Backdoor Roth</a></li>
-              <li><a href="#mistakes">🚫 Common Mistakes</a></li>
-              <li><a href="#faq">❓ FAQ</a></li>
+              <li><a href="#overview">What Is It?</a></li>
+              <li><a href="#limits">2026 Income Limits</a></li>
+              <li><a href="#steps">5-Step Process</a></li>
+              <li><a href="#pro-rata">The Pro-Rata Rule</a></li>
+              <li><a href="#mega">Mega Backdoor Roth</a></li>
+              <li><a href="#mistakes">Common Mistakes</a></li>
+              <li><a href="#faq">FAQ</a></li>
             </ul>
           </div>
           <div className={styles.ctaCard}>
-            <h4>See Your Full Retirement Tax Picture</h4>
-            <p>Plootus models your backdoor Roth contributions alongside your 401(k), Social Security, and projected tax brackets — free.</p>
+            <h4>What's my retirement number?</h4>
+            <p>Using our Retirement Calculator, let us help you figure out if you are on track for your planned retirement.</p>
             <Link href="/retirement-calculator" className={styles.ctaBtn}>Check Here</Link>
           </div>
           <div className={styles.sidebarCard}>

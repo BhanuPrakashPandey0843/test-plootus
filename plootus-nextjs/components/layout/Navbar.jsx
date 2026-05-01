@@ -25,7 +25,21 @@ const NavBar = () => {
     signupModal, setSignupModal 
   } = useContext(LoginSignupContext);
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const router = useRouter();
+
+  const getCookie = (name) => {
+    if (typeof document === 'undefined') return null;
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+    return null;
+  };
+
+  useEffect(() => {
+    setIsLoggedIn(!!getCookie('jwt_token'));
+  }, [router.pathname, loginModal, signupModal]);
+
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -84,7 +98,7 @@ const NavBar = () => {
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
         <Link href="/" className={styles.logoContainer}>
-          <img src="/images/Plootus.png" alt="Plootus" className={styles.logo} />
+          <img src="/logo.png" alt="Plootus" className={styles.logo} />
         </Link>
 
         {/* Desktop Navigation */}
@@ -176,26 +190,38 @@ const NavBar = () => {
 
         {/* Desktop Auth Buttons */}
         <div className={styles.authButtons}>
-          <div className={styles.loginWrapper}>
-            <LogIn 
-              modalIsOpen={loginModal}
-              openModal={() => setLoginModal(true)}
-              closeModal={() => setLoginModal(false)}
-              signupopenModal={() => setSignupModal(true)}
-            />
-          </div>
-          <div className={styles.signupWrapper}>
-            <MainSignupModal 
-              modalIsOpen={signupModal}
-              openModal={() => setSignupModal(true)}
-              closeModal={() => setSignupModal(false)}
-              loginopenModal={() => setLoginModal(true)}
-            />
-            <button onClick={() => setSignupModal(true)} className={styles.signupBtn}>
-              Get Started
+          {isLoggedIn ? (
+            <button 
+              onClick={() => window.location.href = `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.plootus.com'}/auth/dashboard`}
+              className={styles.signupBtn}
+            >
+              My Dashboard
             </button>
-          </div>
+          ) : (
+            <>
+              <div className={styles.loginWrapper}>
+                <LogIn 
+                  modalIsOpen={loginModal}
+                  openModal={() => setLoginModal(true)}
+                  closeModal={() => setLoginModal(false)}
+                  signupopenModal={() => setSignupModal(true)}
+                />
+              </div>
+              <div className={styles.signupWrapper}>
+                <MainSignupModal 
+                  modalIsOpen={signupModal}
+                  openModal={() => setSignupModal(true)}
+                  closeModal={() => setSignupModal(false)}
+                  loginopenModal={() => setLoginModal(true)}
+                />
+                <button onClick={() => setSignupModal(true)} className={styles.signupBtn}>
+                  Get Started
+                </button>
+              </div>
+            </>
+          )}
         </div>
+
       </div>
 
       {/* Mobile Menu */}
@@ -271,9 +297,21 @@ const NavBar = () => {
           </Link>
 
           <div className={styles.mobileAuthButtons}>
-            <button onClick={() => { setLoginModal(true); setIsMobileMenuOpen(false); }} className={styles.mobileLoginBtn}>Sign In</button>
-            <button onClick={() => { setSignupModal(true); setIsMobileMenuOpen(false); }} className={styles.mobileSignupBtn}>Get Started</button>
+            {isLoggedIn ? (
+              <button 
+                onClick={() => window.location.href = `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.plootus.com'}/auth/dashboard`}
+                className={styles.mobileSignupBtn}
+              >
+                Dashboard
+              </button>
+            ) : (
+              <>
+                <button onClick={() => { setLoginModal(true); setIsMobileMenuOpen(false); }} className={styles.mobileLoginBtn}>Sign In</button>
+                <button onClick={() => { setSignupModal(true); setIsMobileMenuOpen(false); }} className={styles.mobileSignupBtn}>Get Started</button>
+              </>
+            )}
           </div>
+
         </div>
       </div>
     </nav>
