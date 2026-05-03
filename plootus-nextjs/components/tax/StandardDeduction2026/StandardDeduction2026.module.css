@@ -19,65 +19,231 @@
 }
 
 .hero {
-  background: var(--navy);
-  padding: 60px 40px 48px;
+  background: linear-gradient(135deg, #03060d 0%, #060708 100%);
+  padding: 72px 40px 64px;
   position: relative;
   overflow: hidden;
+  isolation: isolate;
 }
+
+/* Subtle dot-grid overlay */
+.heroGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ambient glow accents */
+.heroGlow1 {
+  position: absolute;
+  top: -120px;
+  left: -100px;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(59,91,219,0.18) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.heroGlow2 {
+  position: absolute;
+  bottom: -80px;
+  right: 60px;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(59,91,219,0.10) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
 .heroBg {
   position: absolute;
-  right: -20px;
-  bottom: -40px;
-  font-size: 220px;
-  font-weight: 800;
-  color: rgba(255,255,255,.03);
+  right: -10px;
+  bottom: -60px;
+  font-size: 200px;
+  font-weight: 900;
+  color: rgba(255,255,255,0.02);
   line-height: 1;
   pointer-events: none;
   letter-spacing: -8px;
+  z-index: 0;
+  user-select: none;
 }
+
 .heroInner {
   max-width: 1100px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 340px;
+  gap: 48px;
   align-items: center;
 }
+
+.heroLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
 .heroTag {
-  font-size: 11px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 10.5px;
   font-weight: 700;
-  letter-spacing: .1em;
+  letter-spacing: .13em;
   text-transform: uppercase;
-  color: var(--blue);
-  margin-bottom: 14px;
+  color: #7B96F7;
+  background: rgba(59,91,219,0.12);
+  border: 1px solid rgba(59,91,219,0.28);
+  padding: 6px 13px;
+  border-radius: 20px;
+  margin-bottom: 22px;
+  width: fit-content;
+  line-height: 1;
 }
+.heroTagDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 6px #4ade80;
+  animation: pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
 .hero h1 {
-  font-size: clamp(26px, 4vw, 46px);
-  font-weight: 800;
-  line-height: 1.1;
-  color: white;
-  margin-bottom: 16px;
-  letter-spacing: -.5px;
+  font-size: clamp(30px, 4.2vw, 52px);
+  font-weight: 900;
+  line-height: 1.08;
+  color: #ffffff;
+  margin: 0 0 18px;
+  letter-spacing: -.8px;
 }
+.heroH1Accent {
+  background: linear-gradient(90deg, #6B8FFF 0%, #A78BFA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .heroSub {
-  font-size: 15px;
-  color: rgba(255,255,255,.62);
-  margin-bottom: 20px;
-  line-height: 1.7;
+  font-size: 15.5px;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 24px;
+  line-height: 1.75;
 }
+.heroSub strong {
+  color: rgba(255,255,255,0.9);
+  font-weight: 700;
+}
+
 .heroMeta {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
 }
-.heroMeta span {
-  font-size: 12px;
+.heroMetaPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
   font-weight: 500;
-  color: rgba(255,255,255,.42);
-  background: rgba(255,255,255,.06);
-  padding: 4px 10px;
+  color: rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.09);
+  padding: 5px 12px;
   border-radius: 20px;
+  line-height: 1;
+  letter-spacing: .01em;
+}
+.heroMetaPill svg {
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+/* Right-side stat cards */
+.heroRight {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.heroCard {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 12px;
+  padding: 16px 20px;
+  backdrop-filter: blur(8px);
+  transition: background .2s, border-color .2s;
+}
+.heroCard:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.15);
+}
+.heroCardBlue {
+  background: rgba(59,91,219,0.16);
+  border-color: rgba(59,91,219,0.32);
+}
+.heroCardBlue:hover {
+  background: rgba(59,91,219,0.24);
+  border-color: rgba(59,91,219,0.45);
+}
+
+/* Icon + label row at top of each card */
+.heroCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 8px;
+}
+.heroCardIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.55);
+  flex-shrink: 0;
+}
+.heroCardIconBlue {
+  background: rgba(107,143,255,0.18);
+  color: #93B4FF;
+}
+
+.heroCardLabel {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.42);
+  line-height: 1;
+}
+.heroCardVal {
+  font-size: 30px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -1.2px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.heroCardBlue .heroCardVal {
+  color: #93B4FF;
+}
+.heroCardSub {
+  font-size: 11px;
+  color: rgba(255,255,255,0.32);
+  letter-spacing: .01em;
 }
 
 .statStrip {
@@ -325,10 +491,11 @@
   gap: 12px;
 }
 .faqIcon {
-  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
   color: var(--blue);
   flex-shrink: 0;
-  transition: transform .2s;
+  transition: transform .25s ease;
 }
 .faqA {
   padding: 0 20px 16px;
@@ -342,10 +509,36 @@
   display: block;
 }
 .faqItem.open .faqIcon {
-  transform: rotate(45deg);
+  transform: rotate(180deg);
+}
+
+@media(max-width: 900px) {
+  .heroInner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .heroRight {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .heroCard {
+    flex: 1 1 calc(50% - 5px);
+    min-width: 140px;
+  }
 }
 
 @media(max-width: 768px) {
+  .hero {
+    padding: 48px 20px 40px;
+  }
+  .heroGlow1 {
+    width: 300px;
+    height: 300px;
+  }
+  .heroGlow2 {
+    display: none;
+  }
   .pageBody {
     grid-template-columns: 1fr;
     padding: 24px 20px;
@@ -356,10 +549,13 @@
   .statStripInner {
     grid-template-columns: 1fr 1fr;
   }
-  .hero {
-    padding: 32px 20px 24px;
-  }
   .cardGrid {
     grid-template-columns: 1fr;
+  }
+  .heroRight {
+    flex-direction: column;
+  }
+  .heroCard {
+    flex: none;
   }
 }

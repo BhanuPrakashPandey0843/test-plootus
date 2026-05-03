@@ -59,9 +59,11 @@
   color: var(--border);
 }
 .hero {
-  background: linear-gradient(135deg, var(--navy) 0%, #1a2f70 100%);
-  border-bottom: 1px solid rgba(255, 255, 255, .1);
+  background: linear-gradient(135deg, #03060d 0%, #060708 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, .06);
   padding: 60px 40px 48px;
+  position: relative;
+  overflow: hidden;
 }
 .hero-inner {
   max-width: 1100px;

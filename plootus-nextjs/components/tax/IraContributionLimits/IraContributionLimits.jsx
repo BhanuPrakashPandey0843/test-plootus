@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
+import { PiggyBank, Calendar } from 'lucide-react';
 import styles from './IraContributionLimits.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -49,11 +50,15 @@ const IraContributionLimits = () => {
       <div className={styles.hero}>
         <div className={styles.heroBg}>TAXES</div>
         <div className={styles.heroInner}>
-          <p className={styles.heroTag}>💰 Tax Guide · IRS COLA 2026</p>
+          <p className={styles.heroTag}><PiggyBank size={13} strokeWidth={2.5} /> Tax Guide · IRS COLA 2026</p>
           <h1>IRA Contribution Limits 2026</h1>
           <p className={styles.heroDeck}>
-            The 2026 IRA contribution limit is $7,000 ($8,000 age 50+).
+            The 2026 IRA limit is $7,000 ($8,000 age 50+). Know the Roth income limits, backdoor rules, and SECURE 2.0 catch-up changes before you contribute.
           </p>
+          <div className={styles.heroMeta}>
+            <span><Calendar size={11} style={{display:'inline',marginRight:4}} />Updated 2026</span>
+            <span>IRS COLA Adjusted</span>
+          </div>
         </div>
       </div>
 

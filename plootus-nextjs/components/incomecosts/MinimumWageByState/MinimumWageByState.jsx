@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
 import Chart from 'chart.js/auto';
+import { DollarSign, TrendingUp, Calendar, BookOpen, MapPin } from 'lucide-react';
 import styles from './MinimumWageByState.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -188,12 +189,12 @@ const MinimumWageByState = () => {
 
       <div className={styles.hero}>
         <div className={styles.heroInner}>
-          <div className={styles.heroBadge}>💵 Labor Data 2025</div>
+          <div className={styles.heroBadge}><DollarSign size={13} strokeWidth={2.5} /> Labor Data 2025</div>
           <h1>Minimum Wage by State (2025)</h1>
           <p className={styles.heroSub}>The federal minimum wage has been $7.25 since 2009. But 30+ states have set their own higher floors. This is the complete 2025 state minimum wage table, sourced from the U.S. Department of Labor and state labor agencies.</p>
           <div className={styles.heroMeta}>
-            <span>📚 Sources: U.S. <abbr title="U.S. Department of Labor">DOL</abbr>, <abbr title="National Conference of State Legislatures">NCSL</abbr>, Paycor, Workforce.com, Fingercheck</span>
-            <span><time dateTime="2025-01-01">🗓️ Updated: 2025</time></span>
+            <span><BookOpen size={11} style={{marginRight:4,verticalAlign:'middle'}} />Sources: U.S. <abbr title="U.S. Department of Labor">DOL</abbr>, <abbr title="National Conference of State Legislatures">NCSL</abbr>, Paycor, Workforce.com</span>
+            <span><Calendar size={11} style={{marginRight:4,verticalAlign:'middle'}} /><time dateTime="2025-01-01">Updated: 2025</time></span>
           </div>
         </div>
       </div>

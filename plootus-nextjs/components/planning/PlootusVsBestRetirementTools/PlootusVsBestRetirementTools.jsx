@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import { CheckCircle2, CalendarDays, Clock, ShieldCheck } from 'lucide-react';
 import styles from './PlootusVsBestRetirementTools.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -92,13 +93,13 @@ const PlootusVsBestRetirementTools = () => {
       {/* Hero Section */}
       <div className={styles.hero}>
         <div className={styles.heroInner}>
-          <div className={styles.heroBadge}>✅ 100% Free · No Credit Card Required</div>
+          <div className={styles.heroBadge}><CheckCircle2 size={13} strokeWidth={2.5} /> 100% Free · No Credit Card Required</div>
           <h1>Plootus vs. The Best Retirement Planning Tools — <em>And Why Plootus Wins</em></h1>
           <p className={styles.heroSub}>There's a lot to consider when picking a retirement planning tool: 401(k) optimization, budgeting, fee analysis, Social Security, and more. We break down how Plootus compares to 10 of the most popular alternatives.</p>
           <div className={styles.heroMeta}>
-            <span>📅 Updated April 2025</span>
-            <span>⏱ 12 min read</span>
-            <span>✅ Verified by the Plootus Team</span>
+            <span><CalendarDays size={11} strokeWidth={2.5} style={{display:'inline',verticalAlign:'middle',marginRight:3}} /> Updated April 2025</span>
+            <span><Clock size={11} strokeWidth={2.5} style={{display:'inline',verticalAlign:'middle',marginRight:3}} /> 12 min read</span>
+            <span><ShieldCheck size={11} strokeWidth={2.5} style={{display:'inline',verticalAlign:'middle',marginRight:3}} /> Verified by the Plootus Team</span>
           </div>
         </div>
       </div>

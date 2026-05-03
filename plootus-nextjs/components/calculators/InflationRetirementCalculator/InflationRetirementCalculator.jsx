@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import { TrendingUp, Calculator, ShieldAlert, PiggyBank } from 'lucide-react';
 import styles from './InflationRetirementCalculator.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -83,10 +84,13 @@ const InflationRetirementCalculator = () => {
 
       <div className={styles.hero}>
         <div className={styles['hero-inner']}>
-          <div className={styles['hero-eyebrow']}>📈 Interactive Tool · Plootus 2026 · BLS, CMS, Fidelity Data</div>
+          <p className={styles['hero-eyebrow']}>
+            <TrendingUp size={13} strokeWidth={2.5} />
+            Interactive Tool · Plootus 2026 · BLS, CMS, Fidelity Data
+          </p>
           <h1>Inflation Retirement Calculator: How Inflation Erodes Your Retirement Savings</h1>
           <div className={styles['hero-deck']}>
-            $60,000/year in today's dollars becomes $97,000/year in 20 years at 3% inflation — and $131,000/year at 4% inflation. Healthcare costs inflate even faster. This calculator shows exactly how inflation changes your retirement number and what you can do about it.
+            $60,000/year in today&apos;s dollars becomes $97,000/year in 20 years at 3% inflation — and $131,000/year at 4% inflation. Healthcare costs inflate even faster. This calculator shows exactly how inflation changes your retirement number and what you can do about it.
           </div>
           <div className={styles['hero-meta']}>
             <span>By the Plootus Research Team</span>

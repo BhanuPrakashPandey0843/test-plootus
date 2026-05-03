@@ -19,10 +19,11 @@
 }
 
 .hero {
-  background: var(--navy);
+  background: linear-gradient(135deg, #03060d 0%, #060708 100%);
   padding: 60px 40px 48px;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid rgba(255,255,255,.06);
 }
 .heroBg {
   position: absolute;

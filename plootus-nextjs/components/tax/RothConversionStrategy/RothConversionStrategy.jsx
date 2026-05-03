@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
+import { ArrowRightLeft, Calendar, Clock } from 'lucide-react';
 import styles from './RothConversionStrategy.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -49,14 +50,14 @@ const RothConversionStrategy = () => {
       <div className={styles.hero}>
         <div className={styles.heroBg}>TAXES</div>
         <div className={styles.heroInner}>
-          <p className={styles.heroTag}>🔄 Tax Strategy · Retirement Planning · IRMAA · 2026</p>
+          <p className={styles.heroTag}><ArrowRightLeft size={13} strokeWidth={2.5} /> Tax Strategy · Retirement Planning · 2026</p>
           <h1>Roth Conversion Strategy: The Complete 2026 Guide</h1>
           <p className={styles.heroDeck}>
-            Roth conversions can save you hundreds of thousands in lifetime taxes — but only if you convert at the right time and in the right amount.
+            Roth conversions can save you hundreds of thousands in lifetime taxes — but only if you convert at the right time and in the right amount. Master bracket-filling, IRMAA limits, and the conversion ladder.
           </p>
           <div className={styles.heroMeta}>
-            <span>📅 Updated April 2026</span>
-            <span>⏱ 10 min read</span>
+            <span><Calendar size={11} style={{display:'inline',marginRight:4}} />Updated April 2026</span>
+            <span><Clock size={11} style={{display:'inline',marginRight:4}} />10 min read</span>
           </div>
         </div>
       </div>

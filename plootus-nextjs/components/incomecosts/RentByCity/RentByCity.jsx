@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
 import Chart from 'chart.js/auto';
+import { Building2, TrendingUp, Calendar, BookOpen, MapPin } from 'lucide-react';
 import styles from './RentByCity.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -161,12 +162,12 @@ const RentByCity = () => {
 
       <div className={styles.hero}>
         <div className={styles.heroInner}>
-          <div className={styles.heroBadge}>🏙️ Housing Data 2025</div>
+          <div className={styles.heroBadge}><Building2 size={13} strokeWidth={2.5} /> Housing Data 2025</div>
           <h1>Average Rent by City (2025)</h1>
           <p className={styles.heroSub}>How much does it cost to rent in America's biggest cities? We break down 1-bedroom and 2-bedroom average rents for 30+ major metros, using <abbr title="U.S. Department of Housing and Urban Development">HUD</abbr> Fair Market Rent data, U.S. Census <abbr title="American Community Survey">ACS</abbr>, and current market data.</p>
           <div className={styles.heroMeta}>
-            <span>📚 Sources: HUD FY2025 <abbr title="Fair Market Rent">FMR</abbr>, Census ACS, Dwellsy, Apartments.com</span>
-            <span>🗓️ 2025 Data</span>
+            <span><BookOpen size={11} style={{marginRight:4,verticalAlign:'middle'}} />Sources: HUD FY2025 <abbr title="Fair Market Rent">FMR</abbr>, Census ACS, Dwellsy, Apartments.com</span>
+            <span><Calendar size={11} style={{marginRight:4,verticalAlign:'middle'}} />2025 Data</span>
           </div>
         </div>
       </div>

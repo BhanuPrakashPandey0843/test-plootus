@@ -34,8 +34,11 @@
 }
 
 .hero {
-  background: linear-gradient(135deg, var(--navy) 0%, #1a2f70 100%);
+  background: linear-gradient(135deg, #03060d 0%, #060708 100%);
   padding: 52px 40px 44px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255,255,255,.06);
 }
 .heroInner {
   max-width: 1100px;

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import styles from './HowMuch401kByAge.module.css';
 import HubNav from '../../HubNav/HubNav';
@@ -6,6 +6,7 @@ import PartnersSection from '../../home/PartnersSection';
 
 const HowMuch401kByAge = () => {
   const router = useRouter();
+  const chartRef = useRef(null);
 
   useEffect(() => {
     // Load Chart.js dynamically
@@ -34,10 +35,17 @@ const HowMuch401kByAge = () => {
 
   useEffect(() => {
     // Initialize chart
+    let interval = null;
+
     const initChart = () => {
       if (window.Chart && document.getElementById('benchChart')) {
+        // Destroy existing chart instance before creating a new one
+        if (chartRef.current) {
+          chartRef.current.destroy();
+          chartRef.current = null;
+        }
         const ctx = document.getElementById('benchChart').getContext('2d');
-        new window.Chart(ctx, {
+        chartRef.current = new window.Chart(ctx, {
           type: 'bar',
           data: {
             labels: ['Age 30', 'Age 40', 'Age 50', 'Age 60', 'Age 67'],
@@ -96,14 +104,25 @@ const HowMuch401kByAge = () => {
     if (window.Chart) {
       initChart();
     } else {
-      const interval = setInterval(() => {
+      interval = setInterval(() => {
         if (window.Chart) {
           initChart();
           clearInterval(interval);
+          interval = null;
         }
       }, 100);
-      return () => clearInterval(interval);
     }
+
+    // Unified cleanup: always runs on unmount regardless of which branch above ran
+    return () => {
+      if (interval) {
+        clearInterval(interval);
+      }
+      if (chartRef.current) {
+        chartRef.current.destroy();
+        chartRef.current = null;
+      }
+    };
   }, []);
 
   return (

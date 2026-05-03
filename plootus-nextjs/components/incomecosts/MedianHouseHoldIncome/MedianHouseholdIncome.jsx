@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
 import Chart from 'chart.js/auto';
+import { BarChart2, TrendingUp, MapPin, Calendar, BookOpen, ChevronRight } from 'lucide-react';
 import styles from './MedianHouseholdIncome.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -157,12 +158,12 @@ const MedianHouseholdIncome = () => {
 
       <div className={styles.hero}>
         <div className={styles.heroInner}>
-          <div className={styles.heroBadge}>📊 Census 2024 Data</div>
+          <div className={styles.heroBadge}><BarChart2 size={13} strokeWidth={2.5} /> Census 2024 Data</div>
           <h1>Median Household Income by State (2024)</h1>
           <p className={styles.heroSub}>The U.S. median household income reached $83,730 in 2024 — an all-time high. But that number masks a nearly $55,000 gap between the highest and lowest-earning states. Here's the complete state-by-state picture from the U.S. Census Bureau.</p>
           <div className={styles.heroMeta}>
-            <span>📚 Sources: U.S. Census Bureau <abbr title="American Community Survey">ACS</abbr> 2024, <abbr title="Current Population Survey">CPS</abbr> 2025 ASEC, Advisor Perspectives</span>
-            <span><time dateTime="2025-01-01">🗓️ 2024 ACS Data (Published Sept 2025)</time></span>
+            <span><BookOpen size={11} style={{marginRight:4,verticalAlign:'middle'}} />Sources: U.S. Census Bureau <abbr title="American Community Survey">ACS</abbr> 2024, <abbr title="Current Population Survey">CPS</abbr> 2025 ASEC</span>
+            <span><Calendar size={11} style={{marginRight:4,verticalAlign:'middle'}} /><time dateTime="2025-01-01">2024 ACS Data (Published Sept 2025)</time></span>
           </div>
         </div>
       </div>

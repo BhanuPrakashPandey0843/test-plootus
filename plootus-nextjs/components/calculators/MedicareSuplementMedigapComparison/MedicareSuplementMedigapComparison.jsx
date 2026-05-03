@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import { ShieldCheck } from 'lucide-react';
 import styles from './MedicareSuplementMedigapComparison.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -47,7 +48,7 @@ const MedicareSuplementMedigapComparison = () => {
 
       <div className={styles.hero}>
         <div className={styles['hero-inner']}>
-          <div className={styles['hero-eyebrow']}>🏥 Healthcare Guide · Plootus 2026 · CMS, KFF, Medicare.gov</div>
+          <div className={styles['hero-eyebrow']}><ShieldCheck size={13} strokeWidth={2.5} /> Healthcare Guide · Plootus 2026 · CMS, KFF, Medicare.gov</div>
           <h1>Medigap vs. Medicare Advantage: Plan G, Plan N, and Part C Compared (2026)</h1>
           <div className={styles['hero-deck']}>
             Original Medicare (Parts A+B) covers 80% of costs but has <strong>no out-of-pocket maximum</strong>. A serious illness could cost tens of thousands. Supplemental coverage — either Medigap or Medicare Advantage — closes this gap. Here's exactly how each option compares in 2026.

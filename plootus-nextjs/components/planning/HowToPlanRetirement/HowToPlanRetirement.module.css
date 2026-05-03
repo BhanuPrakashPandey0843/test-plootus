@@ -55,10 +55,20 @@
 
 /* HERO */
 .hero {
-  background: linear-gradient(135deg, var(--navy) 0%, #1a2f70 100%);
-  border-bottom: 1px solid rgba(255, 255, 255, .1);
+  background: linear-gradient(135deg, #03060d 0, #060708 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, .06);
   padding: 60px 40px 0;
   margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 60% 0%, rgba(59,91,219,0.10) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .heroInner {
@@ -119,7 +129,8 @@
 
 /* STAT STRIP */
 .statStrip {
-  background: var(--blue);
+  background: linear-gradient(90deg, #0a0f1c 0%, #0d1424 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
   padding: 0 40px;
   margin: 0;
 }

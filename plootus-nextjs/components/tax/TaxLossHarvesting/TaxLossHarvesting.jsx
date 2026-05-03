@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
+import { Scissors, Calendar, Clock } from 'lucide-react';
 import styles from './TaxLossHarvesting.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -49,14 +50,14 @@ const TaxLossHarvesting = () => {
       <div className={styles.hero}>
         <div className={styles.heroBg}>TAXES</div>
         <div className={styles.heroInner}>
-          <p className={styles.heroTag}>📈 Tax Strategy · Portfolio Management · 2026</p>
+          <p className={styles.heroTag}><Scissors size={13} strokeWidth={2.5} /> Tax Strategy · Portfolio Management · 2026</p>
           <h1>Tax-Loss Harvesting: Complete Guide for 2026</h1>
           <p className={styles.heroDeck}>
-            Tax-loss harvesting turns declining investments into real tax savings — without permanently leaving the market.
+            Tax-loss harvesting turns declining investments into real tax savings — without permanently leaving the market. Learn the wash-sale rule, deduction limits, and carryforward strategies.
           </p>
           <div className={styles.heroMeta}>
-            <span>📅 Updated April 2026</span>
-            <span>⏱ 8 min read</span>
+            <span><Calendar size={11} style={{display:'inline',marginRight:4}} />Updated April 2026</span>
+            <span><Clock size={11} style={{display:'inline',marginRight:4}} />8 min read</span>
           </div>
         </div>
       </div>

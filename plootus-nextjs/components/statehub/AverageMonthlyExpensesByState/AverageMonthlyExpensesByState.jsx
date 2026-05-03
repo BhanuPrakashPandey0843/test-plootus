@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import { BarChart3, MapPin, TrendingUp, DollarSign } from 'lucide-react';
 import styles from './AverageMonthlyExpensesByState.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -44,13 +45,13 @@ const AverageMonthlyExpensesByState = () => {
 
       <div className={styles.hero}>
         <div className={styles['hero-inner']}>
-          <p className={styles['hero-eyebrow']}>📊 Cost of Living Guide · BLS CES 2024 · All 50 States</p>
+          <p className={styles['hero-eyebrow']}><BarChart3 size={13} strokeWidth={2.5} /> Cost of Living Guide · BLS CES 2024 · All 50 States</p>
           <h1>Average Monthly Expenses by State 2026: Cost of Living Comparison</h1>
           <p className={styles['hero-deck']}>
             Monthly household expenses range from $3,500 in Mississippi to $7,200 in Hawaii — a $3,700/month difference that translates to over $1 million in required retirement savings. See where your state ranks and what it means for your financial plan.
           </p>
           <div className={styles['hero-meta']}>
-            <span>📅 Updated April 2026</span><span>📚 Source: BLS CES 2024; MERIC Q3 2025</span>
+            <span><MapPin size={11} strokeWidth={2.5} style={{display:'inline',verticalAlign:'middle',marginRight:3}} /> Updated April 2026</span><span><BarChart3 size={11} strokeWidth={2.5} style={{display:'inline',verticalAlign:'middle',marginRight:3}} /> Source: BLS CES 2024; MERIC Q3 2025</span>
           </div>
         </div>
       </div>

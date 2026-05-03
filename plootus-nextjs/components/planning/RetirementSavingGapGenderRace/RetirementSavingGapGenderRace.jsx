@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
+import { TrendingDown, BookOpen, Calendar } from 'lucide-react';
 import styles from './RetirementSavingGapGenderRace.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -48,14 +49,14 @@ const RetirementSavingGapGenderRace = () => {
 
       <div className={styles.hero}>
         <div className={styles['hero-inner']}>
-          <div className={styles['hero-eyebrow']}>📊 Research Report · Plootus 2026 · Federal Reserve, U.S. Census, GAO</div>
+          <div className={styles['hero-eyebrow']}><TrendingDown size={13} /> Research Report · Plootus 2026 · Federal Reserve, U.S. Census, GAO</div>
           <h1>Retirement Savings Gap by Gender and Race: The Data Behind the Inequality</h1>
           <div className={styles['hero-deck']}>
             Women retire with 30–40% less than men. Black and Hispanic households hold a fraction of the retirement savings of white households. This isn't a behavior gap — it's a structural one.
           </div>
           <div className={styles['hero-meta']}>
-            <span>By the Plootus Research Team</span>
-            <span>Updated April 2026</span>
+            <span><BookOpen size={12} style={{display:'inline',verticalAlign:'middle',marginRight:4}} />By the Plootus Research Team</span>
+            <span><Calendar size={12} style={{display:'inline',verticalAlign:'middle',marginRight:4}} />Updated April 2026</span>
             <span>Sources: Federal Reserve SCF 2022, GAO 2022, U.S. Census Bureau, NIRS</span>
           </div>
         </div>

@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
 import Chart from 'chart.js/auto';
+import { BarChart2, BookOpen, Calendar, PenLine } from 'lucide-react';
 import styles from './CostOfRaisiingChildByState.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -129,13 +130,13 @@ const CostOfRaisiingChildByState = () => {
 
       <div className={styles.hero}>
         <div className={styles.heroInner}>
-          <div className={styles.heroBadge}>📊 2025 Data Guide</div>
+          <div className={styles.heroBadge}><BarChart2 size={14} /> 2025 Data Guide</div>
           <h1>Cost of Raising a Child by State: Birth to 18</h1>
           <p className={styles.heroSub}>From diapers to diplomas, the cost of raising a child varies by more than $400,000 depending on where you live. We break down every major expense using <abbr title="U.S. Department of Agriculture">USDA</abbr>, MIT Living Wage, and SmartAsset 2025 data — so you can plan ahead.</p>
           <div className={styles.heroMeta}>
-            <span>📚 Sources: USDA, MIT Living Wage Calculator, SmartAsset 2025</span>
-            <span>🗓️ Updated: 2025 Data</span>
-            <span>✍️ Reviewed by Plootus Research Team</span>
+            <span><BookOpen size={12} style={{display:'inline',verticalAlign:'middle',marginRight:4}} />Sources: USDA, MIT Living Wage Calculator, SmartAsset 2025</span>
+            <span><Calendar size={12} style={{display:'inline',verticalAlign:'middle',marginRight:4}} />Updated: 2025 Data</span>
+            <span><PenLine size={12} style={{display:'inline',verticalAlign:'middle',marginRight:4}} />Reviewed by Plootus Research Team</span>
           </div>
         </div>
       </div>

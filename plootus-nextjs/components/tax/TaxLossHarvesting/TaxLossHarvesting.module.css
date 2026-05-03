@@ -19,21 +19,45 @@
 }
 
 .hero {
-  background: var(--navy);
-  padding: 60px 40px 48px;
+  background: linear-gradient(135deg, #03060d 0%, #060708 100%);
+  padding: 76px 40px 60px;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  left: -80px;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(59,91,219,0.18) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  right: 10%;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(44,182,125,0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
 }
 .heroBg {
   position: absolute;
-  right: -20px;
-  bottom: -40px;
-  font-size: 220px;
-  font-weight: 800;
-  color: rgba(255,255,255,.03);
+  right: -10px;
+  bottom: -30px;
+  font-size: 240px;
+  font-weight: 900;
+  color: rgba(255,255,255,.025);
   line-height: 1;
   pointer-events: none;
-  letter-spacing: -8px;
+  letter-spacing: -10px;
+  user-select: none;
 }
 .heroInner {
   max-width: 1100px;
@@ -45,39 +69,56 @@
   align-items: center;
 }
 .heroTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: .1em;
   text-transform: uppercase;
-  color: var(--blue);
-  margin-bottom: 14px;
+  color: #6ea8fe;
+  margin-bottom: 18px;
+  background: rgba(59,91,219,0.15);
+  border: 1px solid rgba(59,91,219,0.3);
+  padding: 5px 12px;
+  border-radius: 20px;
+  width: fit-content;
 }
+.heroTag svg { flex-shrink: 0; }
 .hero h1 {
-  font-size: clamp(26px, 4vw, 46px);
+  font-size: clamp(28px, 4vw, 50px);
   font-weight: 800;
-  line-height: 1.1;
-  color: white;
-  margin-bottom: 16px;
-  letter-spacing: -.5px;
+  line-height: 1.08;
+  color: #ffffff;
+  margin-bottom: 18px;
+  letter-spacing: -.6px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
 }
 .heroDeck {
-  font-size: 15px;
-  color: rgba(255,255,255,.62);
-  margin-bottom: 20px;
-  line-height: 1.7;
+  font-size: 16px;
+  color: rgba(255,255,255,.58);
+  margin-bottom: 24px;
+  line-height: 1.75;
+  max-width: 680px;
 }
 .heroMeta {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
+  margin-top: 4px;
 }
 .heroMeta span {
   font-size: 12px;
   font-weight: 500;
-  color: rgba(255,255,255,.42);
-  background: rgba(255,255,255,.06);
-  padding: 4px 10px;
+  color: rgba(255,255,255,.38);
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  padding: 4px 12px;
   border-radius: 20px;
+}
+@media (max-width: 640px) {
+  .hero { padding: 52px 20px 44px; }
+  .heroBg { font-size: 120px; }
 }
 
 .statStrip {

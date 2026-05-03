@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
+import { TrendingDown, Calendar } from 'lucide-react';
 import styles from './CapitalGainsTaxRates.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -39,11 +40,15 @@ const CapitalGainsTaxRates = () => {
       <div className={styles.hero}>
         <div className={styles.heroBg}>TAXES</div>
         <div className={styles.heroInner}>
-          <p className={styles.heroTag}>📉 Tax Guide · IRS 2026 Rates</p>
+          <p className={styles.heroTag}><TrendingDown size={13} strokeWidth={2.5} /> Tax Guide · IRS 2026 Rates</p>
           <h1>Capital Gains Tax Rates 2026</h1>
           <p className={styles.heroDeck}>
-            Long-term capital gains can be taxed at 0% in retirement if you manage income carefully.
+            Long-term capital gains can be taxed at 0% in retirement if you manage income carefully. Learn the 2026 thresholds, NIIT rules, and strategies to minimize your tax bill.
           </p>
+          <div className={styles.heroMeta}>
+            <span><Calendar size={11} style={{display:'inline',marginRight:4}} />Updated 2026</span>
+            <span>IRS 2026 Thresholds</span>
+          </div>
         </div>
       </div>
 

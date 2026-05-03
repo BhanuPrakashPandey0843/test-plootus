@@ -35,19 +35,21 @@
 
 /* ── Hero ── */
 .hero {
-  background: linear-gradient(135deg, var(--navy) 0%, #0a1f5c 55%, #1a3a6e 100%);
+  background: linear-gradient(135deg, #03060d 0%, #060708 100%);
   padding: 45px 40px 64px;
   text-align: center;
   position: relative;
   overflow: hidden;
   margin-bottom: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .06);
 }
 
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background: radial-gradient(ellipse 90% 70% at 50% 0%, rgba(59,91,219,0.12) 0%, transparent 65%);
+  pointer-events: none;
 }
 
 .heroInner {

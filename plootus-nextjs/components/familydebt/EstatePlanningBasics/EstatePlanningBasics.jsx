@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Chart from 'chart.js/auto';
+import { FileText, BookOpen, Calendar, Scale, Shield, Landmark } from 'lucide-react';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
 import styles from './EstatePlanningBasics.module.css';
@@ -64,12 +65,12 @@ const EstatePlanningBasics = () => {
       
       <div className={styles.hero}>
         <div className={styles.heroInner}>
-          <div className={styles.heroBadge}>📜 Estate Planning Starter Guide · 2026</div>
+          <div className={styles.heroBadge}><FileText size={14} /> Estate Planning Starter Guide · 2026</div>
           <h1>Estate Planning Basics: Wills, Trusts, Beneficiaries & Powers of Attorney</h1>
           <p className={styles.heroSub}>68% of Americans have no will. Most people think estate planning is only for the wealthy — it isn't. It's for anyone who has money, property, dependents, or wishes about their own medical care. Here's the complete starter guide: 4 documents every adult needs, wills vs. trusts compared, and why your beneficiary form beats your will every time.</p>
           <div className={styles.heroMeta}>
-            <span>📚 Sources: American Bar Association, AARP, Martindale-Nolo Survey, Uniform Law Commission</span>
-            <span>🗓️ 2026 Thresholds & Federal Estate Tax Limits</span>
+            <span><BookOpen size={12} style={{display:'inline',verticalAlign:'middle',marginRight:4}} />Sources: American Bar Association, AARP, Martindale-Nolo Survey, Uniform Law Commission</span>
+            <span><Calendar size={12} style={{display:'inline',verticalAlign:'middle',marginRight:4}} />2026 Thresholds &amp; Federal Estate Tax Limits</span>
           </div>
         </div>
       </div>

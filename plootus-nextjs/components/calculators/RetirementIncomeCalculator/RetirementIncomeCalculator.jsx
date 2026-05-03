@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import { Calculator, Clock, TrendingDown, Banknote } from 'lucide-react';
 import styles from './RetirementIncomeCalculator.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -74,7 +75,7 @@ const RetirementIncomeCalculator = () => {
 
       <div className={styles.hero}>
         <div className={styles['hero-inner']}>
-          <div className={styles['hero-eyebrow']}>🧮 Interactive Tool · Plootus 2026 · Decumulation Planning</div>
+          <p className={styles['hero-eyebrow']}><Calculator size={13} strokeWidth={2.5} /> Interactive Tool · Plootus 2026 · Decumulation Planning</p>
           <h1>Retirement Income Calculator: How Long Will Your Money Last?</h1>
           <div className={styles['hero-deck']}>
             Most retirement calculators focus on <em>accumulation</em> — how much you save. This one focuses on what actually matters in retirement: <em>decumulation</em> — how efficiently you spend it down. Includes withdrawal order optimization and Roth conversion savings.

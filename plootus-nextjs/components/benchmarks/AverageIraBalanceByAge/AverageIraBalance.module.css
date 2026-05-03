@@ -48,8 +48,18 @@
 .breadcrumb a { color: var(--blue); text-decoration: none; }
 .breadcrumb span { margin: 0 6px; color: var(--border); }
 .hero {
-  background: linear-gradient(135deg, var(--navy) 0%, #1a2f70 100%);
+  background: linear-gradient(135deg, #03060d 0, #060708 100%);
   padding: 52px 40px 44px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 60% 0%, rgba(245,159,0,0.07) 0%, transparent 70%);
+  pointer-events: none;
 }
 .hero-inner { max-width: 1100px; margin: 0 auto; }
 .hero-eyebrow {
@@ -93,7 +103,8 @@
   border-radius: 20px;
 }
 .stat-strip {
-  background: var(--blue);
+  background: linear-gradient(90deg, #0a0f1c 0%, #0d1424 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
   padding: 0 40px;
 }
 .stat-strip-inner {

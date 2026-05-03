@@ -32,51 +32,118 @@
   box-sizing: border-box;
 }
 
-/* Hero */
+/* ── Hero ── */
 .hero {
-  background: linear-gradient(135deg, var(--navy) 0%, #1a2f70 100%);
-  padding: 52px 40px 44px;
+  background: linear-gradient(135deg, #03060d 0%, #060708 100%);
+  padding: 64px 40px 52px;
+  position: relative;
+  overflow: hidden;
 }
+
+/* Animated radial glow */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 75% 55% at 65% 35%, rgba(44,182,125,0.12) 0%, transparent 68%),
+    radial-gradient(ellipse 50% 40% at 10% 75%, rgba(59,91,219,0.09) 0%, transparent 58%);
+  pointer-events: none;
+  animation: heroGlow 9s ease-in-out infinite alternate;
+}
+
+/* Subtle grid overlay */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+@keyframes heroGlow {
+  0%   { opacity: 0.6; transform: scale(1); }
+  100% { opacity: 1;   transform: scale(1.05); }
+}
+
+@keyframes fadeSlideDown {
+  from { opacity: 0; transform: translateY(-14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 .heroInner {
   max-width: 1100px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
+
 .heroBadge {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  background: rgba(255, 255, 255, .1);
-  border: 1px solid rgba(255, 255, 255, .2);
-  color: rgba(255, 255, 255, .85);
+  gap: 8px;
+  background: rgba(44, 182, 125, 0.15);
+  border: 1px solid rgba(44, 182, 125, 0.40);
+  color: #6ee7b7;
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: .05em;
-  padding: 5px 12px;
+  letter-spacing: 0.07em;
+  padding: 6px 14px;
   border-radius: 20px;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
+  animation: fadeSlideDown 0.55s ease both;
+  animation-delay: 0.05s;
 }
+
+.heroBadge svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
 .hero h1 {
   font-size: clamp(26px, 4vw, 46px);
   font-weight: 800;
   line-height: 1.1;
-  color: white;
-  margin-bottom: 14px;
-  letter-spacing: -.4px;
-  max-width: 960px;
+  color: #ffffff;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+  max-width: 900px;
+  animation: fadeSlideDown 0.55s ease both;
+  animation-delay: 0.12s;
 }
+
 .heroSub {
   font-size: 16px;
-  color: rgba(255, 255, 255, .7) !important;
-  max-width: 940px;
-  margin-bottom: 20px;
-  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.68) !important;
+  max-width: 860px;
+  margin-bottom: 24px;
+  line-height: 1.7;
+  animation: fadeSlideDown 0.55s ease both;
+  animation-delay: 0.2s;
 }
+
 .heroMeta {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
+  animation: fadeSlideUp 0.55s ease both;
+  animation-delay: 0.28s;
 }
+
 .heroMeta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   font-size: 12px;
   font-weight: 500;
   color: rgba(255, 255, 255, .55);

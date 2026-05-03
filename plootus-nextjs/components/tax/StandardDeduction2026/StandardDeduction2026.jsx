@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
+import {
+  FileText, Calendar, BookOpen, PenLine,
+  User, Users, UserCheck,
+  TrendingUp, ChevronDown, ArrowRight
+} from 'lucide-react';
 import styles from './StandardDeduction2026.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -36,13 +41,78 @@ const StandardDeduction2026 = () => {
       <HubNav />
 
       <section className={styles.hero}>
+        <div className={styles.heroGrid}></div>
+        <div className={styles.heroGlow1}></div>
+        <div className={styles.heroGlow2}></div>
         <div className={styles.heroBg}>TAXES</div>
         <div className={styles.heroInner}>
-          <div className={styles.heroTag}>🧾 Tax Guide · IRS Rev. Proc. 2025-40</div>
-          <h1>Standard Deduction 2026: All Amounts & Age 65+ Rules</h1>
-          <p className={styles.heroSub}>
-            The 2026 standard deduction is $15,000 for single filers and $30,000 for married filing jointly — before any income is taxed.
-          </p>
+
+          {/* ── Left column ── */}
+          <div className={styles.heroLeft}>
+            <div className={styles.heroTag}>
+              <span className={styles.heroTagDot}></span>
+              <FileText size={11} strokeWidth={2.5} />
+              Tax Guide&nbsp;&nbsp;·&nbsp;&nbsp;IRS Rev. Proc. 2025-40
+            </div>
+
+            <h1>
+              Standard Deduction
+              <span className={styles.heroH1Accent}> 2026</span>
+            </h1>
+
+            <p className={styles.heroSub}>
+              The 2026 standard deduction is <strong>$15,000</strong> for single
+              filers and <strong>$30,000</strong> for married filing jointly —
+              shielding that income from federal tax entirely. Taxpayers 65 or
+              older receive up to <strong>$2,600</strong> in additional relief.
+            </p>
+
+            <div className={styles.heroMeta}>
+              <span className={styles.heroMetaPill}>
+                <Calendar size={12} strokeWidth={2} />
+                Updated 2026
+              </span>
+              <span className={styles.heroMetaPill}>
+                <BookOpen size={12} strokeWidth={2} />
+                IRS Rev. Proc. 2025-40
+              </span>
+              <span className={styles.heroMetaPill}>
+                <PenLine size={12} strokeWidth={2} />
+                Plootus Research
+              </span>
+            </div>
+          </div>
+
+          {/* ── Right column — stat cards ── */}
+          <div className={styles.heroRight}>
+            <div className={styles.heroCard}>
+              <div className={styles.heroCardHeader}>
+                <span className={styles.heroCardIcon}><User size={14} strokeWidth={2} /></span>
+                <span className={styles.heroCardLabel}>Single Filer</span>
+              </div>
+              <div className={styles.heroCardVal}>$15,000</div>
+              <div className={styles.heroCardSub}>Standard deduction · 2026</div>
+            </div>
+
+            <div className={`${styles.heroCard} ${styles.heroCardBlue}`}>
+              <div className={styles.heroCardHeader}>
+                <span className={`${styles.heroCardIcon} ${styles.heroCardIconBlue}`}><Users size={14} strokeWidth={2} /></span>
+                <span className={styles.heroCardLabel}>Married Filing Jointly</span>
+              </div>
+              <div className={styles.heroCardVal}>$30,000</div>
+              <div className={styles.heroCardSub}>Standard deduction · 2026</div>
+            </div>
+
+            <div className={styles.heroCard}>
+              <div className={styles.heroCardHeader}>
+                <span className={styles.heroCardIcon}><UserCheck size={14} strokeWidth={2} /></span>
+                <span className={styles.heroCardLabel}>Age 65+ Bonus (Single)</span>
+              </div>
+              <div className={styles.heroCardVal}>+$1,600</div>
+              <div className={styles.heroCardSub}>Additional deduction</div>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -114,7 +184,8 @@ const StandardDeduction2026 = () => {
             <h2>Frequently Asked Questions</h2>
             <div className={styles.faqItem}>
               <button className={styles.faqQ} onClick={toggleFaq}>
-                What is the 2026 standard deduction for a married couple? <span className={styles.faqIcon}>+</span>
+                What is the 2026 standard deduction for a married couple?
+                <span className={styles.faqIcon}><ChevronDown size={18} strokeWidth={2} /></span>
               </button>
               <div className={styles.faqA}>
                 It is $30,000 for married filing jointly.
@@ -125,8 +196,11 @@ const StandardDeduction2026 = () => {
 
         <aside className={styles.sidebar}>
           <div className={styles.ctaCard}>
-            <h4>Check your retirement readiness</h4>
-            <div onClick={() => router.push('/retirement-calculator')} className={styles.ctaBtn} style={{cursor: 'pointer'}}>Check Here</div>
+            <h4>Check Your Retirement Readiness</h4>
+            <p>See if you're on track — personalized to your income and age.</p>
+            <div onClick={() => router.push('/retirement-calculator')} className={styles.ctaBtn} style={{cursor: 'pointer'}}>
+              Get Started <ArrowRight size={15} strokeWidth={2.5} style={{marginLeft: 6, verticalAlign: 'middle'}} />
+            </div>
           </div>
         </aside>
       </div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import { Calculator, CalendarDays, BookOpen, Hash } from 'lucide-react';
 import styles from './RmdCalculator.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -80,11 +81,13 @@ const RmdCalculator = () => {
 
       <div className={styles.hero}>
         <div className={styles['hero-inner']}>
-          <p className={styles['hero-eyebrow']}>🧮 Interactive Calculator · SECURE 2.0 Updated · Age 73+ Required</p>
+          <p className={styles['hero-eyebrow']}><Calculator size={13} strokeWidth={2.5} /> Interactive Calculator · SECURE 2.0 Updated · Age 73+ Required</p>
           <h1>Required Minimum Distribution (RMD) Calculator 2026</h1>
           <p className={styles['hero-deck']}><abbr title="Required Minimum Distribution">RMD</abbr>s start at age 73 under SECURE 2.0. Missing one triggers a 25% penalty. Enter your balance and age to calculate your required 2026 distribution — and see Roth conversion strategies to reduce future RMDs.</p>
           <div className={styles['hero-meta']}>
-            <span>📅 Updated April 2026</span><span>📚 IRS Uniform Lifetime Table</span><span>🔢 Instant results</span>
+            <span><CalendarDays size={11} strokeWidth={2.5} style={{display:'inline',verticalAlign:'middle',marginRight:3}} /> Updated April 2026</span>
+            <span><BookOpen size={11} strokeWidth={2.5} style={{display:'inline',verticalAlign:'middle',marginRight:3}} /> IRS Uniform Lifetime Table</span>
+            <span><Hash size={11} strokeWidth={2.5} style={{display:'inline',verticalAlign:'middle',marginRight:3}} /> Instant results</span>
           </div>
         </div>
       </div>

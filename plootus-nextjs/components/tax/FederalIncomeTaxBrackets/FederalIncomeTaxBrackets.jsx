@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
+import { FileText, Calendar, Clock } from 'lucide-react';
 import styles from './FederalIncomeTaxBrackets.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -90,11 +91,16 @@ const FederalIncomeTaxBrackets = () => {
       <section className={styles.hero}>
         <div className={styles.heroBg}>TAXES</div>
         <div className={styles.heroInner}>
-          <div className={styles.heroTag}>🧾 Tax Guide · IRS Rev. Proc. 2025-40</div>
+          <div className={styles.heroTag}><FileText size={13} strokeWidth={2.5} /> Tax Guide · IRS Rev. Proc. 2025-40</div>
           <h1>Federal Income Tax Brackets 2026</h1>
           <p className={styles.heroSub}>
-            The 2026 federal tax brackets are 10%, 12%, 22%, 24%, 32%, 35%, and 37% — adjusted for inflation.
+            All 7 federal tax rates — 10%, 12%, 22%, 24%, 32%, 35%, and 37% — fully adjusted for inflation. Use our free estimator to calculate your 2026 tax bill.
           </p>
+          <div className={styles.heroMeta}>
+            <span><Calendar size={11} style={{display:'inline',marginRight:4}} />Updated 2026</span>
+            <span><Clock size={11} style={{display:'inline',marginRight:4}} />5 min read</span>
+            <span>IRS Rev. Proc. 2025-40</span>
+          </div>
         </div>
       </section>
 

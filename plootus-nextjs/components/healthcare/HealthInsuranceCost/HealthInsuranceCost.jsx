@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import { ShieldPlus, BookOpen, Calendar } from 'lucide-react';
 import styles from './HealthInsuranceCost.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -100,12 +101,12 @@ const HealthInsuranceCost = () => {
       {/* Hero Section */}
       <div className={styles.hero}>
         <div className={styles.heroInner}>
-          <div className={styles.heroBadge}>🏥 <abbr title="Kaiser Family Foundation">KFF</abbr> 2025 Data</div>
+          <div className={styles.heroBadge}><ShieldPlus size={14} /> <abbr title="Kaiser Family Foundation">KFF</abbr> 2025 Data</div>
           <h1>Average Health Insurance Cost by State & Plan Type (2025)</h1>
           <p className={styles.heroSub}>Health insurance costs depend on how you get coverage: employer-sponsored, <abbr title="Affordable Care Act">ACA</abbr> Marketplace, or Medicare. We break down 2025 average premiums by plan type and state, using KFF's authoritative data.</p>
           <div className={styles.heroMeta}>
-            <span>📚 Sources: KFF 2025 Employer Health Benefits Survey; KFF Marketplace Benchmark Premiums; HHS; Fidelity</span>
-            <span>🗓️ 2025 Data</span>
+            <span><BookOpen size={12} style={{display:'inline',verticalAlign:'middle',marginRight:4}} />Sources: KFF 2025 Employer Health Benefits Survey; KFF Marketplace Benchmark Premiums; HHS; Fidelity</span>
+            <span><Calendar size={12} style={{display:'inline',verticalAlign:'middle',marginRight:4}} />2025 Data</span>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
+import { Calculator, Calendar } from 'lucide-react';
 import styles from './SocialSecurityTaxCalculator.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -75,11 +76,15 @@ const SocialSecurityTaxCalculator = () => {
       <div className={styles.hero}>
         <div className={styles.heroBg}>TAXES</div>
         <div className={styles.heroInner}>
-          <p className={styles.heroTag}>🧮 Free Calculator · 2026 IRS Thresholds</p>
+          <p className={styles.heroTag}><Calculator size={13} strokeWidth={2.5} /> Free Calculator · 2026 IRS Thresholds</p>
           <h1>Social Security Tax Calculator 2026</h1>
           <p className={styles.heroDeck}>
-            Up to 85% of Social Security benefits can be federally taxable. Find out how much of your benefit is taxable.
+            Up to 85% of Social Security benefits can be federally taxable. Enter your income to calculate your exact taxable portion instantly.
           </p>
+          <div className={styles.heroMeta}>
+            <span>Updated 2026</span>
+            <span>Free · No Sign-Up</span>
+          </div>
         </div>
       </div>
 

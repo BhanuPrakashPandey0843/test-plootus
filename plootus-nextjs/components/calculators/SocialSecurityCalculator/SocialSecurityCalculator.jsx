@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import { Calculator, CalendarDays, BookOpen, Hash } from 'lucide-react';
 import styles from './SocialSecurityCalculator.module.css';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
@@ -104,11 +105,13 @@ const SocialSecurityCalculator = () => {
 
       <div className={styles.hero}>
         <div className={styles['hero-inner']}>
-          <p className={styles['hero-eyebrow']}>🧮 Interactive Calculator · SSA 2026 Data · Break-Even Analysis</p>
+          <p className={styles['hero-eyebrow']}><Calculator size={13} strokeWidth={2.5} /> Interactive Calculator · SSA 2026 Data · Break-Even Analysis</p>
           <h1>Social Security Calculator 2026: Estimate Your Benefit at 62, 67, or 70</h1>
           <p className={styles['hero-deck']}>Enter your estimated FRA benefit and see the difference between claiming at 62, 67, or 70 — in monthly income, lifetime totals, and break-even age. The right choice can mean $200,000+ more in lifetime income.</p>
           <div className={styles['hero-meta']}>
-            <span>📅 Updated April 2026</span><span>📚 SSA 2026 Data</span><span>🔢 Instant break-even analysis</span>
+            <span><CalendarDays size={11} strokeWidth={2.5} style={{display:'inline',verticalAlign:'middle',marginRight:3}} /> Updated April 2026</span>
+            <span><BookOpen size={11} strokeWidth={2.5} style={{display:'inline',verticalAlign:'middle',marginRight:3}} /> SSA 2026 Data</span>
+            <span><Hash size={11} strokeWidth={2.5} style={{display:'inline',verticalAlign:'middle',marginRight:3}} /> Instant break-even analysis</span>
           </div>
         </div>
       </div>

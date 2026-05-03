@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Chart from 'chart.js/auto';
+import { Scale, BookOpen, Calendar, AlertTriangle } from 'lucide-react';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
 import styles from './DivorceAndRetirement.module.css';
@@ -64,12 +65,12 @@ const DivorceAndRetirement = () => {
       
       <div className={styles.hero}>
         <div className={styles.heroInner}>
-          <div className={styles.heroBadge}>⚖️ ERISA · IRS & SSA Rules · 2026</div>
+          <div className={styles.heroBadge}><Scale size={14} /> ERISA · IRS &amp; SSA Rules · 2026</div>
           <h1>Divorce & Retirement: QDRO, Splitting Your 401(k) & Social Security After Divorce</h1>
           <p className={styles.heroSub}>Retirement accounts are often the largest marital asset — and the rules for dividing them are full of traps that permanently destroy savings. One wrong step can trigger a tax bill and penalties on money you were legally entitled to. Here's the complete guide: how a QDRO works, how to split each account type correctly, what Social Security pays after divorce, and the mistakes people make that cost them their retirement.</p>
           <div className={styles.heroMeta}>
-            <span>📚 Sources: ERISA, IRC §414(p), IRC §408(d)(6), SSA Publication No. 05-10084</span>
-            <span>🗓️ 2026 Social Security Benefit Thresholds</span>
+            <span><BookOpen size={12} style={{display:'inline',verticalAlign:'middle',marginRight:4}} />Sources: ERISA, IRC §414(p), IRC §408(d)(6), SSA Publication No. 05-10084</span>
+            <span><Calendar size={12} style={{display:'inline',verticalAlign:'middle',marginRight:4}} />2026 Social Security Benefit Thresholds</span>
           </div>
         </div>
       </div>

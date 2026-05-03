@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import Chart from 'chart.js/auto';
+import { HeartPulse, BookOpen, Calendar } from 'lucide-react';
 import HubNav from '../../HubNav/HubNav';
 import PartnersSection from '../../home/PartnersSection';
 import styles from './MedicareGuide.module.css';
@@ -78,12 +79,12 @@ const MedicareGuide = () => {
       
       <div className={styles.hero}>
         <div className={styles.heroInner}>
-          <div className={styles.heroBadge}>🏥 Medicare.gov · CMS 2026 Official Data</div>
+          <div className={styles.heroBadge}><HeartPulse size={14} /> Medicare.gov · CMS 2026 Official Data</div>
           <h1>Medicare Guide 2026: Parts A, B, C & D Explained</h1>
           <p className={styles.heroSub}>Medicare's four parts cover very different things — and the costs, gaps, and enrollment windows catch millions of Americans off guard every year. Here's everything you need to know before you turn 65.</p>
           <div className={styles.heroMeta}>
-            <span>📚 Sources: CMS.gov, Medicare.gov, IRMAA 2026 thresholds, Kaiser Family Foundation</span>
-            <span>🗓️ 2026 Premiums & Deductibles</span>
+            <span><BookOpen size={12} style={{display:'inline',verticalAlign:'middle',marginRight:4}} />Sources: CMS.gov, Medicare.gov, IRMAA 2026 thresholds, Kaiser Family Foundation</span>
+            <span><Calendar size={12} style={{display:'inline',verticalAlign:'middle',marginRight:4}} />2026 Premiums &amp; Deductibles</span>
           </div>
         </div>
       </div>
